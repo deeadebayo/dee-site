@@ -1,0 +1,24 @@
+{
+  "name": "dee-site",
+  "version": "1.0.0",
+  "description": "refactor of deeadebayo.com using better practices",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deeadebayo/dee-site.git"
+  },
+  "author": "@deeadebayo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deeadebayo/dee-site/issues"
+  },
+  "homepage": "https://github.com/deeadebayo/dee-site#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-pug": "^4.0.1"
+  }
+}
