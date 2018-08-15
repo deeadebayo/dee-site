@@ -1,10 +1,13 @@
 var gulp = require('gulp'),
     pug = require('gulp-pug'),
+    error = require('pug-error'),
     watch = require('gulp-watch'),
     postcss = require('gulp-postcss'),
     sourcemaps = require('gulp-sourcemaps');
 
-    
+
+// var err = error('MY_CODE', 'there is an error on this line', {})
+
 gulp.task('pug', function () {
     console.log('Processed HTML');
     return gulp.src('./app/**/*.pug')
