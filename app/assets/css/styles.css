@@ -5,4 +5,4 @@
 @import "modules/_large-hero";
 @import "modules/_btn"; */
 
-/* Leaving these imports empty as a placeholder */
+/* Leaving these imports empty as a placeholder. normalize is already been added as a dependancy */
