@@ -1,6 +1,5 @@
 var gulp = require('gulp'),
     pug = require('gulp-pug'),
-    watch = require('gulp-watch'),
     postcss = require('gulp-postcss'),
     pugLinter = require('gulp-pug-linter'),
     sourcemaps = require('gulp-sourcemaps');
