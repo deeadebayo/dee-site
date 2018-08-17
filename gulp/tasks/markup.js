@@ -7,6 +7,23 @@ var gulp = require('gulp'),
 
 // var err = error('MY_CODE', 'there is an error on this line', {})
 
+// Set up an object with the path variables - use variables in functions
+// var devPaths = {
+//     base:
+//     img:
+//     tmpl:
+//     script:
+//     fonts:
+// };
+
+// var webPaths = {
+//     base:
+//     img:
+//     tmpl:
+//     script:
+//     fonts:
+// };
+
 gulp.task('pug', function () {
     console.log('Processed HTML');
     return gulp.src('./app/**/*.pug')
