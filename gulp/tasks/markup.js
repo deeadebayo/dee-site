@@ -9,6 +9,9 @@ var gulp = require('gulp'),
 
 // var err = error('MY_CODE', 'there is an error on this line', {})
 
+
+// add these in - https://www.npmjs.com/package/gulp-pug-linter
+
 // Set up an object with the path variables - use variables in functions
 var devPaths = {
     // base:
