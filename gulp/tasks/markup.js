@@ -1,8 +1,10 @@
-var pug = require('gulp-pug'),
-    pugLinter = require('gulp-pug-linter'),
+var gulp = require('gulp'),
+    pug = require('gulp-pug'),
     sass = require('gulp-sass'),
-    sourcemaps = require('gulp-sourcemaps'),
-    autoprefixer = require('gulp-autoprefixer');
+    autoprefixer = require('gulp-autoprefixer'),
+    log = require('fancy-log'),
+    sync = require('browser-sync'),
+    reload = sync.reload;
 
 // add these in - https://www.npmjs.com/package/gulp-pug-linter
 
@@ -12,7 +14,7 @@ var devPaths = {
     // img:
     html: './app/**/*.pug',
     styleFile: './app/assets/scss/styles.scss',
-    styles: './app/assets/scss/'
+    styles: './app/assets/scss/**/*.scss'
     // script:
     // fonts:
 };
@@ -27,22 +29,25 @@ var webPaths = {
 };
 
 gulp.task('pug', function () {
-    gulp.src(devPaths.html)
+    return gulp.src(devPaths.html)
         .pipe(pug({
             pretty: false,
         }))
-        .pipe(pugLinter())
-        .pipe(pugLinter.reporter('fail'))
-        .pipe(gulp.dest(webPaths.html));
-    console.log('Your HTML is served!');
+        .pipe(gulp.dest(webPaths.html))
+        .on('end', function() {
+            log('HTML Processed!');
+        });
 });
 
 gulp.task('sass', function () {
-    gulp.src(devPaths.styleFile)
-        .pipe(sourcemaps.init())
-        .pipe(sass().on('error', sass.logError))
+    return gulp.src(devPaths.styleFile)
+        .pipe(sass()).on('error', sass.logError)
         .pipe(autoprefixer('last 3 versions'))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(webPaths.styles));
-    console.log('Your css is styled!');
+        .pipe(gulp.dest(webPaths.styles))
+        .pipe(reload({
+            stream: true
+        }))
+        .on('end', function() {
+            log('CSS Injected!');
+        });
 });
