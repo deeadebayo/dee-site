@@ -1,11 +1,11 @@
-var gulp = require('gulp'),
-    watch = require('gulp-watch');
+var watch = require('gulp-watch');
 
 gulp.task('watch', function () {
-    watch('./app/**/*.pug', function() {
+    watch(devPaths.html, function() {
         gulp.start('pug');
     });
-    watch('./app/**/*.css', function() {
-        gulp.start('css');
+    
+    watch(devPaths.styles, function() {
+        gulp.start('sass');
     });
 });

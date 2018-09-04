@@ -1,14 +1,8 @@
-var gulp = require('gulp'),
-    pug = require('gulp-pug'),
-    postcss = require('gulp-postcss'),
+var pug = require('gulp-pug'),
     pugLinter = require('gulp-pug-linter'),
+    sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
-    autoprefixer = require('autoprefixer'),
-    precss = require('precss');
-
-
-// var err = error('MY_CODE', 'there is an error on this line', {})
-
+    autoprefixer = require('gulp-autoprefixer');
 
 // add these in - https://www.npmjs.com/package/gulp-pug-linter
 
@@ -16,42 +10,39 @@ var gulp = require('gulp'),
 var devPaths = {
     // base:
     // img:
-    tmpl: './app/**/*.pug',
-    styles: './app/assets/scss/**/*.css'
+    html: './app/**/*.pug',
+    styleFile: './app/assets/scss/styles.scss',
+    styles: './app/assets/scss/'
     // script:
     // fonts:
 };
 
 var webPaths = {
-//     base:
-//     img:
-    tmpl: './dist',
+    //     base:
+    //     img:
+    html: './dist',
     styles: './dist/public/css/'
-//     script:
-//     fonts:
+    //     script:
+    //     fonts:
 };
 
 gulp.task('pug', function () {
-    console.log('Processed HTML');
-    return gulp.src(devPaths.tmpl)
-    .pipe(pug({
-        pretty: false,
-    }))
-    .pipe(pugLinter())
-    .pipe(pugLinter.reporter('fail'))
-    .pipe(gulp.dest(devPaths.tmpl));
+    gulp.src(devPaths.html)
+        .pipe(pug({
+            pretty: false,
+        }))
+        .pipe(pugLinter())
+        .pipe(pugLinter.reporter('fail'))
+        .pipe(gulp.dest(webPaths.html));
+    console.log('Your HTML is served!');
 });
 
-gulp.task('css', function () {
-    var plugins = [
-        autoprefixer(),
-        precss(),
-    ];
-    
-    return gulp.src(devPaths.styles)
-    .pipe(sourcemaps.init())
-    .pipe(postcss(plugins))
-    .pipe(autoprefixer('last 3 versions'))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(webPaths.styles));
+gulp.task('sass', function () {
+    gulp.src(devPaths.styleFile)
+        .pipe(sourcemaps.init())
+        .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer('last 3 versions'))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest(webPaths.styles));
+    console.log('Your css is styled!');
 });
