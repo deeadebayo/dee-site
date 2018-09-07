@@ -5,7 +5,7 @@ var gulp = require('gulp'),
 
     devPaths = {
         img: './app/assets/img/*',
-        html: './app/**/*.pug',
+        html: './app/*.pug',
         styleFile: './app/assets/scss/styles.scss',
         styles: './app/assets/scss/**/*.scss',
         scripts: './app/assets/js/**/*.js'

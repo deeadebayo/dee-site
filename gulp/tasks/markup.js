@@ -10,12 +10,16 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     babel = require('gulp-babel'),
     sourcemaps = require('gulp-sourcemaps'),
+    pugInheritance = require('gulp-pug-inheritance'),
+    cached = require('gulp-cached'),
+    changed = require('gulp-changed'),
     // jasmine = require('gulp-jasmine-phantom'),
 
     // Set up an object with the path variables - use variables in functions
     devPaths = {
         img: './app/assets/img/*',
         html: './app/**/*.pug',
+        htmlPartial: '!./app/**/*.pug', //not this
         styleFile: './app/assets/scss/styles.scss',
         styles: './app/assets/scss/**/*.scss',
         scripts: './app/assets/js/**/*.js'
@@ -68,8 +72,20 @@ gulp.task('scripts-dist', function () {
 });
 
 gulp.task('pug', function () {
-    return gulp.src(devPaths.html)
+    return gulp.src([
+        devPaths.html, 
+        devPaths.htmlPartial
+    ])
+        .pipe(changed('./', {
+            extension: '.html'
+        }))
+        .pipe(cached('pug'))
+        .pipe(pugInheritance({
+            //basedir: ' ',
+            skip: 'node_modules'
+        }))
         .pipe(pug({
+            locals: {},
             pretty: false,
         }))
         .pipe(gulp.dest(webPaths.html))
