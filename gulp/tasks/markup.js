@@ -11,8 +11,10 @@ var gulp = require('gulp'),
     babel = require('gulp-babel'),
     sourcemaps = require('gulp-sourcemaps'),
     pugInheritance = require('gulp-pug-inheritance'),
-    cached = require('gulp-cached'),
     changed = require('gulp-changed'),
+    cached = require('gulp-cached'),
+    gulpif = require('gulp-if'),
+    filter = require('gulp-filter'),
     // jasmine = require('gulp-jasmine-phantom'),
 
     // Set up an object with the path variables - use variables in functions
@@ -76,22 +78,25 @@ gulp.task('pug', function () {
         devPaths.html, 
         devPaths.htmlPartial
     ])
-        .pipe(changed('./', {
+        .pipe(changed('./dist', {
             extension: '.html'
         }))
-        .pipe(cached('pug'))
+        .pipe(gulpif(global.isWatching, cached('pug')))
         .pipe(pugInheritance({
-            //basedir: ' ',
+            basedir: './app',
             skip: 'node_modules'
+        }))
+        .pipe(filter(function (file) {
+            return !/\/_/.test(file.path) && !/^_/.test(file.relative);
         }))
         .pipe(pug({
             locals: {},
             pretty: false,
         }))
         .pipe(gulp.dest(webPaths.html))
-        .on('end', function () {
-            log('HTML Processed!');
-        });
+        // .on('end', function () {
+        //     log('HTML Processed!');
+        // });
 });
 
 gulp.task('sass', function () {

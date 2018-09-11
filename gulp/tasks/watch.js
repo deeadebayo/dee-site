@@ -11,8 +11,10 @@ var gulp = require('gulp'),
         scripts: './app/assets/js/**/*.js'
     };
 
-
-gulp.task('pug-watch', ['pug'], reload);
+gulp.task('setWatch', _ => {
+    global.isWatching = true;
+})
+gulp.task('pug-watch', ['setWatch','pug'], reload);
 
 gulp.task('watch', [ 'lint', 'sass', 'pug', 'images'], function() {
     sync({
