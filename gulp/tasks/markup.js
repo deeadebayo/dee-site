@@ -13,6 +13,7 @@ var gulp = require('gulp'),
     pugInheritance = require('gulp-pug-inheritance'),
     cached = require('gulp-cached'),
     changed = require('gulp-changed'),
+    debug = require('gulp-debug'),
     // jasmine = require('gulp-jasmine-phantom'),
 
     // Set up an object with the path variables - use variables in functions
@@ -73,16 +74,17 @@ gulp.task('scripts-dist', function () {
 
 gulp.task('pug', function () {
     return gulp.src([
-        devPaths.html, 
-        devPaths.htmlPartial
-    ])
+            devPaths.html,
+            devPaths.htmlPartial
+        ])
+        .pipe(debug({title: 'myWatcher:'}))
         .pipe(changed('./', {
             extension: '.html'
         }))
         .pipe(cached('pug'))
         .pipe(pugInheritance({
-            //basedir: ' ',
-            skip: 'node_modules'
+            basedir: './app',
+            skip: 'node_modules/'
         }))
         .pipe(pug({
             locals: {},
@@ -96,6 +98,7 @@ gulp.task('pug', function () {
 
 gulp.task('sass', function () {
     return gulp.src(devPaths.styleFile)
+        .pipe(debug({title: 'myWatcher:'}))
         .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'compressed'
