@@ -2,7 +2,7 @@ var gulp = require('gulp');
 
 gulp.task('dist', [
     'pug',
-    'images',
+    //'images',
     'sass',
     'lint',
     'scripts-dist'

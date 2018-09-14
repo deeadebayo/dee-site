@@ -16,7 +16,7 @@ gulp.task('setWatch', _ => {
 })
 gulp.task('pug-watch', ['setWatch','pug'], reload);
 
-gulp.task('watch', [ 'lint', 'sass', 'pug', 'images'], function() {
+gulp.task('watch', [ 'lint', 'sass', 'pug'], function() {
     sync({
         server: './dist'
     });
