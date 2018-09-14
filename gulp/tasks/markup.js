@@ -11,9 +11,14 @@ var gulp = require('gulp'),
     babel = require('gulp-babel'),
     sourcemaps = require('gulp-sourcemaps'),
     pugInheritance = require('gulp-pug-inheritance'),
-    cached = require('gulp-cached'),
     changed = require('gulp-changed'),
+<<<<<<< HEAD
+    cached = require('gulp-cached'),
+    gulpif = require('gulp-if'),
+    filter = require('gulp-filter'),
+=======
     debug = require('gulp-debug'),
+>>>>>>> master
     // jasmine = require('gulp-jasmine-phantom'),
 
     // Set up an object with the path variables - use variables in functions
@@ -74,26 +79,40 @@ gulp.task('scripts-dist', function () {
 
 gulp.task('pug', function () {
     return gulp.src([
+<<<<<<< HEAD
+        devPaths.html, 
+        devPaths.htmlPartial
+    ])
+        .pipe(changed('./dist', {
+=======
             devPaths.html,
             devPaths.htmlPartial
         ])
         .pipe(debug({title: 'myWatcher:'}))
         .pipe(changed('./', {
+>>>>>>> master
             extension: '.html'
         }))
-        .pipe(cached('pug'))
+        .pipe(gulpif(global.isWatching, cached('pug')))
         .pipe(pugInheritance({
             basedir: './app',
+<<<<<<< HEAD
+            skip: 'node_modules'
+=======
             skip: 'node_modules/'
+>>>>>>> master
+        }))
+        .pipe(filter(function (file) {
+            return !/\/_/.test(file.path) && !/^_/.test(file.relative);
         }))
         .pipe(pug({
             locals: {},
             pretty: false,
         }))
         .pipe(gulp.dest(webPaths.html))
-        .on('end', function () {
-            log('HTML Processed!');
-        });
+        // .on('end', function () {
+        //     log('HTML Processed!');
+        // });
 });
 
 gulp.task('sass', function () {
