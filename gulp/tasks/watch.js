@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
     sync = require('browser-sync'),
     watch = require('gulp-watch'),
-    reload = sync.reload,
+    reload = sync.reload(),
 
     devPaths = {
         img: './app/assets/img/*',
@@ -11,12 +11,13 @@ var gulp = require('gulp'),
         scripts: './app/assets/js/**/*.js'
     };
 
-gulp.task('setWatch', _ => {
+gulp.task('setWatch', () => {
     global.isWatching = true;
-})
+});
+
 gulp.task('pug-watch', ['setWatch','pug'], reload);
 
-gulp.task('watch', [ 'lint', 'sass', 'pug'], function() {
+gulp.task('watch', [ 'lint', 'sass', 'pug'], () => {
     sync({
         server: './dist'
     });

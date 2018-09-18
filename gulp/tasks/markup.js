@@ -21,7 +21,7 @@ var gulp = require('gulp'),
     // Set up an object with the path variables - use variables in functions
     devPaths = {
         img: './app/assets/img/*',
-        html: './app/**/*.pug',
+        html: './app/*.pug',
         htmlPartial: '!./app/**/*.pug', //not this
         styleFile: './app/assets/scss/styles.scss',
         styles: './app/assets/scss/**/*.scss',
