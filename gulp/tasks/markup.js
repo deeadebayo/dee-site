@@ -21,7 +21,7 @@ var gulp = require('gulp'),
     // Set up an object with the path variables - use variables in functions
     devPaths = {
         img: './app/assets/img/*',
-        html: './app/*.pug',
+        html: './app/**/*.pug',
         htmlPartial: '!./app/**/*.pug', //not this
         styleFile: './app/assets/scss/styles.scss',
         styles: './app/assets/scss/**/*.scss',
@@ -80,17 +80,17 @@ gulp.task('pug', function () {
         devPaths.htmlPartial
     ])
         .pipe(debug({title: 'myWatcher:'}))
-        .pipe(changed('./', {
-            extension: '.html'
-        }))
-        .pipe(gulpif(global.isWatching, cached('pug')))
+        // .pipe(changed('./', {
+        //     extension: '.html'
+        // }))
+        //.pipe(gulpif(global.isWatching, cached('pug')))
         .pipe(pugInheritance({
             basedir: './app',
             skip: 'node_modules/'
         }))
-        .pipe(filter(function (file) {
-            return !/\/_/.test(file.path) && !/^_/.test(file.relative);
-        }))
+        // .pipe(filter(function (file) {
+        //     return !/\/_/.test(file.path) && !/^_/.test(file.relative);
+        // }))
         .pipe(pug({
             locals: {},
             pretty: false,
