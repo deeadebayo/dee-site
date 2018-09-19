@@ -12,17 +12,14 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     pugInheritance = require('gulp-pug-inheritance'),
     changed = require('gulp-changed'),
-    cached = require('gulp-cached'),
-    gulpif = require('gulp-if'),
-    filter = require('gulp-filter'),
     debug = require('gulp-debug'),
     // jasmine = require('gulp-jasmine-phantom'),
 
-    // Set up an object with the path variables - use variables in functions
+    // path variables
     devPaths = {
         img: './app/assets/img/*',
         html: './app/**/*.pug',
-        htmlPartial: '!./app/**/*.pug', //not this
+        htmlPartial: '!./app/jade-templates/*.pug', //not this
         styleFile: './app/assets/scss/styles.scss',
         styles: './app/assets/scss/**/*.scss',
         scripts: './app/assets/js/**/*.js'
@@ -76,34 +73,37 @@ gulp.task('scripts-dist', function () {
 
 gulp.task('pug', function () {
     return gulp.src([
-        devPaths.html, 
-        devPaths.htmlPartial
-    ])
-        .pipe(debug({title: 'myWatcher:'}))
-        // .pipe(changed('./', {
-        //     extension: '.html'
-        // }))
-        //.pipe(gulpif(global.isWatching, cached('pug')))
+            devPaths.html,
+            devPaths.htmlPartial
+        ])
+        .pipe(debug({
+            title: 'Staging:'
+        }))
+        .pipe(changed('dist', {
+            extension: '.html'
+        }))
+        .pipe(debug({
+            title: 'Files Changed:'
+        }))
         .pipe(pugInheritance({
             basedir: './app',
             skip: 'node_modules/'
         }))
-        // .pipe(filter(function (file) {
-        //     return !/\/_/.test(file.path) && !/^_/.test(file.relative);
-        // }))
         .pipe(pug({
             locals: {},
             pretty: false,
         }))
-        .pipe(gulp.dest(webPaths.html));
-        // .on('end', function () {
-        //     log('HTML Processed!');
-        // });
+        .pipe(gulp.dest(webPaths.html))
+        .on('end', function () {
+            log('HTML Processed! =)');
+        });
 });
 
 gulp.task('sass', function () {
     return gulp.src(devPaths.styleFile)
-        .pipe(debug({title: 'myWatcher:'}))
+        .pipe(debug({
+            title: 'myWatcher:'
+        }))
         .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'compressed'
