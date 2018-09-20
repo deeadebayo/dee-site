@@ -1,21 +1,17 @@
-var gulp = require('gulp'),
-    sync = require('browser-sync'),
-    watch = require('gulp-watch'),
+const gulp = require('gulp'),
+watch = require('gulp-watch'),
+sync = require('browser-sync'),
     reload = sync.reload(),
 
     devPaths = {
         img: './app/assets/img/*',
-        html: './app/*.pug',
+        html: './app/**/*.pug',
         styleFile: './app/assets/scss/styles.scss',
         styles: './app/assets/scss/**/*.scss',
         scripts: './app/assets/js/**/*.js'
     };
 
-gulp.task('setWatch', () => {
-    global.isWatching = true;
-});
-
-gulp.task('pug-watch', ['setWatch','pug'], reload);
+gulp.task('pug-watch', ['pug'], reload);
 
 gulp.task('watch', [ 'lint', 'sass', 'pug'], () => {
     sync({

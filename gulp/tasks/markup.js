@@ -3,7 +3,8 @@ const gulp = require('gulp'),
     pugInheritance = require('gulp-pug-inheritance'),
     changed = require('gulp-changed'),
     sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
+    postcss = require('gulp-postcss'),
+    autoprefixer = require('autoprefixer'),
     log = require('fancy-log'),
     sync = require('browser-sync'),
     reload = sync.reload,
@@ -30,6 +31,15 @@ const gulp = require('gulp'),
         html: './dist',
         styles: './dist/public/css/',
         scripts: './dist/public/js/'
+    },
+
+    //Options
+    sassOptions = {
+        outputStyle: 'compressed'
+    },
+    
+    prefixerOptions = {
+        browsers: ['last 3 versions']
     };
 
 gulp.task('lint', function () {
@@ -102,14 +112,14 @@ gulp.task('pug', function () {
 gulp.task('sass', function () {
     return gulp.src(devPaths.styleFile)
         .pipe(debug({
-            title: 'myWatcher:'
+            title: 'scss file:'
         }))
         .pipe(sourcemaps.init())
-        .pipe(sass({
-            outputStyle: 'compressed'
-        })).on('error', sass.logError)
-        .pipe(sourcemaps.write())
-        .pipe(autoprefixer('last 3 versions'))
+        .pipe(sass(sassOptions)).on('error', sass.logError)
+        .pipe(postcss([
+            autoprefixer(prefixerOptions)
+        ]))
+        .pipe(sourcemaps.write(''))
         .pipe(gulp.dest(webPaths.styles))
         .pipe(reload({
             stream: true
