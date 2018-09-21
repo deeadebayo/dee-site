@@ -24,9 +24,7 @@ gulp.task('watch', ['lint', 'sass', 'pug'], () => {
 
     watch(devPaths.scripts, ['lint']);
     watch(devPaths.styles, ['sass']);
-    watch(devPaths.html, () => {
-        gulp.start('pug-watch');
-    });
+    watch(devPaths.html, ['pug-watch']);
     //watch(devPaths.img, ['images']);
 });
 
