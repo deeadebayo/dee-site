@@ -1,7 +1,7 @@
 const gulp = require('gulp'),
     watch = require('gulp-watch'),
     sync = require('browser-sync').create(),
-    //reload = sync.reload,
+    reload = sync.reload,
 
     devPaths = {
         img: './app/assets/img/*',
@@ -11,7 +11,7 @@ const gulp = require('gulp'),
         scripts: './app/assets/js/**/*.js'
     };
 
-gulp.task('pug-watch', ['pug'], sync.reload);
+gulp.task('pug-watch', ['pug'], reload);
 
 gulp.task('watch', ['lint', 'sass', 'pug'], () => {
     sync.init({
