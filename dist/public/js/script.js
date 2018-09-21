@@ -1,0 +1,2 @@
+console.warn("hello world");
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJhc2UvcmFuZG9tLmpzIl0sIm5hbWVzIjpbImNvbnNvbGUiLCJ3YXJuIl0sIm1hcHBpbmdzIjoiQUFBQUEsUUFBUUMsS0FBSyIsImZpbGUiOiJzY3JpcHQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJjb25zb2xlLndhcm4oJ2hlbGxvIHdvcmxkJyk7Il19

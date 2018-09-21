@@ -1,25 +1,25 @@
-var gulp = require('gulp'),
-    sync = require('browser-sync'),
+const gulp = require('gulp'),
     watch = require('gulp-watch'),
-    reload = sync.reload(),
+    sync = require('browser-sync').create(),
+    reload = sync.reload,
 
     devPaths = {
         img: './app/assets/img/*',
-        html: './app/*.pug',
+        html: './app/**/*.pug',
         styleFile: './app/assets/scss/styles.scss',
         styles: './app/assets/scss/**/*.scss',
         scripts: './app/assets/js/**/*.js'
     };
 
-gulp.task('setWatch', () => {
-    global.isWatching = true;
-});
+gulp.task('pug-watch', ['pug'], reload);
 
-gulp.task('pug-watch', ['setWatch','pug'], reload);
-
-gulp.task('watch', [ 'lint', 'sass', 'pug'], () => {
-    sync({
-        server: './dist'
+gulp.task('watch', ['lint', 'sass', 'pug'], () => {
+    sync.init({
+        notify: true,
+        injectChanges: true,
+        server: {
+            baseDir: './dist'
+        }
     });
 
     watch(devPaths.scripts, ['lint']);
@@ -27,3 +27,5 @@ gulp.task('watch', [ 'lint', 'sass', 'pug'], () => {
     watch(devPaths.html, ['pug-watch']);
     //watch(devPaths.img, ['images']);
 });
+
+//lite-server --baseDir="dist"

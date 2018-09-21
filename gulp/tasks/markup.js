@@ -1,7 +1,10 @@
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     pug = require('gulp-pug'),
+    pugInheritance = require('gulp-pug-inheritance'),
+    changed = require('gulp-changed'),
     sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
+    postcss = require('gulp-postcss'),
+    autoprefixer = require('autoprefixer'),
     log = require('fancy-log'),
     sync = require('browser-sync'),
     reload = sync.reload,
@@ -10,19 +13,14 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     babel = require('gulp-babel'),
     sourcemaps = require('gulp-sourcemaps'),
-    pugInheritance = require('gulp-pug-inheritance'),
-    changed = require('gulp-changed'),
-    cached = require('gulp-cached'),
-    gulpif = require('gulp-if'),
-    filter = require('gulp-filter'),
     debug = require('gulp-debug'),
     // jasmine = require('gulp-jasmine-phantom'),
 
-    // Set up an object with the path variables - use variables in functions
+    // path variables
     devPaths = {
         img: './app/assets/img/*',
-        html: './app/*.pug',
-        htmlPartial: '!./app/**/*.pug', //not this
+        html: './app/**/*.pug',
+        htmlPartial: '!./app/jade-templates/*.pug', //not this
         styleFile: './app/assets/scss/styles.scss',
         styles: './app/assets/scss/**/*.scss',
         scripts: './app/assets/js/**/*.js'
@@ -33,6 +31,15 @@ var gulp = require('gulp'),
         html: './dist',
         styles: './dist/public/css/',
         scripts: './dist/public/js/'
+    },
+
+    //Options
+    sassOptions = {
+        outputStyle: 'compressed'
+    },
+    
+    prefixerOptions = {
+        browsers: ['last 3 versions']
     };
 
 gulp.task('lint', function () {
@@ -59,6 +66,9 @@ gulp.task('lint', function () {
 
 gulp.task('scripts', function () {
     gulp.src(devPaths.scripts)
+        .pipe(debug({
+        title: 'js file:'
+        }))
         .pipe(sourcemaps.init())
         .pipe(babel())
         .pipe(concat('script.js'))
@@ -68,53 +78,58 @@ gulp.task('scripts', function () {
 
 gulp.task('scripts-dist', function () {
     gulp.src(devPaths.scripts)
+        .pipe(sourcemaps.init())
         .pipe(babel())
         .pipe(concat('script.js'))
         .pipe(uglify())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(webPaths.scripts));
 });
 
 gulp.task('pug', function () {
     return gulp.src([
-        devPaths.html, 
-        devPaths.htmlPartial
-    ])
-        .pipe(debug({title: 'myWatcher:'}))
-        .pipe(changed('./', {
-            extension: '.html'
+            devPaths.html,
+            devPaths.htmlPartial
+        ])
+        .pipe(debug({
+            title: 'Staging:'
         }))
-        .pipe(gulpif(global.isWatching, cached('pug')))
+        // .pipe(changed('app', {
+        //     extension: '.pug'
+        // }))
+        // .pipe(debug({
+        //     title: 'Files Changed:'
+        // }))
         .pipe(pugInheritance({
             basedir: './app',
             skip: 'node_modules/'
-        }))
-        .pipe(filter(function (file) {
-            return !/\/_/.test(file.path) && !/^_/.test(file.relative);
         }))
         .pipe(pug({
             locals: {},
             pretty: false,
         }))
-        .pipe(gulp.dest(webPaths.html));
-        // .on('end', function () {
-        //     log('HTML Processed!');
-        // });
+        .pipe(gulp.dest(webPaths.html))
+        .on('end', function () {
+            log('HTML Processed! =)');
+        });
 });
 
 gulp.task('sass', function () {
     return gulp.src(devPaths.styleFile)
-        .pipe(debug({title: 'myWatcher:'}))
-        .pipe(sourcemaps.init())
-        .pipe(sass({
-            outputStyle: 'compressed'
-        })).on('error', sass.logError)
-        .pipe(sourcemaps.write())
-        .pipe(autoprefixer('last 3 versions'))
-        .pipe(gulp.dest(webPaths.styles))
-        .pipe(reload({
-            stream: true
+        .pipe(debug({
+            title: 'scss file:'
         }))
+        .pipe(sourcemaps.init())
+        .pipe(sass(sassOptions)).on('error', sass.logError)
+        .pipe(postcss([
+            autoprefixer(prefixerOptions)
+        ]))
+        .pipe(sourcemaps.write(''))
+        .pipe(gulp.dest(webPaths.styles))
         .on('end', function () {
             log('CSS Injected!');
-        });
+        })
+        .pipe(reload({
+            stream: true
+        }));
 });
