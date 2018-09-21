@@ -66,6 +66,9 @@ gulp.task('lint', function () {
 
 gulp.task('scripts', function () {
     gulp.src(devPaths.scripts)
+        .pipe(debug({
+        title: 'js file:'
+        }))
         .pipe(sourcemaps.init())
         .pipe(babel())
         .pipe(concat('script.js'))
@@ -75,9 +78,11 @@ gulp.task('scripts', function () {
 
 gulp.task('scripts-dist', function () {
     gulp.src(devPaths.scripts)
+        .pipe(sourcemaps.init())
         .pipe(babel())
         .pipe(concat('script.js'))
         .pipe(uglify())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(webPaths.scripts));
 });
 
@@ -89,12 +94,12 @@ gulp.task('pug', function () {
         .pipe(debug({
             title: 'Staging:'
         }))
-        .pipe(changed('dist', {
-            extension: '.html'
-        }))
-        .pipe(debug({
-            title: 'Files Changed:'
-        }))
+        // .pipe(changed('app', {
+        //     extension: '.pug'
+        // }))
+        // .pipe(debug({
+        //     title: 'Files Changed:'
+        // }))
         .pipe(pugInheritance({
             basedir: './app',
             skip: 'node_modules/'
@@ -121,10 +126,10 @@ gulp.task('sass', function () {
         ]))
         .pipe(sourcemaps.write(''))
         .pipe(gulp.dest(webPaths.styles))
-        .pipe(reload({
-            stream: true
-        }))
         .on('end', function () {
             log('CSS Injected!');
-        });
+        })
+        .pipe(reload({
+            stream: true
+        }));
 });
