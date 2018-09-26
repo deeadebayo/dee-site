@@ -1,1 +1,3 @@
-console.warn('hello world');
+import MobileMenu from './modules/MobileMenu';
+
+let mobileMenu = new MobileMenu();

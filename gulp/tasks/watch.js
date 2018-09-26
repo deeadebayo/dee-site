@@ -8,7 +8,7 @@ const gulp = require('gulp'),
         html: './app/*.pug',
         styleFile: './app/assets/scss/styles.scss',
         styles: './app/assets/scss/**/*.scss',
-        //scripts: './app/assets/js/**/*.js'
+        scripts: './app/assets/js/**/*.js'
     },
 
     serveDir = {
@@ -22,20 +22,24 @@ const gulp = require('gulp'),
 gulp.task('watch', () => {
     browserSync.init({
         server: {
-            injectChanges: true,
-            baseDir: 'dist'
-        }
+            baseDir: 'dist/'
+        },
+        injectChanges: true
     });
-
+    watch(rawDir.scripts, () => {
+        gulp.start('scripts');
+    });
     watch(rawDir.html, () => {
         gulp.start('html');
         browserSync.reload();
     });
-
-    watch(rawDir.styles, () => {
-        gulp.start('cssInject')
+    gulp.watch(rawDir.styles, () => {
+        gulp.start('cssInject');
         // browserSync.reload();
     });
+    watch(rawDir.scripts, () => {
+        gulp.start('scripts');
+    })
 });
 
 gulp.task('cssInject', ['sass'], () => {
@@ -43,4 +47,6 @@ gulp.task('cssInject', ['sass'], () => {
         .pipe(browserSync.stream());
 });
 
-gulp.task('default', ['html', 'sass', 'watch']);
+gulp.task('default', ['lint', 'html', 'sass', 'watch'], () => {
+    gulp.watch(rawDir.html, browserSync.reload());
+});

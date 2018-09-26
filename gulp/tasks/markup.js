@@ -63,5 +63,6 @@ gulp.task('sass', () => {
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest(serveDir.styles))
     // .pipe(reload({stream: true}));
-    .pipe(browserSync.stream());
+    // .pipe(browserSync.reload({stream: true}));
+    .pipe(browserSync.stream( {match: '**/*.css' } ));
 });
