@@ -8,7 +8,7 @@ const gulp = require('gulp'),
         html: './app/*.pug',
         styleFile: './app/assets/scss/styles.scss',
         styles: './app/assets/scss/**/*.scss',
-        //scripts: './app/assets/js/**/*.js'
+        scripts: './app/assets/js/**/*.js'
     },
 
     serveDir = {
@@ -36,6 +36,10 @@ gulp.task('watch', () => {
         gulp.start('cssInject')
         // browserSync.reload();
     });
+
+    watch(rawDir.scripts, () => {
+        gulp.start('scriptsRefresh');
+    });
 });
 
 gulp.task('cssInject', ['sass'], () => {
@@ -44,3 +48,7 @@ gulp.task('cssInject', ['sass'], () => {
 });
 
 gulp.task('default', ['html', 'sass', 'watch']);
+
+gulp.task('scriptsRefresh', ['scripts'], () => {
+    browserSync.reload();
+});

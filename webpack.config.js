@@ -6,6 +6,7 @@ module.exports = {
         path: path.resolve(__dirname, './dist/public/js'),
         filename: 'script.js'
     },
+    devtool: 'source-map',
     module: {
         rules: [
             {
