@@ -1,14 +1,16 @@
 doctype html
 html(lang="en")
     head
-        meta(charset='utf-8')
+        meta(charset='UTF-8')
         meta(name='viewport', content='initial-scale=1, maximum-scale=1, user-scalable=no')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
         block startScript
         title #{pageTitle} - Dee Adebayo
         meta(name="author", content="Dee Adebayo")
-        meta(name="description" content="#{pageDescContent}")
-        link(rel='stylesheet', href='')
+        meta(name="keywords", content=keywordContent)
+        meta(name="description" content=pageDescContent)
+        link(rel="stylesheet", href="/public/css/styles.css")
     body
         block content
+        script(src="/public/js/script.js")
         block endScript
