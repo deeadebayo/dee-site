@@ -11,7 +11,7 @@ const gulp = require('gulp'),
     // Path/Directory variables
     rawDir = {
         html: './app/**/*.pug',
-        nothtmlPartial: '!./app/jade-templates/*.pug', //not this
+        nothtmlPartial: '!./app/pug-templates/*.pug', //not this
         styleFile: './app/assets/scss/styles.scss',
         styles: './app/assets/scss/**/*.scss',
     },
