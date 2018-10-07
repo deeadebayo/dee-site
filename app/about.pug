@@ -3,11 +3,12 @@ extends pug-templates/_layout__normal
 block startScript
     - var pageTitle = "About";
     - var keywordContent = "Some SEO stuff"
-    - var pageDescContent = "Here's a page description";
+    - var pageDescContent = "Here's a page description"
+    - var page = "wrapper__content__about-page";
 
 block content
     .container
-        .masthead
+        // make a header with only work, about, contact. Hide inspiration in a link after whole screen looks like a gameboy
         .page-title
             h2 About Me
             p Something of a lead in

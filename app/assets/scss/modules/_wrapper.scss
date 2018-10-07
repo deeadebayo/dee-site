@@ -1,0 +1,43 @@
+.wrapper {
+    display: grid;
+    // grid-template-areas: 
+    //     "header"
+    // ;
+    &__content {
+        margin: 0 auto;
+        //add padding so it gives floating effect
+
+        // &__page-about {
+        //     display: grid;
+        //     grid-template-columns: 1fr;
+        //     grid-gap: 1em;
+
+        //     a {
+        //         grid-column: 1/2;
+        //         grid-row: 1/2;
+        //     }
+        // }
+    }
+
+    // &__navbar {
+
+    // }
+
+    // &__about-blurb {
+
+    // }
+
+    &__projects {
+        display: grid;
+        grid-template-areas:
+            "title title"
+            "project1 project2"
+            "project3 project4"
+            "more-btn more-btn";
+        grid-template-columns: 1fr 1fr;
+    }
+
+    // &__footer {
+
+    // }
+}

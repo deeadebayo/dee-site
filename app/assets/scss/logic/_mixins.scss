@@ -1,15 +1,15 @@
 // @import 'grid/row'; If I choose to make this modular
 
 @mixin sizePhone {
-    
+    @media screen and (min-width: 50em) {
+        
+    }
 }
-@mixin sizeTablet {
-    
-}
-@mixin sizeDesktop {
+
+@mixin sizeTablet { //like old computer widths. you can go full-wdith withouth wierdness
     
 }
 
-@mixin sizeWideScreen {
+@mixin sizeDesktop { //really wide with gutters on the ends
 
 }

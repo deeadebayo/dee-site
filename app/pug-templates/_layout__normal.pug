@@ -10,9 +10,10 @@ html(lang="en")
         meta(name="keywords", content=keywordContent)
         meta(name="description" content=pageDescContent)
         link(rel="stylesheet", href="/public/css/styles.css")
-    body
-        .wrapper
+    body.page-wrapper
+        //block in navigation
+        .wrapper__content(class=page)
             block content
-        //- gotta block out the footer section for that cool effect
+        .wrapper__footer
         script(src="/public/js/script.js")
         block endScript

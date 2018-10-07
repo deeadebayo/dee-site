@@ -1,0 +1,12 @@
+.page-wrapper {
+    margin: 0 auto;
+    width: 100%;
+
+    & > * {
+        display: grid;
+    }
+
+    &__homepage {
+        grid-template-columns: 1fr;
+    }
+}
