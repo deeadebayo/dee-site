@@ -1,0 +1,3 @@
+.page-wrapper{margin:0 auto;width:100%}.page-wrapper>*{display:grid}.page-wrapper__homepage{grid-template-columns:1fr 1fr;grid-template-areas:"navbar navbar" "about-blurb about-blurb" "projects projects" "footer footer";grid-gap:10px}.wrapper{display:grid}.wrapper__content{margin:0 auto}.wrapper__navbar{grid-area:navbar}.wrapper__about-blurb{grid-area:about-blurb}.wrapper__projects{grid-area:projects;display:grid;grid-template-areas:"title title" "project project" "project project" "more-btn more-btn";grid-template-columns:1fr 1fr}.wrapper__footer{grid-area:footer}.project-display__title{grid-area:title}.project-display__box{grid-area:project}.project-display__btn{grid-area:more-btn}
+
+/*# sourceMappingURL=styles.css.map */

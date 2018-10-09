@@ -1,0 +1,13 @@
+.project-display {
+    &__title {
+        grid-area: title;
+    }
+
+    &__box {
+        grid-area: project;
+    }
+
+    &__btn {
+        grid-area: more-btn;
+    }
+}

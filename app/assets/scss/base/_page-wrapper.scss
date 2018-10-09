@@ -7,6 +7,12 @@
     }
 
     &__homepage {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "navbar navbar"
+        "about-blurb about-blurb"
+        "projects projects"
+        "footer footer";
+        grid-gap: 10px;
     }
 }

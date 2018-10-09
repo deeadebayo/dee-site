@@ -19,25 +19,26 @@
         // }
     }
 
-    // &__navbar {
+    &__navbar {
+        grid-area: navbar;
+    }
 
-    // }
-
-    // &__about-blurb {
-
-    // }
+    &__about-blurb {
+        grid-area: about-blurb;
+    }
 
     &__projects {
+        grid-area: projects;
         display: grid;
         grid-template-areas:
             "title title"
-            "project1 project2"
-            "project3 project4"
+            "project project"
+            "project project"
             "more-btn more-btn";
         grid-template-columns: 1fr 1fr;
     }
 
-    // &__footer {
-
-    // }
+    &__footer {
+        grid-area: footer;
+    }
 }
