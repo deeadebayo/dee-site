@@ -19,17 +19,16 @@
         // }
     }
 
-    &__navbar {
-        grid-area: navbar;
-    }
-
     &__about-blurb {
         grid-area: about-blurb;
+        
+        & > * {
+            grid-column: span 1;
+        }
     }
 
     &__projects {
-        grid-area: projects;
-        display: grid;
+        grid-area: project-display;
         grid-template-areas:
             "title title"
             "project project"

@@ -10,16 +10,27 @@ html(lang="en")
         meta(name="keywords", content='keywordContent')
         meta(name="description" content='pageDescContent')
         link(rel="stylesheet", href="/public/css/styles.css")
-    body.page-wrapper.page-wrapper__homepage
+    body
         //block in navigation
-        .wrapper__about-blurb
-            p icon
-            p name
-            p stuff
-        .wrapper__projects
-            p.project-display__title icon
-            p.project-display__box name
-            p.project-display__box stuff
-            p.project-display__btn
-        .wrapper__footer
+        header
+        .page-wrapper.page-wrapper__homepage
+            section.wrapper__about-blurb
+                .about-blurb
+                    p icon
+                    p name
+                    p stuff
+            section.wrapper__projects
+                .project-display__title 
+                    p icon
+                .project-display__box 
+                    p box
+                .project-display__box 
+                    p box
+                .project-display__box 
+                    p box
+                .project-display__box 
+                    p box
+                .project-display__btn
+                    p more button
+            section.wrapper.wrapper__footer
         script(src="/public/js/script.js")

@@ -1,13 +1,17 @@
 .project-display {
     &__title {
         grid-area: title;
+        text-align: center;
     }
 
     &__box {
         grid-area: project;
+        grid-column: span 1;
+        grid-row: span 1;
     }
 
     &__btn {
         grid-area: more-btn;
+        text-align: center;
     }
 }
