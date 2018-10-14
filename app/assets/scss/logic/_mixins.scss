@@ -1,15 +1,39 @@
-// @import 'grid/row'; If I choose to make this modular
+$screen-phone-min: 425px; // The smallest of phones, make this basic or bigger
+$screen-phablet-min: 768px; // Tablet in portrait mode
+$screen-tablet-min: 992px; // Tablet (landscape) and small deskstops
+$screen-comp-min: 1200px; // Large tablets and desktops
+$screen-wide-min: 1650px; // Widescreen desktops 
 
-@mixin sizePhone {
-    @media screen and (min-width: 50em) {
-        
+// #wrapper {
+//     margin: 0 20px;
+// }
+
+@mixin screen-phone {
+    @media screen and (min-width: #{$screen-phone-min}) {
+        @content;
     }
 }
 
-@mixin sizeTablet { //like old computer widths. you can go full-wdith withouth wierdness
-    
+@mixin screen-phablet {
+    @media screen and (min-width: #{$screen-phablet-min}) {
+        @content;
+    }
 }
 
-@mixin sizeDesktop { //really wide with gutters on the ends
+@mixin screen-tablet {
+    @media screen and (min-width: #{$screen-tablet-min}) {
+        @content;
+    }
+}
 
+@mixin screen-comp {
+    @media screen and (min-width: #{$screen-comp-min}) {
+        @content;
+    }
+}
+
+@mixin screen-wide {
+    @media screen and (min-width: #{$screen-wide-min}) {
+        @content;
+    }
 }

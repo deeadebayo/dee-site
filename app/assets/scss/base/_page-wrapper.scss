@@ -2,15 +2,26 @@
     margin: 0 auto;
     width: 100%;
 
-    & > * {
+    &>* {
         display: grid;
     }
 
     &__homepage {
+        margin: 0;
+        transition: width 0.15s;
+
+        @include screen-comp {
+            margin: 0 4.6875rem;
+        }
+
+        @include screen-wide {
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
         // grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
         grid-template-columns: 1fr;
-        grid-template-areas: 
-        "about-blurb"
+        grid-template-areas: "about-blurb"
         "project-display"
         "footer";
     }
