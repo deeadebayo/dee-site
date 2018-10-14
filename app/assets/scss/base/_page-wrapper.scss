@@ -1,6 +1,7 @@
 .page-wrapper {
     margin: 0 auto;
     width: 100%;
+    box-sizing: border-box;
 
     &>* {
         display: grid;
@@ -11,7 +12,7 @@
         transition: width 0.15s;
 
         @include screen-comp {
-            margin: 0 4.6875rem;
+            padding: 0 4.6875rem;
         }
 
         @include screen-wide {
@@ -22,7 +23,6 @@
         // grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
         grid-template-columns: 1fr;
         grid-template-areas: "about-blurb"
-        "project-display"
-        "footer";
+        "project-display";
     }
 }

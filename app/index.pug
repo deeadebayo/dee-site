@@ -9,28 +9,42 @@ html(lang="en")
         meta(name="author", content="Dee Adebayo")
         meta(name="keywords", content='keywordContent')
         meta(name="description" content='pageDescContent')
-        link(rel="stylesheet", href="/public/css/styles.css")
+        link(rel="stylesheet", href="public/css/styles.css")
     body
         //block in navigation
         header
-        .page-wrapper.page-wrapper__homepage
-            section.wrapper__about-blurb
-                .about-blurb
-                    p icon
-                    p name
-                    p stuff
-            section.wrapper__projects
-                .project-display__title 
-                    p icon
-                .project-display__box 
-                    p box
-                .project-display__box 
-                    p box
-                .project-display__box 
-                    p box
-                .project-display__box 
-                    p box
-                .project-display__btn
-                    p more button
-            section.wrapper.wrapper__footer
-        script(src="/public/js/script.js")
+        .page
+            .wrapper
+                .page-wrapper.page-wrapper__homepage
+                    section.wrapper__about-blurb
+                        .about-blurb
+                            p icon
+                            p name
+                            p stuff
+                    section.wrapper__projects
+                        .project-display__title 
+                            p icon
+                        .project-display__box.project-display__box--blue
+                            p box
+                        .project-display__box.project-display__box--green
+                            p box
+                        .project-display__box.project-display__box--yellow
+                            p box
+                        .project-display__box.project-display__box--red
+                            p box
+                        .project-display__btn
+                            p more button
+                            br
+                            br
+                            br
+                            br
+                            br
+                            br
+                            br
+                            br
+                            br
+                            br
+            .wrapper__footer.footer
+                .icons__footer
+                    p some text
+        script(src="public/js/script.js")
