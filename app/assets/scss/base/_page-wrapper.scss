@@ -1,6 +1,6 @@
 .page-wrapper {
     margin: 0 auto;
-    width: 100%;
+    // width: 100%;
     box-sizing: border-box;
 
     &>* {
@@ -12,7 +12,7 @@
         transition: width 0.15s;
 
         @include screen-comp {
-            padding: 0 4.6875rem;
+            margin: 0 4.6875rem;
         }
 
         @include screen-wide {

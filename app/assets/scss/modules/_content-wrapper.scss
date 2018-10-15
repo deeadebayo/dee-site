@@ -1,8 +1,8 @@
-.wrapper {
-    display: grid;
-    // grid-template-areas: 
-    //     "header"
-    // ;
+.content-wrapper {
+    & > * {
+        display: grid;
+    }
+    
     &__content {
         margin: 0 auto;
         //add padding so it gives floating effect
@@ -27,14 +27,8 @@
         }
     }
 
-    &__projects {
+    &__project-display {
         grid-area: project-display;
-        grid-template-areas:
-            "title title"
-            "project project"
-            "project project"
-            "more-btn more-btn";
-        grid-template-columns: 1fr 1fr;
     }
 
     &__footer {

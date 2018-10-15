@@ -1,7 +1,18 @@
+@import 'normalize.css';
+
+// Logic and Variables
 @import 'logic/mixins';
 @import 'logic/variables';
+
+// The things
+@import 'base/typography';
+@import 'modules/btn';
+
+// Site-wide
 @import 'base/page-wrapper';
 @import 'base/footer';
-@import 'modules/wrapper';
+@import 'modules/content-wrapper';
 @import 'modules/about-blurb';
 @import 'modules/project-display';
+
+// Third Party

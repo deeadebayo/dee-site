@@ -1,4 +1,11 @@
 .project-display {
+    grid-template-areas:
+        "title title"
+        "project project"
+        "project project"
+        "more-btn more-btn";
+    grid-template-columns: 1fr 1fr;
+
     &__title {
         grid-area: title;
         text-align: center;
@@ -12,12 +19,15 @@
         &--blue {
             background-color: blue;
         }
+
         &--green {
             background-color: green;
         }
+
         &--yellow {
             background-color: yellow;
         }
+
         &--red {
             background-color: red;
         }
