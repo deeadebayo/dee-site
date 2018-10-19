@@ -3,3 +3,21 @@
 
 @import url('https://fonts.googleapis.com/css?family=Merriweather|Muli:300,700');
 
+p {
+    font-family: $font--muli;
+    font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font--merriweather;
+}
+
+a {
+    font-family: $font--muli;
+    font-weight: 700;
+}
