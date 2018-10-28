@@ -1,0 +1,34 @@
+.navbar {
+    display: grid;
+    grid-template-columns: 12.5em auto; //minmax the logo area
+    border: 1px solid blue;
+
+    &__logo {
+        grid-column: 1/2;
+    }
+
+    &__links {
+        grid-column: 2/3;
+        display: block;
+        
+        ul {
+            list-style: none;
+            justify-content: end;
+            float: right;
+
+            li {
+                display: block;
+                float: left;
+                margin-right: 2.647em;
+
+                a {
+                    display: block;
+                    position: relative;
+                    margin-left: 10px;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}

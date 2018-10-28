@@ -17,19 +17,19 @@
         grid-row: span 1;
 
         &--blue {
-            background-color: #fbcb8b;
+            background-color: $color--primary;
         }
 
         &--green {
-            background-color: #fc6568;
+            background-color: $color--secondary;
         }
 
         &--yellow {
-            background-color: #bf3132;
+            background-color: $color--accent;
         }
 
         &--red {
-            background-color: #8f9980;
+            background-color: $color--alert-red;
         }
     }
 

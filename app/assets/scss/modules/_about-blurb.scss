@@ -1,5 +1,8 @@
 .about-blurb {
     border: 1px solid blue;
-    text-align: center;
-    background: #b6bfce;
+    background: $color--accent;
+
+    &__content {
+        text-align: center;
+    }
 }

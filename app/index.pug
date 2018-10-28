@@ -10,31 +10,40 @@ html(lang="en")
         meta(name="keywords", content='keywordContent')
         meta(name="description" content='pageDescContent')
         link(rel="stylesheet", href="public/css/styles.css")
-    body
-        //block in navigation
-        header
-            .navbar
-        .page(style="background: linear-gradient(to right, #403a3e, #be5869);")
-            .wrapper(style="background: #FFF;")
-                .page-wrapper.page-wrapper__homepage
+    body(style="background: linear-gradient(to right, #403a3e, #be5869);")
+        .wrapper(style="background: #FFF;")
+            .page-wrapper.page-wrapper__homepage
+                //block in navigation
+                header.page-wrapper__homepage--header
+                    .navbar
+                        .navbar__logo
+                            a here's the logo I would put
+                        .navbar__links
+                            // make the nav links the dark grey/black color
+                            ul
+                                li: a(href="/about.html") About
+                                li: a(href="#footer") Contact
+                                li: a(href="http://deeadebayo.tumblr.com/") Inspiration
+                .page-wrapper__homepage--content
                     section.content-wrapper.content-wrapper__about-blurb
                         .about-blurb
-                            p icon
-                            h2 Dee Adebayo
-                            p I'm an Atlanta-based web developer with a passion for interactive design and creative problem-solving.
-                            button.btn About Me 
+                            .about-blurb__content
+                                p icon
+                                h2 Dee Adebayo
+                                p I'm an Atlanta-based web developer with a passion for interactive design and creative problem-solving.
+                                button.btn About Me 
                     section.content-wrapper.content-wrapper__project-display
                         .project-display
                             .project-display__title 
-                                p icon
+                                h2 Featured Projects
                             .project-display__box.project-display__box--blue
-                                p box
+                                p color primary
                             .project-display__box.project-display__box--green
-                                p box
+                                p secondary
                             .project-display__box.project-display__box--yellow
-                                p box
+                                p accent
                             .project-display__box.project-display__box--red
-                                p box
+                                p attention
                             .project-display__btn
                                 button.btn More Projects?
                                 br
@@ -50,7 +59,7 @@ html(lang="en")
                                 br
                                 br
                                 br
-            .content-wrapper.wrapper__footer.footer
-                .icons__footer
-                    p some text
+        #footer.content-wrapper.wrapper__footer.footer
+            .icons__footer
+                p some text
         script(src="public/js/script.js")
