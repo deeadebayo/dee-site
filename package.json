@@ -26,7 +26,7 @@
     "autoprefixer": "^9.1.5",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.4",
-    "browser-sync": "^2.24.7",
+    "browser-sync": "^2.26.3",
     "fancy-log": "^1.3.2",
     "gulp": "^3.9.1",
     "gulp-babel": "^8.0.0",
