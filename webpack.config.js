@@ -8,8 +8,7 @@ module.exports = {
     },
     devtool: 'source-map',
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
@@ -20,7 +19,27 @@ module.exports = {
                         ]
                     }
                 }
-            }
+            },
+            // {
+            //     test: /\.scss$/,
+            //     use: [{
+            //         loader: 'style-loader'
+            //     }, {
+            //         loader: 'css-loader',
+            //         options: {
+            //             sourceMap: true,
+            //             importLoaders: 1
+            //         }
+            //     }, {
+            //         loader: 'postcss-loader'
+            //     }, {
+            //         loader: 'sass-loader',
+            //         options: {
+            //             sourceMap: true
+            //         }
+            //     }]
+            // }
         ]
-    }
+    },
+    mode: 'development'
 }
