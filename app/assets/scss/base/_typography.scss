@@ -9,42 +9,42 @@
 
 $modularscale: (
     base: 19px,
-    ratio: 1.5,
+    ratio: $fourth, //1.333
     $screen-phone-min: (
-        ratio: 1.2
+        ratio: $minor-third //1.2
     ),
     $screen-phablet-min: (
         base: 21px,
-        ratio: 1.3
+        ratio: $fourth
     ),
     $screen-tablet-min: (
         base: 22px,
-        ratio: 1.3
+        ratio: $fourth
     ),
     $screen-comp-min: (
         base: 22px,
-        ratio: 1.6
+        ratio: $fourth
     ),
     $screen-wide-min: (
         base: 25px,
-        ratio: 1.6
+        ratio: $fourth
     )
 );
 
-// $ms-fluid: false;
+$ms-fluid: false;
 
-// $ms-range: (
-//     1.2 30em,
-//     1.333 50em,
-//     1.618 70em
-// );
+$ms-range: (
+    $minor-third $screen-phone-min,
+    $fourth $screen-phablet-min,
+    $golden $screen-comp-min
+);
 
 p {
     font-family: $font--muli;
     font-weight: 300;
     line-height: 1.5;
     // @include ms-respond(font-size, 3)
-    @include ms-respond(font-size, 1)
+    @include ms-respond(font-size, 0);
 }
 
 h1,
@@ -61,6 +61,23 @@ a {
     font-weight: 700;
 }
 
+h1 {
+    @include ms-respond(font-size, 4)
+}
+
+h2 {
+    @include ms-respond(font-size, 3)
+}
+
+h3 {
+    @include ms-respond(font-size, 2)
+}
+
+h4 {
+    @include ms-respond(font-size, 1)
+}
+
+$ms-fluid: false;
 
 // major-sixth 3:5
 // This outputs our font-size in rems, our line-height as a unitless number, and our trailer as a margin, also in rems. The leader, however, is computed together with the offset we need to get rid of our spooky box, and results in a css top value, in rems. This is then added to our bottom margin to ensure any following items will flow correctly below - meaning that we’ve only got margins specified in one direction, and still have padding to fall back on if we want to further modify our flow down the page. Here’s what this looks like:
