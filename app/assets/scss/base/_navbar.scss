@@ -1,7 +1,6 @@
 .navbar {
     display: grid;
     grid-template-columns: 12.5em auto; //minmax the logo area
-    border: 1px solid blue;
 
     &__logo {
         grid-column: 1/2;
