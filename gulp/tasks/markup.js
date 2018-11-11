@@ -5,8 +5,7 @@ const gulp = require('gulp'),
     sass = require('gulp-sass'),
     postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer'),
-    browserSync = require('browser-sync'),
-    // modularscale = require('modularscale-sass'),
+    browserSync = require('browser-sync').create(),
     // reload = browserSync.reload,
 
     // Path/Directory variables
@@ -24,16 +23,10 @@ const gulp = require('gulp'),
     // Options in objects
     sassOptions = {
         outputStyle: 'compressed',
-        // includePaths: [
-        //     rawDir.styleFile,
-        //     rawDir.styles,
-        //     './node_modules/modularscale-sass/stylesheets/'
-        // ]
     },
     prefixerOptions = {
         browsers: ['last 3 versions']
     };
-
 
 gulp.task('html', () => {
     return gulp.src([
@@ -63,7 +56,6 @@ gulp.task('sass', () => {
     .pipe(debug({
         title: 'processed:'
     }))
-    // .pipe(modularscale.includePaths)
     .pipe(postcss([
         autoprefixer(prefixerOptions)
     ]))

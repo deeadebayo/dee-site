@@ -15,9 +15,15 @@
         grid-area: project;
         grid-column: span 1;
         grid-row: span 1;
-        background-position: 0% 0%;
         display: flex;
         min-height: 300px;
+        max-height: 500px;
+        width: 100%;
+
+        img {
+            display: block;
+            width: 100%;
+        }
 
         &--blue {
             background-color: $color--primary;
