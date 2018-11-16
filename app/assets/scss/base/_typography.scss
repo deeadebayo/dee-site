@@ -37,12 +37,14 @@ $ms-range: (
   $fourth $screen-phablet-min,
   $golden $screen-comp-min
 );
+
 p {
   font-family: $font--muli;
   font-weight: 300;
   line-height: 1.5;
   // @include ms-respond(font-size, 3)
   @include ms-respond(font-size, 0);
+  color: $color--text-default;
 }
 
 h1,
@@ -53,6 +55,8 @@ h5,
 h6 {
   font-family: $font--merriweather;
 }
+
+
 a {
   font-family: $font--muli;
   font-weight: 700;
@@ -68,6 +72,10 @@ h3 {
 }
 h4 {
   @include ms-respond(font-size, 1);
+}
+
+.title--big {
+  color: $color--text-header;
 }
 
 $ms-fluid: false;
