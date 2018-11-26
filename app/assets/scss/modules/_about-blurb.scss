@@ -1,24 +1,33 @@
 .about-blurb {
-  background: $color--primary;
-  padding: 0 2em;
-  //animation: textColor 10s ease infinite;
-  //@include backlight(0, 5vw, 5vw, 0.75, #0fffc1, #7e0fff, 10s);
+	// background: $color--primary;
+	padding: 1.5em 2em;
+	border: 1px solid rgba(23,43,99,0.1);
+	box-shadow: rgba(23,43,99,0.24) 0 3px 15px;
+	transition: 2.5s box-shadow;
+	// transition: 2.5s box-shadow;
+	//animation: textColor 10s ease infinite;
 
-//   @keyframes textColor {
-//     0% {
-//       color: #7e0fff;
-//     }
+	//   @keyframes textColor {
+	//     0% {
+	//       color: #7e0fff;
+	//     }
 
-//     50% {
-//       color: #0fffc1;
-//     }
+	//     50% {
+	//       color: #0fffc1;
+	//     }
 
-//     100% {
-//       color: #7e0fff;
-//     }
-//   }
+	//     100% {
+	//       color: #7e0fff;
+	//     }
+	//   }
 
-  &__content {
-    text-align: center;
-  }
+	&:hover {
+		box-shadow: rgba(23,43,99,0.24) 0 20px 75px;
+		transition: 2.5s all;
+		// border: 1px solid transparent;
+	}
+
+	&__content {
+		// text-align: center;
+	}
 }

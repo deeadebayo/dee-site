@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Merriweather|Muli:300,700");
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Muli:300,700');
 
 // $screen-phone-min: 425px; // The smallest of phones, make this basic or bigger
 // $screen-phablet-min: 768px; // Tablet in portrait mode
@@ -7,83 +7,75 @@
 // $screen-wide-min: 1650px; // Widescreen desktops
 
 $modularscale: (
-  base: 19px,
-  ratio: $fourth,
-  //1.333
-    $screen-phone-min:
-    (
-      ratio: $minor-third//1.2
-    ),
-  $screen-phablet-min: (
-    base: 21px,
-    ratio: $fourth
-  ),
-  $screen-tablet-min: (
-    base: 22px,
-    ratio: $fourth
-  ),
-  $screen-comp-min: (
-    base: 22px,
-    ratio: $fourth
-  ),
-  $screen-wide-min: (
-    base: 25px,
-    ratio: $fourth
-  )
+	base: 19px,
+	ratio: $fourth,
+	//1.333
+
+		$screen-phone-min:
+		(
+			ratio: $minor-third//1.2
+		),
+	$screen-phablet-min: (
+		base: 21px,
+		ratio: $fourth
+	),
+	$screen-tablet-min: (
+		base: 22px,
+		ratio: $fourth
+	),
+	$screen-comp-min: (
+		base: 22px,
+		ratio: $fourth
+	),
+	$screen-wide-min: (
+		base: 25px,
+		ratio: $fourth
+	)
 );
 $ms-fluid: false;
 $ms-range: (
-  $minor-third $screen-phone-min,
-  $fourth $screen-phablet-min,
-  $golden $screen-comp-min
+	$minor-third $screen-phone-min,
+	$fourth $screen-phablet-min,
+	$golden $screen-comp-min
 );
-
 p {
-  font-family: $font--muli;
-  font-weight: 300;
-  line-height: 1.5;
-  // @include ms-respond(font-size, 3)
-  @include ms-respond(font-size, 0);
-  color: $color--text-default;
+	font-family: $font--muli;
+	font-weight: 300;
+	line-height: 1.5;
+	// @include ms-respond(font-size, 3)
+	@include ms-respond(font-size, 0);
+	color: $color--text-default;
 }
-
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: $font--merriweather;
+	font-family: $font--merriweather;
 }
-
-
 a {
-  font-family: $font--muli;
-  font-weight: 700;
+	font-family: $font--muli;
+	font-weight: 700;
 }
-
 h1 {
-  @include ms-respond(font-size, 4);
+	@include ms-respond(font-size, 4);
 }
-
 h2 {
-  @include ms-respond(font-size, 3);
+	@include ms-respond(font-size, 3);
 }
-
 h3 {
-  @include ms-respond(font-size, 2);
+	@include ms-respond(font-size, 2);
 }
-
 h4 {
-  @include ms-respond(font-size, 1);
+	@include ms-respond(font-size, 1);
 }
 
 .title--big {
-  color: $color--text-header;
+	color: $color--text-header;
 }
 
 $ms-fluid: false;
-
 // major-sixth 3:5
 // This outputs our font-size in rems, our line-height as a unitless number, and our trailer as a margin, also in rems. The leader, however, is computed together with the offset we need to get rid of our spooky box, and results in a css top value, in rems. This is then added to our bottom margin to ensure any following items will flow correctly below - meaning that we’ve only got margins specified in one direction, and still have padding to fall back on if we want to further modify our flow down the page. Here’s what this looks like:
 // p {
@@ -91,8 +83,6 @@ $ms-fluid: false;
 // line-height: 1.5;         // 24px = 1.5 * 16px
 // top: -0.47333333rem;      // shifted up so baseline sits on grid
 // margin-bottom: 0;         // rounds to zero; no margin needed
-
-
 // @media (min-width: 30em) {
 // p {
 // font-size: 1.25rem;     // 1.25rem

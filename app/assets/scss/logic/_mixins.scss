@@ -2,75 +2,91 @@ $screen-phone-min: 425px; // The smallest of phones, make this basic or bigger
 $screen-phablet-min: 768px; // Tablet in portrait mode
 $screen-tablet-min: 992px; // Tablet (landscape) and small deskstops
 $screen-comp-min: 1200px; // Large tablets and desktops
-$screen-wide-min: 1650px; // Widescreen desktops 
+$screen-wide-min: 1650px; // Widescreen desktops
 
 // #wrapper {
 //     margin: 0 20px;
 // }
 
 @mixin screen-phone {
-    @media screen and (min-width: #{$screen-phone-min}) {
-        @content;
-    }
+	@media screen and (min-width: #{$screen-phone-min}) {
+		@content;
+	}
 }
 
 @mixin screen-phablet {
-    @media screen and (min-width: #{$screen-phablet-min}) {
-        @content;
-    }
+	@media screen and (min-width: #{$screen-phablet-min}) {
+		@content;
+	}
 }
 
 @mixin screen-tablet {
-    @media screen and (min-width: #{$screen-tablet-min}) {
-        @content;
-    }
+	@media screen and (min-width: #{$screen-tablet-min}) {
+		@content;
+	}
 }
 
 @mixin screen-comp {
-    @media screen and (min-width: #{$screen-comp-min}) {
-        @content;
-    }
+	@media screen and (min-width: #{$screen-comp-min}) {
+		@content;
+	}
 }
 
 @mixin screen-wide {
-    @media screen and (min-width: #{$screen-wide-min}) {
-        @content;
-    }
+	@media screen and (min-width: #{$screen-wide-min}) {
+		@content;
+	}
 }
 
-
-@mixin backlight($x, $y, $spread, $size, $colorA, $colorB, $duration) {
-    &:after {
-        position: absolute;
-        content: "";
-        top: $y;
-        left: $x;
-        right: 0;
-        z-index: -1;
-        height: 100%;
-        width: 100%;
-        margin: 0 auto;
-        transform: scale($size);
-        -webkit-filter: blur($spread);
-        -moz-filter: blur($spread);
-        -ms-filter: blur($spread);
-        filter: blur($spread);
-        background: linear-gradient(270deg, $colorA, $colorB);
-        background-size: 200% 200%;
-        animation: animateGlow $duration ease infinite;
-
-        @keyframes animateGlow {
-            0% {
-                background-position: 0% 50%
-            }
-
-            50% {
-                background-position: 100% 50%
-            }
-
-            100% {
-                background-position: 0% 50%
-            }
-        }
-    }
+// For button border drawing
+@mixin btn-border-drawing(
+	$color: #ccc,
+	$hover: black,
+	$width: 2px,
+	$vertical: top,
+	$horizontal: left,
+	$duration: 0.25s
+) {
+	box-shadow: inset 0 0 0 $width $color;
+	color: $color;
+	transition: color $duration $duration/3;
+	position: relative;
+	&::before,
+	&::after {
+		border: 0 solid transparent;
+		box-sizing: border-box;
+		content: '';
+		pointer-events: none;
+		position: absolute;
+		width: 0;
+		height: 0;
+		#{$vertical}: 0;
+		#{$horizontal}: 0;
+	}
+	&::before {
+		$h-side: if($horizontal == 'left', 'right', 'left');
+		border-#{$vertical}-width: $width;
+		border-#{$h-side}-width: $width;
+	}
+	&::after {
+		$v-side: if($vertical == 'top', 'bottom', 'top');
+		border-#{$v-side}-width: $width;
+		border-#{$horizontal}-width: $width;
+	}
+	&:hover {
+		color: $hover;
+		&::before,
+		&::after {
+			border-color: $hover;
+			transition: border-color 0s, width $duration, height $duration;
+			width: 100%;
+			height: 100%;
+		}
+		&::before {
+			transition-delay: 0s, 0s, $duration;
+		}
+		&::after {
+			transition-delay: 0s, $duration, 0s;
+		}
+	}
 }
