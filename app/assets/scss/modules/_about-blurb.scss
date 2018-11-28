@@ -2,29 +2,19 @@
 	// background: $color--primary;
 	padding: 1.5em 2em;
 	border: 1px solid rgba(23,43,99,0.1);
-	box-shadow: rgba(23,43,99,0.24) 0 3px 15px;
-	transition: 2.5s box-shadow;
-	// transition: 2.5s box-shadow;
-	//animation: textColor 10s ease infinite;
-
-	//   @keyframes textColor {
-	//     0% {
-	//       color: #7e0fff;
-	//     }
-
-	//     50% {
-	//       color: #0fffc1;
-	//     }
-
-	//     100% {
-	//       color: #7e0fff;
-	//     }
-	//   }
-
-	&:hover {
-		box-shadow: rgba(23,43,99,0.24) 0 20px 75px;
-		transition: 2.5s all;
+	box-shadow: 0 3px 15px rgba(23,43,99,0.24);
+	
+	&::after {
+		box-shadow: 0 50px 100px red;
+		// box-shadow: 0 20px 75px red;
+		opacity: 0;
+		border: 3px solid red;
+		transition: opacity 1s ease-in-out;
 		// border: 1px solid transparent;
+	}
+
+	&:hover::after {
+		opacity: 1;
 	}
 
 	&__content {
