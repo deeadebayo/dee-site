@@ -1,23 +1,26 @@
 .about-blurb {
 	// background: $color--primary;
 	padding: 1.5em 2em;
+	// margin: 1.5em 2em;
 	border: 1px solid rgba(23,43,99,0.1);
-	box-shadow: 0 3px 15px rgba(23,43,99,0.24);
+	//box-shadow: 0 3px 15px rgba(23,43,99,0.24);
 	
 	&::after {
-		box-shadow: 0 50px 100px red;
-		// box-shadow: 0 20px 75px red;
-		opacity: 0;
-		border: 3px solid red;
+		box-shadow: 0 15px 50px red;
+		//box-shadow: 5px 15px 15px 1px red;
+		border: 1px solid blue;
+		// opacity: 0;
 		transition: opacity 1s ease-in-out;
 		// border: 1px solid transparent;
+		content: '';
 	}
 
 	&:hover::after {
-		opacity: 1;
+		// opacity: 1;
 	}
 
 	&__content {
 		// text-align: center;
+		margin: 1.5rem 2rem;
 	}
 }
