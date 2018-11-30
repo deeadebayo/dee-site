@@ -25,6 +25,16 @@
         & > * {
             grid-column: span 1;
         }
+
+        &::after {
+            box-shadow: 0 15px 50px red;
+            //box-shadow: 5px 15px 15px 1px red;
+            border: 1px solid blue;
+            // opacity: 0;
+            transition: opacity 1s ease-in-out;
+            // border: 1px solid transparent;
+            content: '';
+        }
     }
 
     &__project-display {
