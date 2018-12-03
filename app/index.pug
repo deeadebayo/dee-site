@@ -36,13 +36,33 @@ html(lang="en")
                         .project-display
                             h3.project-display__title Projects
                             .project-display__box.project-display__box--blue
-                                img(src="public/img/work__jmdrums__cover.jpg")
+                                a.project-display__link(href="/")
+                                    .project-display__img
+                                        img(src="public/img/work__jmdrums__cover.jpg")
+                                    span.project-display__detail-box
+                                        span.project-display__detail-box__details
+                                            span.project-display__detail-box__details__title
+                                            span.project-display__detail-box__details__subtitle
+                                            //- span.project-display__detail-box__details__icon-section
+                                            //-     span.project-display__detail-box__details__icon-section__icon
                             .project-display__box.project-display__box--green
-                                img(src="public/img/work__ctkmc__tablet-and-phone.png")
-                            .project-display__box.project-display__box--yellow
-                                img(src="public/img/work__jmdrums__cover.jpg")
+                                a.project-display__link(href="/")
+                                    span.project-display__img
+                                        img(src="public/img/work__ctkmc__tablet-and-phone.png")
+                                    span.project-display__detail
+
                             .project-display__box.project-display__box--red
-                                img(src="public/img/work__coming-soon.jpg")
+                                a.project-display__link(href="/")
+                                    span.project-display__img
+                                        img(src="public/img/work__coming-soon.jpg")
+                                    span.project-display__detail
+
+                            .project-display__box.project-display__box--red
+                                a.project-display__link(href="/")
+                                    span.project-display__img
+                                        img(src="public/img/work__coming-soon.jpg")
+                                    span.project-display__detail
+
                             .project-display__btn
                                 button.btn More Projects?
                                 br
