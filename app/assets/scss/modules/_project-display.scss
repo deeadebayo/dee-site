@@ -32,22 +32,43 @@
             overflow: hidden;
             text-decoration: none;
             border: none;
+            position: relative;
         }
 
         &--blue {
             background-color: $color--primary;
+            border-top-left-radius: 5px;
+
+            a {
+                border-top-left-radius: 5px;
+            }
         }
 
         &--green {
             background-color: $color--secondary;
+            border-top-right-radius: 5px;
+
+            a {
+                border-top-right-radius: 5px;
+            }
         }
 
         &--yellow {
             background-color: $color--accent;
+            border-bottom-left-radius: 5px;
+
+            a {
+                border-bottom-left-radius: 5px;
+            }
         }
 
         &--red {
             background-color: $color--alert;
+            border-bottom-right-radius: 5px;
+
+            a {
+                border-bottom-right-radius: 5px;
+            }
         }
     }
 
