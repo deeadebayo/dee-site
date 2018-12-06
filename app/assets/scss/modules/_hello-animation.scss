@@ -1,6 +1,8 @@
+$hello__line-height: 40px;
+
 .hello-animation {
     overflow: hidden;
-    // height: text size
+    height: $hello__line-height;
     
     ul.hello-animation__hellos {
         list-style: none;
@@ -8,7 +10,7 @@
         padding-left: 0;
         
         li {
-            // line-height: same as height
+            line-height: $hello__line-height;
             margin: 0;
         }
         
