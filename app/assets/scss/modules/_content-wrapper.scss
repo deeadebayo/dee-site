@@ -27,8 +27,7 @@
         }
 
         &::after {
-            box-shadow: 0 15px 50px red;
-            //box-shadow: 5px 15px 15px 1px red;
+            box-shadow: 0 15px 15px 1px red;
             display: block;
             opacity: 0;
             transition: opacity 1s ease-in-out;

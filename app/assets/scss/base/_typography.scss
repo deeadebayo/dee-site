@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Merriweather|Muli:300,700');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400|Muli:300,700');
 
 // $screen-phone-min: 425px; // The smallest of phones, make this basic or bigger
 // $screen-phablet-min: 768px; // Tablet in portrait mode
@@ -53,6 +53,8 @@ h4,
 h5,
 h6 {
 	font-family: $font--merriweather;
+	color: $color--dark;
+	font-weight: 400;
 }
 a {
 	font-family: $font--muli;

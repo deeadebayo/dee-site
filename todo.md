@@ -1,0 +1,11 @@
+#to dos
+- fix the shadow ad the bottom
+- fix the keyframes percentages
+- finalize about-blurb copy
+- implement underline animation 
+- secondary color is what links hover to
+- refactor jquery
+- modularize js
+- navbar just hovers to the color
+- navbar links is one of the grey options
+- install inkscape at work
