@@ -2,9 +2,6 @@
 - fix the shadow ad the bottom
 - fix the keyframes percentages
 - finalize about-blurb copy
-- implement underline animation 
-- secondary color is what links hover to
+- implement underline animation (left to right for regular anchors, right to left for navbar)
 - refactor jquery
 - modularize js
-- navbar just hovers to the color
-- navbar links is one of the grey options

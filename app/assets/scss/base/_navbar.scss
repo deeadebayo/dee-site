@@ -20,12 +20,23 @@
                 float: left;
                 margin-right: 2.647em;
 
+                &:last-child {
+                    margin-right: 0;
+                }
+
                 a {
                     display: block;
                     position: relative;
                     margin-left: 10px;
                     text-decoration: none;
-                    text-transform: uppercase;
+                    // text-transform: capitalize;
+                    color: $color--text-black;
+                    // @include ms-respond(font-size, 1);
+
+
+                    &:hover {
+                        color: $color--primary;
+                    }
                 }
             }
         }
