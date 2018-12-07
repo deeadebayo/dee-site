@@ -8,4 +8,3 @@
 - modularize js
 - navbar just hovers to the color
 - navbar links is one of the grey options
-- install inkscape at work

@@ -38,6 +38,7 @@ $ms-range: (
 	$fourth $screen-phablet-min,
 	$golden $screen-comp-min
 );
+
 p {
 	font-family: $font--muli;
 	font-weight: 300;
@@ -46,6 +47,7 @@ p {
 	@include ms-respond(font-size, 0);
 	color: $color--text-default;
 }
+
 h1,
 h2,
 h3,
@@ -56,19 +58,29 @@ h6 {
 	color: $color--dark;
 	font-weight: 400;
 }
+
 a {
 	font-family: $font--muli;
 	font-weight: 700;
+	color: $color-primary;
+
+	&:hover {
+		color: $color--secondary;
+	}
 }
+
 h1 {
 	@include ms-respond(font-size, 4);
 }
+
 h2 {
 	@include ms-respond(font-size, 3);
 }
+
 h3 {
 	@include ms-respond(font-size, 2);
 }
+
 h4 {
 	@include ms-respond(font-size, 1);
 }
