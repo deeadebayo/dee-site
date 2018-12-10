@@ -13,17 +13,8 @@ html(lang="en")
     body(style="background: linear-gradient(to right, #403a3e, #be5869);")
         .wrapper(style="background: #FFF;")
             .page-wrapper.page-wrapper__homepage
-                //block in navigation
                 header.page-wrapper__homepage--header
-                    .navbar
-                        .navbar__logo
-                            a here's the logo I would put
-                        .navbar__links
-                            // make the nav links the dark grey/black color
-                            ul
-                                li: a(href="/about.html") About
-                                li: a(href="#footer") Contact
-                                li: a(href="http://deeadebayo.tumblr.com/") Inspiration
+                    include pug-templates/_includes/navbar                    
                 .page-wrapper__homepage--content
                     section.content-wrapper.content-wrapper__about-blurb
                         .about-blurb
@@ -34,13 +25,16 @@ html(lang="en")
                                         li Hello
                                         li Hi
                                         li Hola
-                                        li Heya!
+                                        li Heya
                                         li Hiya
-                                        li What's up?
-                                        li Greetings!
-                                        li Hey there!
-                                p I'm an Atlanta-based web developer with a passion for interactive design and creative problem-solving.
-                                button.btn--draw-border.btn about me 
+                                        li What's up
+                                        li Hey there
+                                        li Greetings
+                                p 
+                                    | I'm an Atlanta-based web developer from <a href="https://www.lonelyplanet.com/nigeria/lagos" target="_blank" class="underline-animation underline-animation--ltr">Lagos</a> 
+                                    br
+                                    | with a passion for interactive design and creative problem-solving.
+                                button.btn about me 
                     section.content-wrapper.content-wrapper__project-display
                         .project-display
                             h3.project-display__title Projects
@@ -86,7 +80,5 @@ html(lang="en")
                                             //-     span.project-display__detail-box__details__icon-section__icon
                             .project-display__btn
                                 button.btn More Projects
-        #footer.content-wrapper.wrapper__footer.footer
-            .icons__footer
-                p some text
+        include pug-templates/_includes/footer
         script(src="public/js/script.js")

@@ -32,6 +32,7 @@ $modularscale: (
 		ratio: $fourth
 	)
 );
+
 $ms-fluid: false;
 $ms-range: (
 	$minor-third $screen-phone-min,
@@ -63,10 +64,12 @@ a {
 	font-family: $font--muli;
 	font-weight: 700;
 	color: $color--primary;
-	transition: color .1s ease-in-out;
-
+	transition: color 0.2s ease-in-out;
+    text-decoration: none;
+    
 	&:hover {
 		color: $color--secondary;
+		cursor: pointer;
 	}
 }
 
@@ -89,44 +92,3 @@ h4 {
 .title--big {
 	color: $color--text-header;
 }
-
-$ms-fluid: false;
-// major-sixth 3:5
-// This outputs our font-size in rems, our line-height as a unitless number, and our trailer as a margin, also in rems. The leader, however, is computed together with the offset we need to get rid of our spooky box, and results in a css top value, in rems. This is then added to our bottom margin to ensure any following items will flow correctly below - meaning that we’ve only got margins specified in one direction, and still have padding to fall back on if we want to further modify our flow down the page. Here’s what this looks like:
-// p {
-// font-size: 1.33333333rem; // 16px = 1.33 * 12px rootsize
-// line-height: 1.5;         // 24px = 1.5 * 16px
-// top: -0.47333333rem;      // shifted up so baseline sits on grid
-// margin-bottom: 0;         // rounds to zero; no margin needed
-// @media (min-width: 30em) {
-// p {
-// font-size: 1.25rem;     // 1.25rem
-// line-height: 1.6;       // 2rem is 1.6 * 1.25rem
-// top: -0.44375rem;       // shifted up so baseline sits on grid
-// margin-bottom: 0;       // rounds to zero; no margin needed
-// }
-// }
-// @media (min-width: 48em) {
-// p {
-// font-size: 1rem;        // 1 baseline unit = 1rem
-// line-height: 2;         // 2 baseline units with 1rem font-size = 2
-// top: -0.355rem;         // shifted up so baseline sits on grid
-// margin-bottom: 0;       // rounds to zero; no margin needed
-// }
-// }
-// @media (min-width: 61.25em) {
-// p {
-// font-size: 1rem;        // 1 baseline unit = 1rem
-// line-height: 2;         // 2 baseline units with 1rem font-size = 2
-// top: -0.355rem;         // shifted up so baseline sits on grid
-// margin-bottom: 0;       // rounds to zero; no margin needed
-// }
-// }
-// @media (min-width: 80em) {
-// p {
-// font-size: 0.8rem;      // 16px = 0.8 * 20px rootsize
-// line-height: 2.5;       // 2 baseline units (2rem) = 2.5 * 0.8rem font-size
-// top: 0.716rem;          // shifted down so baseline sits on grid
-// margin-bottom: 1rem;    // 1rem below
-// }
-// }
