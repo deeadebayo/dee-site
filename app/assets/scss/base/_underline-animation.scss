@@ -10,11 +10,17 @@
 		content: '';
 		position: absolute;
 		bottom: 0;
-		height: 3px;
+		height: 2px;
 		width: 0%;
 		background-color: $color--primary;
 		transition: 0.2s ease-in-out all;
-	}
+    }
+    
+    &--lower-line {
+        &::after {
+            bottom: -2px;
+        }
+    }
     
     &--ltr {
         &::after {
