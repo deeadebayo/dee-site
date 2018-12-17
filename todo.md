@@ -1,9 +1,10 @@
 #to dos
 - finalize about-blurb copy
+- about-blurb copy button on hover is "more buzzwords!"
 - refactor jquery
 - modularize js
 - increase size of navbar font
-- take another look at current text modulare scale
+- take another look at current text modular scale
 - add in modal full to screen
 - increase the distance for underline on 'Lagos'
 - github as one of the categories
