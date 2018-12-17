@@ -8,9 +8,13 @@ $hello__line-height: 56.1562px; // probably have to put something for relative s
         list-style: none;
         margin-top: 0;
         padding-left: 0;
+        color: $color--dark;
         
         li {
+            @include ms-respond(font-size, 3);
             line-height: $hello__line-height;
+            font-family: $font--merriweather;
+	        font-weight: 400;
             margin: 0;
         }
         

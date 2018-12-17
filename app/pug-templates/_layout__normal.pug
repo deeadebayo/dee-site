@@ -9,11 +9,14 @@ html(lang="en")
         meta(name="author", content="Dee Adebayo")
         meta(name="keywords", content=keywordContent)
         meta(name="description" content=pageDescContent)
-        link(rel="stylesheet", href="/public/css/styles.css")
-    body.page-wrapper
-        //block in navigation
-        .wrapper__content(class=page)
-            block content
+        link(rel="stylesheet", href="public/css/styles.css")
+    body
+        .wrapper
+            .page-wrapper.page-wrapper__template
+                header.page-wrapper__template__header
+                    include _includes/navbar
+                .page-wrapper__template__content(class=page)
+                    block content
         include ./_includes/footer
-        script(src="/public/js/script.js")
+        script(src="public/js/script.js")
         block endScript
