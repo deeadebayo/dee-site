@@ -1,6 +1,8 @@
 #to dos
-- finalize about-blurb copy
-- about-blurb copy button on hover is "more buzzwords!"
+- add nigerian flag and somethign atlanta at the end of links
+- add padding for template containers (wrappers)
+- About us page - (https://www.sarasoueidan.com/)
+- switch colors to hsl
 - refactor jquery
 - modularize js
 - increase size of navbar font
