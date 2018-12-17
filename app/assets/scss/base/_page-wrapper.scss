@@ -16,19 +16,32 @@
             margin: 0 auto;
         }
 
-        &--header {
+        &__header {
             .navbar {
                 padding: 2em 0;
                 overflow: hidden;
             }
         }
 
-        &--content {
+        &__content {
             display: grid;
             // grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
             grid-template-columns: 1fr;
             grid-template-areas: "about-blurb"
             "project-display";
+        }
+    }
+
+    &__template {
+        &__header {
+
+        }
+        &__content {
+            &--about {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 5px;
+            }
         }
     }
 }
