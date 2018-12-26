@@ -11,3 +11,4 @@
 - github as one of the categories
 - use a github for one of the 4 project-displays
 - each menu bar has a different color underline, logo color changes with the page that the color underneath is on. Icon already will be a color already. 4 colors. About, projects, contact (no coloor)
+- highlight text color
