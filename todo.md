@@ -1,6 +1,6 @@
 #to dos
-- add nigerian flag and somethign atlanta at the end of links
 - add padding for template containers (wrappers)
+- translate(y) on navbar links when hovered, maybe?
 - About us page - (https://www.sarasoueidan.com/)
 - switch colors to hsl
 - refactor jquery
