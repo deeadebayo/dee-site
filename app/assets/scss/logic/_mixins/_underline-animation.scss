@@ -1,4 +1,4 @@
-.underline-animation {
+@mixin underline-animation($color, $endpoint, $lower-underline) {
 	position: relative;
     
     &:hover::after {
@@ -12,29 +12,27 @@
 		bottom: 0;
 		height: 2px;
 		width: 0%;
-		background-color: $color--primary;
+		background-color: $color;
 		transition: 0.2s ease-in-out all;
     }
     
-    &--lower-line {
+    @if $endpoint == 'right' {
+        &::after {
+            left: 0;
+        }
+    } @else if $endpoint == 'left' {
+        //only for navbar links
+        &::after {
+            right: 0;
+            background-color: $color;
+        }
+    } @else {
+        
+    }
+
+    @if $lower-underline {
         &::after {
             bottom: -2px;
         }
     }
-    
-    &--ltr {
-        &::after {
-            left: 0;
-        }
-    }
-
-    //only for navbar links
-    &--rtl {
-        &::after {
-            right: 0;
-            background-color: $color--primary;
-        }
-    }
-    
-
 }

@@ -32,6 +32,7 @@
                     // text-transform: capitalize;
                     color: $color--text-black;
                     // @include ms-respond(font-size, 1);
+                    @include underline-animation($color--primary,'left', $lower-underline: false);
 
 
                     &:hover {
