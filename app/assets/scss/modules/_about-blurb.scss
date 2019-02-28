@@ -8,5 +8,9 @@
 	&__content {
 		// text-align: center;
 		margin: 1.5rem 2rem;
+
+		a {
+			@include underline-animation($color--secondary, 'right', $lower-underline: true);
+		}
 	}
 }
