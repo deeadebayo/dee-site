@@ -59,10 +59,7 @@ gulp.task('default', ['scripts', 'html', 'sass', 'images', 'watch'], () => {
     console.log('Let the watch party begin!!');
 });
 
-gulp.task('build', ['scripts', 'html', 'sass', 'images'], () => {
-    // eslint-disable-next-line no-console
-    console.log('Let the watch party begin!!');
-});
+gulp.task('build', ['scripts', 'html', 'sass', 'images']);
 
 gulp.task('scriptsRefresh', ['scripts'], () => {
     reload();
