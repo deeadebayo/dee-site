@@ -37,7 +37,7 @@ gulp.task('watch', () => {
     // watch(rawDir.styles, () => {
     //     gulp.start('cssInject');
     // });
-    gulp.watch(rawDir.styles, ['sass']);
+    gulp.watch(rawDir.styles, gulp.series('sass'));
     
     watch(rawDir.img, () => {
         gulp.start('images');
@@ -49,18 +49,18 @@ gulp.task('watch', () => {
     });
 });
 
-gulp.task('cssInject', ['sass'], () => {
+gulp.task('cssInject', gulp.series('sass', () => {
     return gulp.src(serveDir.styleFile)
         .pipe(browserSync.stream());
-});
+}));
 
-gulp.task('default', ['scripts', 'html', 'sass', 'images', 'watch'], () => {
+gulp.task('default', gulp.series('scripts', 'html', 'sass', 'images', 'watch', () => {
     // eslint-disable-next-line no-console
     console.log('Let the watch party begin!!');
-});
+}));
 
-gulp.task('build', ['scripts', 'html', 'sass', 'images']);
+gulp.task('build', gulp.series('scripts', 'html', 'sass', 'images'));
 
-gulp.task('scriptsRefresh', ['scripts'], () => {
+gulp.task('scriptsRefresh', gulp.series('scripts', () => {
     reload();
-});
+}));
