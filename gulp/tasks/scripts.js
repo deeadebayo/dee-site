@@ -1,4 +1,4 @@
-const gulp = require('gulp'),
+const { src, task, dest, series } = require('gulp'),
 	webpack = require('webpack'),
 	webpackStream = require('webpack-stream'),
 	webpackConfig = require('../../webpack.config.js'),
@@ -17,27 +17,24 @@ const gulp = require('gulp'),
 		scripts: './dist/public/js/'
 	};
 
-gulp.task('lint', function() {
-	return gulp
-		.src(rawDir.scripts)
+function lintScripts () {
+	return src(rawDir.scripts)
 		.pipe(eslint())
 		.pipe(eslint.format())
 		.pipe(eslint.failAfterError());
-});
+}
 
-gulp.task(
-	'scripts',
-	gulp.series('lint', () => {
-		return gulp
-			.src(rawDir.scripts)
-			.pipe(
-				webpackStream(webpackConfig, webpack, (err, stats) => {
-					if (err) {
-						log(err.toString());
-					}
-					log(stats.toString());
-				})
-			)
-			.pipe(gulp.dest(serveDir.scripts));
-	})
-);
+function compileScripts () {
+	return src(rawDir.scripts)
+		.pipe(
+			webpackStream(webpackConfig, webpack, (err, stats) => {
+				if (err) {
+					log(err.toString());
+				}
+				log(stats.toString());
+			})
+		)
+		.pipe(dest(serveDir.scripts));
+}
+
+task('scriptTask', series(lintScripts, compileScripts));

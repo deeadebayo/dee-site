@@ -1,4 +1,4 @@
-const gulp = require('gulp'),
+const {src, task, dest, parallel } = require('gulp'),
     debug = require('gulp-debug'),
     pug = require('gulp-pug'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -28,8 +28,8 @@ const gulp = require('gulp'),
         browsers: ['last 3 versions']
     };
 
-gulp.task('html', () => {
-    return gulp.src([
+task('compilePug', () => {
+    return src([
             rawDir.html,
             rawDir.nothtmlPartial
         ])
@@ -43,11 +43,11 @@ gulp.task('html', () => {
         .pipe(debug({
             title: 'processed:'
         }))
-        .pipe(gulp.dest(serveDir.html));
+        .pipe(dest(serveDir.html));
 });
 
-gulp.task('sass', () => {
-    return gulp.src(rawDir.styleFile)
+task('compileSass', () => {
+    return src(rawDir.styleFile)
     .pipe(debug({
         title: 'staging scss:'
     }))
@@ -60,7 +60,9 @@ gulp.task('sass', () => {
         autoprefixer(prefixerOptions)
     ]))
     .pipe(sourcemaps.write(''))
-    .pipe(gulp.dest(serveDir.styles))
+    .pipe(dest(serveDir.styles))
     // .pipe(reload({stream: true}));
     .pipe(browserSync.stream());
 });
+
+task('markupTask', parallel('compilePug', 'compileSass'));

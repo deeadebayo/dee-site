@@ -1,5 +1,5 @@
-const gulp = require('gulp'),
-    watch = require('gulp-watch'),
+const {watch, task, src, series, parallel}= require('gulp'),
+    // watch = require('gulp-watch'),
     browserSync = require('browser-sync').create(),
     reload = browserSync.reload,
 
@@ -20,7 +20,7 @@ const gulp = require('gulp'),
         //scripts: './dist/public/js/'
     };
 
-gulp.task('watch', () => {
+task('watch', () => {
     browserSync.init({
         open: false,
         injectChanges: true,
@@ -30,37 +30,37 @@ gulp.task('watch', () => {
     });
 
     watch(rawDir.html, () => {
-        gulp.start('html');
+        series('compilePug');
         reload();
     });
 
     // watch(rawDir.styles, () => {
     //     gulp.start('cssInject');
     // });
-    gulp.watch(rawDir.styles, gulp.series('sass'));
+    watch(rawDir.styles, series('compileSass'));
     
     watch(rawDir.img, () => {
-        gulp.start('images');
+        series('imgTask');
         reload();
     });
     
     watch(rawDir.scripts, () => {
-        gulp.start('scriptsRefresh');
+        series('scriptsRefresh');
     });
 });
 
-gulp.task('cssInject', gulp.series('sass', () => {
-    return gulp.src(serveDir.styleFile)
+task('cssInject', series('compileSass', () => {
+    return src(serveDir.styleFile)
         .pipe(browserSync.stream());
 }));
 
-gulp.task('default', gulp.series('scripts', 'html', 'sass', 'images', 'watch', () => {
+task('default', series(parallel('scriptTask', 'markupTask', 'imgTask'), 'watch', () => {
     // eslint-disable-next-line no-console
     console.log('Let the watch party begin!!');
 }));
 
-gulp.task('build', gulp.series('scripts', 'html', 'sass', 'images'));
+task('build', parallel('scriptTask', 'markupTask', 'imgTask'));
 
-gulp.task('scriptsRefresh', gulp.series('scripts', () => {
+task('scriptsRefresh', series('scriptTask', () => {
     reload();
 }));

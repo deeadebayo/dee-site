@@ -1,4 +1,4 @@
-var gulp = require('gulp'),
+const { src, series, task, dest } = require('gulp'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
 
@@ -17,11 +17,14 @@ var gulp = require('gulp'),
         scripts: './dist/public/js/'
     };
 
-gulp.task('images', function () {
-    gulp.src(devPaths.img)
+function compressImages(cb) {
+    src(devPaths.img)
         .pipe(imagemin({
             progressive: true,
             use: [pngquant()]
         }))
-        .pipe(gulp.dest(webPaths.img));
-});
+        .pipe(dest(webPaths.img));
+        cb();
+}
+
+task('imgTask', series(compressImages));
