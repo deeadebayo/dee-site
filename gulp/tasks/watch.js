@@ -1,5 +1,4 @@
 const { watch, task, src, series, parallel } = require('gulp'),
-	// watch = require('gulp-watch'),
 	browserSync = require('browser-sync').create(),
 	reload = browserSync.reload,
 	// Path/Directory variables
@@ -28,7 +27,7 @@ function cssInject() {
 }
 
 function reloadPage(cb) {
-	series('compilePug', reload);
+	series(compilePug, reload);
 	cb();
 }
 
@@ -48,7 +47,7 @@ task('watch', () => {
 		cb();
 	}); */
 
-	watch(rawDir.styles, series(cssInject, 'compileSass'));
+	watch(rawDir.styles, series(cssInject, compileSass));
 
 	watch(rawDir.img, () => {
 		series('imgTask', reload);
@@ -56,6 +55,6 @@ task('watch', () => {
 	watch(rawDir.scripts, scriptsRefresh);
 });
 
-task('build', parallel('scriptTask', 'markupTask', 'imgTask'));
+task('build', series(parallel('scriptTask', 'markupTask'), 'imgTask'));
 
 task('default', series('build', 'watch'));
