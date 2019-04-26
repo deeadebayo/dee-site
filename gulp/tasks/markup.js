@@ -49,26 +49,23 @@ function compilePug() {
 }
 
 function compileSass() {
-	return (
-		src(rawDir.styleFile)
-			.pipe(
-				debug({
-					title: 'staging scss:'
-				})
-			)
-			.pipe(sourcemaps.init())
-			.pipe(sass(sassOptions).on('error', sass.logError))
-			.pipe(
-				debug({
-					title: 'processed:'
-				})
-			)
-			.pipe(postcss([autoprefixer(prefixerOptions)]))
-			.pipe(sourcemaps.write(''))
-			.pipe(dest(serveDir.styles))
-			// .pipe(reload({stream: true}));
-			.pipe(browserSync.stream())
-	);
+	return src(rawDir.styleFile)
+		.pipe(
+			debug({
+				title: 'staging scss:'
+			})
+		)
+		.pipe(sourcemaps.init())
+		.pipe(sass(sassOptions).on('error', sass.logError))
+		.pipe(
+			debug({
+				title: 'processed:'
+			})
+		)
+		.pipe(postcss([autoprefixer(prefixerOptions)]))
+		.pipe(sourcemaps.write(''))
+		.pipe(dest(serveDir.styles))
+		.pipe(browserSync.stream());
 }
 
 task('markupTask', parallel(compilePug, compileSass));
