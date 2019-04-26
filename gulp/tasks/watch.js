@@ -26,11 +26,14 @@ task(
 	'serve',
 	series('build', function watchParty() {
 		browserSync.init({
+			open: false,
+			injectChanges: true,
 			server: './dist'
 		});
 
 		watch(rawDir.styles, compileSass);
 		watch(rawDir.html).on('change', series(compilePug, reload));
+		watch(rawDir.img).on('change', series('imgTask', reload));
 	})
 );
 

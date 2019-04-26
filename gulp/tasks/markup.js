@@ -12,7 +12,7 @@ const { src, task, dest, parallel } = require('gulp'),
 	rawDir = {
 		html: './app/**/*.pug',
 		nothtmlPartial: '!./app/pug-templates/**/*.pug', //not this
-		styleFile: './app/assets/scss/styles.scss',
+		styleFile: './app/assets/scss/*.scss',
 		styles: './app/assets/scss/**/*.scss'
 	},
 	serveDir = {
@@ -49,23 +49,25 @@ function compilePug() {
 }
 
 function compileSass() {
-	return src(rawDir.styleFile)
-		.pipe(
-			debug({
-				title: 'staging scss:'
-			})
-		)
-		.pipe(sourcemaps.init())
-		.pipe(sass(sassOptions).on('error', sass.logError))
-		.pipe(
-			debug({
-				title: 'processed:'
-			})
-		)
-		.pipe(postcss([autoprefixer(prefixerOptions)]))
-		.pipe(sourcemaps.write(''))
-		.pipe(dest(serveDir.styles))
-		.pipe(browserSync.stream());
+	return (
+		src(rawDir.styleFile)
+			// .pipe(
+			// 	debug({
+			// 		title: 'staging scss:'
+			// 	})
+			// )
+			.pipe(sourcemaps.init())
+			.pipe(sass(sassOptions).on('error', sass.logError))
+			.pipe(
+				debug({
+					title: 'processed:'
+				})
+			)
+			.pipe(postcss([autoprefixer(prefixerOptions)]))
+			.pipe(sourcemaps.write(''))
+			.pipe(dest(serveDir.styles))
+			.pipe(browserSync.stream({ stream: true }))
+	);
 }
 
 task('markupTask', parallel(compilePug, compileSass));
