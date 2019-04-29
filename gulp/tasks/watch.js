@@ -1,66 +1,40 @@
-const gulp = require('gulp'),
-    watch = require('gulp-watch'),
-    browserSync = require('browser-sync').create(),
-    reload = browserSync.reload,
+const { watch, task, series, parallel } = require('gulp'),
+	browserSync = require('browser-sync').create(),
+	{ compilePug, compileSass } = require('./markup.js'),
+	del = require('del'),
+	// Path/Directory variables
+	rawDir = {
+		img: './app/assets/img/*',
+		html: './app/*.pug',
+		styleFile: './app/assets/scss/styles.scss',
+		styles: './app/assets/scss/**/*.scss',
+		scripts: './app/assets/js/**/*.js'
+	};
 
-    // Path/Directory variables
-    rawDir = {
-        img: './app/assets/img/*',
-        html: './app/*.pug',
-        styleFile: './app/assets/scss/styles.scss',
-        styles: './app/assets/scss/**/*.scss',
-        scripts: './app/assets/js/**/*.js'
-    },
+function cleanUp() {
+	return del(['./dist/public']);
+}
 
-    serveDir = {
-        // img: './dist/public/img/',
-        html: './dist',
-        styleFile: '/dist/public/css/styles.css',
-        styles: './dist/public/css/',
-        //scripts: './dist/public/js/'
-    };
+function reload(done) {
+	browserSync.reload();
+	done();
+}
 
-gulp.task('watch', () => {
-    browserSync.init({
-        open: false,
-        injectChanges: true,
-        server: {
-            baseDir: 'dist'
-        }
-    });
+task('build', series(parallel('scriptTask', 'markupTask'), 'imgTask'));
 
-    watch(rawDir.html, () => {
-        gulp.start('html');
-        reload();
-    });
+task(
+	'serve',
+	series('build', function watchParty() {
+		browserSync.init({
+			open: false,
+			injectChanges: true,
+			server: './dist'
+		});
 
-    // watch(rawDir.styles, () => {
-    //     gulp.start('cssInject');
-    // });
-    gulp.watch(rawDir.styles, ['sass']);
-    
-    watch(rawDir.img, () => {
-        gulp.start('images');
-        reload();
-    });
-    
-    watch(rawDir.scripts, () => {
-        gulp.start('scriptsRefresh');
-    });
-});
+		watch(rawDir.styles, compileSass);
+		watch(rawDir.html).on('change', series(compilePug, reload));
+		watch(rawDir.img).on('change', series('imgTask', reload));
+	})
+);
 
-gulp.task('cssInject', ['sass'], () => {
-    return gulp.src(serveDir.styleFile)
-        .pipe(browserSync.stream());
-});
-
-gulp.task('default', ['scripts', 'html', 'sass', 'images', 'watch'], () => {
-    // eslint-disable-next-line no-console
-    console.log('Let the watch party begin!!');
-});
-
-gulp.task('build', ['scripts', 'html', 'sass', 'images']);
-
-gulp.task('scriptsRefresh', ['scripts'], () => {
-    reload();
-});
+task('default', series(cleanUp, 'serve'));
