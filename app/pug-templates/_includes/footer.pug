@@ -5,3 +5,12 @@
         p hi@deeadebayo.com
     .footer__contact-form
         form(name='contact', method='POST' data-netlify='true' action='/')
+        
+            label(for="name")
+            input(type="text" id="name" name="name" placeholder="Your Full Name")
+
+            label(for="email")
+            input#email(type="text" name="email" placeholder="Your Email")
+
+            label(for="message")
+            textarea#message(name="message", cols="30", rows="10", placeholder="What's on your mind")
