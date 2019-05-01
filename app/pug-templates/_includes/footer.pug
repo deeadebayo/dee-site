@@ -3,14 +3,22 @@
         p some text
         p say hi
         p hi@deeadebayo.com
-    .footer__contact-form
+    .footer__contact-form.contact-form
         form(name='contact', method='POST' data-netlify='true' action='/')
         
-            label(for="name")
+            label(for="name") What's your name
             input(type="text" id="name" name="name" placeholder="Your Full Name")
 
-            label(for="email")
+            label(for="email") Email
             input#email(type="text" name="email" placeholder="Your Email")
+
+            label(for="for-why") For why?
+            select#for-why(name="for-why")
+                option(value="this") Just saying hi
+                option(value="that") words
+                option(value="those") those
 
             label(for="message")
             textarea#message(name="message", cols="30", rows="10", placeholder="What's on your mind")
+
+            input(type="submit", value="Submit")
