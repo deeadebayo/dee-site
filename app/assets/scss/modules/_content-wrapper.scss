@@ -1,53 +1,55 @@
 .content-wrapper {
+  & > * {
+    display: grid;
+  }
+
+  &__content {
+    margin: 0 auto;
+    //add padding so it gives floating effect
+
+    // &__page-about {
+    //     display: grid;
+    //     grid-template-columns: 1fr;
+    //     grid-gap: 1em;
+
+    //     a {
+    //         grid-column: 1/2;
+    //         grid-row: 1/2;
+    //     }
+    // }
+  }
+
+  &__about-blurb {
+    grid-area: about-blurb;
+    margin-bottom: 2.75rem;
+
     & > * {
-        display: grid;
-    }
-    
-    &__content {
-        margin: 0 auto;
-        //add padding so it gives floating effect
-
-        // &__page-about {
-        //     display: grid;
-        //     grid-template-columns: 1fr;
-        //     grid-gap: 1em;
-
-        //     a {
-        //         grid-column: 1/2;
-        //         grid-row: 1/2;
-        //     }
-        // }
+      grid-column: span 1;
     }
 
-    &__about-blurb {
-        grid-area: about-blurb;
-        margin-bottom: 2.75rem;
-        
-        & > * {
-            grid-column: span 1;
-        }
-
-        &::after {
-            box-shadow: 2px 6px 10px 1px rgba(23,43,99,0.24);
-            display: block;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            content: '';
-            border-top: 1px solid transparent;
-            border-radius: 5px;
-        }
-
-        &:hover::after {
-            opacity: 1;
-        }
+    &::after {
+      box-shadow: 2px 6px 10px 1px rgba(23, 43, 99, 0.24);
+      display: block;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      content: "";
+      border-top: 1px solid transparent;
+      border-radius: 5px;
     }
 
-    &__project-display {
-        grid-area: project-display;
-        margin-bottom: 10rem;
+    &:hover::after {
+      opacity: 1;
     }
+  }
 
-    &__footer {
-        grid-area: footer;
-    }
+  &__project-display {
+    grid-area: project-display;
+    margin-bottom: 10rem;
+  }
+
+  &__footer {
+    display: grid;
+    padding: 2.5rem;
+    grid-template-columns: 1fr 1.75fr;
+  }
 }

@@ -1,10 +1,9 @@
-#footer.content-wrapper.wrapper__footer.footer
-    .footer__icons
-        p some text
-        p say hi
-        p hi@deeadebayo.com
+#footer.content-wrapper__footer.footer
+    .footer__info
+        h1 Let's get started
     .footer__contact-form.contact-form
         form(name='contact', method='POST' data-netlify='true' action='/')
+        p my name is ___ (Your Full Name), plrease reach out to me at ___(your email address). Add a checkbox for send me a copy
         
             label(for="name") What's your name
             input(type="text" id="name" name="name" placeholder="Your Full Name")
@@ -20,5 +19,5 @@
 
             label(for="message")
             textarea#message(name="message", cols="30", rows="10", placeholder="What's on your mind")
-
+            br
             input(type="submit", value="Submit")
