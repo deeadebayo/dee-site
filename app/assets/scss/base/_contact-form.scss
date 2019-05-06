@@ -3,13 +3,21 @@
 		box-sizing: border-box;
 
 		border: none;
+<<<<<<< HEAD
 		border-bottom: 2px solid $color--gray;
+=======
+		border-bottom: 3px solid $color--primary;
+>>>>>>> 79d00f6330236f4576f1c67db74f3d19cfce7f07
 		background-color: $color--rare;
 		//add a darker color for when it's focused and an actual lighter color to indicate input
 
 		&:focus {
 			background-color: $color--secondary;
+<<<<<<< HEAD
 			border-bottom: 2px solid $color--primary;
+=======
+			border: none;
+>>>>>>> 79d00f6330236f4576f1c67db74f3d19cfce7f07
 		}
 	}
 
