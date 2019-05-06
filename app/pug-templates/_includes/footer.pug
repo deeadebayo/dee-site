@@ -1,23 +1,21 @@
 #footer.content-wrapper__footer.footer
     .footer__info
-        h1 Let's get started
+        h2 Get In Touch
+        p Although I'm not currently looking for freelance work, my inbox is always open. Say hi and ask a question, I'll do my best to get back to you.
+        p linkedin
+        p resume
+        p github
+        //- text in input fields has to be entered from middle out. how will the text around it behave?
     .footer__contact-form.contact-form
         form(name='contact', method='POST' data-netlify='true' action='/')
-        p my name is ___ (Your Full Name), plrease reach out to me at ___(your email address). Add a checkbox for send me a copy
-        
-            label(for="name") What's your name
-            input(type="text" id="name" name="name" placeholder="Your Full Name")
+            section.contact-form__details
+                label(for="name") My name is
+                input(type="text" id="name" name="name" placeholder="YOUR FULL NAME")
 
-            label(for="email") Email
-            input#email(type="text" name="email" placeholder="Your Email")
-
-            label(for="for-why") For why?
-            select#for-why(name="for-why")
-                option(value="this") Just saying hi
-                option(value="that") words
-                option(value="those") those
-
-            label(for="message")
-            textarea#message(name="message", cols="30", rows="10", placeholder="What's on your mind")
-            br
+                label(for="email") please respond to me at
+                input#email(type="text" name="email" placeholder="YOUR EMAIL ADDRESS")
+            section.contact-form__message
+                label(for="message")
+                textarea#message(name="message", cols="30", rows="10", placeholder="What's on your mind")
+            p Add a checkbox for send me a copy
             input(type="submit", value="Submit")
