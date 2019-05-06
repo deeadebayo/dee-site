@@ -1,0 +1,23 @@
+.contact-form {
+	input[type='text'] {
+		box-sizing: border-box;
+
+		border: none;
+		border-bottom: 2px solid $color--gray;
+		background-color: $color--rare;
+		//add a darker color for when it's focused and an actual lighter color to indicate input
+
+		&:focus {
+			background-color: $color--secondary;
+			border-bottom: 2px solid $color--primary;
+		}
+	}
+
+	input[type='submit'] {
+		border: 1px solid $color--accent;
+	}
+
+	textarea {
+		border: 1px solid $color--accent;
+	}
+}
