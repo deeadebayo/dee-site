@@ -28,6 +28,7 @@ body.tight .wrapper {
 }
 
 .footer {
+	background-color: white;
 	width: 90%;
 	max-width: 1440px;
 	margin: 0px auto;
@@ -36,13 +37,19 @@ body.tight .wrapper {
 	color: #fff;
 	font-size: 2.125rem;
 	border: 1px solid red;
+	border-radius: 5px;
+
+	padding: 1.5em 2em;
+	border: 1px solid rgba(23, 43, 99, 0.1);
+	border-radius: 5px;
+	box-shadow: 0px 3px 5px rgba(23, 43, 99, 0.24);
 
 	&__footer__info {
 		grid-column: 1/2;
 	}
 
 	&__contact-form {
-		grid-column: 2/3;
+		grid-column: 3/4;
 	}
 }
 

@@ -1,55 +1,40 @@
 .content-wrapper {
-  & > * {
-    display: grid;
-  }
+	box-sizing: border-box;
 
-  &__content {
-    margin: 0 auto;
-    //add padding so it gives floating effect
+	& > * {
+		display: grid;
+	}
 
-    // &__page-about {
-    //     display: grid;
-    //     grid-template-columns: 1fr;
-    //     grid-gap: 1em;
+	&__about-blurb {
+		grid-area: about-blurb;
+		margin-bottom: 2.75rem;
 
-    //     a {
-    //         grid-column: 1/2;
-    //         grid-row: 1/2;
-    //     }
-    // }
-  }
+		& > * {
+			grid-column: span 1;
+		}
+		@include animation__background-hover();
+	}
 
-  &__about-blurb {
-    grid-area: about-blurb;
-    margin-bottom: 2.75rem;
+	&__project-display {
+		grid-area: project-display;
+		margin-bottom: 10rem;
+	}
 
-    & > * {
-      grid-column: span 1;
-    }
+	&__footer {
+		transition: all 0.5s ease 0s;
 
-    &::after {
-      box-shadow: 2px 6px 10px 1px rgba(23, 43, 99, 0.24);
-      display: block;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-      content: "";
-      border-top: 1px solid transparent;
-      border-radius: 5px;
-    }
+		display: grid;
+		grid-template-columns: 1fr 0.25fr 1.75fr;
+		box-sizing: border-box;
+		@include screen-comp {
+			margin: 0 4.6875rem;
+		}
 
-    &:hover::after {
-      opacity: 1;
-    }
-  }
+		@include screen-wide {
+			max-width: 1500px;
+			margin: 0 auto;
+		}
 
-  &__project-display {
-    grid-area: project-display;
-    margin-bottom: 10rem;
-  }
-
-  &__footer {
-    display: grid;
-    padding: 2.5rem;
-    grid-template-columns: 1fr 1.75fr;
-  }
+		@include animation__background-hover();
+	}
 }
