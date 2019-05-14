@@ -1,11 +1,12 @@
 #footer.page-wrapper.page-wrapper__footer
     .content-wrapper__footer.footer
         .footer__info
-            h2 Get In Touch
+            h2 Get In Touch!
             p Although I'm not currently looking for freelance work, my inbox is always open. Say hi and ask a question, I'll do my best to get back to you.
-            p linkedin
-            p resume
-            p github
+            .footer__info__links
+                p: a(href="https://www.linkedin.com/in/deeadebayo") LinkedIn
+                p: a(href="https://github.com/deeadebayo/") GitHub
+                p: a(href="/") Resume
             //- text in input fields has to be entered from middle out. how will the text around it behave?
         .footer__contact-form.contact-form
             form(name='contact', method='POST' data-netlify='true' action='/')
@@ -20,6 +21,6 @@
                 section.contact-form__message
                     label(for="message")
                     textarea#message(name="message", cols="30", rows="10", placeholder="What's on your mind")
-                p Add a checkbox for send me a copy
+                p Add a checkbox for send me a copyyy
                 p add a back to top button
                 input(type="submit", value="Submit")

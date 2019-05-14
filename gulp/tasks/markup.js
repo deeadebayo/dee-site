@@ -74,3 +74,4 @@ task('markupTask', parallel(compilePug, compileSass));
 
 exports.compilePug = compilePug;
 exports.compileSass = compileSass;
+exports.rawDir = rawDir;

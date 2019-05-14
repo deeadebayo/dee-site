@@ -7,6 +7,7 @@ const { watch, task, series, parallel } = require('gulp'),
 		img: './app/assets/img/*',
 		html: './app/*.pug',
 		styleFile: './app/assets/scss/styles.scss',
+		nothtmlPartial: '!./app/pug-templates/',
 		styles: './app/assets/scss/**/*.scss',
 		scripts: './app/assets/js/**/*.js'
 	};
@@ -32,7 +33,10 @@ task(
 		});
 
 		watch(rawDir.styles, compileSass);
-		watch(rawDir.html).on('change', series(compilePug, reload));
+		watch([rawDir.html, rawDir.nothtmlPartial]).on(
+			'change',
+			series(compilePug, reload)
+		);
 		watch(rawDir.img).on('change', series('imgTask', reload));
 	})
 );
