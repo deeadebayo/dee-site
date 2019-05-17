@@ -2,14 +2,13 @@
 	position: relative;
 	outline: none;
 	transition: all 0.2s ease-in-out;
-	// display: block;
 	border: 1px solid $color--primary;
-	box-shadow: 0 3px 6px 1px rgba(23,43,99,0.24);
+	box-shadow: 0 3px 6px 1px rgba(23, 43, 99, 0.24);
 	background: transparent;
 	color: $color--primary;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
-	font-size: 1.2em;
+	font-size: 1.2rem;
 	border-radius: 4px;
 	padding: 1em 2em;
 	cursor: pointer;
@@ -25,11 +24,11 @@
 
 	&:active {
 		transform: scale3d(0.95, 0.95, 0.95);
-		box-shadow: 0 0px 0px rgba(23, 43, 99, 0.24) ;
+		box-shadow: 0 0px 0px rgba(23, 43, 99, 0.24);
 		background: darken($color--secondary, 10);
-    }
-    
-    //animate the pseudo-element for performant reasons. Hide and show with opacity 0. Make it work on shrink, not just grow
+	}
+
+	//animate the pseudo-element for performant reasons. Hide and show with opacity 0. Make it work on shrink, not just grow
 	// &::after {
 	// 	box-shadow: rgba(23, 43, 99, 0.24) 0 3px 20px;
 	// 	opacity: 1;
