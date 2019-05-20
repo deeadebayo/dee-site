@@ -1,60 +1,74 @@
 .contact-form {
-	input[type='text'] {
-		transition: all 0.3s ease-in-out;
-		box-sizing: border-box;
-		border: none;
-		border-bottom: 2px solid $color--gray;
-		border-top-left-radius: 4px;
-		border-top-right-radius: 4px;
-		@include ms-respond(font-size, 0);
-		outline: 0;
-		padding: 2px;
-		//add a darker color for when it's focused and an actual lighter color to indicate input
+	input {
 		font-family: $font--muli;
-		font-weight: 600;
+		font-weight: 400;
 		color: $color--text-default;
 
-		&:focus {
-			background-color: $color--secondary;
-			border-bottom: 2px solid transparent;
-		}
-	}
+		&[type='text'] {
+			transition: all 0.3s ease-in-out;
+			box-sizing: border-box;
+			border: none;
+			border-bottom: 2px solid $color--gray;
+			// border-top-left-radius: 4px;
+			// border-top-right-radius: 4px;
+			@include ms-respond(font-size, -1);
+			outline: 0;
+			padding: 2px;
 
-	input[type='submit'] {
-		border: 1px solid $color--accent;
-
-		//Button styles
-		position: relative;
-		outline: none;
-		transition: all 0.2s ease-in-out;
-		border: 1px solid $color--primary;
-		box-shadow: 0 3px 6px 1px rgba(23, 43, 99, 0.24);
-		background: transparent;
-		color: $color--primary;
-		letter-spacing: 0.1em;
-		font-size: 1.2rem;
-		border-radius: 4px;
-		padding: 1em 2em;
-		cursor: pointer;
-		backface-visibility: hidden;
-		transform: translateZ(0) scale(1, 1);
-		transform: translate3d(0, 0, 0);
-
-		&:hover {
-			background: $color--secondary;
-			border: 1px solid $color--secondary;
-			color: white;
+			&:focus {
+				background-color: $color--secondary;
+				border-bottom: 2px solid transparent;
+			}
 		}
 
-		&:active {
-			transform: scale3d(0.95, 0.95, 0.95);
-			box-shadow: 0 0px 0px rgba(23, 43, 99, 0.24);
-			background: darken($color--secondary, 10);
+		&[type='submit'] {
+			border: 1px solid $color--accent;
+
+			//Button styles
+			position: relative;
+			outline: none;
+			transition: all 0.2s ease-in-out;
+			border: 1px solid $color--primary;
+			box-shadow: 0 3px 6px 1px rgba(23, 43, 99, 0.24);
+			background: transparent;
+			color: $color--primary;
+			letter-spacing: 0.1em;
+			font-size: 1.2rem;
+			border-radius: 4px;
+			padding: 1em 2em;
+			cursor: pointer;
+			backface-visibility: hidden;
+			transform: translateZ(0) scale(1, 1);
+			transform: translate3d(0, 0, 0);
+
+			&:hover {
+				background: $color--secondary;
+				border: 1px solid $color--secondary;
+				color: white;
+			}
+
+			&:active {
+				transform: scale3d(0.95, 0.95, 0.95);
+				box-shadow: 0 0px 0px rgba(23, 43, 99, 0.24);
+				background: darken($color--secondary, 10);
+			}
 		}
 	}
 
 	textarea {
-		border: 1px solid $color--accent;
+		border: 2px solid $color--gray;
 		width: 100%;
+		padding: 0.625rem 0.8rem;
+
+		font-family: $font--muli;
+		font-weight: 300;
+		color: $color--text-default;
+		font-size: 1.2rem;
+
+		&:hover,
+		&:focus,
+		&:active {
+			border: 2px solid $color--primary;
+		}
 	}
 }
