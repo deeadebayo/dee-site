@@ -5,6 +5,10 @@
 		display: grid;
 	}
 
+	&__content {
+		margin: 0 auto;
+	}
+
 	&__about-blurb {
 		grid-area: about-blurb;
 		margin-bottom: 2.75rem;
@@ -13,6 +17,20 @@
 			grid-column: span 1;
 		}
 		@include animation__background-hover();
+
+		&::after {
+			box-shadow: 2px 6px 10px 1px hsla(224, 62%, 24%, 0.24);
+			display: block;
+			opacity: 0;
+			transition: opacity 1s ease-in-out;
+			content: '';
+			border-top: 1px solid transparent;
+			border-radius: 5px;
+		}
+
+		&:hover::after {
+			opacity: 1;
+		}
 	}
 
 	&__project-display {
