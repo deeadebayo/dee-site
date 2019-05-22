@@ -1,25 +1,27 @@
 #footer.page-wrapper.page-wrapper__footer
     .content-wrapper__footer.footer
-        .footer__info
-            h2 Get In Touch!
-            p Although I'm not currently looking for freelance work, my inbox is always open. Say hi and ask a question, I'll do my best to get back to you.
-            .footer__info__links
-                p: a(href="https://www.linkedin.com/in/deeadebayo") LinkedIn
-                p: a(href="https://github.com/deeadebayo/") GitHub
-                p: a(href="/") Resume
-            //- text in input fields has to be entered from middle out. how will the text around it behave?
-        .footer__contact-form.contact-form
-            form(name='contact', method='POST' data-netlify='true' action='/')
-                section.contact-form__details
+        form(name='contact', method='POST' data-netlify='true' action='/').contact-form
+            section.contact-form__input
+                .contact-form__details
                     p
                         label(for="name") My name is  
                         input(type="text" id="name" name="name" placeholder="YOUR FULL NAME")
                         label(for="email") please respond back to me at 
                         input#email(type="text" name="email" placeholder="YOUR EMAIL ADDRESS")
                         | .
-                section.contact-form__message
+                .contact-form__message
                     label(for="message")
                     textarea#message(name="message", cols="30", rows="10", placeholder="What's on your mind")
-                p Add a checkbox for send me a copyyy
-                p add a back to top button
+                    input(type="checkbox", name="email-copy", value="true")
+                    label(for="email-copy"): p Check here to send yourself a copy
+            section.contact-form__info
+                h2 Get In Touch!
+                p Although I'm not currently looking for freelance work, my inbox is always open. Say hi and ask a question, I'll do my best to get back to you.
+                .contact-form__info__links
+                    p: a(href="https://www.linkedin.com/in/deeadebayo") LinkedIn
+                    p: a(href="https://github.com/deeadebayo/") GitHub
+                    p: a(href="/") Resume
+                //- text in input fields has to be entered from middle out. how will the text around it behave?
+            section.contact-form__submit
                 input(type="submit", value="Send")
+                p: a(href="#top") Back to top &#x2B06;

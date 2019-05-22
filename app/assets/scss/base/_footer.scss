@@ -5,7 +5,6 @@ html {
 }
 
 body {
-	// background: #2C2A2A;
 	text-rendering: optimizelegibility;
 	margin: 0px;
 	padding: 0px;
@@ -13,8 +12,6 @@ body {
 }
 
 .wrapper {
-	/*  background: url("http://i.imgur.com/RUj7iOD.jpg") no-repeat scroll center center/cover transparent;*/
-	/*    background-color: #444c5c;*/
 	min-height: 100vh;
 	transform-origin: center bottom 0px;
 	transition: all 0.5s ease 0s;
@@ -34,54 +31,34 @@ body.tight .wrapper {
 	margin: 0px auto;
 	min-height: 200px;
 	font-weight: bold;
-	color: #fff;
 	font-size: 2.125rem;
 	border: 1px solid red;
 	border-radius: 5px;
 
 	padding: 1.5em 2em;
-	border: 1px solid rgba(23, 43, 99, 0.1);
-	box-shadow: 0px 3px 5px rgba(23, 43, 99, 0.24);
+	border: 1px solid hsla(224, 62%, 24%, 0.1);
+	box-shadow: 0px 3px 5px hsla(224, 62%, 24%, 0.24);
 
-	border: 10px solid rgba(0, 0, 255, 0.8);
+	border: 10px solid hsla(240, 100%, 50%, 0.8);
 	border-image: repeating-linear-gradient(
 			-45deg,
-			rgba(0, 0, 255, 0.8),
-			rgba(0, 0, 255, 0.8) 5px,
+			hsla(240, 100%, 50%, 0.8),
+			hsla(240, 100%, 50%, 0.8) 5px,
 			transparent 6px,
 			transparent 10px,
-			rgba(255, 0, 0, 0.8) 11px,
-			rgba(255, 0, 0, 0.8) 15px,
+			hsla(0, 100%, 50%, 0.8) 11px,
+			hsla(0, 100%, 50%, 0.8) 15px,
 			transparent 16px,
 			transparent 20px
 		)
 		12/10px;
+
 	a {
 		@include underline-animation(
 			$color--secondary,
 			'right',
 			$lower-underline: true
 		);
-	}
-
-	&__info {
-		grid-column: 1/2;
-		// text-align: center;
-
-		&__links {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-
-			p {
-				flex: 1;
-				text-align: center;
-			}
-		}
-	}
-
-	&__contact-form {
-		grid-column: 3/4;
 	}
 }
 
