@@ -1,22 +1,24 @@
 #footer.page-wrapper.page-wrapper__footer
     .content-wrapper__footer.footer
-        form(name='contact', method='POST' data-netlify='true' action='/').contact-form
+        form(name='contact', method='POST' netlify-honeypot='fake-friends' data-netlify='true' action='/').contact-form
             section.contact-form__input
                 .contact-form__details
                     p
                         label(for="name") My name is  
                         input(type="text" id="name" name="name" placeholder="YOUR FULL NAME")
-                        label(for="email") please respond back to me at 
+                        label(for="email") , please respond back to me at 
                         input#email(type="text" name="email" placeholder="YOUR EMAIL ADDRESS")
                         | .
                 .contact-form__message
                     label(for="message")
-                    textarea#message(name="message", cols="30", rows="10", placeholder="What's on your mind")
-                    input(type="checkbox", name="email-copy", value="true")
-                    label(for="email-copy"): p Check here to send yourself a copy
+                    textarea#message(name="message", rows="8", placeholder="What's on your mind")
+                    p.hidden
+                        label This isn't for humans 
+                            input(name="fake-friends")
             section.contact-form__info
-                h2 Get In Touch!
-                p Although I'm not currently looking for freelance work, my inbox is always open. Say hi and ask a question, I'll do my best to get back to you.
+                h2 Get In Touch
+                //- p Although I'm not currently looking for freelance work, my inbox is always open. Say hi or ask any questions. I may not get answer immediately but, I'll do my best to get back to you!
+                p Don't be shy! Say hi or ask a question. I may not be able to answer immediately but, I'll get back to you as soon as I can!
                 .contact-form__info__links
                     p: a(href="https://www.linkedin.com/in/deeadebayo") LinkedIn
                     p: a(href="https://github.com/deeadebayo/") GitHub

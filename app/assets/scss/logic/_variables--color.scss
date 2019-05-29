@@ -5,7 +5,8 @@ $color--rare: hsl(39, 98%, 58%);
 $color--alert: hsl(356, 69%, 54%);
 
 $color--text-black: hsl(0, 0%, 17%);
-$color--text-header: rgb(51, 51, 51);
-$color--text-default: rgb(72, 72, 72);
-$color--dark: rgb(72, 72, 72);
-$color--gray: rgb(118, 118, 118);
+$color--text-header: hsl(0, 0%, 20%);
+$color--text-default: hsl(0, 0%, 28%);
+$color--dark: hsl(0, 0%, 28%);
+$color--gray: hsl(0, 0%, 46%);
+$color--gray__lighter: hsl(0, 0%, 85%);
