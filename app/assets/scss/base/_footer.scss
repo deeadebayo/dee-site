@@ -26,7 +26,7 @@ body.tight .wrapper {
 
 .footer {
     position: relative;
-    background: white url('/dist/public/img/postcard-border.jpg');
+    background: white url('/public/img/postcard-border--blue.jpg');
     width: 90%;
     max-width: 1440px;
     margin: 0px auto;
@@ -47,7 +47,7 @@ body.tight .wrapper {
         bottom: 0;
         left: 4px;
         border-radius: 8px;
-        background: white url('/dist/public/img/postcard-border.jpg');
+        background: white url('/public/img/postcard-border--blue.jpg');
         transform: rotate(1deg);
         box-shadow: hsla(0, 0%, 0%, 0.5);
         z-index: -1;
