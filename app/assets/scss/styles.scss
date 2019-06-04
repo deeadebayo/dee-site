@@ -2,7 +2,8 @@
 
 // Logic and Variables
 @import 'logic/mixins';
-@import 'logic/variables';
+@import 'logic/variables--color';
+@import 'logic/variables--type';
 
 // The things
 // @import 'modular-scale';
@@ -15,6 +16,7 @@
 @import 'base/navbar';
 @import 'base/page-wrapper';
 @import 'base/footer';
+@import 'base/contact-form';
 @import 'modules/content-wrapper';
 @import 'modules/about-blurb';
 @import 'modules/hello-animation';

@@ -1,16 +1,17 @@
 header a {
-  outline: none;
+    outline: none;
 }
 
 .wrapper {
-  border-top: 4px solid $color--secondary;
+    border-top: 4px solid $color--secondary;
+    margin-bottom: 4.5em;
 }
 
 // Emoji styles for homepage about section
 .emoji {
-  height: 19px;
-  padding: 0 2px;
-  line-height: 1.5;
+    height: 19px;
+    padding: 0 2px;
+    line-height: 1.5;
 }
 
 // /* Match any class name that starts with icon */
@@ -27,3 +28,7 @@ header a {
 //   .icon-music {
 //     right: 5px;
 //   }
+
+.hidden {
+    display: none;
+}
