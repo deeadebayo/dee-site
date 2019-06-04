@@ -2,14 +2,13 @@
 	position: relative;
 	outline: none;
 	transition: all 0.2s ease-in-out;
-	// display: block;
 	border: 1px solid $color--primary;
 	box-shadow: 0 3px 6px 1px hsla(224, 62%, 24%, 0.24);
 	background: transparent;
 	color: $color--primary;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
-	font-size: 1.2em;
+	font-size: 1.2rem;
 	border-radius: 4px;
 	padding: 1em 2em;
 	cursor: pointer;

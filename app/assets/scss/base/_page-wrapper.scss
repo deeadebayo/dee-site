@@ -1,47 +1,59 @@
 .page-wrapper {
-    margin: 0 auto;
-    // width: 100%;
-    box-sizing: border-box;
+	margin: 0 auto;
+	// width: 100%;
+	box-sizing: border-box;
 
-    &__homepage {
-        margin: 0;
-        transition: width 0.1s;
-    
-        @include screen-comp {
-            margin: 0 4.6875rem;
-        }
-    
-        @include screen-wide {
-            max-width: 1500px;
-            margin: 0 auto;
-        }
+	&__homepage {
+		margin: 0;
+		transition: width 0.1s;
 
-        &__header {
-            .navbar {
-                padding: 2em 0;
-                overflow: hidden;
-            }
-        }
+		@include screen-comp {
+			margin: 0 4.6875rem;
+		}
 
-        &__content {
-            display: grid;
-            // grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
-            grid-template-columns: 1fr;
-            grid-template-areas: "about-blurb"
-            "project-display";
-        }
-    }
+		@include screen-wide {
+			max-width: 1500px;
+			margin: 0 auto;
+		}
 
-    &__template {
-        &__header {
+		&__header {
+			.navbar {
+				padding: 2em 0;
+				overflow: hidden;
+			}
+		}
 
-        }
-        &__content {
-            &--about {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-column-gap: 5px;
-            }
-        }
-    }
+		&__content {
+			display: grid;
+			// grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
+			grid-template-columns: 1fr;
+			grid-template-areas:
+				'about-blurb'
+				'project-display';
+		}
+	}
+
+	&__footer {
+		margin-bottom: 5.5rem;
+		@include screen-comp {
+			margin: 0 4.6875rem 5.5rem;
+		}
+
+		@include screen-wide {
+			max-width: 1500px;
+			margin: 0 auto 5.5rem;
+		}
+	}
+
+	&__template {
+		&__header {
+		}
+		&__content {
+			&--about {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-column-gap: 5px;
+			}
+		}
+	}
 }

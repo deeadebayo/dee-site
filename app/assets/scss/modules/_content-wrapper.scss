@@ -1,22 +1,12 @@
 .content-wrapper {
+	box-sizing: border-box;
+
 	& > * {
 		display: grid;
 	}
 
 	&__content {
 		margin: 0 auto;
-		//add padding so it gives floating effect
-
-		// &__page-about {
-		//     display: grid;
-		//     grid-template-columns: 1fr;
-		//     grid-gap: 1em;
-
-		//     a {
-		//         grid-column: 1/2;
-		//         grid-row: 1/2;
-		//     }
-		// }
 	}
 
 	&__about-blurb {
@@ -26,6 +16,7 @@
 		& > * {
 			grid-column: span 1;
 		}
+		@include animation__background-hover();
 
 		&::after {
 			box-shadow: 2px 6px 10px 1px hsla(224, 62%, 24%, 0.24);
@@ -48,6 +39,15 @@
 	}
 
 	&__footer {
-		grid-area: footer;
+		transition: all 0.5s ease 0s;
+		box-sizing: border-box;
+		@include screen-comp {
+			margin: 0 4.6875rem;
+		}
+
+		@include screen-wide {
+			max-width: 1500px;
+			margin: 0 auto;
+		}
 	}
 }

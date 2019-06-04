@@ -1,15 +1,7 @@
 const { watch, task, series, parallel } = require('gulp'),
 	browserSync = require('browser-sync').create(),
-	{ compilePug, compileSass } = require('./markup.js'),
-	del = require('del'),
-	// Path/Directory variables
-	rawDir = {
-		img: './app/assets/img/*',
-		html: './app/*.pug',
-		styleFile: './app/assets/scss/styles.scss',
-		styles: './app/assets/scss/**/*.scss',
-		scripts: './app/assets/js/**/*.js'
-	};
+	{ compilePug, compileSass, rawDir } = require('./markup.js'),
+	del = require('del');
 
 function cleanUp() {
 	return del(['./dist/public']);
@@ -32,7 +24,10 @@ task(
 		});
 
 		watch(rawDir.styles, compileSass);
-		watch(rawDir.html).on('change', series(compilePug, reload));
+		watch([rawDir.html, rawDir.htmlPartial]).on(
+			'change',
+			series(compilePug, reload)
+		);
 		watch(rawDir.img).on('change', series('imgTask', reload));
 	})
 );
