@@ -10,7 +10,6 @@ $modularscale: (
 	base: 19px,
 	ratio: $fourth,
 	//1.333
-
 		$screen-phone-min:
 		(
 			ratio: $minor-third//1.2
@@ -47,6 +46,10 @@ p {
 	// @include ms-respond(font-size, 3)
 	@include ms-respond(font-size, 0);
 	color: $color--text-default;
+
+	&.small {
+		@include ms-respond(font-size, -1);
+	}
 }
 
 h1,
@@ -65,8 +68,8 @@ a {
 	font-weight: 700;
 	color: $color--primary;
 	transition: color 0.2s ease-in-out;
-    text-decoration: none;
-    
+	text-decoration: none;
+
 	&:hover {
 		color: $color--secondary;
 		cursor: pointer;

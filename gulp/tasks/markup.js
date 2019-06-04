@@ -6,14 +6,16 @@ const { src, task, dest, parallel } = require('gulp'),
 	postcss = require('gulp-postcss'),
 	autoprefixer = require('autoprefixer'),
 	browserSync = require('browser-sync').create(),
-	// reload = browserSync.reload,
-
 	// Path/Directory variables
 	rawDir = {
+		img: './app/assets/img/*',
 		html: './app/**/*.pug',
+		htmlPartial: './app/pug-templates/**/*.pug', //not this
 		nothtmlPartial: '!./app/pug-templates/**/*.pug', //not this
-		styleFile: './app/assets/scss/*.scss',
-		styles: './app/assets/scss/**/*.scss'
+		styleFile: './app/assets/scss/styles.scss',
+		// styleFile: './app/assets/scss/*.scss',
+		styles: './app/assets/scss/**/*.scss',
+		scripts: './app/assets/js/**/*.js'
 	},
 	serveDir = {
 		html: './dist',

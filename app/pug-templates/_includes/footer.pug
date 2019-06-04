@@ -1,30 +1,36 @@
 #footer.page-wrapper.page-wrapper__footer
     .content-wrapper__footer.footer
         form(name='contact', method='POST' netlify-honeypot='fake-friends' data-netlify='true' action='/').contact-form
-            h2.contact-form__title Get In Touch
+            .contact-form__title 
+                h2 Get In Touch
+                p.small send some mail
             section.contact-form__input
                 .contact-form__details
                     p
                         label(for="name") My name is  
-                        input(type="text" id="name" name="name" placeholder="YOUR FULL NAME")
-                        label(for="email") , please respond back to me at 
-                        input#email(type="text" name="email" placeholder="YOUR EMAIL ADDRESS")
+                        input(type="text" id="name" name="name" placeholder="Your Full Name" size="20")
+                        label(for="email") , <br>please respond back to me at 
+                        input#email(type="text" name="email" placeholder="Your Email Address" size='25')
                         | .
                 .contact-form__message
                     label(for="message")
-                    textarea#message(name="message", cols='30', rows="9", wrap='soft', placeholder="What's on your mind")
+                    textarea#message(name="message", cols='30', rows="8", wrap='soft', placeholder="What's on your mind?")
                     p.hidden
                         label This isn't for humans 
                             input(name="fake-friends")
             section.contact-form__midsection
+            //- section.contact-form__postage-stamp
             section.contact-form__info
+                .contact-form__info__postcard-stamp
+                    include ../_svg-code/postcard-stamp
                 //- p Although I'm not currently looking for freelance work, my inbox is always open. Say hi or ask any questions. I may not get answer immediately but, I'll do my best to get back to you!
-                p Don't be shy! Say hi or ask a question. I may not be able to answer immediately but, I'll get back to you as soon as I can!
+                br
+                p Ask a question or say hi! I may not be able to answer immediately but, I'll make sure to get back to you as soon as I can!
                 .contact-form__info__links
                     p: a(href="https://www.linkedin.com/in/deeadebayo") LinkedIn
                     p: a(href="https://github.com/deeadebayo/") GitHub
                     p: a(href="/") Resume
                 //- text in input fields has to be entered from middle out. how will the text around it behave?
             section.contact-form__submit
-                p: a(href="#top") Back to top &#x2B06;
                 input(type="submit", value="Send")
+                p: a(href="#top") Back to top &#x2B06;
