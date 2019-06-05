@@ -1,9 +1,10 @@
 console.warn(`yes, we're still good`);
 
-const clickScroll = require('./modules/ClickScroll');
-const helloAnimation = require('./modules/HelloAnimation');
-const footerAnimation = require('./modules/Footer');
+import $ from 'jquery';
+const clickScroll = require('./modules/ClickScroll'),
+	helloAnimation = require('./modules/HelloAnimation'),
+	footerAnimation = require('./modules/Footer');
 
-new clickScroll();
 new helloAnimation();
+new clickScroll();
 new footerAnimation();

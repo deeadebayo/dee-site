@@ -1,6 +1,7 @@
 const { watch, task, series, parallel } = require('gulp'),
 	browserSync = require('browser-sync').create(),
 	{ compilePug, compileSass } = require('./markup.js'),
+	// { lintScripts, compileScripts } = require('./scripts.js'),
 	{ rawDir } = require('../variables__directory.js'),
 	del = require('del');
 
@@ -25,6 +26,7 @@ task(
 		});
 
 		watch(rawDir.styles, compileSass);
+		watch(rawDir.scripts, series('scriptTask', reload));
 		watch([rawDir.html, rawDir.htmlPartial]).on(
 			'change',
 			series(compilePug, reload)

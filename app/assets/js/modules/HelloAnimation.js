@@ -8,4 +8,4 @@ const helloAnimation = () => {
 	console.warn('testing');
 };
 
-exports.helloAnimation = helloAnimation;
+export default helloAnimation;
