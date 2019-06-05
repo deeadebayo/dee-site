@@ -6,22 +6,8 @@ const { src, task, dest, parallel } = require('gulp'),
 	postcss = require('gulp-postcss'),
 	autoprefixer = require('autoprefixer'),
 	browserSync = require('browser-sync').create(),
-	// Path/Directory variables
-	rawDir = {
-		img: './app/assets/img/*',
-		html: './app/**/*.pug',
-		htmlPartial: './app/pug-templates/**/*.pug', //not this
-		nothtmlPartial: '!./app/pug-templates/**/*.pug', //not this
-		styleFile: './app/assets/scss/styles.scss',
-		// styleFile: './app/assets/scss/*.scss',
-		styles: './app/assets/scss/**/*.scss',
-		scripts: './app/assets/js/**/*.js'
-	},
-	serveDir = {
-		html: './dist',
-		styles: './dist/public/css/'
-	},
-	// Options in objects
+	{ rawDir, serveDir } = require('../variables__directory.js'),
+	// Options for Gulp Plugins
 	sassOptions = {
 		outputStyle: 'compressed'
 	},
@@ -76,4 +62,3 @@ task('markupTask', parallel(compilePug, compileSass));
 
 exports.compilePug = compilePug;
 exports.compileSass = compileSass;
-exports.rawDir = rawDir;

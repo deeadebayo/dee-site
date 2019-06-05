@@ -1,6 +1,7 @@
 const { watch, task, series, parallel } = require('gulp'),
 	browserSync = require('browser-sync').create(),
-	{ compilePug, compileSass, rawDir } = require('./markup.js'),
+	{ compilePug, compileSass } = require('./markup.js'),
+	rawDir = require('../variables__directory.js'),
 	del = require('del');
 
 function cleanUp() {
