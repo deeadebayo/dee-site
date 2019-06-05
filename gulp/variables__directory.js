@@ -15,5 +15,5 @@ const rawDir = {
 		img: './dist/public/img/'
 	};
 
-exports.rawDir;
-exports.serveDir;
+exports.rawDir = rawDir;
+exports.serveDir = serveDir;

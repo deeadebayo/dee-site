@@ -1,10 +1,10 @@
 const { src, task, dest, series } = require('gulp'),
+	{ rawDir, serveDir } = require('../variables__directory.js'),
 	webpack = require('webpack'),
 	webpackStream = require('webpack-stream'),
 	webpackConfig = require('../../webpack.config.js'),
 	eslint = require('gulp-eslint'),
-	log = require('fancy-log'),
-	{ rawDir, serveDir } = require('../variables__directory.js');
+	log = require('fancy-log');
 
 function lintScripts() {
 	return src(rawDir.scripts)

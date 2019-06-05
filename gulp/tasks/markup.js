@@ -1,4 +1,5 @@
 const { src, task, dest, parallel } = require('gulp'),
+	{ rawDir, serveDir } = require('../variables__directory.js'),
 	debug = require('gulp-debug'),
 	pug = require('gulp-pug'),
 	sourcemaps = require('gulp-sourcemaps'),
@@ -6,13 +7,9 @@ const { src, task, dest, parallel } = require('gulp'),
 	postcss = require('gulp-postcss'),
 	autoprefixer = require('autoprefixer'),
 	browserSync = require('browser-sync').create(),
-	{ rawDir, serveDir } = require('../variables__directory.js'),
 	// Options for Gulp Plugins
 	sassOptions = {
 		outputStyle: 'compressed'
-	},
-	prefixerOptions = {
-		browsers: ['last 3 versions']
 	};
 
 function compilePug() {
@@ -51,7 +48,7 @@ function compileSass() {
 					title: 'processed:'
 				})
 			)
-			.pipe(postcss([autoprefixer(prefixerOptions)]))
+			.pipe(postcss([autoprefixer]))
 			.pipe(sourcemaps.write(''))
 			.pipe(dest(serveDir.styles))
 			.pipe(browserSync.stream({ stream: true }))
