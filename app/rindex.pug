@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='initial-scale=1, maximum-scale=1, user-scalable=no')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        block startScript
+        title #{pageTitle} - Dee Adebayo
+        meta(name="author", content="Dee Adebayo")
+        meta(name="keywords", content=keywordContent)
+        meta(name="description" content=pageDescContent)
+        link(rel="stylesheet", href="public/css/styles.css")
+    body
+        .wrapper
+            .page-wrapper.page-wrapper__template
+                header.page-wrapper__template__header
+                    include _includes/navbar
+                .page-wrapper__template__content(class=page)
+                    block content
+        include ./_includes/footer
+        script(src="public/js/script.js")
+        block endScript
+
+extends pug-templates/_layout__normal
+
+append startScript
+    - var pageTitle = "About";
+    - var keywordContent = "Some SEO stuff"
+    - var pageDescContent = "Here's a page description"
+    - var page = ".page-wrapper__template__content--about";
+
+h1 Hi
+p I lost my old site, so working on a new one. Here's a preview (<a href="https://github.com/deeadebayo/dee-site">source</a>). When it's done, it'll be this site (smiley face).
+
+p LinkedIn
+
