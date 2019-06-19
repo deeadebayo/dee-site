@@ -4,20 +4,28 @@ html(lang="en")
         meta(charset='UTF-8')
         meta(name='viewport', content='initial-scale=1, maximum-scale=1, user-scalable=no')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
-        block startScript
         title Dee Adebayo - Front-End Web Developer
         meta(name="author", content="Dee Adebayo")
         meta(name="keywords", content=keywordContent)
         meta(name="description" content=pageDescContent)
         link(rel="stylesheet", href="public/css/styles.css")
+        style.
+            p {
+                margin-top: .25em;
+                margin-bottom: .25em;
+            }
+            section {
+                margin: 1em 0;
+            }
     body
-        .wrapper
-            .page-wrapper.page-wrapper__homepage
-                .page-wrapper__homepage__content
-                    h1 Hi, my name's Adeolu!
-                    p I lost my old site, so I'm working on a new one. A preview is hosted <a href="https://dee-site.netlify.com/">here</a> - source (<a href="https://github.com/deeadebayo/dee-site">GitHub</a>). When it's done, it'll be this site &#x1F604;.
-
+        .page-wrapper.page-wrapper__landing-page
+            .page-wrapper__landing-page__content
+                section.message
+                    h2 Hello there!
+                    p Thanks for visiting. I lost my old website, so I'm working on a new one. A preview is hosted <a href="https://dee-site.netlify.com/">here</a> - source (<a href="https://github.com/deeadebayo/dee-site">GitHub</a>). When it's done, this page will be updated &#x1F604;. 
+                    p Thanks!
+                section.contact
+                    p Email: dee(at)deeadebayo.com
                     p: a(href='https://www.linkedin.com/in/deeadebayo/' target='_blank') LinkedIn
-                    p: a(href='mailto:dee@deeadebayo.com?subject=Mail from Your Website') Email
         script(src="public/js/script.js")
 
