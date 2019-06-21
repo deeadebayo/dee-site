@@ -1,4 +1,5 @@
 const { src, task, dest, parallel } = require('gulp'),
+	{ rawDir, serveDir } = require('../variables__directory.js'),
 	debug = require('gulp-debug'),
 	pug = require('gulp-pug'),
 	sourcemaps = require('gulp-sourcemaps'),
@@ -6,27 +7,9 @@ const { src, task, dest, parallel } = require('gulp'),
 	postcss = require('gulp-postcss'),
 	autoprefixer = require('autoprefixer'),
 	browserSync = require('browser-sync').create(),
-	// Path/Directory variables
-	rawDir = {
-		img: './app/assets/img/*',
-		html: './app/**/*.pug',
-		htmlPartial: './app/pug-templates/**/*.pug', //not this
-		nothtmlPartial: '!./app/pug-templates/**/*.pug', //not this
-		styleFile: './app/assets/scss/styles.scss',
-		// styleFile: './app/assets/scss/*.scss',
-		styles: './app/assets/scss/**/*.scss',
-		scripts: './app/assets/js/**/*.js'
-	},
-	serveDir = {
-		html: './dist',
-		styles: './dist/public/css/'
-	},
-	// Options in objects
+	// Options for Gulp Plugins
 	sassOptions = {
 		outputStyle: 'compressed'
-	},
-	prefixerOptions = {
-		browsers: ['last 3 versions']
 	};
 
 function compilePug() {
@@ -65,7 +48,7 @@ function compileSass() {
 					title: 'processed:'
 				})
 			)
-			.pipe(postcss([autoprefixer(prefixerOptions)]))
+			.pipe(postcss([autoprefixer]))
 			.pipe(sourcemaps.write(''))
 			.pipe(dest(serveDir.styles))
 			.pipe(browserSync.stream({ stream: true }))
@@ -76,4 +59,3 @@ task('markupTask', parallel(compilePug, compileSass));
 
 exports.compilePug = compilePug;
 exports.compileSass = compileSass;
-exports.rawDir = rawDir;
