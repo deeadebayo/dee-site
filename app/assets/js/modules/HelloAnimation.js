@@ -1,4 +1,4 @@
-const helloAnimation = () => {
+export function helloAnimation() {
 	let hello = document.getElementsByClassName('hello-animation');
 	let helloAction = document.querySelectorAll('ul.hello-animation__hellos');
 
@@ -6,6 +6,4 @@ const helloAnimation = () => {
 		helloAction.toggleClass('hello-animation__hellos--action');
 	});
 	console.warn('testing');
-};
-
-export default helloAnimation;
+}

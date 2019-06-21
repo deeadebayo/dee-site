@@ -1,9 +1,7 @@
-// console.warn(`yes, we're still good`);
+console.warn(`yes, we're still good`);
 
-const clickScroll = require('./modules/ClickScroll'),
-	helloAnimation = require('./modules/HelloAnimation'),
-	footerAnimation = require('./modules/Footer');
+import { footerAnimation } from './modules/Footer';
+// import helloAnimation from './modules/HelloAnimation';
 
-new helloAnimation();
-new clickScroll();
-new footerAnimation();
+footerAnimation();
+// helloAnimation();
