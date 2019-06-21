@@ -9,14 +9,14 @@
                     p
                         | Hi Dee. My name is 
                         label(for="name")
-                        input(type="text" id="name" name="name" placeholder="Your Full Name" size="19")
+                        input(type="text" id="name" name="name" placeholder="Your Full Name" size="19" required)
                         | , please respond back to me at 
                         label(for="email") 
-                        input#email(type="text" name="email" placeholder="Your Email Address" size='24')
+                        input#email(type="text" name="email" placeholder="Your Email Address" size='24' required)
                         | .
                 .contact-form__message
                     label(for="message")
-                    textarea#message(name="message", cols='30', rows="8", wrap='soft', placeholder="What's on your mind?")
+                    textarea#message(name="message", cols='30', rows="8", wrap='soft', placeholder="What's on your mind?" required)
                     p.hidden
                         label This isn't for humans 
                             input(name="fake-friends")
