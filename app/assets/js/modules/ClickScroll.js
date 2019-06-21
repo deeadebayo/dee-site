@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-const clickScroll = () => {
+export function clickScroll() {
 	$('a[href^="#"]')
 		.not('a[href="#"]')
 		.click(function(e) {
@@ -12,6 +12,4 @@ const clickScroll = () => {
 				500
 			);
 		});
-};
-
-exports.clickScroll = clickScroll;
+}
