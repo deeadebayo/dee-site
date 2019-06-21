@@ -1,9 +1,10 @@
-export function helloAnimation() {
-	let hello = document.getElementsByClassName('hello-animation');
-	let helloAction = document.querySelectorAll('ul.hello-animation__hellos');
+import $ from 'jquery';
 
-	hello.hover(() => {
-		helloAction.toggleClass('hello-animation__hellos--action');
+export function helloAnimation() {
+	let hello = document.getElementsByClassName('hello-animation')[0];
+	let helloAction = document.querySelector('ul.hello-animation__hellos');
+
+	hello.addEventListener('mouseover', () => {
+		$(helloAction).toggleClass('hello-animation__hellos--action');
 	});
-	console.warn('testing');
 }
