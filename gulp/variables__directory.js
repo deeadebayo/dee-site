@@ -6,7 +6,8 @@ const rawDir = {
 		styleFile: './app/assets/scss/styles.scss',
 		styles: './app/assets/scss/**/*.scss',
 		scripts: './app/assets/js/**/*.js',
-		img: './app/assets/img/*'
+		img: './app/assets/img/*',
+		netlify: './app/netlify/*'
 	},
 	serveDir = {
 		html: './dist',
