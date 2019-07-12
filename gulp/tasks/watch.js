@@ -1,7 +1,6 @@
 const { watch, task, series, parallel } = require('gulp'),
 	browserSync = require('browser-sync').create(),
 	{ compilePug, compileSass } = require('./markup.js'),
-	// { lintScripts, compileScripts } = require('./scripts.js'),
 	{ rawDir } = require('../variables__directory.js'),
 	del = require('del');
 
@@ -14,7 +13,10 @@ function reload(done) {
 	done();
 }
 
-task('build', series(parallel('scriptTask', 'markupTask'), 'imgTask'));
+task(
+	'build',
+	series(parallel('scriptTask', 'markupTask', 'netlifyTask'), 'imgTask')
+);
 
 task(
 	'serve',
