@@ -1,4 +1,6 @@
 .logo {
+	transition: 2s ease all;
+
 	&__text-outline {
 		stroke: $color--gray;
 	}
@@ -16,16 +18,20 @@
 	}
 
 	&:hover {
-		&__layer-1 {
+		.logo__text-outline {
+			stroke: transparent;
+		}
+
+		.logo__layer-1 {
 			fill: blue;
 		}
 
-		&__layer-2 {
+		.logo__layer-2 {
 			fill: red;
 		}
 
-		&__layer-3 {
-			fill: purple;
+		.logo__layer-3 {
+			fill: green;
 		}
 	}
 }
