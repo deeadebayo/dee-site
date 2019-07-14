@@ -1,0 +1,31 @@
+.logo {
+	&__text-outline {
+		stroke: $color--gray;
+	}
+
+	&__layer-1 {
+		fill: transparent;
+	}
+
+	&__layer-2 {
+		fill: transparent;
+	}
+
+	&__layer-3 {
+		fill: transparent;
+	}
+
+	&:hover {
+		&__layer-1 {
+			fill: blue;
+		}
+
+		&__layer-2 {
+			fill: red;
+		}
+
+		&__layer-3 {
+			fill: purple;
+		}
+	}
+}

@@ -1,45 +1,49 @@
 .navbar {
-    display: grid;
-    grid-template-columns: 12.5em auto; //minmax the logo area
+	display: grid;
+	grid-template-columns: 12.5em auto; //minmax the logo area
 
-    &__logo {
-        grid-column: 1/2;
-    }
+	&__logo {
+		grid-column: 1/2;
+		padding: 0 5px;
+	}
 
-    &__links {
-        grid-column: 2/3;
-        display: block;
-        
-        ul {
-            list-style: none;
-            justify-content: end;
-            float: right;
+	&__links {
+		grid-column: 2/3;
+		display: block;
 
-            li {
-                display: block;
-                float: left;
-                margin-right: 2.647em;
+		ul {
+			list-style: none;
+			justify-content: end;
+			float: right;
 
-                &:last-child {
-                    margin-right: 0;
-                }
+			li {
+				display: block;
+				float: left;
+				margin-right: 2.647em;
 
-                a {
-                    display: block;
-                    position: relative;
-                    margin-left: 10px;
-                    text-decoration: none;
-                    // text-transform: capitalize;
-                    color: $color--text-black;
-                    // @include ms-respond(font-size, 1);
-                    @include underline-animation($color--primary,'left', $lower-underline: false);
+				&:last-child {
+					margin-right: 0;
+				}
 
+				a {
+					display: block;
+					position: relative;
+					margin-left: 10px;
+					text-decoration: none;
+					// text-transform: capitalize;
+					color: $color--text-black;
+					// @include ms-respond(font-size, 1);
+					@include underline-animation(
+						$color--primary,
+						'left',
+						$lower-underline: false
+					);
 
-                    &:hover {
-                        color: $color--primary;
-                    }
-                }
-            }
-        }
-    }
+					&:hover {
+						color: $color--primary;
+					}
+				}
+			}
+		}
+	}
 }
