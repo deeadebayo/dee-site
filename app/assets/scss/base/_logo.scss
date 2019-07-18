@@ -1,37 +1,72 @@
 .logo {
-	transition: 2s ease all;
+	stroke: $color--gray;
+	stroke-width: 0.1px;
 
 	&__text-outline {
-		stroke: $color--gray;
+		transition: 0.5s;
 	}
 
 	&__layer-1 {
 		fill: transparent;
+		transition: 0.5s;
 	}
 
 	&__layer-2 {
 		fill: transparent;
+		transition: 2s;
 	}
 
 	&__layer-3 {
 		fill: transparent;
+		transition: 1s;
 	}
 
-	&:hover {
+	&--primaryColor:hover {
 		.logo__text-outline {
-			stroke: transparent;
+			opacity: 0;
 		}
-
 		.logo__layer-1 {
-			fill: blue;
+			fill: $color--primary;
 		}
 
 		.logo__layer-2 {
-			fill: red;
+			fill: $color--primary;
 		}
 
 		.logo__layer-3 {
-			fill: green;
+			fill: $color--primary;
+		}
+	}
+	&--secondaryColor:hover {
+		.logo__text-outline {
+			opacity: 0;
+		}
+		.logo__layer-1 {
+			fill: $color--primary;
+		}
+
+		.logo__layer-2 {
+			fill: $color--primary;
+		}
+
+		.logo__layer-3 {
+			fill: $color--primary;
+		}
+	}
+	&--accentColor:hover {
+		.logo__text-outline {
+			opacity: 0;
+		}
+		.logo__layer-1 {
+			fill: $color--primary;
+		}
+
+		.logo__layer-2 {
+			fill: $color--primary;
+		}
+
+		.logo__layer-3 {
+			fill: $color--primary;
 		}
 	}
 }
