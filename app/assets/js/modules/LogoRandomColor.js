@@ -10,11 +10,12 @@ function getRandomColor() {
 }
 
 export function showRandomColor() {
-	const logo = document.querySelector('#logo');
+	let logo = document.querySelector('#logo');
 
-	logo.addEventListener('mouseover', () => {
-		this.classList.toggle(getRandomColor);
+	logo.addEventListener('mouseenter', function() {
+		let logoClass = getRandomColor();
+
+		logo.classList.remove('logo--primaryColor', 'logo--secondaryColor', 'logo--accentColor');
+		this.classList.toggle(logoClass);
 	});
-
-	// classList.toggle(getRandomColor);
 }

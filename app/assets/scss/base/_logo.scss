@@ -1,40 +1,52 @@
+// Module specific variables. To make editing timing for transitions a bit easier
+$layer0-static-transition: 0.3s;
+$layer1-static-transition: 0.3s;
+$layer2-static-transition: 0.3s;
+$layer3-static-transition: 0.3s;
+
+$layer0-hover-delay: 0.3s;
+$layer1-hover-delay: 0.4s;
+$layer2-hover-delay: 0.2s;
+$layer3-hover-delay: 0s;
+
 .logo {
 	stroke: $color--gray;
 	stroke-width: 0.1px;
 
 	&__text-outline {
-		transition: 0.5s;
+		transition: 0.8s;
 	}
 
 	&__layer-1 {
-		fill: transparent;
-		transition: 0.5s;
+		@include logo-animation(transparent, null, 0.4s);
 	}
 
 	&__layer-2 {
-		fill: transparent;
-		transition: 2s;
+		@include logo-animation(transparent, null, 0.4s);
 	}
 
 	&__layer-3 {
-		fill: transparent;
-		transition: 1s;
+		@include logo-animation(transparent, null, 0.5s);
 	}
+
+	// &:hover {
+	// 	transform: scale(1.01);
+	// }
 
 	&--primaryColor:hover {
 		.logo__text-outline {
 			opacity: 0;
 		}
 		.logo__layer-1 {
-			fill: $color--primary;
+			@include logo-animation($color--primary, $layer1-hover-delay);
 		}
 
 		.logo__layer-2 {
-			fill: $color--primary;
+			@include logo-animation($color--primary, $layer2-hover-delay);
 		}
 
 		.logo__layer-3 {
-			fill: $color--primary;
+			@include logo-animation($color--primary, $layer3-hover-delay);
 		}
 	}
 	&--secondaryColor:hover {
@@ -42,15 +54,15 @@
 			opacity: 0;
 		}
 		.logo__layer-1 {
-			fill: $color--primary;
+			@include logo-animation($color--secondary, $layer1-hover-delay);
 		}
 
 		.logo__layer-2 {
-			fill: $color--primary;
+			@include logo-animation($color--secondary, $layer2-hover-delay);
 		}
 
 		.logo__layer-3 {
-			fill: $color--primary;
+			@include logo-animation($color--secondary, $layer3-hover-delay);
 		}
 	}
 	&--accentColor:hover {
@@ -58,15 +70,15 @@
 			opacity: 0;
 		}
 		.logo__layer-1 {
-			fill: $color--primary;
+			@include logo-animation($color--rare, $layer1-hover-delay);
 		}
 
 		.logo__layer-2 {
-			fill: $color--primary;
+			@include logo-animation($color--rare, $layer2-hover-delay);
 		}
 
 		.logo__layer-3 {
-			fill: $color--primary;
+			@include logo-animation($color--rare, $layer3-hover-delay);
 		}
 	}
 }
