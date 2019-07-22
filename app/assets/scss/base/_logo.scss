@@ -1,17 +1,18 @@
 // Module specific variables. To make editing timing for transitions a bit easier
 $layer0-static-transition: 0.8s;
-$layer1-static-transition: 0.4s;
-$layer2-static-transition: 0.4s;
+$layer1-static-transition: 0.3s;
+$layer2-static-transition: 0.3s;
 $layer3-static-transition: 0.5s;
 
-$layer0-hover-delay: 0.3s;
-$layer1-hover-delay: 0.4s;
-$layer2-hover-delay: 0.2s;
+$layer0-hover-delay: 0.2s;
+$layer1-hover-delay: 0.3s;
+$layer2-hover-delay: 0.15s;
 $layer3-hover-delay: 0s;
 
 .logo {
 	stroke: $color--gray;
 	stroke-width: 0.1px;
+	max-height: 51px;
 
 	&__text-outline {
 		@include logo-animation(null, null, $layer0-static-transition);
@@ -28,10 +29,6 @@ $layer3-hover-delay: 0s;
 	&__layer-3 {
 		@include logo-animation(transparent, null, $layer3-static-transition);
 	}
-
-	// &:hover {
-	// 	transform: scale(1.01);
-	// }
 
 	&--primaryColor:hover {
 		.logo__text-outline {

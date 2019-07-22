@@ -4,7 +4,7 @@
 
 	&__logo {
 		grid-column: 1/2;
-		padding: 0 5px;
+		padding: 2px 0;
 	}
 
 	&__links {
@@ -28,7 +28,6 @@
 				a {
 					display: block;
 					position: relative;
-					margin-left: 10px;
 					text-decoration: none;
 					// text-transform: capitalize;
 					color: $color--text-black;
