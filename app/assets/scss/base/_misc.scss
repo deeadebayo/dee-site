@@ -5,7 +5,12 @@ header a {
 	max-height: 55px;
 	margin-left: -0.535rem;
 }
+//set body overflow to auto for no-js users
+.no-js body {
+	overflow: auto;
+}
 
+//footer class but used to add some UI refreshes to top of page
 .wrapper {
 	border-top: 4px solid $color--secondary;
 	margin-bottom: 4.5em;
