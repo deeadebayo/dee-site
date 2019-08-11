@@ -10,9 +10,9 @@ html(lang="en")
         meta(name="keywords", content='keywordContent')
         meta(name="description" content='pageDescContent')
         link(rel="stylesheet", href="public/css/styles.css")
-    body(style="background: linear-gradient(to right, #403a3e, #be5869);")#top.most-outside__body
-        #most-outside.most-outside__page
-            #swup.wrapper.transition-fade(style="background: #FFF;")
+        body(style="background: linear-gradient(to right, #403a3e, #be5869);")#top
+            .page-animation.page-animation__overlay
+            .wrapper(style="background: #FFF;")
                 .page-wrapper.page-wrapper__homepage
                     header.page-wrapper__homepage__header
                         include pug-templates/_includes/navbar                    
@@ -92,6 +92,6 @@ html(lang="en")
                                                 //- span.project-display__detail-box__details__icon-section
                                                 //-     span.project-display__detail-box__details__icon-section__icon
                                 .project-display__btn
-                                    button.btn More Projects
-        include pug-templates/_includes/footer
+                                button.btn More Projects
+            include pug-templates/_includes/footer
         script(src="public/js/script.js")
