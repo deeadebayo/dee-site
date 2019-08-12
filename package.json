@@ -17,6 +17,7 @@
 	},
 	"homepage": "https://github.com/deeadebayo/dee-site#readme",
 	"dependencies": {
+		"@barba/core": "^2.4.0",
 		"normalize.css": "^8.0.1",
 		"npm": "^6.10.3"
 	},

@@ -2,7 +2,7 @@
 	&__overlay {
 		position: absolute;
 		z-index: 999;
-		height: 100vh;
+		height: 63vh;
 		width: 100%;
 		background-color: $color--accent;
 
@@ -10,15 +10,5 @@
 	}
 
 	&__page {
-		// position: absolute;
-		// top: 0;
-		// left: 0;
-		// visibility: hidden;
-		// overflow: hidden;
-		// backface-visibility: hidden;
-		// transform: translate3d(0, 0, 0);
-		// //animashuns
-		// animation: moveToTop 0.7s ease-in-out both;
-		// // end
 	}
 }
