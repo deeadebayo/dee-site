@@ -1,9 +1,9 @@
-// import { barba } from "@barba/core";
+import { barba } from '@barba/core';
 
-// export function barba.init(<options></options>) {
-//     transitions: [{
-//         enter({
-
-//         })
-//     }]
-// }
+barba.init({
+	transitions: [
+		{
+			name: 'scrollDownUp'
+		}
+	]
+});

@@ -11,6 +11,9 @@ html(lang="en")
         meta(name="description" content='pageDescContent')
         link(rel="stylesheet", href="public/css/styles.css")
         body(style="background: linear-gradient(to right, #403a3e, #be5869);")#top
+            .page-animation.page-animation--slideUp
+                .page-animation__logo
+                    include ./pug-templates/_svg-code/logo--main
             .wrapper(style="background: #FFF;")
                 .page-wrapper.page-wrapper__homepage(data-barba='wrapper')
                     header.page-wrapper__homepage__header
