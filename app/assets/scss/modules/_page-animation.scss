@@ -19,21 +19,25 @@
 	&__logo {
 		stroke: $color--gray;
 		stroke-width: 0.1px;
-		min-height: 101px;
 
 		&__letters {
+			fill: black;
 		}
 
 		&__first-color {
+			fill: purple;
 		}
 
 		&__second-color {
+			fill: yellow;
 		}
 
 		&__third-color {
+			fill: blue;
 		}
 
 		&__everything-green {
+			fill: green;
 		}
 	}
 }
@@ -45,5 +49,15 @@
 
 	100% {
 		height: 0;
+	}
+}
+
+@keyframes turnGreen {
+	// 0% {
+	// 	color: $this;
+	// }
+
+	100% {
+		fill: green;
 	}
 }
