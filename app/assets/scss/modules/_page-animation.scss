@@ -3,41 +3,48 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	box-sizing: content-box;
 
-	animation-delay: 1s;
+	animation-delay: 1.4s;
 	animation-duration: 1.75s;
 	transition-timing-function: ease-in;
 	animation-fill-mode: both;
 	overflow: hidden;
-	background-color: $color--accent;
+	background-color: $color--gray__lighter;
 
 	// Forcing a full window div, then "animating" it up (while filling in SVG colors) for a loading effect
-	// &--slideUp {
-	// 	animation-name: slideUp;
-	// }
+	&--slideUp {
+		animation-name: slideUp;
+	}
 
 	&__logo {
-		stroke: $color--gray;
 		stroke-width: 0.1px;
+		fill: transparent;
+		animation-duration: 0.3s;
 
 		&__letters {
-			fill: black;
+			animation: fadeInOut 0.5s ease forwards;
+			fill: none;
 		}
 
 		&__first-color {
-			fill: purple;
+			// fill: $color--secondary;
+			animation: redToGreen 1.5s ease-in 0s 1 forwards;
 		}
 
 		&__second-color {
-			fill: yellow;
+			// fill: $color--secondary;
+			animation: yellowToGreen 1.5s ease-out 0s 1 forwards;
 		}
 
 		&__third-color {
-			fill: blue;
+			// fill: $color--secondary;
+			animation: greenToGreen 1.6s ease-in 0s 1 forwards;
 		}
 
-		&__everything-green {
-			fill: green;
+		&__bar-final-layer {
+			// fill: $color--secondary;
+			animation: greenToGreen 1.6s ease-in 0.2s 1 forwards;
 		}
 	}
 }
@@ -52,12 +59,70 @@
 	}
 }
 
-@keyframes turnGreen {
-	// 0% {
-	// 	color: $this;
-	// }
+@keyframes fadeInOut {
+	0% {
+		stroke: transparent;
+	}
+
+	2% {
+		stroke: $color--gray;
+	}
 
 	100% {
-		fill: green;
+		stroke: transparent;
+	}
+}
+
+@keyframes redToGreen {
+	0% {
+		fill: none;
+	}
+
+	33% {
+		fill: $color--primary;
+	}
+
+	50% {
+		fill: $color--rare;
+	}
+
+	90% {
+		fill: $color--secondary;
+	}
+
+	100% {
+		fill: $color--secondary;
+	}
+}
+
+@keyframes yellowToGreen {
+	0% {
+		fill: none;
+	}
+
+	25% {
+		fill: none;
+	}
+
+	50% {
+		fill: $color--rare;
+	}
+
+	90% {
+		fill: $color--secondary;
+	}
+
+	100% {
+		fill: $color--secondary;
+	}
+}
+
+@keyframes greenToGreen {
+	from {
+		fill: none;
+	}
+
+	to {
+		fill: $color--secondary;
 	}
 }
