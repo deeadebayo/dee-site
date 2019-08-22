@@ -25,22 +25,18 @@
 		}
 
 		&__first-color {
-			// fill: $color--secondary;
 			animation: redToGreen 1.5s ease-in 0s 1 forwards;
 		}
 
 		&__second-color {
-			// fill: $color--secondary;
 			animation: yellowToGreen 1.5s ease-out 0s 1 forwards;
 		}
 
 		&__third-color {
-			// fill: $color--secondary;
 			animation: greenToGreen 1.6s ease-in 0s 1 forwards;
 		}
 
 		&__bar-final-layer {
-			// fill: $color--secondary;
 			animation: greenToGreen 1.6s ease-in 0.2s 1 forwards;
 		}
 	}
