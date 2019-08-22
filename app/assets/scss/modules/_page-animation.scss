@@ -5,15 +5,12 @@
 	justify-content: center;
 	box-sizing: content-box;
 
-	animation-delay: 1.4s;
-	animation-duration: 1.75s;
-	transition-timing-function: ease-in;
-	animation-fill-mode: both;
 	overflow: hidden;
 	background-color: $color--gray__lighter;
 
 	// Forcing a full window div, then "animating" it up (while filling in SVG colors) for a loading effect
 	&--slideUp {
+		animation: slideUp 1.5s ease-out 1.4s 1 both;
 		animation-name: slideUp;
 	}
 
