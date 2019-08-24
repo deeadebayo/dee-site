@@ -12,10 +12,10 @@ html(lang="en")
         link(rel="stylesheet", href="public/css/styles.css")
     body
         .wrapper
-            .page-wrapper.page-wrapper__template
+            .page-wrapper.page-wrapper__homepage(data-barba='wrapper')
                 header.page-wrapper__template__header
                     include _includes/navbar
-                .page-wrapper__template__content(class=page)
+                main.page-wrapper__template__content(class=page, data-barba='container')
                     block content
         include ./_includes/footer
         script(src="public/js/script.js")
