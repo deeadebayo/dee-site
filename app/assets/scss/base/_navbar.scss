@@ -38,7 +38,9 @@
 						$lower-underline: false
 					);
 
-					&:hover {
+					&:hover,
+					&.active,
+					&:focus {
 						color: $color--primary;
 					}
 				}

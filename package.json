@@ -17,7 +17,7 @@
 	},
 	"homepage": "https://github.com/deeadebayo/dee-site#readme",
 	"dependencies": {
-		"@barba/core": "^2.4.0",
+		"@dogstudio/highway": "^2.1.3",
 		"normalize.css": "^8.0.1",
 		"npm": "^6.10.3"
 	},

@@ -14,12 +14,12 @@ html(lang="en")
             .page-animation.page-animation--slideUp
                 .page-animation__logo
                     include ./pug-templates/_svg-code/logo--main
-            .wrapper(style="background: #FFF;")
-                .page-wrapper.page-wrapper__homepage(data-barba='wrapper')
+            .wrapper
+                .page-wrapper.page-wrapper__homepage(data-router-wrapper)
                     header.page-wrapper__homepage__header
                         include pug-templates/_includes/navbar  
                     //- main barba container                  
-                    main.page-wrapper__homepage__content(data-barba ='container', data-barba-namespace='home')
+                    main.page-wrapper__homepage__content(data-router-view='home')
                         section.content-wrapper.content-wrapper__about-blurb
                             .about-blurb
                                 .about-blurb__content
