@@ -12,6 +12,9 @@ module.exports = {
 			{
 				test: /\.js$/,
 				exclude: /(node_modules|bower_components)/,
+				// include: [
+				// 	path.resolve(__dirname, 'node_modules', '@dogstudio', 'highway')
+				// ],
 				use: {
 					loader: 'babel-loader',
 					options: {

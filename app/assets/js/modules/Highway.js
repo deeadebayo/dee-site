@@ -1,4 +1,4 @@
-import { Highway } from '@dogstudio/highway';
+import { Highway } from 'DogJuice/highway';
 
 // class CustomRenderer extends Highway.Renderer {
 // 	onEnter() {}
