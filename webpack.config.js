@@ -11,10 +11,16 @@ module.exports = {
 		rules: [
 			{
 				test: /\.js$/,
-				exclude: /(node_modules|bower_components)/,
-				// include: [
-				// 	path.resolve(__dirname, 'node_modules', '@dogstudio', 'highway')
-				// ],
+				// exclude: /(node_modules|bower_components)/,
+				include: [
+					path.resolve(
+						__dirname,
+						'node_modules',
+						'@dogstudio',
+						'highway',
+						'src'
+					)
+				],
 				use: {
 					loader: 'babel-loader',
 					options: {
@@ -24,5 +30,5 @@ module.exports = {
 			}
 		]
 	},
-	mode: 'development'
+	mode: 'production'
 };
