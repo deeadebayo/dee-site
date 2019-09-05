@@ -9,18 +9,20 @@ html(lang="en")
         meta(name="author", content="Dee Adebayo")
         meta(name="keywords", content='keywordContent')
         meta(name="description" content='pageDescContent')
+        meta(name='theme-color', content='#ff5b61')
         link(rel="stylesheet", href="public/css/styles.css")
+        link(rel='icon', type="image/png", sizes='32x32', href='favicon-32x32.png')
+        link(rel='icon', type="image/png", sizes='16x16', href='favicon-16x16.png')
         body(style="background: linear-gradient(to right, #403a3e, #be5869);")#top
             .page-animation.page-animation--slideUp
                 .page-animation__logo
                     include ./pug-templates/_svg-code/logo--main
             .wrapper
-                .page-wrapper.page-wrapper__homepage(data-router-wrapper)
+                .page-wrapper.page-wrapper__homepage
                     header.page-wrapper__homepage__header
                         include pug-templates/_includes/navbar  
-                    //- main barba container                  
-                    main.page-wrapper__homepage__content(data-router-view='home')
-                        section.content-wrapper.content-wrapper__about-blurb
+                    main.page-wrapper__homepage__content(data-router-wrapper)
+                        section.content-wrapper.content-wrapper__about-blurb(data-router-view='home')
                             .about-blurb
                                 .about-blurb__content
                                     .hello-animation

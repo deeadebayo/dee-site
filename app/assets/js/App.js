@@ -1,11 +1,11 @@
 import { footerAnimation } from './modules/Footer';
-import { clickScroll } from './modules/ClickScroll';
+import { footerScroll } from './modules/SmoothScroll';
 import { helloAnimation } from './modules/HelloAnimation';
 import { showRandomColor } from './modules/LogoRandomColor';
-// import { H } from './modules/PageAnimation';
+// eslint-disable-next-line no-unused-vars
+import { pageAnimation } from './modules/PageAnimation';
 
 new footerAnimation();
-new clickScroll();
+new footerScroll();
 new showRandomColor();
 new helloAnimation();
-// H();
