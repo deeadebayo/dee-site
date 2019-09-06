@@ -1,4 +1,4 @@
-export function footerScroll() {
+export function smoothScroll() {
 	// $('a[href^="#"]')
 	// 	.not('a[href="#"]')
 	// 	.click(function(e) {
@@ -10,16 +10,19 @@ export function footerScroll() {
 	// 			500
 	// 		);
 	// 	});
-	const footer = document.querySelector('#footer'),
-		navlink = document.querySelector('#contact-link'),
-		anchor = document.querySelectorAll('a[href^="#"]'),
-		
-	
-		anchor.addEventListener('click', function (e) {
-			e.preventDefault();
+	// const footer = document.querySelector('#footer'),
+	// navlink = document.querySelector('#contact-link'),
+	const anchor = document.querySelectorAll('a[href^="#"]', '!a[href^="#"]');
+	// body = document.body,
+	// wrapper = document.querySelectorAll('.wrapper'),
+	// html = document.documentElement;
 
-		})
-	navlink.addEventListener('click', () => {
-		footer.scrollIntoView({ behavior: 'smooth' });
+	anchor.addEventListener('click', function(e) {
+		e.preventDefault();
+		this.scrollIntoView({ behavior: 'smooth' });
 	});
+
+	// navlink.addEventListener('click', () => {
+	// 	footer.scrollIntoView({ behavior: 'smooth' });
+	// });
 }

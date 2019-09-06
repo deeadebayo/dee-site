@@ -3,7 +3,7 @@ import $ from 'jquery';
 export function footerAnimation() {
 	const body = document.body,
 		wrapper = document.querySelectorAll('.wrapper'),
-		html = document.documentElement; //the html tag;
+		html = document.documentElement; //the html tag,
 
 	window.addEventListener('scroll', () => {
 		//ADD .TIGHT
