@@ -19,8 +19,8 @@ class Navigate extends Highway.Transition {
 		// let container = document.querySelector('main');
 		anime({
 			//add duration, starting point, ending point
-			targets: from,
-			translateX: 270,
+			targets: to,
+			opacity: [0, 1],
 			begin: function() {
 				from.remove();
 				to;
@@ -31,7 +31,6 @@ class Navigate extends Highway.Transition {
 
 	out({ from, done }) {
 		//animation. Call from and done
-		from.remove();
 		anime({
 			targets: from,
 			translateY: 270,
