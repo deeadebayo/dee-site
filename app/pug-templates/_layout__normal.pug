@@ -2,7 +2,7 @@ doctype html
 html(lang="en")
     head
         meta(charset='UTF-8')
-        meta(name='viewport', content='initial-scale=1, maximum-scale=1, user-scalable=no')
+        meta(name='viewport', content='initial-scale=1')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
         block startScript
         title #{pageTitle} - Dee Adebayo
@@ -11,13 +11,18 @@ html(lang="en")
         meta(name="description" content=pageDescContent)
         meta(name='theme-color', content='#ff5b61')
         link(rel="stylesheet", href="public/css/styles.css")
-        link(rel='icon', type="image/png", sizes='32x32', href='./../favicon-32x32.png')
-        link(rel='icon', type="image/png", sizes='16x16', href='./../favicon-16x16.png')
-    body
+        link(rel='icon', type="image/png", sizes='32x32', href='public/img/favicon-32x32.png')
+        link(rel='icon', type="image/png", sizes='16x16', href='public/img/favicon-16x16.png')
+    body(style="background: linear-gradient(to right, #403a3e, #be5869);")#top
+        .page-animation.page-animation--slideUp
+                .page-animation__logo
+                    include ./_svg-code/logo--main
         .wrapper
-            .page-wrapper.page-wrapper__template
+            .page-wrapper.page-wrapper__content
+                header.page-wrapper__header
+                    include ./_includes/navbar  
                 main(data-router-wrapper)
-                    .page-wrapper__template__content(class=page, data-router-view=namespace)
+                    div(class=pageContent, data-router-view=namespace)
                         block content
         include ./_includes/footer
         script(src="public/js/script.js")

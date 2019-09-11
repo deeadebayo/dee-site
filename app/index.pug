@@ -1,102 +1,87 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset='UTF-8')
-        meta(name='viewport')
-        meta(http-equiv='X-UA-Compatible', content='IE=edge')
-        block startScript
-        title Dee Adebayo - Front-End Web Developer
-        meta(name="author", content="Dee Adebayo")
-        meta(name="keywords", content='keywordContent')
-        meta(name="description" content='pageDescContent')
-        meta(name='theme-color', content='#ff5b61')
-        link(rel="stylesheet", href="public/css/styles.css")
-        link(rel='icon', type="image/png", sizes='32x32', href='favicon-32x32.png')
-        link(rel='icon', type="image/png", sizes='16x16', href='favicon-16x16.png')
-        body(style="background: linear-gradient(to right, #403a3e, #be5869);")#top
-            .page-animation.page-animation--slideUp
-                .page-animation__logo
-                    include ./pug-templates/_svg-code/logo--main
-            .wrapper
-                .page-wrapper.page-wrapper__homepage
-                    header.page-wrapper__homepage__header
-                        include pug-templates/_includes/navbar  
-                    main.page-wrapper__homepage__content(data-router-wrapper)
-                        section.content-wrapper.content-wrapper__about-blurb(data-router-view='home')
-                            .about-blurb
-                                .about-blurb__content
-                                    .hello-animation
-                                        ul.hello-animation__hellos
-                                            li Hello
-                                            li Hi
-                                            li Hola
-                                            li Heya
-                                            li Hiya
-                                            li What's up
-                                            li Hey there
-                                            li Whoa
-                                    p.lead I'm Adeolu!
-                                        span.p
-                                    p 
-                                        | I'm a front-end UI/UX developer
-                                        //love web dev, one of major requirements for staying relevant is continously keep learning
-                                        br
-                                        | focused on creating interactive and functional web experiences.
-                                    p 
-                                        | I'm originally from  
-                                        | <a href="https://www.lonelyplanet.com/nigeria/lagos" target="_blank">Lagos</a>
-                                        img(src="public/img/emoji__ng-flag.png", alt="Nigerian flag emoji").emoji
-                                        | but reside in <a href="https://www.lonelyplanet.com/usa/the-south/atlanta" target="_blank">Atlanta</a>
-                                        img(src="public/img/emoji__peach.png", alt="peach emoji").emoji
-                                        | ,
-                                        br
-                                        | building static websites for small businesses.
-                                    p <a href="#contact" data-router-disabled>Say hello</a>, or keep exploring. 
-                                    button.btn more about me 
-                        section.content-wrapper.content-wrapper__project-display
-                            .project-display
-                                h3.project-display__title Projects
-                                .project-display__box.project-display__box--blue
-                                    a.project-display__link(href="/")
-                                        .project-display__img
-                                            img(src="public/img/work__jmdrums__cover.jpg")
-                                        span.project-display__detail-box
-                                            span.project-display__detail-box__details
-                                                span.project-display__detail-box__details__title 
-                                                span.project-display__detail-box__details__subtitle
-                                                //- span.project-display__detail-box__details__icon-section
-                                                //-     span.project-display__detail-box__details__icon-section__icon
-                                .project-display__box.project-display__box--green
-                                    a.project-display__link(href="/")
-                                        .project-display__img
-                                            img(src="public/img/work__ctkmc__tablet-and-phone.png")
-                                        span.project-display__detail-box
-                                            span.project-display__detail-box__details
-                                                span.project-display__detail-box__details__title
-                                                span.project-display__detail-box__details__subtitle
-                                                //- span.project-display__detail-box__details__icon-section
-                                                //-     span.project-display__detail-box__details__icon-section__icon
-                                .project-display__box.project-display__box--yellow
-                                    a.project-display__link(href="/")
-                                        .project-display__img
-                                            img(src="public/img/work__coming-soon.jpg")
-                                        span.project-display__detail-box
-                                            span.project-display__detail-box__details
-                                                span.project-display__detail-box__details__title
-                                                span.project-display__detail-box__details__subtitle
-                                                //- span.project-display__detail-box__details__icon-section
-                                                //-     span.project-display__detail-box__details__icon-section__icon
-                                .project-display__box.project-display__box--red
-                                    a.project-display__link(href="/")
-                                        .project-display__img
-                                            img(src="public/img/work__coming-soon.jpg")
-                                        span.project-display__detail-box
-                                            span.project-display__detail-box__details
-                                                span.project-display__detail-box__details__title
-                                                span.project-display__detail-box__details__subtitle
-                                                //- span.project-display__detail-box__details__icon-section
-                                                //-     span.project-display__detail-box__details__icon-section__icon
-                                .project-display__btn
-                                button.btn More Projects
-            include pug-templates/_includes/footer
-            script(src="public/js/script.js")
+extends pug-templates/_layout__normal
+
+append startScript
+    - var pageTitle = "About";
+    - var keywordContent = "Some SEO stuff"
+    - var pageDescContent = "Here's a page description"
+    - var pageContent = ".page-wrapper__content__home";
+    - var namespace = 'home'
+
+block content
+    section.content-wrapper.content-wrapper__about-blurb(data-router-view='home')
+        .about-blurb
+            .about-blurb__content
+                .hello-animation
+                    ul.hello-animation__hellos
+                        li Hello
+                        li Hi
+                        li Hola
+                        li Heya
+                        li Hiya
+                        li What's up
+                        li Hey there
+                        li Whoa
+                p.lead I'm Adeolu!
+                    span.p
+                p 
+                    | I'm a front-end UI/UX developer
+                    //love web dev, one of major requirements for staying relevant is continously keep learning
+                    br
+                    | focused on creating interactive and functional web experiences.
+                p 
+                    | I'm originally from  
+                    | <a href="https://www.lonelyplanet.com/nigeria/lagos" target="_blank">Lagos</a>
+                    img(src="public/img/emoji__ng-flag.png", alt="Nigerian flag emoji").emoji
+                    | but reside in <a href="https://www.lonelyplanet.com/usa/the-south/atlanta" target="_blank">Atlanta</a>
+                    img(src="public/img/emoji__peach.png", alt="peach emoji").emoji
+                    | ,
+                    br
+                    | building static websites for small businesses.
+                p <a href="#contact" data-router-disabled>Say hello</a>, or keep exploring. 
+                button.btn more about me 
+    section.content-wrapper.content-wrapper__project-display
+        .project-display
+            h3.project-display__title Projects
+            .project-display__box.project-display__box--blue
+                a.project-display__link(href="/")
+                    .project-display__img
+                        img(src="public/img/work__jmdrums__cover.jpg")
+                    span.project-display__detail-box
+                        span.project-display__detail-box__details
+                            span.project-display__detail-box__details__title 
+                            span.project-display__detail-box__details__subtitle
+                            //- span.project-display__detail-box__details__icon-section
+                            //-     span.project-display__detail-box__details__icon-section__icon
+            .project-display__box.project-display__box--green
+                a.project-display__link(href="/")
+                    .project-display__img
+                        img(src="public/img/work__ctkmc__tablet-and-phone.png")
+                    span.project-display__detail-box
+                        span.project-display__detail-box__details
+                            span.project-display__detail-box__details__title
+                            span.project-display__detail-box__details__subtitle
+                            //- span.project-display__detail-box__details__icon-section
+                            //-     span.project-display__detail-box__details__icon-section__icon
+            .project-display__box.project-display__box--yellow
+                a.project-display__link(href="/")
+                    .project-display__img
+                        img(src="public/img/work__coming-soon.jpg")
+                    span.project-display__detail-box
+                        span.project-display__detail-box__details
+                            span.project-display__detail-box__details__title
+                            span.project-display__detail-box__details__subtitle
+                            //- span.project-display__detail-box__details__icon-section
+                            //-     span.project-display__detail-box__details__icon-section__icon
+            .project-display__box.project-display__box--red
+                a.project-display__link(href="/")
+                    .project-display__img
+                        img(src="public/img/work__coming-soon.jpg")
+                    span.project-display__detail-box
+                        span.project-display__detail-box__details
+                            span.project-display__detail-box__details__title
+                            span.project-display__detail-box__details__subtitle
+                            //- span.project-display__detail-box__details__icon-section
+                            //-     span.project-display__detail-box__details__icon-section__icon
+            .project-display__btn
+        button.btn More Projects
+block endScript

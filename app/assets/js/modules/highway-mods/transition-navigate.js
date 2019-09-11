@@ -12,19 +12,13 @@ out: This method should contain the animation to hide a data-router-view. */
 //Fade
 class Navigate extends Highway.Transition {
 	in({ from, to, done }) {
-		//reset scroll
-		window.scrollTo(0, 0);
-
 		// animation. Call to and done in the function
 		// let container = document.querySelector('main');
+		from.remove();
 		anime({
 			//add duration, starting point, ending point
 			targets: to,
 			opacity: [0, 1],
-			begin: function() {
-				from.remove();
-				to;
-			},
 			complete: done
 		});
 	}
@@ -33,7 +27,7 @@ class Navigate extends Highway.Transition {
 		//animation. Call from and done
 		anime({
 			targets: from,
-			translateY: 270,
+			opacity: [1, 0],
 			complete: done
 		});
 	}
