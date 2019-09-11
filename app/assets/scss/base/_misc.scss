@@ -1,13 +1,25 @@
+//smooth scrolling behavior
+html {
+	scroll-behavior: smooth;
+}
+
+// To affect the maximum size of the svg/logo container
 header a {
 	outline: none;
 	display: block;
 	max-height: 55px;
 	margin-left: -0.535rem;
 }
+//set body overflow to auto for no-js users
+.no-js body {
+	overflow: auto;
+}
 
+//footer class but used to add some UI refreshes to top of page
 .wrapper {
 	border-top: 4px solid $color--secondary;
 	margin-bottom: 4.5em;
+	background-color: #fff;
 }
 
 // Emoji styles for homepage about section
@@ -16,21 +28,6 @@ header a {
 	padding: 0 2px;
 	line-height: 1.5;
 }
-
-// /* Match any class name that starts with icon */
-// [class^="icon"] {
-//     width: 50px;
-//     height: 50px;
-//     position: relative;
-//     top: 15px;
-//     margin-right: 10px;
-//     fill: #fff;
-//   }
-
-//   /* Reposition the music note icon */
-//   .icon-music {
-//     right: 5px;
-//   }
 
 .hidden {
 	display: none;

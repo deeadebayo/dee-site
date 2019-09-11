@@ -9,14 +9,16 @@ html(lang="en")
         meta(name="author", content="Dee Adebayo")
         meta(name="keywords", content=keywordContent)
         meta(name="description" content=pageDescContent)
+        meta(name='theme-color', content='#ff5b61')
         link(rel="stylesheet", href="public/css/styles.css")
+        link(rel='icon', type="image/png", sizes='32x32', href='./../favicon-32x32.png')
+        link(rel='icon', type="image/png", sizes='16x16', href='./../favicon-16x16.png')
     body
         .wrapper
             .page-wrapper.page-wrapper__template
-                header.page-wrapper__template__header
-                    include _includes/navbar
-                .page-wrapper__template__content(class=page)
-                    block content
+                main(data-router-wrapper)
+                    .page-wrapper__template__content(class=page, data-router-view=namespace)
+                        block content
         include ./_includes/footer
         script(src="public/js/script.js")
         block endScript

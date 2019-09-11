@@ -1,9 +1,9 @@
 import { footerAnimation } from './modules/Footer';
-import { clickScroll } from './modules/ClickScroll';
 import { helloAnimation } from './modules/HelloAnimation';
 import { showRandomColor } from './modules/LogoRandomColor';
+// eslint-disable-next-line no-unused-vars
+import { pageAnimation } from './modules/PageAnimation';
 
-footerAnimation();
-clickScroll();
-helloAnimation();
-showRandomColor();
+new footerAnimation();
+new showRandomColor();
+new helloAnimation();

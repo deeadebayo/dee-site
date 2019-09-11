@@ -54,6 +54,34 @@
 		}
 	}
 
+	&__template {
+		margin: 0;
+		transition: width 0.1s;
+
+		@include screen-comp {
+			margin: 0 4.6875rem;
+		}
+
+		@include screen-wide {
+			max-width: 1500px;
+			margin: 0 auto;
+		}
+
+		&__header {
+			.navbar {
+				padding: 2em 0 1em;
+				overflow: hidden;
+			}
+		}
+		&__content {
+			&--about {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-column-gap: 5px;
+			}
+		}
+	}
+
 	&__footer {
 		margin-bottom: 5.5rem;
 		@include screen-comp {
@@ -62,18 +90,6 @@
 		@include screen-wide {
 			max-width: 1500px;
 			margin: 0 auto 5.5rem;
-		}
-	}
-
-	&__template {
-		// &__header {
-		// }
-		&__content {
-			&--about {
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				grid-column-gap: 5px;
-			}
 		}
 	}
 }

@@ -7,7 +7,7 @@
 		padding: 2px 0;
 	}
 
-	&__links {
+	&__list {
 		grid-column: 2/3;
 		display: block;
 
@@ -25,7 +25,7 @@
 					margin-right: 0;
 				}
 
-				a {
+				a.navbar-links {
 					display: block;
 					position: relative;
 					text-decoration: none;
@@ -38,7 +38,9 @@
 						$lower-underline: false
 					);
 
-					&:hover {
+					&:hover,
+					&.active,
+					&:focus {
 						color: $color--primary;
 					}
 				}
