@@ -33,15 +33,16 @@
 
 	&__content {
 		margin: 0 calc(10% - 2em);
-		transition: width 0.1s;
 
 		@include screen-comp {
 			margin: 0 calc(10% - 2em);
+			transition: width 0.1s;
 		}
 
 		@include screen-wide {
 			max-width: 1500px;
 			margin: 0 calc(10% - 2em);
+			transition: width 0.1s;
 		}
 
 		&__home {
