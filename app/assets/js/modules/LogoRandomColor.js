@@ -1,4 +1,4 @@
-function getRandomColor() {
+export function getRandomColor() {
 	const classes = [
 		'logo--primaryColor',
 		'logo--secondaryColor',
@@ -13,9 +13,13 @@ export function showRandomColor() {
 	let logo = document.querySelector('#logo');
 
 	logo.addEventListener('mouseenter', function() {
-		let logoClass = getRandomColor();
+		let logoColorChange = getRandomColor();
 
-		logo.classList.remove('logo--primaryColor', 'logo--secondaryColor', 'logo--accentColor');
-		this.classList.toggle(logoClass);
+		logo.classList.remove(
+			'logo--primaryColor',
+			'logo--secondaryColor',
+			'logo--accentColor'
+		);
+		this.classList.toggle(logoColorChange);
 	});
 }
