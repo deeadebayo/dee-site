@@ -1,4 +1,4 @@
-export function getRandomColor() {
+function getRandomColor() {
 	const classes = [
 		'logo--primaryColor',
 		'logo--secondaryColor',
@@ -15,11 +15,20 @@ export function showRandomColor() {
 	logo.addEventListener('mouseenter', function() {
 		let logoColorChange = getRandomColor();
 
+		if (logo.classList.contains('logo--noColor')) {
+			logo.classList.remove('logo--noColor');
+		}
+
 		logo.classList.remove(
 			'logo--primaryColor',
 			'logo--secondaryColor',
-			'logo--accentColor'
+			'logo--accentColor',
+			'logo--primaryColorHover',
+			'logo--secondaryColorHover',
+			'logo--accentColorHover'
 		);
+
+		console.warn(logo);
 		this.classList.toggle(logoColorChange);
 	});
 }
