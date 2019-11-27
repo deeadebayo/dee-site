@@ -1,4 +1,4 @@
-function getRandomColor() {
+function getRandomHoverColor() {
 	const classes = [
 		'logo--primaryColorHover',
 		'logo--secondaryColorHover',
@@ -16,11 +16,20 @@ export function logoNavHover() {
 
 	items.map(item => {
 		item.addEventListener('mouseenter', () => {
-			let randomColor = getRandomColor(),
-				colorRemoveTime = 2500;
-
+			const randomColor = getRandomHoverColor();
 			logo.classList.remove(
-				'logo--noColor',
+				'logo--primaryColor',
+				'logo--secondaryColor',
+				'logo--accentColor',
+				'logo--primaryColorHover',
+				'logo--secondaryColorHover',
+				'logo--accentColorHover',
+				'logo--noColor'
+			);
+			logo.classList.add(randomColor);
+		});
+		item.addEventListener('mouseout', () => {
+			logo.classList.remove(
 				'logo--primaryColor',
 				'logo--secondaryColor',
 				'logo--accentColor',
@@ -28,23 +37,7 @@ export function logoNavHover() {
 				'logo--secondaryColorHover',
 				'logo--accentColorHover'
 			);
-			// logo.classList.add('logo--noColor');
-			console.warn(logo);
-			logo.classList.toggle(randomColor);
-			if (
-				logo.classList.contains(
-					'logo--primaryColor',
-					'logo--secondaryColor',
-					'logo--accentColor',
-					'logo--primaryColorHover',
-					'logo--secondaryColorHover',
-					'logo--accentColorHover'
-				)
-			) {
-				setTimeout(() => {
-					logo.classList.toggle('logo--noColor');
-				}, colorRemoveTime);
-			}
+			logo.classList.add('logo--noColor');
 		});
 	});
 }

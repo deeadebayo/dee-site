@@ -9,16 +9,23 @@ function getRandomColor() {
 	return classes[currentClass];
 }
 
-export function showRandomColor() {
+export function logoRandomColor() {
 	let logo = document.querySelector('#logo');
 
-	logo.addEventListener('mouseenter', function() {
+	logo.addEventListener('mouseenter', () => {
 		let logoColorChange = getRandomColor();
-
-		if (logo.classList.contains('logo--noColor')) {
-			logo.classList.remove('logo--noColor');
-		}
-
+		logo.classList.remove(
+			'logo--primaryColor',
+			'logo--secondaryColor',
+			'logo--accentColor',
+			'logo--primaryColorHover',
+			'logo--secondaryColorHover',
+			'logo--accentColorHover',
+			'logo--noColor'
+		);
+		logo.classList.toggle(logoColorChange);
+	});
+	logo.addEventListener('mouseleave', () => {
 		logo.classList.remove(
 			'logo--primaryColor',
 			'logo--secondaryColor',
@@ -26,9 +33,8 @@ export function showRandomColor() {
 			'logo--primaryColorHover',
 			'logo--secondaryColorHover',
 			'logo--accentColorHover'
+			// 'logo--noColor'
 		);
-
-		console.warn(logo);
-		this.classList.toggle(logoColorChange);
+		logo.classList.add('logo--noColor');
 	});
 }

@@ -46,6 +46,7 @@ $layer3-hover-delay: 0s;
 			@include logo-animation(transparent, $layer3-hover-delay);
 		}
 	}
+
 	&--primaryColorHover,
 	&--primaryColor:hover {
 		.logo__text-outline {
@@ -80,6 +81,7 @@ $layer3-hover-delay: 0s;
 			@include logo-animation($color--secondary, $layer3-hover-delay);
 		}
 	}
+
 	&--accentColorHover,
 	&--accentColor:hover {
 		.logo__text-outline {
