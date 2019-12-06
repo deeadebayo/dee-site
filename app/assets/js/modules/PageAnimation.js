@@ -1,5 +1,5 @@
 import Highway from '@dogstudio/highway';
-import Fade from './highway-mods/transition-fade';
+import Fade from './highway-mods/transition__fade';
 
 const pageAnimation = new Highway.Core({
 	transitions: {

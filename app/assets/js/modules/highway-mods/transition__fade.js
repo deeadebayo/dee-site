@@ -13,7 +13,6 @@ class Fade extends Highway.Transition {
 	in({ from, to, done }) {
 		// animation. Call to and done in the function
 		from.remove();
-		console.warn(`i'ts happening`);
 		anime({
 			//add duration, starting point, ending point
 			targets: to,
@@ -23,7 +22,6 @@ class Fade extends Highway.Transition {
 		});
 	}
 	out({ from, done }) {
-		console.warn(`and again`);
 		//animation. Call from and done
 		anime({
 			targets: from,
