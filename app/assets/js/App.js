@@ -4,8 +4,10 @@ import { logoRandomColor } from './modules/LogoRandomColor';
 import { logoNavHover } from './modules/LogoNavHover';
 // eslint-disable-next-line no-unused-vars
 import { pageAnimation } from './modules/PageAnimation';
+import { preloaderAnimation } from './modules/PreloaderAnimation';
 
 new footerAnimation();
 new logoRandomColor();
 new logoNavHover();
 new helloAnimation();
+new preloaderAnimation();
