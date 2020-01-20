@@ -1,24 +1,26 @@
 .project-display {
 	grid-template-areas:
-		'title title'
-		'project project'
-		'project project'
-		'more-btn more-btn';
-	grid-template-columns: 1fr 1fr;
+		'title'
+		'project'
+		'more-btn';
 
 	&__title {
 		grid-area: title;
 		text-align: center;
 	}
 
-	&__box {
+	&__container {
 		grid-area: project;
-		grid-column: span 1;
-		grid-row: span 1;
 		display: flex;
-		min-height: 300px;
-		max-height: 500px;
-		width: 100%;
+		flex-wrap: wrap;
+	}
+
+	&__box {
+		flex-basis: 50%;
+		display: flex;
+		flex-direction: column;
+
+		overflow: hidden;
 
 		&:hover .project-display__img {
 			transform: translateY(-65px);
@@ -30,12 +32,10 @@
 
 		a,
 		a img {
-			overflow: hidden;
 			text-decoration: none;
 			border: none;
 			position: relative;
 			width: 100%;
-			// height: auto;
 		}
 
 		&--blue {
@@ -76,10 +76,10 @@
 	}
 
 	.project-display__img {
-		transform: translateY(0);
 		transition: transform 0.25s ease-in-out 0.01s;
 		transition-delay: 0.01s;
 		display: flex;
+		flex-grow: 1;
 		align-items: center;
 		justify-content: center;
 
@@ -93,7 +93,6 @@
 
 	.project-display__detail-box {
 		position: absolute;
-		// left: 0;
 		bottom: 0;
 		transform: translateY(108px);
 		height: 108px;
@@ -113,6 +112,7 @@
 			}
 
 			&__icon-section {
+				background-color: black;
 				&__icon {
 				}
 			}
