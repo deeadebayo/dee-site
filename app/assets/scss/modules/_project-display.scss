@@ -24,11 +24,16 @@
 	}
 
 	&__item {
-		flex-basis: 50%;
+		transition: all 0.2s ease-in-out;
+		flex-basis: 100%;
 		display: flex;
 		flex-direction: column;
 		overflow: hidden;
 		flex-grow: 1;
+
+		@include screen-tablet {
+			flex-basis: 50%;
+		}
 
 		&:hover .project-display__img {
 			transform: translateY(-65px);
