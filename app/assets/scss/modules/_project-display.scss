@@ -13,6 +13,14 @@
 		grid-area: project;
 		display: flex;
 		flex-wrap: wrap;
+
+		a,
+		a img {
+			text-decoration: none;
+			border: none;
+			position: relative;
+			width: 100%;
+		}
 	}
 
 	&__box {
@@ -27,14 +35,6 @@
 
 		&:hover .project-display__detail-box {
 			transform: translateY(0);
-		}
-
-		a,
-		a img {
-			text-decoration: none;
-			border: none;
-			position: relative;
-			width: 100%;
 		}
 
 		&--blue {
