@@ -1,5 +1,5 @@
 .page-wrapper {
-	margin: 0 calc(15% - 2em);
+	margin: 0 auto;
 	box-sizing: border-box;
 
 	&__header {
@@ -16,6 +16,7 @@
 		justify-content: center;
 		align-items: center;
 		height: 100vh;
+		max-width: calc(90% - 3.5rem);
 
 		@include screen-comp {
 			margin: 0 4.6875rem;
@@ -32,16 +33,17 @@
 	}
 
 	&__content {
-		margin: 0 calc(10% - 2em);
+		margin: 0 auto;
+		max-width: calc(90% - 3.5rem);
 
 		@include screen-comp {
-			margin: 0 calc(10% - 2em);
+			margin: 0 auto;
 			transition: width 0.1s;
 		}
 
 		@include screen-wide {
 			max-width: 1500px;
-			margin: 0 calc(10% - 2em);
+			margin: 0 auto;
 			transition: width 0.1s;
 		}
 
@@ -63,14 +65,15 @@
 
 	&__footer {
 		margin-bottom: 5.5rem;
+		max-width: calc(90% - 3.5rem);
 
 		@include screen-comp {
-			margin: 0 calc(10% - 2em) 5.5rem;
+			margin: 0 auto 5.5rem;
 		}
 
 		@include screen-wide {
 			max-width: 1500px;
-			margin: 0 calc(10% - 2em) 5.5rem;
+			margin: 0 auto 5.5rem;
 		}
 	}
 }
