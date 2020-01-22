@@ -86,14 +86,18 @@
 
 			&__details {
 				display: block;
-				padding: 1.6875rem 9.375rem 1.875rem 1.875rem;
+				padding: 1.2rem 1.875rem;
 				position: relative;
 				color: $color--text-default;
 
 				&__title {
+					@include font('title');
+					line-height: 1.4;
 				}
 
 				&__subtitle {
+					@include font('paragraph');
+					line-height: 1.4;
 				}
 
 				&__icon-section {
