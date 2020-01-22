@@ -112,17 +112,72 @@
 			}
 
 			&__icon-section {
-				background-color: black;
+				background-color: green;
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 108px;
+				overflow: hidden;
+				height: 108px;
+
 				&__icon {
+					display: block;
+					position: absolute;
+
+					svg {
+						$ease: cubic-bezier(0.2, 1, 0.3, 1);
+						width: 100px;
+						height: auto;
+						margin: 0.3rem;
+						cursor: pointer;
+						overflow: visible;
+
+						path {
+							transition: all 0.25s $ease;
+						}
+
+						&:hover path {
+							transition: all 0.3s $ease;
+							fill: $color--primary;
+						}
+
+						&:hover .layer-1 {
+							animation: arrow-anim 1.8s $ease infinite;
+						}
+						&:hover .layer-2 {
+							animation: arrow-fixed-anim 1.8s $ease infinite;
+						}
+					}
+				}
+
+				@keyframes arrow-anim {
+					0% {
+						opacity: 1;
+						transform: translateX(0);
+					}
+					5% {
+						transform: translateX(-0.1rem);
+					}
+					100% {
+						transform: translateX(1rem);
+						opacity: 0;
+					}
+				}
+
+				@keyframes arrow-fixed-anim {
+					5% {
+						opacity: 0;
+					}
+					20% {
+						opacity: 0.4;
+					}
+					100% {
+						opacity: 1;
+					}
 				}
 			}
 		}
 	}
-
-	// &__link {
-	//     text-decoration: none;
-	//     overflow: hidden;
-	// }
 
 	&__btn {
 		margin: 3rem 0;
