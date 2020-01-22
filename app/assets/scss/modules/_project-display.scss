@@ -1,4 +1,5 @@
 .project-display {
+	padding: 1rem 0 4rem;
 	grid-template-areas:
 		'title'
 		'project'
@@ -14,8 +15,7 @@
 		display: flex;
 		flex-wrap: wrap;
 
-		a,
-		a img {
+		a {
 			text-decoration: none;
 			border: none;
 			position: relative;
@@ -23,11 +23,12 @@
 		}
 	}
 
-	&__box {
+	&__item {
 		flex-basis: 50%;
 		display: flex;
 		flex-direction: column;
 		overflow: hidden;
+		flex-grow: 1;
 
 		&:hover .project-display__img {
 			transform: translateY(-65px);
@@ -40,138 +41,124 @@
 		&--blue {
 			background-color: $color--primary;
 			border-top-left-radius: 5px;
-
-			a {
-				border-top-left-radius: 5px;
-			}
 		}
 
 		&--green {
 			background-color: $color--secondary;
 			border-top-right-radius: 5px;
-
-			a {
-				border-top-right-radius: 5px;
-			}
 		}
 
 		&--yellow {
 			background-color: $color--accent;
 			border-bottom-left-radius: 5px;
-
-			a {
-				border-bottom-left-radius: 5px;
-			}
 		}
 
 		&--red {
 			background-color: $color--alert;
 			border-bottom-right-radius: 5px;
+		}
 
-			a {
-				border-bottom-right-radius: 5px;
+		.project-display__img {
+			transition: transform 0.25s ease-in-out 0.01s;
+			transition-delay: 0.01s;
+			display: flex;
+			flex-grow: 1;
+			align-items: center;
+			justify-content: center;
+			height: 40vh;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				vertical-align: bottom;
 			}
 		}
-	}
 
-	.project-display__img {
-		transition: transform 0.25s ease-in-out 0.01s;
-		transition-delay: 0.01s;
-		display: flex;
-		flex-grow: 1;
-		align-items: center;
-		justify-content: center;
+		.project-display__detail-box {
+			position: absolute;
+			bottom: 0;
+			transform: translateY(108px);
+			height: 108px;
+			width: 100%;
+			transition: transform 0.2s ease-in-out;
+			background-color: #f9f9f9;
 
-		img {
-			display: block;
-			max-width: 100%;
-			height: auto;
-			object-fit: cover;
-		}
-	}
+			&__details {
+				display: block;
+				padding: 1.6875rem 9.375rem 1.875rem 1.875rem;
+				position: relative;
+				color: $color--text-default;
 
-	.project-display__detail-box {
-		position: absolute;
-		bottom: 0;
-		transform: translateY(108px);
-		height: 108px;
-		width: 100%;
-		transition: transform 0.2s ease-in-out;
-		background-color: $color--accent;
+				&__title {
+				}
 
-		&__details {
-			display: block;
-			padding: 1.6875rem 9.375rem 1.875rem 1.875rem;
-			position: relative;
+				&__subtitle {
+				}
 
-			&__title {
-			}
-
-			&__subtitle {
-			}
-
-			&__icon-section {
-				background-color: green;
-				position: absolute;
-				right: 0;
-				top: 0;
-				width: 108px;
-				overflow: hidden;
-				height: 108px;
-
-				&__icon {
-					display: block;
+				&__icon-section {
+					background-color: green;
 					position: absolute;
+					right: 0;
+					top: 0;
+					width: 108px;
+					overflow: hidden;
+					height: 108px;
 
-					svg {
-						$ease: cubic-bezier(0.2, 1, 0.3, 1);
-						width: 100px;
-						height: auto;
-						margin: 0.3rem;
-						cursor: pointer;
-						overflow: visible;
+					&__icon {
+						display: block;
+						position: absolute;
 
-						path {
-							transition: all 0.25s $ease;
+						svg {
+							$ease: cubic-bezier(0.2, 1, 0.3, 1);
+							width: 100px;
+							height: auto;
+							margin: 0.3rem;
+							cursor: pointer;
+							overflow: visible;
+
+							path {
+								transition: all 0.25s $ease;
+							}
+
+							&:hover path {
+								transition: all 0.3s $ease;
+								fill: $color--primary;
+							}
+
+							&:hover .layer-1 {
+								animation: arrow-anim 1.8s $ease infinite;
+							}
+							&:hover .layer-2 {
+								animation: arrow-fixed-anim 1.8s $ease infinite;
+							}
 						}
+					}
 
-						&:hover path {
-							transition: all 0.3s $ease;
-							fill: $color--primary;
+					@keyframes arrow-anim {
+						0% {
+							opacity: 1;
+							transform: translateX(0);
 						}
-
-						&:hover .layer-1 {
-							animation: arrow-anim 1.8s $ease infinite;
+						5% {
+							transform: translateX(-0.1rem);
 						}
-						&:hover .layer-2 {
-							animation: arrow-fixed-anim 1.8s $ease infinite;
+						100% {
+							transform: translateX(1rem);
+							opacity: 0;
 						}
 					}
-				}
 
-				@keyframes arrow-anim {
-					0% {
-						opacity: 1;
-						transform: translateX(0);
-					}
-					5% {
-						transform: translateX(-0.1rem);
-					}
-					100% {
-						transform: translateX(1rem);
-						opacity: 0;
-					}
-				}
-
-				@keyframes arrow-fixed-anim {
-					5% {
-						opacity: 0;
-					}
-					20% {
-						opacity: 0.4;
-					}
-					100% {
-						opacity: 1;
+					@keyframes arrow-fixed-anim {
+						5% {
+							opacity: 0;
+						}
+						20% {
+							opacity: 0.4;
+						}
+						100% {
+							opacity: 1;
+						}
 					}
 				}
 			}
@@ -179,7 +166,7 @@
 	}
 
 	&__btn {
-		margin: 3rem 0;
+		margin: 5rem 0 2rem;
 		grid-area: more-btn;
 		text-align: center;
 	}
