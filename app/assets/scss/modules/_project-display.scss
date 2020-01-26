@@ -136,19 +136,14 @@
 							overflow: visible;
 
 							path {
-								transition: all 0.25s $ease;
-							}
-
-							&:hover path {
-								transition: all 0.3s $ease;
-								fill: $color--primary;
+								fill: white;
 							}
 
 							&:hover .layer-1 {
-								animation: arrow-anim 1.8s $ease infinite;
+								animation: arrow-anim 2s $ease infinite;
 							}
 							&:hover .layer-2 {
-								animation: arrow-fixed-anim 1.8s $ease infinite;
+								animation: arrow-fixed-anim 2s $ease infinite;
 							}
 						}
 					}
@@ -161,6 +156,10 @@
 						5% {
 							transform: translateX(-0.1rem);
 						}
+						45% {
+							transform: translateX(1rem);
+							opacity: 0;
+						}
 						100% {
 							transform: translateX(1rem);
 							opacity: 0;
@@ -172,7 +171,10 @@
 							opacity: 0;
 						}
 						20% {
-							opacity: 0.4;
+							opacity: 0.2;
+						}
+						45% {
+							opacity: 1;
 						}
 						100% {
 							opacity: 1;
