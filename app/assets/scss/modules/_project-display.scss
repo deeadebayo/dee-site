@@ -55,14 +55,15 @@
 			@include screen-tablet {
 				border-top-right-radius: 5px;
 			}
-			@include iconColor($color--secondary);
+			@include iconColor($color--rare);
 		}
 
 		&:nth-child(3) {
 			@include screen-tablet {
 				border-bottom-left-radius: 5px;
 			}
-			@include iconColor($color--accent);
+			@include iconColor($color--secondary);
+			background-color: $color--rare;
 		}
 
 		&:last-of-type {
@@ -70,7 +71,7 @@
 			@include screen-tablet {
 				border-radius: 0 0 5px 0;
 			}
-			@include iconColor($color--alert);
+			@include iconColor($color--accent);
 		}
 
 		.project-display__img {
