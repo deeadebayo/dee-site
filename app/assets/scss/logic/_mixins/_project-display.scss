@@ -1,0 +1,6 @@
+@mixin iconColor($color) {
+	background-color: $color;
+	& .project-display__detail-container__details__icon-section__icon {
+		background-color: $color;
+	}
+}

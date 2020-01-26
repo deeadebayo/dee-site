@@ -39,28 +39,38 @@
 			transform: translateY(-65px);
 		}
 
-		&:hover .project-display__detail-box {
+		&:hover .project-display__detail-container {
 			transform: translateY(0);
 		}
 
-		&--blue {
-			background-color: $color--primary;
-			border-top-left-radius: 5px;
+		&:first-of-type {
+			border-radius: 5px 5px 0 0;
+			@include screen-tablet {
+				border-radius: 5px 0 0 0;
+			}
+			@include iconColor($color--primary);
 		}
 
-		&--green {
-			background-color: $color--secondary;
-			border-top-right-radius: 5px;
+		&:nth-child(2) {
+			@include screen-tablet {
+				border-top-right-radius: 5px;
+			}
+			@include iconColor($color--secondary);
 		}
 
-		&--yellow {
-			background-color: $color--accent;
-			border-bottom-left-radius: 5px;
+		&:nth-child(3) {
+			@include screen-tablet {
+				border-bottom-left-radius: 5px;
+			}
+			@include iconColor($color--accent);
 		}
 
-		&--red {
-			background-color: $color--alert;
-			border-bottom-right-radius: 5px;
+		&:last-of-type {
+			border-radius: 0 0 5px 5px;
+			@include screen-tablet {
+				border-radius: 0 0 5px 0;
+			}
+			@include iconColor($color--alert);
 		}
 
 		.project-display__img {
@@ -80,7 +90,7 @@
 			}
 		}
 
-		.project-display__detail-box {
+		.project-display__detail-container {
 			position: absolute;
 			bottom: 0;
 			transform: translateY(108px);
@@ -97,7 +107,7 @@
 
 				&__title {
 					@include font('title');
-					line-height: 1.4;
+					line-height: 1.7;
 				}
 
 				&__subtitle {
@@ -106,7 +116,6 @@
 				}
 
 				&__icon-section {
-					background-color: green;
 					position: absolute;
 					right: 0;
 					top: 0;

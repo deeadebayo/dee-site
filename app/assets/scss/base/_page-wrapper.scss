@@ -16,7 +16,10 @@
 		justify-content: center;
 		align-items: center;
 		height: 100vh;
-		max-width: calc(90% - 3.5rem);
+		max-width: calc(90% - 0.5rem);
+		@include screen-phablet {
+			max-width: calc(92% - 1rem);
+		}
 
 		@include screen-comp {
 			margin: 0 4.6875rem;
@@ -34,7 +37,10 @@
 
 	&__content {
 		margin: 0 auto;
-		max-width: calc(90% - 3.5rem);
+		max-width: calc(90% - 0.5rem);
+		@include screen-phablet {
+			max-width: calc(92% - 1rem);
+		}
 
 		@include screen-comp {
 			margin: 0 auto;
@@ -64,7 +70,10 @@
 
 	&__footer {
 		margin-bottom: 5.5rem;
-		max-width: calc(90% - 3.5rem);
+		max-width: calc(90% - 0.5rem);
+		@include screen-phablet {
+			max-width: calc(92% - 1rem);
+		}
 
 		@include screen-comp {
 			margin: 0 auto 5.5rem;
