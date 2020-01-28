@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Merriweather:400|Muli:300,700');
+@import url('https://fonts.googleapis.com/css?family=Philosopher:400,700|Muli:400,700');
 
 // $screen-phone-min: 425px; // The smallest of phones, make this basic or bigger
 // $screen-phablet-min: 768px; // Tablet in portrait mode
@@ -42,7 +42,7 @@ $ms-range: (
 
 p {
 	font-family: $font--muli;
-	font-weight: 300;
+	font-weight: 400;
 	line-height: 1.5;
 	// @include ms-respond(font-size, 3)
 	@include ms-respond(font-size, 0);
@@ -64,9 +64,9 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: $font--merriweather;
+	font-family: $font--philosopher;
 	color: $color--dark;
-	font-weight: 400;
+	font-weight: 700;
 }
 
 a {

@@ -9,10 +9,10 @@
 	background-color: $color--gray__lighter;
 
 	// Forcing a full window div, then "animating" it up (while filling in SVG colors) for a loading effect
-	// &--slideUp {
-	// 	animation: slideUp 1.5s ease-out 1.4s 1 both;
-	// 	animation-name: slideUp;
-	// }
+	&--slideUp {
+		animation: slideUp 1.5s ease-out 1.4s 1 both;
+		animation-name: slideUp;
+	}
 
 	&__logo {
 		stroke-width: 0.1px;
@@ -42,15 +42,15 @@
 	}
 }
 
-// @keyframes slideUp {
-// 	0% {
-// 		height: 100vh;
-// 	}
+@keyframes slideUp {
+	0% {
+		height: 100vh;
+	}
 
-// 	100% {
-// 		height: 0;
-// 	}
-// }
+	100% {
+		height: 0;
+	}
+}
 
 @keyframes fadeInOut {
 	0% {

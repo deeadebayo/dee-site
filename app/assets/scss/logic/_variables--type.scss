@@ -1,7 +1,13 @@
 // Typography
-$font--merriweather: 'Merriweather', Constantia, 'Lucida Bright', Lucidabright,
-	'Lucida Serif', Lucida, 'DejaVu Serif', 'Bitstream Vera Serif',
-	'Liberation Serif', Georgia, serif;
+//-saving this line in case of serif font in future
+// $font--merriweather: 'Merriweather', Constantia, 'Lucida Bright', Lucidabright,
+// 	'Lucida Serif', Lucida, 'DejaVu Serif', 'Bitstream Vera Serif',
+// 	'Liberation Serif', Georgia, serif;
+
+$font--philosopher: 'Philosopher', 'Muli', Frutiger, 'Frutiger Linotype',
+	Univers, Calibri, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad,
+	'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva,
+	'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 $font--muli: 'Muli', Frutiger, 'Frutiger Linotype', Univers, Calibri,
 	'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad, 'DejaVu Sans Condensed',
