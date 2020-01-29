@@ -1,5 +1,4 @@
 .page-animation {
-	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -8,9 +7,29 @@
 	overflow: hidden;
 	background-color: $color--gray__lighter;
 
+	&--color1 {
+		background-color: $color--secondary;
+	}
+
+	&--color2 {
+		background-color: $color--secondary;
+	}
+
+	&--color3 {
+		background-color: $color--secondary;
+	}
+
+	&--color4 {
+		background-color: $color--secondary;
+	}
+
+	&--color5 {
+		background-color: $color--secondary;
+	}
+
 	// Forcing a full window div, then "animating" it up (while filling in SVG colors) for a loading effect
 	&--slideUp {
-		animation: slideUp 1.5s ease-out 1.4s 1 both;
+		animation: slideUp 1.5s ease-in-out 1.4s 1 both;
 		animation-name: slideUp;
 	}
 
