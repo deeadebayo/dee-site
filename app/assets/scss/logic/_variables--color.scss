@@ -1,12 +1,26 @@
-$color--primary: hsl(358, 100%, 68%);
-$color--secondary: hsl(175, 100%, 33%);
-$color--accent: hsl(16, 97%, 58%);
-$color--rare: hsl(39, 98%, 58%);
-$color--alert: hsl(356, 69%, 54%);
-
+// Grays
 $color--text-black: hsl(0, 0%, 17%);
 $color--text-header: hsl(0, 0%, 20%);
 $color--text-default: hsl(0, 0%, 28%);
 $color--dark: hsl(0, 0%, 28%);
 $color--gray: hsl(0, 0%, 46%);
 $color--gray__lighter: hsl(0, 0%, 85%);
+
+$color--gray_0: hsl(210, 17%, 98%); //light background
+$color--gray_1: hsl(210, 17%, 95%); // medium background
+
+$color--gray_3: hsl(210, 14%, 89%); // light stroke/border
+$color--gray_4: hsl(210, 14%, 83%); // medium stroke/border
+
+$color--gray_6: hsl(210, 7%, 56%); // disabled/light text
+$color--gray_7: hsl(210, 9%, 31%); // body text
+$color--gray_8: hsl(210, 10%, 23%); // title text
+
+// Primaries
+$color--primary: hsl(358, 100%, 68%);
+$color--secondary: hsl(175, 100%, 33%);
+
+// Accents
+$color--accent: hsl(16, 97%, 58%);
+$color--rare: hsl(39, 98%, 58%);
+$color--alert: hsl(356, 69%, 54%);
