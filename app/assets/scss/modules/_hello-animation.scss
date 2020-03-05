@@ -8,7 +8,7 @@ $hello__line-height: 56.1562px; // probably have to put something for relative s
 		list-style: none;
 		margin-top: 0;
 		padding-left: 0;
-		color: $color--dark;
+		color: $color--neutral_text-title;
 
 		li {
 			@include ms-respond(font-size, 3);
@@ -64,7 +64,7 @@ $hello__line-height: 56.1562px; // probably have to put something for relative s
 			}
 
 			&:first-child {
-				color: $color--secondary;
+				color: $color--primary;
 			}
 
 			li {

@@ -10,7 +10,7 @@ $layer2-hover-delay: 0.15s;
 $layer3-hover-delay: 0s;
 
 .logo {
-	stroke: $color--gray;
+	stroke: $color--neutral_stroke-med;
 	stroke-width: 0.1px;
 	max-height: 51px;
 
@@ -36,23 +36,6 @@ $layer3-hover-delay: 0s;
 			opacity: 0;
 		}
 		.logo__layer-1 {
-			@include logo-animation($color--primary, $layer1-hover-delay);
-		}
-
-		.logo__layer-2 {
-			@include logo-animation($color--primary, $layer2-hover-delay);
-		}
-
-		.logo__layer-3 {
-			@include logo-animation($color--primary, $layer3-hover-delay);
-		}
-	}
-	&--secondaryColorHover,
-	&--secondaryColor:hover {
-		.logo__text-outline {
-			opacity: 0;
-		}
-		.logo__layer-1 {
 			@include logo-animation($color--secondary, $layer1-hover-delay);
 		}
 
@@ -62,6 +45,23 @@ $layer3-hover-delay: 0s;
 
 		.logo__layer-3 {
 			@include logo-animation($color--secondary, $layer3-hover-delay);
+		}
+	}
+	&--secondaryColorHover,
+	&--secondaryColor:hover {
+		.logo__text-outline {
+			opacity: 0;
+		}
+		.logo__layer-1 {
+			@include logo-animation($color--primary, $layer1-hover-delay);
+		}
+
+		.logo__layer-2 {
+			@include logo-animation($color--primary, $layer2-hover-delay);
+		}
+
+		.logo__layer-3 {
+			@include logo-animation($color--primary, $layer3-hover-delay);
 		}
 	}
 

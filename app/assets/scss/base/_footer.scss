@@ -55,7 +55,7 @@ body.tight .wrapper {
 
 	a {
 		@include underline-animation(
-			$color--secondary,
+			$color--primary--dark,
 			'right',
 			$lower-underline: true
 		);
