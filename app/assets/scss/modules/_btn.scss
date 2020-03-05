@@ -2,10 +2,10 @@
 	position: relative;
 	outline: none;
 	transition: all 0.2s ease-in-out;
-	border: 1px solid $color--primary;
+	border: 1px solid $color--secondary;
 	box-shadow: 0 3px 6px 1px hsla(224, 62%, 24%, 0.24);
 	background: transparent;
-	color: $color--primary;
+	color: $color--secondary;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
 	font-size: 1.2rem;
@@ -17,15 +17,15 @@
 	transform: translate3d(0, 0, 0);
 
 	&:hover {
-		background: $color--secondary;
-		border: 1px solid $color--secondary;
+		background: $color--primary--dark;
+		border: 1px solid $color--primary--dark;
 		color: white;
 	}
 
 	&:active {
 		transform: scale3d(0.95, 0.95, 0.95);
 		box-shadow: 0 0px 0px hsla(224, 62%, 24%, 0.24);
-		background: darken($color--secondary, 10);
+		background: $color--primary--darker;
 	}
 
 	//animate the pseudo-element for performant reasons. Hide and show with opacity 0. Make it work on shrink, not just grow

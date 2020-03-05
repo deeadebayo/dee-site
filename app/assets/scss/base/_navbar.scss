@@ -30,10 +30,10 @@
 					position: relative;
 					text-decoration: none;
 					// text-transform: capitalize;
-					color: $color--text-black;
+					color: $color--neutral_text-dark;
 					// @include ms-respond(font-size, 1);
 					@include underline-animation(
-						$color--primary,
+						$color--secondary--dark,
 						'left',
 						$lower-underline: false
 					);
@@ -41,7 +41,7 @@
 					&:hover,
 					&.active,
 					&:focus {
-						color: $color--primary;
+						color: $color--secondary--dark;
 					}
 				}
 			}

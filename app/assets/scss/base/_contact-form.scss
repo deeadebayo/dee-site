@@ -1,7 +1,7 @@
 .contact-form {
 	background: white;
 	border-radius: 5px;
-	border: 1px solid $color--neutral_border-light;
+	border: 1px solid $color--neutral_stroke-light;
 	padding: 1.5em 2em;
 	box-shadow: 1px 1px 4px hsla(0, 0%, 0%, 0.4);
 
@@ -88,13 +88,13 @@
 	input {
 		font-family: $font--muli;
 		font-weight: 400;
-		color: $color--text-default;
+		color: $color--neutral_text-body;
 
 		&[type='text'] {
 			transition: all 0.3s ease-in-out;
 			box-sizing: border-box;
 			border: none;
-			border-bottom: 2px solid $color--gray;
+			border-bottom: 2px solid $color--neutral_stroke-dark;
 			// border-top-left-radius: 4px;
 			// border-top-right-radius: 4px;
 			@include ms-respond(font-size, 0);
@@ -105,13 +105,12 @@
 			bottom: 0.16rem;
 
 			&:hover {
-				background: lighten($color--secondary, 5%);
+				background: $color--primary--dark;
 				border-bottom: 2px solid transparent;
 			}
 
 			&:focus {
-				background: $color--secondary
-					linear-gradient(hsla(0, 0%, 0%, 0.5), hsla(0, 0%, 0%, 0.5));
+				background: $color--primary--darker;
 				border-bottom: 2px solid transparent;
 				color: white;
 			}
@@ -124,10 +123,10 @@
 			position: relative;
 			outline: none;
 			transition: all 0.2s ease-in-out;
-			border: 1px solid $color--primary;
+			border: 1px solid $color--secondary;
 			box-shadow: 0 3px 6px 1px rgba(23, 43, 99, 0.24);
 			background: transparent;
-			color: $color--primary;
+			color: $color--secondary;
 			letter-spacing: 0.1rem;
 			font-size: 1.2rem;
 			border-radius: 4px;
@@ -138,36 +137,36 @@
 			transform: translate3d(0, 0, 0);
 
 			&:hover {
-				background: $color--secondary;
-				border: 1px solid $color--secondary;
+				background: $color--primary--dark;
+				border: 1px solid $color--primary--dark;
 				color: white;
 			}
 
 			&:active {
 				transform: scale3d(0.95, 0.95, 0.95);
 				box-shadow: 0 0px 0px rgba(23, 43, 99, 0.24);
-				background: darken($color--secondary, 10%);
+				background: $color--primary--darker;
 			}
 		}
 	}
 
 	textarea {
-		border: 2px solid $color--gray;
+		border: 2px solid $color--neutral_stroke-med;
 		width: 90%;
 		padding: 0.625rem 0.8rem;
 		overflow: auto;
 
 		font-family: $font--muli;
 		font-weight: 300;
-		color: $color--text-default;
+		color: $color--neutral_text-body;
 		font-size: 1.2rem;
 
 		&:hover {
-			border: 2px solid lighten($color--secondary, 5%);
+			border: 2px solid $color--primary--dark;
 		}
-		&:focus,
-		&:active {
-			border: 2px solid darken($color--secondary, 10%);
+		&:active,
+		&:focus {
+			border: 2px solid $color--primary--darker;
 		}
 	}
 }

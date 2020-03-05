@@ -45,7 +45,7 @@
 			@include screen-tablet {
 				border-radius: 5px 0 0 0;
 			}
-			@include iconColor($color--primary);
+			@include iconColor($color--secondary);
 		}
 
 		&:nth-child(2) {
@@ -59,7 +59,7 @@
 			@include screen-tablet {
 				border-bottom-left-radius: 5px;
 			}
-			@include iconColor($color--secondary);
+			@include iconColor($color--primary);
 		}
 
 		&:last-of-type {
@@ -92,13 +92,13 @@
 			height: 108px;
 			width: 100%;
 			transition: transform 0.2s ease-in-out;
-			background-color: #f9f9f9;
+			background-color: $color--neutral_bg-light;
 
 			&__details {
 				display: block;
 				padding: 1.2rem 1.875rem;
 				position: relative;
-				color: $color--text-default;
+				color: $color--neutral_text-body;
 
 				&__title {
 					@include font('title');

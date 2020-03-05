@@ -46,7 +46,7 @@ p {
 	line-height: 1.5;
 	// @include ms-respond(font-size, 3)
 	@include ms-respond(font-size, 0);
-	color: $color--text-default;
+	color: $color--neutral_text-body;
 
 	&.small {
 		@include ms-respond(font-size, -1);
@@ -65,19 +65,19 @@ h4,
 h5,
 h6 {
 	font-family: $font--philosopher;
-	color: $color--dark;
+	color: $color--neutral_text-title;
 	font-weight: 700;
 }
 
 a {
 	font-family: $font--muli;
 	font-weight: 700;
-	color: $color--primary;
+	color: $color--secondary;
 	transition: color 0.2s ease-in-out;
 	text-decoration: none;
 
 	&:hover {
-		color: $color--secondary;
+		color: $color--primary;
 		cursor: pointer;
 	}
 }
@@ -99,5 +99,5 @@ h4 {
 }
 
 .title--big {
-	color: $color--text-header;
+	color: $color--neutral_text-dark;
 }

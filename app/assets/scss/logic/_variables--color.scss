@@ -1,9 +1,10 @@
 // Black + White
-$color--neutral_bg-light: hsl(210, 20%, 98%);
-$color--neutral_bg-med: hsl(210, 15%, 95%);
+$color--neutral_bg-light: hsl(210, 20%, 95%);
+$color--neutral_bg-med: hsl(210, 15%, 85%);
 
-$color--neutral_border-light: hsl(210, 14%, 89%);
-$color--neutral_border-med: hsl(210, 14%, 83%);
+$color--neutral_stroke-light: hsl(210, 14%, 92%);
+$color--neutral_stroke-med: hsl(210, 14%, 83%);
+$color--neutral_stroke-dark: hsl(0, 0%, 46%);
 
 $color--neutral_text-light: hsl(210, 7%, 56%);
 $color--neutral_text-dark: hsl(0, 0%, 17%); // for standout dark text
@@ -11,11 +12,11 @@ $color--neutral_text-body: hsl(210, 9%, 31%);
 $color--neutral_text-title: hsl(210, 10%, 23%);
 
 // Main Colors
-$color--primary--lighter: hsl(175, 100%, 53%);
-$color--primary--light: hsl(175, 100%, 43%);
+$color--primary--lighter: hsl(175, 100%, 51%);
+$color--primary--light: hsl(175, 100%, 41%);
 $color--primary: hsl(175, 100%, 33%);
-$color--primary--dark: hsl(175, 100%, 23%);
-$color--primary--darker: hsl(175, 100%, 13%);
+$color--primary--dark: hsl(175, 100%, 25%);
+$color--primary--darker: hsl(175, 90%, 15%);
 
 $color--secondary--lighter: hsl(358, 100%, 88%);
 $color--secondary--light: hsl(358, 100%, 78%);
