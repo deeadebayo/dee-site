@@ -48,7 +48,7 @@
 		"gulp-sourcemaps": "^2.6.5",
 		"gulp-uglify": "^3.0.2",
 		"imagemin-pngquant": "^8.0.0",
-		"jquery": "^3.4.1",
+		"jquery": "^3.5.0",
 		"lite-server": "^2.5.3",
 		"modularscale-sass": "^3.0.8",
 		"node-sass": "^4.12.0",
