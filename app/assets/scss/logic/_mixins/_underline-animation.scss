@@ -1,12 +1,12 @@
-@mixin underline-animation($color, $endpoint, $lower-underline) {
+@mixin underline-animation(
+	$color,
+	$endPoint,
+	$lowerUnderline,
+	$bodyLink: false,
+	$endColor: $color
+) {
 	position: relative;
-    
-    &:hover::after {
-        width: 100%;
-        transition: 0.3s ease all;
-    }
-    
-    &::after {
+	&::after {
 		content: '';
 		position: absolute;
 		bottom: 0;
@@ -14,25 +14,39 @@
 		width: 0%;
 		background-color: $color;
 		transition: 0.2s ease-in-out all;
-    }
-    
-    @if $endpoint == 'right' {
-        &::after {
-            left: 0;
-        }
-    } @else if $endpoint == 'left' {
-        //only for navbar links
-        &::after {
-            right: 0;
-            background-color: $color;
-        }
-    } @else {
-        
-    }
+	}
 
-    @if $lower-underline {
-        &::after {
-            bottom: -2px;
-        }
-    }
+	&:hover::after {
+		width: 100%;
+		background-color: $endColor;
+	}
+
+	@if $endPoint == 'right' {
+		&::after {
+			left: 0;
+		}
+	} @else if $endPoint == 'left' {
+		//only for navbar links
+		&::after {
+			right: 0;
+			background-color: $color;
+		}
+	} @else {
+	}
+
+	@if $lowerUnderline {
+		&::after {
+			bottom: -1px;
+		}
+	}
+
+	@if $bodyLink {
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
+		&::after {
+			bottom: 2px;
+		}
+	}
 }
