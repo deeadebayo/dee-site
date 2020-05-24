@@ -13,24 +13,24 @@ $modularscale: (
 		$screen-phone-min:
 		(
 			base: 16px,
-			ratio: 20at1 // ratio: $minor-third//1.2
+			ratio: 20at1 // ratio: $minor-third//1.2,
 		),
 	$screen-phablet-min: (
 		base: 21px,
-		ratio: $fourth
+		ratio: $fourth,
 	),
 	$screen-tablet-min: (
 		base: 22px,
-		ratio: $fourth
+		ratio: $fourth,
 	),
 	$screen-comp-min: (
 		base: 22px,
-		ratio: $fourth
+		ratio: $fourth,
 	),
 	$screen-wide-min: (
 		base: 25px,
-		ratio: $fourth
-	)
+		ratio: $fourth,
+	),
 );
 
 $ms-fluid: false;
@@ -79,6 +79,10 @@ a {
 	&:hover {
 		color: $color--primary;
 		cursor: pointer;
+	}
+
+	&:focus {
+		outline: thin dotted;
 	}
 }
 

@@ -13,7 +13,9 @@
 			@include underline-animation(
 				$color--primary,
 				'right',
-				$lower-underline: true
+				$lowerUnderline: true,
+				$bodyLink: true,
+				$endColor: $color--primary--dark
 			);
 		}
 	}
