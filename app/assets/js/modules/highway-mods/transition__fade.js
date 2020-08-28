@@ -9,27 +9,27 @@ in: This method should contain the animation to display a data-router-view.
 out: This method should contain the animation to hide a data-router-view. */
 
 //Fade
-class Fade extends Highway.Transition {
-	in({ from, to, done }) {
-		// animation. Call to and done in the function
-		from.remove();
-		anime({
-			//add duration, starting point, ending point
-			targets: to,
-			opacity: [0, 1],
-			complete: done,
-			easing: 'linear'
-		});
-	}
+export default class Fade extends Highway.Transition {
 	out({ from, done }) {
 		//animation. Call from and done
 		anime({
 			targets: from,
 			opacity: [1, 0],
+			duration: 0.5,
+			easing: 'linear',
 			complete: done,
-			easing: 'linear'
+		});
+	}
+	in({ from, to, done }) {
+		// animation. Call to and done in the function
+		window.scrollTo(0, 0);
+		from.remove();
+		anime({
+			//add duration, starting point, ending point
+			targets: to,
+			opacity: [0, 1],
+			easing: 'linear',
+			complete: done,
 		});
 	}
 }
-
-export default Fade;

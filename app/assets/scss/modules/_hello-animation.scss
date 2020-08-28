@@ -22,47 +22,11 @@ $hello__line-height: 56.1562px; // probably have to put something for relative s
 			animation-name: change;
 			animation-duration: 4s;
 			animation-iteration-count: 1;
+			animation-play-state: paused;
 
-			@keyframes change {
-				0%,
-				11.11%,
-				100% {
-					transform: translateY(0);
-				}
-				22.22%,
-				33.32% {
-					transform: translateY(-12.5%);
-				}
-				33.32%,
-				44.43% {
-					transform: translateY(-25%);
-				}
-				44.43%,
-				55.54% {
-					transform: translateY(-37.5%);
-				}
-				55.54%,
-				66.65% {
-					transform: translateY(-50%);
-				}
-				66.65%,
-				77.76% {
-					transform: translateY(-62.5%);
-				}
-				77.76%,
-				88.87% {
-					transform: translateY(-75%);
-				}
-				88.87%,
-				99.98% {
-					transform: translateY(-87.5%);
-				}
-				99.98%,
-				99.99% {
-					transform: translateY(0);
-				}
+			&:hover {
+				animation-play-state: running;
 			}
-
 			&:first-child {
 				color: $color--primary;
 			}
@@ -73,5 +37,45 @@ $hello__line-height: 56.1562px; // probably have to put something for relative s
 				}
 			}
 		}
+	}
+}
+
+@keyframes change {
+	0%,
+	11.11%,
+	100% {
+		transform: translateY(0);
+	}
+	22.22%,
+	33.32% {
+		transform: translateY(-12.5%);
+	}
+	33.32%,
+	44.43% {
+		transform: translateY(-25%);
+	}
+	44.43%,
+	55.54% {
+		transform: translateY(-37.5%);
+	}
+	55.54%,
+	66.65% {
+		transform: translateY(-50%);
+	}
+	66.65%,
+	77.76% {
+		transform: translateY(-62.5%);
+	}
+	77.76%,
+	88.87% {
+		transform: translateY(-75%);
+	}
+	88.87%,
+	99.98% {
+		transform: translateY(-87.5%);
+	}
+	99.98%,
+	99.99% {
+		transform: translateY(0);
 	}
 }
