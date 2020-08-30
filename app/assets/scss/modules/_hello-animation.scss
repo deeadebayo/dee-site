@@ -27,6 +27,7 @@ $hello__line-height: 56.1562px; // probably have to put something for relative s
 			&:hover {
 				animation-play-state: running;
 			}
+
 			&:first-child {
 				color: $color--primary;
 			}
