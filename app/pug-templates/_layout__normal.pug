@@ -5,7 +5,7 @@ html(lang="en")
         meta(name='viewport', content='initial-scale=1')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
         block startScript
-        title #{pageTitle}
+        title #{pageTitle} - Front-End UI/UX Developer
         meta(name="author", content="Dee Adebayo")
         meta(name="keywords", content=keywordContent)
         meta(name="description" content=pageDescContent)
@@ -14,7 +14,7 @@ html(lang="en")
         link(rel='icon', type="image/png", sizes='32x32', href='public/img/favicon-32x32.png')
         link(rel='icon', type="image/png", sizes='16x16', href='public/img/favicon-16x16.png')
     body(style="background: linear-gradient(to right, #403a3e, #be5869);")#top
-        .page-animation.page-animation--slideUp
+        #loader.page-animation
                 .page-animation__logo
                     include ./_svg-code/logo--main
         .wrapper

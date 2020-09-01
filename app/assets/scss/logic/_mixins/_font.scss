@@ -1,0 +1,15 @@
+@mixin font($type, $title-weight: 700) {
+	@if $type == 'title' {
+		font-family: $font--philosopher;
+		font-weight: $title-weight;
+		@include ms-respond(font-size, 1);
+		color: $color--neutral_text-title;
+	} @else if $type == 'paragraph' {
+		font-family: $font--muli;
+		font-weight: 400;
+		line-height: 1.5;
+		// @include ms-respond(font-size, 3)
+		@include ms-respond(font-size, -1);
+		color: $color--neutral_text-dark;
+	}
+}

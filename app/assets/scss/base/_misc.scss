@@ -17,9 +17,9 @@ header a {
 
 //footer class but used to add some UI refreshes to top of page
 .wrapper {
-	border-top: 4px solid $color--secondary;
+	border-top: 4px solid $color--primary;
 	margin-bottom: 4.5em;
-	background-color: #fff;
+	background-color: $color--neutral_bg-light;
 }
 
 // Emoji styles for homepage about section

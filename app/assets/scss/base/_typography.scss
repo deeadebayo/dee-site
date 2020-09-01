@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Merriweather:400|Muli:300,700');
+@import url('https://fonts.googleapis.com/css?family=Philosopher:400,700|Muli:400,700');
 
 // $screen-phone-min: 425px; // The smallest of phones, make this basic or bigger
 // $screen-phablet-min: 768px; // Tablet in portrait mode
@@ -13,24 +13,24 @@ $modularscale: (
 		$screen-phone-min:
 		(
 			base: 16px,
-			ratio: 20at1 // ratio: $minor-third//1.2
+			ratio: 20at1 // ratio: $minor-third//1.2,
 		),
 	$screen-phablet-min: (
 		base: 21px,
-		ratio: $fourth
+		ratio: $fourth,
 	),
 	$screen-tablet-min: (
 		base: 22px,
-		ratio: $fourth
+		ratio: $fourth,
 	),
 	$screen-comp-min: (
 		base: 22px,
-		ratio: $fourth
+		ratio: $fourth,
 	),
 	$screen-wide-min: (
 		base: 25px,
-		ratio: $fourth
-	)
+		ratio: $fourth,
+	),
 );
 
 $ms-fluid: false;
@@ -42,11 +42,11 @@ $ms-range: (
 
 p {
 	font-family: $font--muli;
-	font-weight: 300;
+	font-weight: 400;
 	line-height: 1.5;
 	// @include ms-respond(font-size, 3)
 	@include ms-respond(font-size, 0);
-	color: $color--text-default;
+	color: $color--neutral_text-body;
 
 	&.small {
 		@include ms-respond(font-size, -1);
@@ -64,21 +64,25 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: $font--merriweather;
-	color: $color--dark;
-	font-weight: 400;
+	font-family: $font--philosopher;
+	color: $color--neutral_text-title;
+	font-weight: 700;
 }
 
 a {
 	font-family: $font--muli;
 	font-weight: 700;
-	color: $color--primary;
+	color: $color--secondary;
 	transition: color 0.2s ease-in-out;
 	text-decoration: none;
 
 	&:hover {
-		color: $color--secondary;
+		color: $color--primary;
 		cursor: pointer;
+	}
+
+	&:focus {
+		outline: thin dotted;
 	}
 }
 
@@ -99,5 +103,5 @@ h4 {
 }
 
 .title--big {
-	color: $color--text-header;
+	color: $color--neutral_text-dark;
 }
