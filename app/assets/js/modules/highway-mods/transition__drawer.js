@@ -17,15 +17,21 @@ export default class Drawer extends Highway.Transition {
 			timelineIn = anime.timeline({
 				targets: to,
 				opacity: [0, 1],
-				duration: 400,
+				duration: 250,
 				easing: 'linear',
 			});
-		timelineIn.add({
-			targets: loaderPage,
-			top: ['0', '100vh'],
-			duration: 500,
-			easing: 'easeOutExpo',
-		});
+		timelineIn
+			.add({
+				targets: loaderPage,
+				top: ['0', '100vh'],
+				duration: 500,
+				easing: 'easeInOutQuart',
+			})
+			.add({
+				targets: loaderPage,
+				opacity: [1, 0],
+				easing: 'linear',
+			});
 
 		done();
 	}
@@ -33,16 +39,22 @@ export default class Drawer extends Highway.Transition {
 		let loaderPage = document.querySelector('#loader'),
 			timelineOut = anime.timeline({
 				targets: loaderPage,
-				top: ['-100vh', '0vh'],
-				duration: 500,
-				easing: 'easeOutExpo',
 			});
-		timelineOut.add({
-			targets: from,
-			opacity: [1, 0],
-			duration: 400,
-			easing: 'linear',
-			complete: done,
-		});
+
+		timelineOut
+			.add({})
+			.add({
+				targets: from,
+				opacity: [1, 0.8],
+				duration: 500,
+				easing: 'linear',
+			})
+			.add({
+				targets: loaderPage,
+				top: ['-100vh', '0vh'],
+				easing: 'easeOutQuint',
+				duration: 700,
+				complete: done,
+			});
 	}
 }
