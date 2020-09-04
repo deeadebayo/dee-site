@@ -44,105 +44,25 @@
 	&__logo {
 		stroke-width: 0.1px;
 		fill: transparent;
-		animation-duration: 0.3s;
 
 		&__letters {
-			animation: fadeInOut 0.5s ease forwards;
 			fill: none;
 		}
 
 		&__first-color {
-			animation: redToGreen 1.5s ease-in 0s 1 forwards;
+			fill: none;
 		}
 
 		&__second-color {
-			animation: yellowToGreen 1.5s ease-out 0s 1 forwards;
+			fill: none;
 		}
 
 		&__third-color {
-			animation: greenToGreen 1.6s ease-in 0s 1 forwards;
+			fill: none;
 		}
 
 		&__bar-final-layer {
-			animation: greenToGreen 1.6s ease-in 0.2s 1 forwards;
+			fill: none;
 		}
-	}
-}
-
-@keyframes slideUp {
-	0% {
-		height: 100vh;
-	}
-
-	100% {
-		height: 0;
-	}
-}
-
-@keyframes fadeInOut {
-	0% {
-		stroke: transparent;
-	}
-
-	20% {
-		stroke: $color--neutral_stroke-med;
-	}
-
-	100% {
-		stroke: transparent;
-	}
-}
-
-@keyframes redToGreen {
-	0% {
-		fill: none;
-	}
-
-	33% {
-		fill: $color--secondary;
-	}
-
-	50% {
-		fill: $color--rare;
-	}
-
-	90% {
-		fill: $color--primary;
-	}
-
-	100% {
-		fill: $color--primary;
-	}
-}
-
-@keyframes yellowToGreen {
-	0% {
-		fill: none;
-	}
-
-	25% {
-		fill: none;
-	}
-
-	50% {
-		fill: $color--rare;
-	}
-
-	90% {
-		fill: $color--primary;
-	}
-
-	100% {
-		fill: $color--primary;
-	}
-}
-
-@keyframes greenToGreen {
-	from {
-		fill: none;
-	}
-
-	to {
-		fill: $color--primary;
 	}
 }
