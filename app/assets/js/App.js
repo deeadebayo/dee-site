@@ -7,7 +7,7 @@ import { pageAnimation } from './modules/PageAnimation';
 import { preloaderAnimation } from './modules/PreloaderAnimation';
 
 new footerAnimation();
+new helloAnimation();
 new logoRandomColor();
 new logoNavHover();
-new helloAnimation();
 new preloaderAnimation();

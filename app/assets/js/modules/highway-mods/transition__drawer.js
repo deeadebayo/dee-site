@@ -7,7 +7,6 @@ done: The required callback method that has to be called once the animation is d
 in: This method should contain the animation to display a view.
 out: This method should contain the animation to hide a view. */
 
-//Drawer
 export default class Drawer extends Highway.Transition {
 	in({ from, to, done }) {
 		window.scrollTo(0, 0);
@@ -15,17 +14,16 @@ export default class Drawer extends Highway.Transition {
 
 		let loaderPage = document.querySelector('#loader'),
 			timelineIn = anime.timeline({
-				targets: to,
-				opacity: [0, 1],
-				duration: 250,
-				easing: 'linear',
+				targets: loaderPage,
+				top: ['-100vh', '0vh'],
+				duration: 500,
+				easing: 'easeInOutQuart',
 			});
 		timelineIn
 			.add({
-				targets: loaderPage,
-				top: ['0', '100vh'],
-				duration: 500,
-				easing: 'easeInOutQuart',
+				targets: to,
+				opacity: [0, 1],
+				easing: 'linear',
 			})
 			.add({
 				targets: loaderPage,
@@ -39,22 +37,17 @@ export default class Drawer extends Highway.Transition {
 		let loaderPage = document.querySelector('#loader'),
 			timelineOut = anime.timeline({
 				targets: loaderPage,
-			});
-
-		timelineOut
-			.add({})
-			.add({
-				targets: from,
-				opacity: [1, 0.8],
-				duration: 500,
-				easing: 'linear',
-			})
-			.add({
-				targets: loaderPage,
 				top: ['-100vh', '0vh'],
 				easing: 'easeOutQuint',
 				duration: 700,
-				complete: done,
 			});
+
+		timelineOut.add({
+			targets: from,
+			opacity: [1, 0.8],
+			duration: 500,
+			easing: 'linear',
+			complete: done,
+		});
 	}
 }
