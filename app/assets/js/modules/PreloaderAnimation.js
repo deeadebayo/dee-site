@@ -78,7 +78,7 @@ export function preloaderAnimation() {
 				top: ['-100vh', '0vh'],
 			})
 			.add(svgTextAnim)
-			.add(svgColor1Anim)
+			.add(svgColor1Anim, 400)
 			.add(svgColor2Anim)
 			.add(svgColor3Anim)
 			.add(svgBarAnim)

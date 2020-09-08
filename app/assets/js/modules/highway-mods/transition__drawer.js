@@ -10,6 +10,7 @@ out: This method should contain the animation to hide a view. */
 export default class Drawer extends Highway.Transition {
 	in({ from, to, done }) {
 		window.scrollTo(0, 0);
+		//animate in the color and opacity of the loader div to 'remove old view'
 		from.remove();
 
 		let loaderPage = document.querySelector('#loader'),
