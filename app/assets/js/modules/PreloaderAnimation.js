@@ -57,13 +57,13 @@ export function preloaderAnimation() {
 			targets: svgColor3,
 			fill: ['none', colorPrimary],
 			easing: 'linear',
-			duration: 800,
+			duration: 500,
 		},
 		svgBarAnim = {
 			targets: svgBarLayer,
 			fill: ['none', colorPrimary],
 			easing: 'linear',
-			duration: 800,
+			duration: 500,
 		};
 
 	window.onload = () => {
@@ -78,10 +78,10 @@ export function preloaderAnimation() {
 				top: ['-100vh', '0vh'],
 			})
 			.add(svgTextAnim)
-			.add(svgColor1Anim)
-			.add(svgColor2Anim)
-			.add(svgColor3Anim)
-			.add(svgBarAnim)
+			.add(svgColor1Anim, '-=700')
+			.add(svgColor2Anim, '-=800')
+			.add(svgColor3Anim, '-=200')
+			.add(svgBarAnim, '-=200')
 			.add({
 				delay: 5000,
 				targets: loaderPage,
