@@ -2,7 +2,7 @@ import anime from 'animejs';
 
 export function preloaderAnimation() {
 	let loaderPage = document.querySelector('#loader'),
-		svgText = document.querySelector('.page-animation__logo__letters'),
+		svgText = document.querySelector('.page-animation__logo__letters path'),
 		svgColor1 = document.querySelector(
 			'.page-animation__logo__first-color'
 		),
@@ -19,13 +19,12 @@ export function preloaderAnimation() {
 		colorSecondary = 'hsl(358, 100%, 68%)',
 		colorRare = 'hsl(39, 98%, 58%)',
 		colorNeutralStroke = 'hsl(0, 0%, 46%)';
+
 	let svgTextAnim = {
 			targets: svgText,
-			stroke: [
-				{ value: 'transparent', duration: 1000 },
+			keyframes: [
 				{
-					value: [colorNeutralStroke, 'transparent'],
-					duration: 1000,
+					fill: [colorNeutralStroke, 'transparent'],
 				},
 			],
 			easing: 'linear',
@@ -33,25 +32,22 @@ export function preloaderAnimation() {
 		},
 		svgColor1Anim = {
 			targets: svgColor1,
-			fill: [
-				{ value: 'none', duration: 1000 },
-				{
-					value: colorSecondary,
-					duration: 1000,
-				},
-				{ value: [colorRare, colorPrimary], duration: 1000 },
+			keyframes: [
+				{ fill: ['none', colorSecondary] },
+				{ fill: [colorSecondary, colorRare] },
+				{ fill: [colorRare, colorPrimary] },
 			],
+			// delay: anime.stagger(100, { easing: 'linear' }),
 			easing: 'linear',
-			duration: 800,
+			duration: 1000,
 		},
 		svgColor2Anim = {
 			targets: svgColor2,
-			fill: [
-				{ value: ['none', colorRare], duration: 1000 },
-				{ value: [colorRare, colorPrimary], duration: 1000 },
+			keyframes: [
+				{ fill: ['none', colorRare] },
+				{ fill: [colorRare, colorPrimary] },
 			],
-			easing: 'linear',
-			duration: 800,
+			// delay: anime.stagger(500, { easing: 'linear' }),
 		},
 		svgColor3Anim = {
 			targets: svgColor3,
@@ -66,29 +62,25 @@ export function preloaderAnimation() {
 			duration: 500,
 		};
 
-	window.onload = () => {
-		const tlDrawerIn = anime
-			.timeline({
-				targets: loaderPage,
-				duration: 1000,
-				easing: 'easeOutQuint',
-			})
-			.add({
-				targets: loaderPage,
-				top: ['-100vh', '0vh'],
-			})
-			.add(svgTextAnim)
-			.add(svgColor1Anim, '-=700')
-			.add(svgColor2Anim, '-=800')
-			.add(svgColor3Anim, '-=200')
-			.add(svgBarAnim, '-=200')
-			.add({
-				delay: 5000,
-				targets: loaderPage,
-				top: ['0vh', '-100vh'],
-				duration: 700,
-			});
-
-		tlDrawerIn.play();
-	};
+	anime
+		.timeline({
+			targets: loaderPage,
+			duration: 1000,
+			easing: 'easeOutQuint',
+		})
+		.add({
+			targets: loaderPage,
+			top: ['-100vh', '0vh'],
+		})
+		.add(svgTextAnim, '-=200')
+		.add(svgColor1Anim, 400)
+		.add(svgColor2Anim, 600)
+		.add(svgColor3Anim, 800)
+		.add(svgBarAnim, 200)
+		.add({
+			delay: 5000,
+			targets: loaderPage,
+			top: ['0vh', '-100vh'],
+			duration: 700,
+		});
 }
