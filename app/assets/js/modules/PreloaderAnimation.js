@@ -2,7 +2,7 @@ import anime from 'animejs';
 
 export function preloaderAnimation() {
 	let loaderPage = document.querySelector('#loader'),
-		svgText = document.querySelector('.page-animation__logo__letters path'),
+		svgText = document.querySelector('.page-animation__logo__letters'),
 		svgColor1 = document.querySelector(
 			'.page-animation__logo__first-color'
 		),
