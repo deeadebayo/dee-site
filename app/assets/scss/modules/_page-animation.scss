@@ -2,7 +2,7 @@
 	width: 100vw;
 	height: 100vh;
 	position: absolute;
-	top: -100vh;
+	top: 0vh;
 	z-index: 999;
 	pointer-events: none;
 	box-sizing: content-box;
@@ -33,34 +33,8 @@
 	&--color5 {
 		background-color: $color--primary;
 	}
-
-	// Forcing a full window div, then "animating" it up (while filling in SVG colors) for a loading effect
-	// &--loading {
-	// 	top:
-	// }
-
-	&__logo {
-		stroke-width: 0.1px;
-		fill: transparent;
-
-		// &__letters {
-		// 	fill: none;
-		// }
-
-		// &__first-color {
-		// 	fill: none;
-		// }
-
-		// &__second-color {
-		// 	fill: none;
-		// }
-
-		// &__third-color {
-		// 	fill: none;
-		// }
-
-		// &__bar-final-layer {
-		// 	fill: none;
-		// }
+	&__logo__letters {
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
 	}
 }
