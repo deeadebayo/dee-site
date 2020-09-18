@@ -21,10 +21,16 @@ const svgText = [
 	//Animate each different section (path) of the SVG
 	svgTextAnim = {
 		targets: svgText,
-		fill: {
-			value: [colorNeutralStroke, 'transparent'],
-			duration: 500,
-		},
+		fill: [
+			{
+				value: colorNeutralStroke,
+				duration: 500,
+			},
+			{
+				value: 'transparent',
+				duration: 500,
+			},
+		],
 		strokeDashoffset: [anime.setDashoffset, 0],
 		easing: 'easeInOutSine',
 		duration: 1500,
@@ -36,7 +42,6 @@ const svgText = [
 	svgColor1Anim = {
 		targets: svgColor1,
 		fill: [
-			{ value: 'none', duration: 300 },
 			{ value: colorSecondary, duration: 500 },
 			{ value: colorRare, duration: 300 },
 			{ value: colorPrimary, duration: 400 },
@@ -50,9 +55,8 @@ const svgText = [
 	svgColor2Anim = {
 		targets: svgColor2,
 		fill: [
-			{ value: ['none'], duration: 400 },
-			{ value: [colorRare], duration: 300 },
-			{ value: [colorPrimary], duration: 400 },
+			{ value: colorRare, duration: 300 },
+			{ value: colorPrimary, duration: 400 },
 		],
 		opacity: {
 			value: [0, 1],
@@ -63,10 +67,6 @@ const svgText = [
 	svgColor3Anim = {
 		targets: svgColor3,
 		fill: [
-			{
-				value: 'none',
-				duration: 400,
-			},
 			{
 				value: colorPrimary,
 				duration: 400,
@@ -80,7 +80,7 @@ const svgText = [
 	},
 	svgBarAnim = {
 		targets: svgBarLayer,
-		fill: [{ value: 'none', duration: 200 }, { value: colorPrimary }],
+		fill: { value: colorPrimary },
 		easing: 'linear',
 		opacity: {
 			value: [0, 1],
@@ -94,6 +94,6 @@ const AnimateLoader = anime
 	.add(svgColor1Anim, '-=500')
 	.add(svgColor2Anim, '-=1050')
 	.add(svgColor3Anim, '-=300')
-	.add(svgBarAnim, '-=250').add;
+	.add(svgBarAnim, '-=250');
 
-export { AnimateLoader };
+export default AnimateLoader;
