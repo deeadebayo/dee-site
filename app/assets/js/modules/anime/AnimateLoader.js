@@ -16,71 +16,78 @@ const svgText = [
 	),
 	colorPrimary = 'hsl(175, 100%, 33%)',
 	colorSecondary = 'hsl(358, 100%, 68%)',
-	colorRare = 'hsl(39, 98%, 58%)',
-	colorNeutralStroke = 'hsl(0, 0%, 46%)',
+	// colorNeutralStroke = 'hsl(0, 0%, 46%)',
+	colorPageBackground = '#D3D9DE',
+	staggeredDelay = anime.stagger(50, { easing: 'easeInOutSine' }),
 	//Animate each different section (path) of the SVG
 	svgTextAnim = {
 		targets: svgText,
 		fill: [
 			{
-				value: colorNeutralStroke,
-				duration: 500,
+				value: colorPageBackground,
 			},
 			{
 				value: 'transparent',
-				duration: 500,
 			},
 		],
 		strokeDashoffset: [anime.setDashoffset, 0],
 		easing: 'easeInOutSine',
-		duration: 1500,
-		delay: function (el, i) {
-			return i * 250;
-		},
 		direction: 'alternate',
+		stroke: colorPageBackground,
 	},
 	svgColor1Anim = {
 		targets: svgColor1,
 		fill: [
-			{ value: colorSecondary, duration: 500 },
-			{ value: colorRare, duration: 300 },
-			{ value: colorPrimary, duration: 400 },
+			{
+				value: colorSecondary,
+				opacity: [0, 1],
+				duration: 250,
+				delay: staggeredDelay,
+			},
+			{ value: colorPrimary, duration: 250, delay: staggeredDelay },
 		],
 		opacity: {
 			value: [0, 1],
-			duration: 1200,
+			duration: 500,
 		},
 		easing: 'easeInSine',
 	},
 	svgColor2Anim = {
 		targets: svgColor2,
 		fill: [
-			{ value: colorRare, duration: 300 },
-			{ value: colorPrimary, duration: 400 },
+			{ value: colorSecondary, duration: 200, delay: staggeredDelay },
+			{ value: colorPrimary, duration: 150, delay: staggeredDelay },
 		],
 		opacity: {
 			value: [0, 1],
-			duration: 800,
+			duration: 500,
 		},
-		// delay: anime.stagger(100),
 	},
 	svgColor3Anim = {
 		targets: svgColor3,
 		fill: [
 			{
 				value: colorPrimary,
-				duration: 400,
+				duration: 250,
+				delay: staggeredDelay,
 			},
 		],
 		opacity: {
 			value: [0, 1],
-			duration: 400,
+			duration: 500,
 		},
 		easing: 'linear',
 	},
 	svgBarAnim = {
 		targets: svgBarLayer,
-		fill: { value: colorPrimary },
+		fill: [
+			{
+				value: colorPrimary,
+				duration: 400,
+				delay: staggeredDelay,
+			},
+		],
+		delay: staggeredDelay,
 		easing: 'linear',
 		opacity: {
 			value: [0, 1],
@@ -91,9 +98,9 @@ const svgText = [
 const AnimateLoader = anime
 	.timeline({ easing: 'easeInSine' })
 	.add(svgTextAnim)
-	.add(svgColor1Anim, '-=500')
-	.add(svgColor2Anim, '-=1050')
-	.add(svgColor3Anim, '-=300')
-	.add(svgBarAnim, '-=250');
+	.add(svgColor1Anim, '-=200')
+	.add(svgColor2Anim, '-=200')
+	.add(svgColor3Anim, '-=250')
+	.add(svgBarAnim, '-=400');
 
 export default AnimateLoader;
