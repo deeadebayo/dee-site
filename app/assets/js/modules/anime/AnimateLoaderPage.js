@@ -1,10 +1,8 @@
-import anime from 'animejs';
-
 const pageCover = document.querySelector('#page-cover path'),
 	gone = 'M 0,0 L 10,0 L 10,0 C 5,0 5,0 0,0 L 0,0 Z',
 	morphing = 'M 0,0 L 10,0 L 10,5 C 5,8.5 5,8.5 0,5 L 0,0 Z',
 	there = 'M 0,0 L 10,0 L 10,10 C 5,10 5,10 0,10 L 0,0 Z',
-	coverPage = anime({
+	coverPage = {
 		targets: pageCover,
 		opacity: 1,
 		d: [
@@ -24,8 +22,11 @@ const pageCover = document.querySelector('#page-cover path'),
 				easing: 'easeOutQuad',
 			},
 		],
-	}),
-	uncoverPage = anime({
+		complete: function () {
+			console.warn('cover ran');
+		},
+	},
+	uncoverPage = {
 		targets: pageCover,
 		opacity: 1,
 		d: [
@@ -46,8 +47,8 @@ const pageCover = document.querySelector('#page-cover path'),
 			},
 		],
 		complete: function () {
-			console.warn('this ran');
+			console.warn('uncover ran');
 		},
-	});
+	};
 
 export { coverPage, uncoverPage };

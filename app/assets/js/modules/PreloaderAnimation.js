@@ -1,7 +1,8 @@
-import uncoverPage from './anime/AnimateLoaderPage';
+import anime from 'animejs';
+import { uncoverPage } from './anime/AnimateLoaderPage';
 import AnimateLoaderLogo from './anime/AnimateLoaderLogo';
 
 export function preloaderAnimation() {
-	uncoverPage;
+	anime(uncoverPage);
 	AnimateLoaderLogo;
 }
