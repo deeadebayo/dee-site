@@ -1,9 +1,9 @@
 import Highway from '@dogstudio/highway';
-import Glob from './highway-mods/transition__glob';
+import Shade from './highway-mods/transition__shade';
 
 const pageAnimation = new Highway.Core({
 	transitions: {
-		default: Glob,
+		default: Shade,
 	},
 });
 

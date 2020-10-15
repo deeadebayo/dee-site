@@ -1,8 +1,10 @@
 const pageCover = document.querySelector('#page-cover path'),
-	gone = 'M 0,0 L 10,0 L 10,0 C 5,0 5,0 0,0 L 0,0 Z',
-	morphing = 'M 0,0 L 10,0 L 10,5 C 5,8.5 5,8.5 0,5 L 0,0 Z',
-	there = 'M 0,0 L 10,0 L 10,10 C 5,10 5,10 0,10 L 0,0 Z',
+	// shade type pattern
+	gone = 'M 0,0 10,0 10,0 0,0 Z',
+	morphing = 'M 0,0 10,0 10,6 0,8 Z',
+	there = 'M 0,0 10,0 10,10 0,10 Z',
 	coverPage = {
+		// onBegin: d,
 		targets: pageCover,
 		opacity: 1,
 		d: [
@@ -13,18 +15,15 @@ const pageCover = document.querySelector('#page-cover path'),
 			},
 			{
 				value: morphing,
-				duration: 1000,
+				duration: 800,
 				easing: 'easeInQuad',
 			},
 			{
 				value: there,
-				duration: 1000,
+				duration: 800,
 				easing: 'easeOutQuad',
 			},
 		],
-		complete: function () {
-			console.warn('cover ran');
-		},
 	},
 	uncoverPage = {
 		targets: pageCover,
@@ -37,18 +36,15 @@ const pageCover = document.querySelector('#page-cover path'),
 			},
 			{
 				value: morphing,
-				duration: 1000,
+				duration: 800,
 				easing: 'easeInQuad',
 			},
 			{
 				value: gone,
-				duration: 1000,
+				duration: 800,
 				easing: 'easeOutQuad',
 			},
 		],
-		complete: function () {
-			console.warn('uncover ran');
-		},
 	};
 
 export { coverPage, uncoverPage };
