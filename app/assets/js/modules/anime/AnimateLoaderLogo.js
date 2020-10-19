@@ -22,19 +22,10 @@ let svgText = [
 	//Animate each different section (path) of the SVG
 	svgTextAnim = {
 		targets: svgText,
-		fill: [
-			{
-				value: colorPageBackground,
-				duration: 200,
-			},
-			{
-				value: 'transparent',
-				duration: 250,
-			},
-		],
+		fill: [colorPageBackground, 'transparent'],
 		strokeDashoffset: [anime.setDashoffset, 0],
 		easing: 'easeInOutSine',
-		direction: 'alternate',
+		// direction: 'alternate',
 		stroke: colorPageBackground,
 	},
 	svgColor1Anim = {
@@ -43,10 +34,10 @@ let svgText = [
 			{
 				value: colorSecondary,
 				opacity: [0, 1],
-				duration: 250,
+				duration: 200,
 				delay: staggeredDelay,
 			},
-			{ value: colorPrimary, duration: 250, delay: staggeredDelay },
+			{ value: colorPrimary, duration: 200, delay: staggeredDelay },
 		],
 		opacity: {
 			value: [0, 1],
@@ -57,8 +48,8 @@ let svgText = [
 	svgColor2Anim = {
 		targets: svgColor2,
 		fill: [
-			{ value: colorSecondary, duration: 200, delay: staggeredDelay },
-			{ value: colorPrimary, duration: 150, delay: staggeredDelay },
+			{ value: colorSecondary, duration: 150, delay: staggeredDelay },
+			{ value: colorPrimary, duration: 100, delay: staggeredDelay },
 		],
 		opacity: {
 			value: [0, 1],
@@ -70,7 +61,7 @@ let svgText = [
 		fill: [
 			{
 				value: colorPrimary,
-				duration: 250,
+				duration: 200,
 				delay: staggeredDelay,
 			},
 		],
@@ -98,7 +89,7 @@ let svgText = [
 	};
 
 let AnimateLoaderLogo = anime
-	.timeline({ easing: 'easeInSine' })
+	.timeline({ easing: 'easeInSine', duration: '300' })
 	.add(svgTextAnim)
 	.add(svgColor1Anim, '-=200')
 	.add(svgColor2Anim, '-=200')

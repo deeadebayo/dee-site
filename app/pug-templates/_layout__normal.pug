@@ -24,8 +24,10 @@ html(lang="en")
                 main(data-router-wrapper)
                     div(class=pageContent, data-router-view=namespace)
                         block content
-        svg#page-cover(height='102%', width='102%', viewBox='0 0 10 10' ,preserveAspectRatio='none')
-            path.page-cover(d='M 0,0 10,0 10,0 0,0 Z' fill='yellow')
+        svg#page-cover1(height='102%', width='102%', viewBox='0 0 10 10' ,preserveAspectRatio='none')
+            path.page-cover(d='M 0,0 10,0 10,0 0,0 Z' fill='hsl(175, 100%, 33%)')
+        svg#page-cover2(height='102%', width='102%', viewBox='0 0 10 10' ,preserveAspectRatio='none')
+            path.page-cover(d='M 0,0 10,0 10,0 0,0 Z' fill='hsl(358, 100%, 68%)')
         include ./_includes/footer
         script(src="public/js/script.js")
         block endScript

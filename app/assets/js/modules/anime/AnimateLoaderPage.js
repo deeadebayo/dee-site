@@ -1,4 +1,4 @@
-const pageCover = document.querySelector('#page-cover path'),
+const pageCover = Array.from(document.querySelectorAll('#page-cover path')),
 	// shade type pattern
 	gone = 'M 0,0 10,0 10,0 0,0 Z',
 	morphing = 'M 0,0 10,0 10,6 0,8 Z',
@@ -21,12 +21,13 @@ const pageCover = document.querySelector('#page-cover path'),
 			{
 				value: there,
 				duration: 800,
-				easing: 'easeOutQuad',
+				easing: 'easeOutExpo',
 			},
 		],
 	},
 	uncoverPage = {
 		targets: pageCover,
+		// delay: (el, i) => i * 150,
 		opacity: 1,
 		d: [
 			{
@@ -36,13 +37,13 @@ const pageCover = document.querySelector('#page-cover path'),
 			},
 			{
 				value: morphing,
-				duration: 800,
+				duration: 1000,
 				easing: 'easeInQuad',
 			},
 			{
 				value: gone,
-				duration: 800,
-				easing: 'easeOutQuad',
+				duration: 1000,
+				easing: 'easeOutBack',
 			},
 		],
 	};
