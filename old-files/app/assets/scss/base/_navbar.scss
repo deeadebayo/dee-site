@@ -34,7 +34,7 @@
 					// @include ms-respond(font-size, 1);
 					@include underline-animation(
 						$color--primary,
-						'left',
+						"left",
 						$lower-underline: false
 					);
 

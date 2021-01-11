@@ -24,6 +24,8 @@
 	"dependencies": {
 		"@emotion/react": "^11.1.4",
 		"@emotion/styled": "^11.0.0",
+		"@fontsource/merriweather": "^4.1.0",
+		"@fontsource/muli": "^4.1.0",
 		"gatsby": "^2.30.1",
 		"gatsby-image": "^2.9.0",
 		"gatsby-plugin-emotion": "^5.2.0",
@@ -34,6 +36,7 @@
 		"gatsby-plugin-sitemap": "^2.10.0",
 		"gatsby-source-filesystem": "^2.9.0",
 		"gatsby-transformer-sharp": "^2.10.0",
+		"normalize.css": "^8.0.1",
 		"react": "^17.0.1",
 		"react-dom": "^17.0.1",
 		"react-helmet": "^6.1.0"
