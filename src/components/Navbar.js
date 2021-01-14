@@ -1,10 +1,18 @@
 import React from "react";
-import styled from "@emotion/styled";
+import { css } from "@emotion/react";
 import { Link } from "gatsby";
 
-const StyledNavbar = styled.header``,
-	links = [
+const navbarStyles = css`
+		a {
+			outline: none;
+			display: block;
+			max-height: 55px;
+			margin-left: -0.535rem;
+		}
+	`,
+	internalLinks = [
 		{
+			id: 1,
 			title: "About",
 			url: "/about",
 			description:
@@ -12,13 +20,17 @@ const StyledNavbar = styled.header``,
 			color: "#E95800",
 		},
 		{
+			id: 2,
 			title: "Contact",
 			url: "/contact",
 			description:
 				"Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
 			color: "#1099A8",
 		},
+	],
+	externalLinks = [
 		{
+			id: 3,
 			title: "Inspiration",
 			url: "https://www.gatsbyjs.com/docs/reference/",
 			description:
@@ -27,7 +39,7 @@ const StyledNavbar = styled.header``,
 		},
 	],
 	Navbar = () => (
-		<StyledNavbar>
+		<header css={navbarStyles}>
 			<div className="navbar__logo">
 				<Link to="/" className="logo--wrap" id="logo">
 					//Include logo svg image
@@ -35,14 +47,19 @@ const StyledNavbar = styled.header``,
 			</div>
 			<div className="navbar__links">
 				<ul>
-					{links.map((link) => (
-						<li>
+					{internalLinks.map((link) => (
+						<li key={link.id}>
 							<Link to={link.url}>{link.title}</Link>
+						</li>
+					))}
+					{externalLinks.map((link) => (
+						<li key={link.id}>
+							<a href={link.url}>{link.title}</a>
 						</li>
 					))}
 				</ul>
 			</div>
-		</StyledNavbar>
+		</header>
 	);
 
 export default Navbar;

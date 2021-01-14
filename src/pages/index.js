@@ -64,28 +64,29 @@ const docLink = {
 const IndexPage = () => {
 	return (
 		<main style={pageStyles}>
-			<title>Home Page</title>
-			<h1 style={headingStyles}>
-				Congratulations
-				<br />
-				<span style={headingAccentStyles}>
-					— you just made a Gatsby site!{" "}
-				</span>
-				<span role="img" aria-label="Party popper emojis">
-					🎉🎉🎉
-				</span>
-			</h1>
-			<ul style={listStyles}>
-				<li style={docLinkStyle}>
-					<a
-						style={linkStyle}
-						href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-					>
-						{docLink.text}
-					</a>
-				</li>
-			</ul>
-			<AboutIndex />
+			<article>
+				<h1 style={headingStyles}>
+					Congratulations
+					<br />
+					<span style={headingAccentStyles}>
+						— you just made a Gatsby site!{" "}
+					</span>
+					<span role="img" aria-label="Party popper emojis">
+						🎉🎉🎉
+					</span>
+				</h1>
+				<ul style={listStyles}>
+					<li style={docLinkStyle}>
+						<a
+							style={linkStyle}
+							href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
+						>
+							{docLink.text}
+						</a>
+					</li>
+				</ul>
+				<AboutIndex />
+			</article>
 		</main>
 	);
 };

@@ -2,7 +2,7 @@ import { Global, css } from "@emotion/react";
 import "normalize.css";
 import styled from "@emotion/styled";
 
-const Wrapper = styled.div`
+const wrapperStyles = css`
 		border-top: 4px solid blue;
 		margin-bottom: 4.5em;
 	`,
@@ -18,8 +18,8 @@ const Wrapper = styled.div`
 	`;
 
 export default GlobalStyled = () => (
-	<Wrapper>
-		<Global css={globalstyles} />
+	<div css={wrapperStyles}>
+		<Global styles={globalstyles} />
 		<div className="some-class">This is hotpink now!</div>
-	</Wrapper>
+	</div>
 );
