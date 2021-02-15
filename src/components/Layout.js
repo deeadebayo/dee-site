@@ -31,7 +31,7 @@ export default function Layout({ children }) {
 		<div css={wrapperStyle}>
 			<Global styles={GlobalStyle}></Global>
 			<Navbar />
-			{children}
+			<main>{children}</main>
 			{/* <Footer /> */}
 		</div>
 	);

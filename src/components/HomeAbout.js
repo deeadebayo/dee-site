@@ -1,6 +1,6 @@
 import React from "react";
 
-const AboutIndex = () => (
+const HomeIndex = () => (
 	<section className="content-wrapper content-wrapper__about-blurb">
 		<div className="about-blurb">
 			<div className="about-blurb__content">
@@ -42,7 +42,7 @@ const AboutIndex = () => (
 	</section>
 );
 
-export default AboutIndex;
+export default HomeIndex;
 
 // section.content-wrapper.content-wrapper__about-blurb
 //                         .about-blurb
