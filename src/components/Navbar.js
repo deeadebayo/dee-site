@@ -1,10 +1,11 @@
 import React from "react";
 import { css } from "@emotion/react";
 import { Link } from "gatsby";
+import "../scss/navbar.scss";
 
 const navbarStyles = css`
 		a {
-			outline: none;
+			outline: 1px blue;
 			display: block;
 			max-height: 55px;
 			margin-left: -0.535rem;

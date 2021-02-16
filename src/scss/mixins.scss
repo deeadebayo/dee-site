@@ -1,0 +1,20 @@
+@use '_mixins/underline-animation';
+@use '_mixins/view';
+@use '_mixins/logo-animation';
+
+// For homepage card hover animations
+@mixin animation__background-hover {
+	&::after {
+		box-shadow: 2px 6px 10px 1px rgba(23, 43, 99, 0.24);
+		display: block;
+		opacity: 0;
+		transition: opacity 1s ease-in-out;
+		content: "";
+		border-top: 1px solid transparent;
+		border-radius: 5px;
+	}
+
+	&:hover::after {
+		opacity: 1;
+	}
+}

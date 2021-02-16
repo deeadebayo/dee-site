@@ -10,15 +10,13 @@ const style = css``;
 // markup
 const IndexPage = () => {
 	return (
-		<main>
+		<>
 			<Helmet>
 				<title>Dee Adebayo</title>
 			</Helmet>
-			<article>
-				<HomeIndex />
-				<HomeProjectList />
-			</article>
-		</main>
+			<HomeIndex />
+			<HomeProjectList />
+		</>
 	);
 };
 

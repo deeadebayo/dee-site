@@ -8,6 +8,7 @@ module.exports = {
 		"gatsby-plugin-react-helmet",
 		"gatsby-plugin-sitemap",
 		"gatsby-plugin-offline",
+		"gatsby-plugin-sass",
 		{
 			resolve: "gatsby-plugin-manifest",
 			options: {

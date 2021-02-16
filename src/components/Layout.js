@@ -1,35 +1,26 @@
 import React from "react";
-import { Global, css } from "@emotion/react";
-import "normalize.css";
+import { css } from "@emotion/react";
 
+import GlobalStyles from "../styles/GlobalStyles";
 import Navbar from "./Navbar";
 // import Footer from './Footer';
 
-const GlobalStyle = css`
-		color: "darkorchid";
-		background-color: "lightgray";
-
-		.emoji {
-			height: 19px;
-			padding: 0 2px;
-			line-height: 1.5;
-		}
-		.hidden {
-			display: none;
-		}
-	`,
-	wrapperStyle = css`
-		${
-			"" /* border-top: 4px solid blue; actual color is secondary brand color*/
-		}
-		border-top: 4px solid blue;
-		margin-bottom: 4.5em;
-	`;
+const wrapperStyle = css`
+	html {
+		--color-primary: red;
+		--color-secondary: blue;
+		--color-text: black;
+		--color-background: lightgray;
+	}
+	display: block;
+	border-top: 4px var(--color-secondary);
+	margin-bottom: 4.5em;
+`;
 
 export default function Layout({ children }) {
 	return (
 		<div css={wrapperStyle}>
-			<Global styles={GlobalStyle}></Global>
+			<GlobalStyles />
 			<Navbar />
 			<main>{children}</main>
 			{/* <Footer /> */}
