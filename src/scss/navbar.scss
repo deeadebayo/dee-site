@@ -1,11 +1,10 @@
 @import "../scss/mixins";
 @import "../scss/variables/color.scss";
-body {
-	background-color: $color--secondary;
-}
-header.navbar {
+
+.navbar {
 	display: grid;
 	grid-template-columns: 12.5em auto; //minmax the logo area
+	padding: 2rem;
 
 	&__logo {
 		grid-column: 1/2;

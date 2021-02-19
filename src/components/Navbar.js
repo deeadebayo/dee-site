@@ -32,9 +32,7 @@ const navbar = css`
 		{
 			id: 3,
 			title: "Inspiration",
-			url: "https://www.gatsbyjs.com/docs/reference/",
-			description:
-				"Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
+			url: "http://deeadebayo.tumblr.com/",
 			color: "#BC027F",
 		},
 	],
@@ -63,15 +61,3 @@ const navbar = css`
 	);
 
 export default Navbar;
-
-// .navbar
-//     .navbar__logo
-//         //- logo is declared in a new class
-//         a#logo.logo--wrap(href='/')
-//             include ../_svg-code/logo--main
-//     .navbar__links
-//         //- make the nav links the dark grey/black color
-//         ul
-//             li: a(href="/about.html") About
-//             li: a(href="#footer") Contact
-//             li: a(href="http://deeadebayo.tumblr.com/") Inspiration

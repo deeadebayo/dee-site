@@ -7,7 +7,6 @@ import HomeProjectList from "../components/HomeProject";
 
 const style = css``;
 
-// markup
 const IndexPage = () => {
 	return (
 		<>
