@@ -9,13 +9,13 @@ module.exports = {
 		"gatsby-plugin-sitemap",
 		"gatsby-plugin-offline",
 		"gatsby-plugin-sass",
+		"gatsby-transformer-sharp",
 		{
 			resolve: "gatsby-plugin-manifest",
 			options: {
 				icon: "src/images/icon.png",
 			},
 		},
-		"gatsby-transformer-sharp",
 		{
 			resolve: "gatsby-source-filesystem",
 			options: {

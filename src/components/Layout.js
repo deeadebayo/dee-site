@@ -4,6 +4,9 @@ import { css } from "@emotion/react";
 import GlobalStyles from "../styles/GlobalStyles";
 import Navbar from "./Navbar";
 // import Footer from './Footer';
+// import "./bg.scss";
+import "./../scss/navbar.scss";
+// import "./../scss/mixins/_underline-animation.scss";
 
 const wrapperStyle = css`
 	html {

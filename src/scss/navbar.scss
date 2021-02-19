@@ -1,51 +1,53 @@
-// @use "./mixins";
-// @use "./variables/color";
+@import "../scss/mixins";
+@import "../scss/variables/color.scss";
+body {
+	background-color: $color--secondary;
+}
+header.navbar {
+	display: grid;
+	grid-template-columns: 12.5em auto; //minmax the logo area
 
-// .navbar {
-// 	display: grid;
-// 	grid-template-columns: 12.5em auto; //minmax the logo area
+	&__logo {
+		grid-column: 1/2;
+		padding: 2px 0;
+	}
 
-// 	&__logo {
-// 		grid-column: 1/2;
-// 		padding: 2px 0;
-// 	}
+	&__links {
+		grid-column: 2/3;
+		display: block;
 
-// 	&__links {
-// 		grid-column: 2/3;
-// 		display: block;
+		ul {
+			list-style: none;
+			justify-content: end;
+			float: right;
 
-// 		ul {
-// 			list-style: none;
-// 			justify-content: end;
-// 			float: right;
+			li {
+				display: block;
+				float: left;
+				margin-right: 2.647em;
 
-// 			li {
-// 				display: block;
-// 				float: left;
-// 				margin-right: 2.647em;
+				&:last-child {
+					margin-right: 0;
+				}
 
-// 				&:last-child {
-// 					margin-right: 0;
-// 				}
+				a {
+					display: block;
+					position: relative;
+					text-decoration: none;
+					// text-transform: capitalize;
+					// color: $color--text-black;
+					// @include ms-respond(font-size, 1);
+					@include underline-animation(
+						$color--primary,
+						"left",
+						$lower-underline: false
+					);
 
-// 				a {
-// 					display: block;
-// 					position: relative;
-// 					text-decoration: none;
-// 					// text-transform: capitalize;
-// 					// color: $color--text-black;
-// 					// @include ms-respond(font-size, 1);
-// 					@include underline-animation(
-// 						$color--primary,
-// 						"left",
-// 						$lower-underline: false
-// 					);
-
-// 					&:hover {
-// 						color: $color--primary;
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// }
+					&:hover {
+						color: $color--primary;
+					}
+				}
+			}
+		}
+	}
+}

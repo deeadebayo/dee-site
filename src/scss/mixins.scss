@@ -1,6 +1,6 @@
-@use '_mixins/underline-animation';
-@use '_mixins/view';
-@use '_mixins/logo-animation';
+@import "mixins/underline-animation";
+@import "mixins/view";
+@import "mixins/logo-animation";
 
 // For homepage card hover animations
 @mixin animation__background-hover {
