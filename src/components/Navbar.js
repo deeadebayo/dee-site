@@ -2,6 +2,10 @@ import React from "react";
 import { css } from "@emotion/react";
 import { Link } from "gatsby";
 
+import Logo from "./../images/svg/logo.svg";
+import "./../scss/navbar.scss";
+import "./../scss/logo.scss";
+
 const navbar = css`
 		a {
 			outline: 1px blue;
@@ -40,7 +44,7 @@ const navbar = css`
 		<header className="navbar" css={navbar}>
 			<div className="navbar__logo">
 				<Link to="/" className="logo--wrap" id="logo">
-					//Include logo svg image
+					<Logo />
 				</Link>
 			</div>
 			<div className="navbar__links">

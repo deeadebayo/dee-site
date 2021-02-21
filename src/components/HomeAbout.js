@@ -1,7 +1,10 @@
+import { css } from "@emotion/react";
 import React from "react";
 
+const aboutStyle = css``;
+
 const HomeIndex = () => (
-	<section className="content-wrapper content-wrapper__about-blurb">
+	<div className="content-wrapper content-wrapper__about-blurb">
 		<div className="about-blurb">
 			<div className="about-blurb__content">
 				<p>Hello Animation Here</p>
@@ -39,7 +42,7 @@ const HomeIndex = () => (
 				</p>
 			</div>
 		</div>
-	</section>
+	</div>
 );
 
 export default HomeIndex;

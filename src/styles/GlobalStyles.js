@@ -23,7 +23,12 @@ const globalstyles = css`
 	}
 
 	main {
-		max-width: 65ch;
+		${"" /* max-width: 65ch; */}
+		min-height: 100vh;
+		background: white;
+		position: relative;
+		z-index: 1;
+		padding: 2rem;
 	}
 `;
 

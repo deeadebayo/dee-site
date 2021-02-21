@@ -1,7 +1,3 @@
-@import "mixins/underline-animation";
-@import "mixins/view";
-@import "mixins/logo-animation";
-
 // For homepage card hover animations
 @mixin animation__background-hover {
 	&::after {

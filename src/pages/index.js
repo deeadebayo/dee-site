@@ -9,13 +9,13 @@ const style = css``;
 
 const IndexPage = () => {
 	return (
-		<>
+		<article>
 			<Helmet>
 				<title>Dee Adebayo</title>
 			</Helmet>
 			<HomeIndex />
 			<HomeProjectList />
-		</>
+		</article>
 	);
 };
 

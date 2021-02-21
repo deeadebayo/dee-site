@@ -4,18 +4,18 @@ module.exports = {
 	},
 	plugins: [
 		"gatsby-plugin-emotion",
-		"gatsby-plugin-sharp",
 		"gatsby-plugin-react-helmet",
 		"gatsby-plugin-sitemap",
 		"gatsby-plugin-offline",
 		"gatsby-plugin-sass",
-		"gatsby-transformer-sharp",
 		{
 			resolve: "gatsby-plugin-manifest",
 			options: {
 				icon: "src/images/icon.png",
 			},
 		},
+		"gatsby-plugin-sharp",
+		"gatsby-transformer-sharp",
 		{
 			resolve: "gatsby-source-filesystem",
 			options: {
@@ -28,6 +28,14 @@ module.exports = {
 			resolve: `gatsby-plugin-typography`,
 			options: {
 				pathToConfigModule: `src/utils/typography`,
+			},
+		},
+		{
+			resolve: "gatsby-plugin-react-svg",
+			options: {
+				rule: {
+					include: /src/,
+				},
 			},
 		},
 	],
