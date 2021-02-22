@@ -3,30 +3,21 @@ import { css } from "@emotion/react";
 
 import GlobalStyles from "../styles/GlobalStyles";
 import Navbar from "./Navbar";
-// import Footer from './Footer';
+import Footer from "./Footer";
 
 const wrapperStyle = css`
-	html {
-		--color-primary: red;
-		--color-secondary: blue;
-		--color-text: black;
-		--color-background: lightgray;
-	}
 	display: block;
-	border-top: 4px var(--color-secondary);
+
+	${
+		"" /* width: 90vw;
+	width: clamp(16rem, 90vw, 70rem);
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	position: relative; */
+	}
 	${"" /* margin-bottom: 4.5em; */}
-`;
-
-const footerStyle = css`
-	position: sticky;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-
-	background: #252a47;
-	display: grid;
-	place-items: center;
-	padding: 50px;
 `;
 
 export default function Layout({ children }) {
@@ -35,8 +26,7 @@ export default function Layout({ children }) {
 			<GlobalStyles />
 			<Navbar />
 			<main>{children}</main>
-			<div css={footerStyle}></div>
-			{/* <Footer /> */}
+			<Footer />
 		</div>
 	);
 }

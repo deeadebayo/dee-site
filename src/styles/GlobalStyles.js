@@ -5,10 +5,22 @@ import "normalize.css";
 
 const globalstyles = css`
 	:root {
-		--color--primary: red;
-		--color--secondary: blue;
+		--color-primary: hsl(358, 100%, 68%);
+		--color-secondary: hsl(175, 100%, 33%);
+		--color-accent: hsl(16, 97%, 58%);
+		--color-rare: hsl(39, 98%, 58%);
+		--color-alert: hsl(356, 69%, 54%);
+
+		--color--text-black: hsl(0, 0%, 17%);
+		--color--text-header: hsl(0, 0%, 20%);
+		--color--text-default: hsl(0, 0%, 28%);
+		--color--dark: hsl(0, 0%, 28%);
+		--color--gray: hsl(0, 0%, 46%);
+		--color--gray__lighter: hsl(0, 0%, 85%);
+
 		--color-text: black;
 		--color-background: lightgray;
+		border-top: 4px solid var(--color-secondary);
 	}
 	background-color: "lightgray";
 

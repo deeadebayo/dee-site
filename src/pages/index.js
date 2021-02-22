@@ -2,10 +2,8 @@ import { css } from "@emotion/react";
 import React from "react";
 import { Helmet } from "react-helmet";
 
-import HomeIndex from "../components/HomeAbout";
+import HomeAbout from "../components/HomeAbout";
 import HomeProjectList from "../components/HomeProject";
-
-const style = css``;
 
 const IndexPage = () => {
 	return (
@@ -13,7 +11,7 @@ const IndexPage = () => {
 			<Helmet>
 				<title>Dee Adebayo</title>
 			</Helmet>
-			<HomeIndex />
+			<HomeAbout />
 			<HomeProjectList />
 		</article>
 	);
