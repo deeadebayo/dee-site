@@ -3,18 +3,49 @@ import React from "react";
 import { Helmet } from "react-helmet";
 
 import HomeAbout from "../components/HomeAbout";
-import HomeProjectList from "../components/HomeProjectList";
+import ProjectBoxList from "../components/ProjectBoxList";
 
 const IndexPage = () => {
 	return (
-		<article>
+		<>
 			<Helmet>
 				<title>Dee Adebayo</title>
 			</Helmet>
 			<HomeAbout />
-			<HomeProjectList />
-		</article>
+			<ProjectBoxList projectData={projectData} />
+		</>
 	);
 };
+
+const projectData = [
+	{
+		id: 1,
+		title: "Title",
+		subtitle: "Some sub-text",
+		backgroundColor: "blue",
+		link: "/",
+	},
+	{
+		id: 2,
+		title: "Title",
+		subtitle: "Some sub-text",
+		backgroundColor: "blue",
+		link: "/",
+	},
+	{
+		id: 3,
+		title: "Title",
+		subtitle: "Some sub-text",
+		backgroundColor: "blue",
+		link: "/",
+	},
+	{
+		id: 4,
+		title: "Title",
+		subtitle: "Some sub-text",
+		backgroundColor: "blue",
+		link: "/",
+	},
+];
 
 export default IndexPage;

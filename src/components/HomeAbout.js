@@ -4,6 +4,7 @@ import React from "react";
 import "../scss/about-blurb.scss";
 
 const aboutStyle = css`
+	margin: 3em 0;
 	padding: 1.5em 2em;
 	border: 1px solid hsla(224, 62%, 24%, 0.1);
 	border-radius: 5px;
