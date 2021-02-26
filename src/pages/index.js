@@ -12,40 +12,9 @@ const IndexPage = () => {
 				<title>Dee Adebayo</title>
 			</Helmet>
 			<HomeAbout />
-			<ProjectBoxList projectData={projectData} />
+			<ProjectBoxList />
 		</>
 	);
 };
-
-const projectData = [
-	{
-		id: 1,
-		title: "Title",
-		subtitle: "Some sub-text",
-		backgroundColor: "blue",
-		link: "/",
-	},
-	{
-		id: 2,
-		title: "Title",
-		subtitle: "Some sub-text",
-		backgroundColor: "blue",
-		link: "/",
-	},
-	{
-		id: 3,
-		title: "Title",
-		subtitle: "Some sub-text",
-		backgroundColor: "blue",
-		link: "/",
-	},
-	{
-		id: 4,
-		title: "Title",
-		subtitle: "Some sub-text",
-		backgroundColor: "blue",
-		link: "/",
-	},
-];
 
 export default IndexPage;
