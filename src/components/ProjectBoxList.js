@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
 import { css } from "@emotion/react";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const projectBoxStyles = css`
 		margin: 3em 0;
@@ -46,14 +46,9 @@ const projectBoxStyles = css`
 				transform: translateY(0);
 				transition: transform 0.25s ease-in-out 0.01s;
 				transition-delay: 0.01s;
-
-				img {
-					display: block;
-					width: 100%;
-					background-position: center center;
-					background-size: cover;
-				}
+				display: flex;
 			}
+
 			&__detail-box {
 				position: absolute;
 				left: 0;
@@ -62,7 +57,7 @@ const projectBoxStyles = css`
 				height: 108px;
 				width: 100%;
 				transition: transform 0.2s ease-in-out;
-				${"" /* background-color: $color--accent; */}
+				background-color: var(--color-accent);
 
 				&__details {
 					display: block;
@@ -85,6 +80,7 @@ const projectBoxStyles = css`
 			&__link {
 				text-decoration: none;
 				overflow: hidden;
+				display: flex;
 			}
 
 			&--blue {
@@ -124,11 +120,17 @@ const projectBoxStyles = css`
 			}
 		}
 	`,
-	ProjectBox = ({ title, subtitle, link, image, alt }) => (
+	ProjectBox = ({ title, subtitle, link, image, alt, bg }) => (
 		<div className="project-box">
 			<Link className="project-box__link" to={link}>
 				<div className="project-box__img">
-					<GatsbyImage image={image} alt={alt} />
+					<GatsbyImage
+						image={image}
+						alt={alt}
+						objectFit="cover"
+						backgroundColor={bg}
+						objectPosition
+					/>
 				</div>
 				<span className="project-box__detail-box">
 					<span className="project-box__detail-box__details">
@@ -155,21 +157,36 @@ export default function ProjectBoxList() {
 						id: { eq: "4fba0b40-a120-510a-abab-b01a1860975e" }
 					) {
 						childrenImageSharp {
-							gatsbyImageData(layout: FIXED)
+							gatsbyImageData(
+								layout: CONSTRAINED
+								placeholder: TRACED_SVG
+								height: 562
+								aspectRatio: 1.33
+							)
 						}
 					}
 					josh: file(
 						id: { eq: "bd3f399e-d3d6-5eaa-8398-31c3741259eb" }
 					) {
 						childrenImageSharp {
-							gatsbyImageData(layout: FIXED)
+							gatsbyImageData(
+								layout: CONSTRAINED
+								placeholder: TRACED_SVG
+								height: 562
+								aspectRatio: 1.33
+							)
 						}
 					}
 					ctkmc: file(
 						id: { eq: "5e1ef454-d1e5-5d1b-9fe4-5ac05d4de7b4" }
 					) {
 						childrenImageSharp {
-							gatsbyImageData(layout: FIXED)
+							gatsbyImageData(
+								layout: CONSTRAINED
+								placeholder: TRACED_SVG
+								height: 562
+								aspectRatio: 1.33
+							)
 						}
 					}
 				}
@@ -181,36 +198,40 @@ export default function ProjectBoxList() {
 				title: "Josh",
 				subtitle: "Some sub-text",
 				backgroundColor: "blue",
-				link: "/",
+				link: "/work/jmdrums",
 				image: data.josh.childrenImageSharp[0].gatsbyImageData,
 				alt: "Josh project image",
+				bg: "yellow",
 			},
 			{
 				id: 2,
 				title: "ctkmc",
 				subtitle: "Some sub-text",
 				backgroundColor: "blue",
-				link: "/",
+				link: "/ctkmedcenter",
 				image: data.ctkmc.childrenImageSharp[0].gatsbyImageData,
-				alt: "Josh project image",
+				alt: "ctmedcenter project image",
+				bg: "yellow",
 			},
 			{
 				id: 3,
 				title: "Title",
 				subtitle: "Some sub-text",
 				backgroundColor: "blue",
-				link: "/",
+				link: "/work/",
 				image: data.ctkmc.childrenImageSharp[0].gatsbyImageData,
 				alt: "Josh project image",
+				bg: "yellow",
 			},
 			{
 				id: 4,
 				title: "Title",
 				subtitle: "Some sub-text",
 				backgroundColor: "blue",
-				link: "/",
+				link: "/work/",
 				image: data.ctkmc.childrenImageSharp[0].gatsbyImageData,
 				alt: "Josh project image",
+				bg: "yellow",
 			},
 		];
 
@@ -224,6 +245,7 @@ export default function ProjectBoxList() {
 					link={project.link}
 					image={project.image}
 					key={`hp${project.id}`}
+					bg={project.bg}
 				/>
 			))}
 			<div>Div for More projects link</div>
