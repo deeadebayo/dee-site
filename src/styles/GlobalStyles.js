@@ -35,19 +35,19 @@ const globalstyles = css`
 	}
 
 	main {
-		${"" /* max-width: 65ch; */}
+		display: flex;
 		min-height: 100vh;
 		background: white;
 		position: relative;
 		z-index: 1;
 		padding: 2rem;
+		& > .page {
+			width: clamp(16rem, 90vw, 70rem);
+			margin: 0 auto;
+		}
 	}
 `;
 
-const GlobalStyles = () => (
-	<>
-		<Global styles={globalstyles} />
-	</>
-);
+const GlobalStyles = () => <Global styles={globalstyles} />;
 
 export default GlobalStyles;

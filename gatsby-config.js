@@ -8,6 +8,7 @@ module.exports = {
 		"gatsby-plugin-sitemap",
 		"gatsby-plugin-offline",
 		"gatsby-plugin-sass",
+		"gatsby-plugin-image",
 		{
 			resolve: "gatsby-plugin-manifest",
 			options: {

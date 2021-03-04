@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 import React from "react";
+import { StaticImage } from "gatsby-plugin-image";
 
 import "../scss/about-blurb.scss";
 
@@ -32,11 +33,11 @@ const HomeAbout = () => (
 					className="about-link"
 				>
 					Lagos
-					<img
+					{/* <StaticImage
 						className="emoji"
-						src="public/img/emoji__ng-flag.png"
+						src="../images/emoji__ng-flag.png"
 						alt="Nigerian flag emoji"
-					/>
+					/> */}
 				</a>
 				but reside in
 				<a
@@ -45,11 +46,11 @@ const HomeAbout = () => (
 					className="about-link"
 				>
 					Atlanta
-					<img
-						src="public/img/emoji__peach.png"
+					{/* <StaticImage
+						src="../images/emoji__peach.png"
 						alt="peach emoji"
 						className="emoji"
-					/>
+					/> */}
 				</a>
 				building static websites for small businesses.
 			</p>

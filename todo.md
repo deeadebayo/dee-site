@@ -1,8 +1,8 @@
 #to dos
 
+-         add some major css clamp for font sizes and header (doing full with with links too)
 -   add padding for template containers (wrappers)
 -   translate(y) on navbar links when hovered, maybe?
--   About us page - (https://www.sarasoueidan.com/)
 -   increase size of navbar font
 -   take another look at current text modular scale
 -   add in modal full to screen

@@ -11,6 +11,7 @@ const projectBoxStyles = css`
 			"project project"
 			"project project"
 			"more-btn more-btn";
+
 		grid-template-columns: 1fr 1fr;
 
 		&__title {

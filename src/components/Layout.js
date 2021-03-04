@@ -25,7 +25,9 @@ export default function Layout({ children }) {
 		<div css={wrapperStyle}>
 			<GlobalStyles />
 			<Navbar />
-			<main>{children}</main>
+			<main>
+				<div className="page">{children}</div>
+			</main>
 			<Footer />
 		</div>
 	);
