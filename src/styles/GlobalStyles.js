@@ -42,7 +42,7 @@ const globalstyles = css`
 		z-index: 1;
 		padding: 2rem;
 		& > .page {
-			width: clamp(16rem, 90vw, 70rem);
+			${"" /* width: clamp(16rem, 90vw, 70rem); */}
 			margin: 0 auto;
 		}
 	}

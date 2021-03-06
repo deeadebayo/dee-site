@@ -4,6 +4,7 @@ import { css } from "@emotion/react";
 import { GatsbyImage } from "gatsby-plugin-image";
 
 const projectBoxStyles = css`
+		width: clamp(16rem, 90vw, 70rem);
 		margin: 3em 0;
 		display: grid;
 		grid-template-areas:
@@ -19,13 +20,19 @@ const projectBoxStyles = css`
 			text-align: center;
 		}
 
+		&.project-box::nth-child(1) {
+			a {
+				border-top-left-radius: 5px;
+			}
+		}
+
 		.project-box {
 			grid-area: project;
 			grid-column: span 1;
 			grid-row: span 1;
 			display: flex;
-			min-height: 300px;
-			max-height: 500px;
+			${"" /* min-height: 300px;
+			max-height: 500px; */}
 			width: 100%;
 
 			&:hover .project-box__img {
@@ -58,7 +65,6 @@ const projectBoxStyles = css`
 				height: 108px;
 				width: 100%;
 				transition: transform 0.2s ease-in-out;
-				background-color: var(--color-accent);
 
 				&__details {
 					display: block;
@@ -86,11 +92,6 @@ const projectBoxStyles = css`
 
 			&--blue {
 				background-color: $color--primary;
-				border-top-left-radius: 5px;
-
-				a {
-					border-top-left-radius: 5px;
-				}
 			}
 
 			&--green {
@@ -129,11 +130,15 @@ const projectBoxStyles = css`
 						image={image}
 						alt={alt}
 						objectFit="cover"
-						backgroundColor={bg}
 						objectPosition
 					/>
 				</div>
-				<span className="project-box__detail-box">
+				<span
+					className="project-box__detail-box"
+					css={css`
+						background-color: ${bg};
+					`}
+				>
 					<span className="project-box__detail-box__details">
 						<span className="project-box__detail-box__details__title">
 							{title}
@@ -193,46 +198,46 @@ export default function ProjectBoxList() {
 				}
 			`
 		),
+		colorPrimary = "hsl(358, 100%, 68%)",
+		colorSecondary = "hsl(175, 100%, 33%)",
+		colorAccent = "hsl(16, 97%, 58%)",
+		colorRare = "hsl(39, 98%, 58%)",
 		projectData = [
 			{
 				id: 1,
 				title: "Josh",
 				subtitle: "Some sub-text",
-				backgroundColor: "blue",
+				backgroundColor: colorPrimary,
 				link: "/work/jmdrums",
 				image: data.josh.childrenImageSharp[0].gatsbyImageData,
 				alt: "Josh project image",
-				bg: "yellow",
 			},
 			{
 				id: 2,
 				title: "ctkmc",
 				subtitle: "Some sub-text",
-				backgroundColor: "blue",
+				backgroundColor: colorAccent,
 				link: "/ctkmedcenter",
 				image: data.ctkmc.childrenImageSharp[0].gatsbyImageData,
 				alt: "ctmedcenter project image",
-				bg: "yellow",
 			},
 			{
 				id: 3,
 				title: "Title",
 				subtitle: "Some sub-text",
-				backgroundColor: "blue",
+				backgroundColor: colorRare,
 				link: "/work/",
 				image: data.ctkmc.childrenImageSharp[0].gatsbyImageData,
 				alt: "Josh project image",
-				bg: "yellow",
 			},
 			{
 				id: 4,
 				title: "Title",
 				subtitle: "Some sub-text",
-				backgroundColor: "blue",
+				backgroundColor: colorSecondary,
 				link: "/work/",
 				image: data.ctkmc.childrenImageSharp[0].gatsbyImageData,
 				alt: "Josh project image",
-				bg: "yellow",
 			},
 		];
 
@@ -246,7 +251,7 @@ export default function ProjectBoxList() {
 					link={project.link}
 					image={project.image}
 					key={`hp${project.id}`}
-					bg={project.bg}
+					bg={project.backgroundColor}
 				/>
 			))}
 			<div>Div for More projects link</div>
