@@ -21,6 +21,7 @@ const globalstyles = css`
 		--color-text: black;
 		--color-background: lightgray;
 		border-top: 4px solid var(--color-secondary);
+		scroll-behavior: smooth;
 	}
 	background-color: "lightgray";
 

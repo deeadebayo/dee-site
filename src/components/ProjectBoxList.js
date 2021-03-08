@@ -5,7 +5,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 
 const projectBoxStyles = css`
 		width: clamp(16rem, 90vw, 70rem);
-		margin: 3em 0;
+		margin: 4em 0;
 		display: grid;
 		grid-template-areas:
 			"title title"
@@ -15,26 +15,7 @@ const projectBoxStyles = css`
 
 		grid-template-columns: 1fr 1fr;
 
-		&__title {
-			grid-area: title;
-			text-align: center;
-		}
-
-		&.project-box::nth-child(1) {
-			a {
-				border-top-left-radius: 5px;
-			}
-		}
-
 		.project-box {
-			grid-area: project;
-			grid-column: span 1;
-			grid-row: span 1;
-			display: flex;
-			${"" /* min-height: 300px;
-			max-height: 500px; */}
-			width: 100%;
-
 			&:hover .project-box__img {
 				transform: translateY(-65px);
 			}
@@ -43,13 +24,25 @@ const projectBoxStyles = css`
 				transform: translateY(0);
 			}
 
+			grid-area: project;
+			grid-column: span 1;
+			grid-row: span 1;
+			display: flex;
+			width: 100%;
+
+			&__title {
+				grid-area: title;
+				text-align: center;
+			}
+
 			a,
-			a img {
+			a > img {
 				overflow: hidden;
 				text-decoration: none;
 				border: none;
 				position: relative;
 			}
+
 			&__img {
 				transform: translateY(0);
 				transition: transform 0.25s ease-in-out 0.01s;
@@ -90,35 +83,12 @@ const projectBoxStyles = css`
 				display: flex;
 			}
 
-			&--blue {
-				background-color: $color--primary;
-			}
-
-			&--green {
-				background-color: $color--secondary;
-				border-top-right-radius: 5px;
-
-				a {
-					border-top-right-radius: 5px;
-				}
-			}
-
-			&--yellow {
-				background-color: $color--accent;
-				border-bottom-left-radius: 5px;
-
-				a {
-					border-bottom-left-radius: 5px;
-				}
-			}
-
-			&--red {
-				background-color: $color--alert;
-				border-bottom-right-radius: 5px;
-
-				a {
-					border-bottom-right-radius: 5px;
-				}
+			${
+				"" /* //style the grid item and the anchor link, respectively
+			border-top-right-radius: 5px;
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+			border-bottom-left-radius: 5px; */
 			}
 		}
 	`,
@@ -160,9 +130,9 @@ export default function ProjectBoxList() {
 			graphql`
 				query {
 					comingSoon: file(
-						id: { eq: "4fba0b40-a120-510a-abab-b01a1860975e" }
+						relativePath: { eq: "work/work__coming-soon.jpg" }
 					) {
-						childrenImageSharp {
+						childImageSharp {
 							gatsbyImageData(
 								layout: CONSTRAINED
 								placeholder: TRACED_SVG
@@ -172,9 +142,9 @@ export default function ProjectBoxList() {
 						}
 					}
 					josh: file(
-						id: { eq: "bd3f399e-d3d6-5eaa-8398-31c3741259eb" }
+						relativePath: { eq: "work/work__jmdrums__cover.jpg" }
 					) {
-						childrenImageSharp {
+						childImageSharp {
 							gatsbyImageData(
 								layout: CONSTRAINED
 								placeholder: TRACED_SVG
@@ -184,9 +154,11 @@ export default function ProjectBoxList() {
 						}
 					}
 					ctkmc: file(
-						id: { eq: "5e1ef454-d1e5-5d1b-9fe4-5ac05d4de7b4" }
+						relativePath: {
+							eq: "work/work__ctkmc__tablet-and-phone.png"
+						}
 					) {
-						childrenImageSharp {
+						childImageSharp {
 							gatsbyImageData(
 								layout: CONSTRAINED
 								placeholder: TRACED_SVG
@@ -209,7 +181,7 @@ export default function ProjectBoxList() {
 				subtitle: "Some sub-text",
 				backgroundColor: colorPrimary,
 				link: "/work/jmdrums",
-				image: data.josh.childrenImageSharp[0].gatsbyImageData,
+				image: data.josh.childImageSharp.gatsbyImageData,
 				alt: "Josh project image",
 			},
 			{
@@ -218,7 +190,7 @@ export default function ProjectBoxList() {
 				subtitle: "Some sub-text",
 				backgroundColor: colorAccent,
 				link: "/ctkmedcenter",
-				image: data.ctkmc.childrenImageSharp[0].gatsbyImageData,
+				image: data.ctkmc.childImageSharp.gatsbyImageData,
 				alt: "ctmedcenter project image",
 			},
 			{
@@ -227,22 +199,25 @@ export default function ProjectBoxList() {
 				subtitle: "Some sub-text",
 				backgroundColor: colorRare,
 				link: "/work/",
-				image: data.ctkmc.childrenImageSharp[0].gatsbyImageData,
+				image: data.ctkmc.childImageSharp.gatsbyImageData,
 				alt: "Josh project image",
 			},
 			{
 				id: 4,
 				title: "Title",
 				subtitle: "Some sub-text",
-				backgroundColor: colorSecondary,
+				backgroundColor: colorPrimary,
 				link: "/work/",
-				image: data.ctkmc.childrenImageSharp[0].gatsbyImageData,
-				alt: "Josh project image",
+				image: data.comingSoon.childImageSharp.gatsbyImageData,
+				alt: "Coming soon image",
 			},
 		];
 
 	return (
 		<div css={projectBoxStyles}>
+			<div className="project-box__title">
+				<h2>Here's my title</h2>
+			</div>
 			{projectData.map((project) => (
 				<ProjectBox
 					alt={project.alt}

@@ -1,6 +1,6 @@
 #to dos
 
--         add some major css clamp for font sizes and header (doing full with with links too)
+-   add some major css clamp for font sizes and header (doing full with with links too)
 -   add padding for template containers (wrappers)
 -   translate(y) on navbar links when hovered, maybe?
 -   increase size of navbar font

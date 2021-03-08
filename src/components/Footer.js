@@ -12,6 +12,10 @@ const footerStyle = css`
 		place-items: center;
 		padding: 50px;
 	`,
-	Footer = () => <footer css={footerStyle}>Some text</footer>;
+	Footer = () => (
+		<footer id="contact" css={footerStyle}>
+			Some text
+		</footer>
+	);
 
 export default Footer;
