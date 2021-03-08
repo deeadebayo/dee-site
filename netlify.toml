@@ -1,0 +1,18 @@
+[[redirects]]
+from="/"
+to="/landing-page"
+status="302"
+
+[[redirects]]
+from="/catch-of-the-day/*"
+to="https://deedlebeans-catch.netlify.app/catch-of-the-day/:splat"
+status="200"
+
+# Specific branch context:
+# Deploys from this branch will take these settings
+# and override their current ones.
+[context.feature]
+  command = "make gatsby"
+
+[context."features/branch"]
+  command = "gulp"

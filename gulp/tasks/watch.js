@@ -13,10 +13,7 @@ function reload(done) {
 	done();
 }
 
-task(
-	'build',
-	series(parallel('scriptTask', 'markupTask', 'netlifyTask'), 'imgTask')
-);
+task('build', series(parallel('scriptTask', 'markupTask'), 'imgTask'));
 
 task(
 	'serve',
@@ -24,7 +21,7 @@ task(
 		browserSync.init({
 			open: false,
 			injectChanges: true,
-			server: './dist'
+			server: './dist',
 		});
 
 		watch(rawDir.styles, compileSass);

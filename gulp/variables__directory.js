@@ -7,13 +7,12 @@ const rawDir = {
 		styles: './app/assets/scss/**/*.scss',
 		scripts: './app/assets/js/**/*.js',
 		img: './app/assets/img/*',
-		netlify: './app/netlify/*'
 	},
 	serveDir = {
 		html: './dist',
 		styles: './dist/public/css/',
 		scripts: './dist/public/js/',
-		img: './dist/public/img/'
+		img: './dist/public/img/',
 	};
 
 exports.rawDir = rawDir;
