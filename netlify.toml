@@ -4,3 +4,7 @@
 [context.gatsby]
   command = "npm run build"
   publish = "public"
+
+[context."gatsby/branch"]
+  command = "gatsby build"
+  publish = "public"
