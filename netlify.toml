@@ -2,9 +2,9 @@
 # Deploys from this branch will take these settings
 # and override their current ones.
 [context.gatsby]
-  command = "gatsby build"
+  command = "npm run build"
   base = "public"
 
-  [context."gatsby/branch"]
+[context."gatsby/branch"]
   command = "gatsby build"
   base = "public"
