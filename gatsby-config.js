@@ -1,6 +1,7 @@
 module.exports = {
 	siteMetadata: {
 		title: "dee-site",
+		siteUrl: "https://www.deeadebayo.com",
 	},
 	plugins: [
 		"gatsby-plugin-emotion",

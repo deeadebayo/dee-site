@@ -1,0 +1,10 @@
+# Specific branch context:
+# Deploys from this branch will take these settings
+# and override their current ones.
+[context.gatsby]
+  command = "gatsby build"
+  base = "public"
+
+  [context."gatsby/branch"]
+  command = "gatsby build"
+  base = "public"
