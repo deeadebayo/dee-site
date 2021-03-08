@@ -7,7 +7,7 @@
 		padding: 2px 0;
 	}
 
-	&__links {
+	&__list {
 		grid-column: 2/3;
 		display: block;
 
@@ -25,21 +25,23 @@
 					margin-right: 0;
 				}
 
-				a {
+				a.navbar-links {
 					display: block;
 					position: relative;
 					text-decoration: none;
 					// text-transform: capitalize;
-					color: $color--text-black;
+					color: $color--neutral_text-dark;
 					// @include ms-respond(font-size, 1);
 					@include underline-animation(
-						$color--primary,
+						$color--secondary--dark,
 						'left',
-						$lower-underline: false
+						$lowerUnderline: false
 					);
 
-					&:hover {
-						color: $color--primary;
+					&:hover,
+					&.active,
+					&:focus {
+						color: $color--secondary--dark;
 					}
 				}
 			}

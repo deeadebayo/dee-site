@@ -2,6 +2,13 @@
 	margin: 0 auto;
 	box-sizing: border-box;
 
+	&__header {
+		.navbar {
+			padding: 2em 0 1em;
+			overflow: hidden;
+		}
+	}
+
 	&__landing-page {
 		margin: 0;
 		transition: width 0.1s;
@@ -9,6 +16,10 @@
 		justify-content: center;
 		align-items: center;
 		height: 100vh;
+		max-width: calc(90% - 0.5rem);
+		@include screen-phablet {
+			max-width: calc(92% - 1rem);
+		}
 
 		@include screen-comp {
 			margin: 0 4.6875rem;
@@ -24,56 +35,53 @@
 		}
 	}
 
-	&__homepage {
-		margin: 0;
-		transition: width 0.1s;
+	&__content {
+		margin: 0 auto;
+		max-width: calc(90% - 0.5rem);
+		@include screen-phablet {
+			max-width: calc(92% - 1rem);
+		}
 
 		@include screen-comp {
-			margin: 0 4.6875rem;
+			margin: 0 auto;
+			transition: width 0.1s;
 		}
 
 		@include screen-wide {
 			max-width: 1500px;
 			margin: 0 auto;
+			transition: width 0.1s;
 		}
 
-		&__header {
-			.navbar {
-				padding: 2em 0 1em;
-				overflow: hidden;
-			}
-		}
-
-		&__content {
+		&__home {
 			display: grid;
-			// grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
 			grid-template-columns: 1fr;
 			grid-template-areas:
 				'about-blurb'
 				'project-display';
 		}
+
+		&__about {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-column-gap: 5px;
+		}
 	}
 
 	&__footer {
 		margin-bottom: 5.5rem;
-		@include screen-comp {
-			margin: 0 4.6875rem 5.5rem;
+		max-width: calc(90% - 0.5rem);
+		@include screen-phablet {
+			max-width: calc(92% - 1rem);
 		}
+
+		@include screen-comp {
+			margin: 0 auto 5.5rem;
+		}
+
 		@include screen-wide {
 			max-width: 1500px;
 			margin: 0 auto 5.5rem;
-		}
-	}
-
-	&__template {
-		// &__header {
-		// }
-		&__content {
-			&--about {
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				grid-column-gap: 5px;
-			}
 		}
 	}
 }

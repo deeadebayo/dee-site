@@ -1,9 +1,13 @@
 import { footerAnimation } from './modules/Footer';
-import { clickScroll } from './modules/ClickScroll';
 import { helloAnimation } from './modules/HelloAnimation';
-import { showRandomColor } from './modules/LogoRandomColor';
+import { logoRandomColor } from './modules/LogoRandomColor';
+import { logoNavHover } from './modules/LogoNavHover';
+// eslint-disable-next-line no-unused-vars
+import { pageAnimation } from './modules/PageAnimation';
+import { preloaderAnimation } from './modules/PreloaderAnimation';
 
-footerAnimation();
-clickScroll();
-helloAnimation();
-showRandomColor();
+new footerAnimation();
+new helloAnimation();
+new logoRandomColor();
+new logoNavHover();
+new preloaderAnimation();

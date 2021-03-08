@@ -1,3 +1,4 @@
 # Redirects to landing page
 /	/landing-page	302!
 /catch-of-the-day/* https://deedlebeans-catch.netlify.app/catch-of-the-day/:splat 200!
+

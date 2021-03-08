@@ -5,10 +5,6 @@
 		display: grid;
 	}
 
-	&__content {
-		margin: 0 auto;
-	}
-
 	&__about-blurb {
 		grid-area: about-blurb;
 		margin-bottom: 2.75rem;
@@ -41,13 +37,13 @@
 	&__footer {
 		transition: all 0.5s ease 0s;
 		box-sizing: border-box;
+
 		@include screen-comp {
-			margin: 0 4.6875rem;
+			margin: 0 4.6875rem 3rem;
 		}
 
 		@include screen-wide {
-			max-width: 1500px;
-			margin: 0 auto;
+			margin: 0 auto 3rem;
 		}
 	}
 }

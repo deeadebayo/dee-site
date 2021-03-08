@@ -1,12 +1,51 @@
-$color--primary: hsl(358, 100%, 68%);
-$color--secondary: hsl(175, 100%, 33%);
+// Black + White
+$color--neutral_bg-light: hsl(210, 20%, 95%);
+$color--neutral_bg-med: hsl(210, 15%, 85%);
+
+$color--neutral_stroke-light: hsl(210, 14%, 92%);
+$color--neutral_stroke-med: hsl(210, 14%, 83%);
+$color--neutral_stroke-dark: hsl(0, 0%, 46%);
+
+$color--neutral_text-light: hsl(210, 7%, 56%);
+$color--neutral_text-dark: hsl(0, 0%, 17%); // for standout dark text
+$color--neutral_text-body: hsl(210, 9%, 31%);
+$color--neutral_text-title: hsl(210, 10%, 23%);
+
+// Main Colors
+$color--primary--lighter: hsl(175, 100%, 51%);
+$color--primary--light: hsl(175, 100%, 41%);
+$color--primary: hsl(175, 100%, 33%);
+$color--primary--dark: hsl(175, 100%, 25%);
+$color--primary--darker: hsl(175, 90%, 15%);
+
+$color--secondary--lighter: hsl(358, 100%, 88%);
+$color--secondary--light: hsl(358, 100%, 78%);
+$color--secondary: hsl(358, 100%, 68%);
+$color--secondary--dark: hsl(358, 100%, 58%);
+$color--secondary--darker: hsl(358, 100%, 48%);
+
 $color--accent: hsl(16, 97%, 58%);
 $color--rare: hsl(39, 98%, 58%);
 $color--alert: hsl(356, 69%, 54%);
 
-$color--text-black: hsl(0, 0%, 17%);
-$color--text-header: hsl(0, 0%, 20%);
-$color--text-default: hsl(0, 0%, 28%);
-$color--dark: hsl(0, 0%, 28%);
-$color--gray: hsl(0, 0%, 46%);
-$color--gray__lighter: hsl(0, 0%, 85%);
+// :root {
+//     --bg-color: #f5f8ff;
+//     --main-color: #353536;
+//     --secondary-color: #8e92a4;
+//     --main-text-color: #5d606b;
+//     --secondary-dark-color: #9496a5;
+//     --tag-color-one: #e0fbf6;
+//     --tag-color-text-one: #58c2a9;
+//     --tag-color-two: #ece7fe;
+//     --tag-color-text-two: #8972f3;
+//     --tag-color-three: #fde7ea;
+//     --tag-color-text-three: #e77f89;
+//     --tag-color-four: #f7f8fc;
+//     --tag-color-text-four: #a0a6b5;
+//     --checkbox-color: #009e90;
+//     --button-color: #49beb7;
+//     --box-color: #fff1d6;
+//     --box-color-2: #d3e6ff;
+//     --box-color-3: #ffd9d9;
+//     --box-color-4: #daffe5;
+//     --task-color: #777982;

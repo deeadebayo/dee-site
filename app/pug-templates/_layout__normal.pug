@@ -5,24 +5,35 @@ html(lang="en")
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MZDN562');</script>
         //- End Google Tag Manager
         meta(charset='UTF-8')
-        meta(name='viewport', content='initial-scale=1, maximum-scale=1, user-scalable=no')
+        meta(name='viewport', content='initial-scale=1')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
         block startScript
-        title #{pageTitle} - Dee Adebayo
+        title #{pageTitle} - Front-End UI/UX Developer
         meta(name="author", content="Dee Adebayo")
         meta(name="keywords", content=keywordContent)
         meta(name="description" content=pageDescContent)
+        meta(name='theme-color', content='#ff5b61')
         link(rel="stylesheet", href="public/css/styles.css")
-    body
+        link(rel='icon', type="image/png", sizes='32x32', href='public/img/favicon-32x32.png')
+        link(rel='icon', type="image/png", sizes='16x16', href='public/img/favicon-16x16.png')
+    body(style="background: linear-gradient(to right, #403a3e, #be5869);")#top
         //- Google Tag Manager (noscript)
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MZDN562" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         //- End Google Tag Manager (noscript)
+        #loader.page-animation
+                .page-animation__logo
+                    include ./_svg-code/logo--main
         .wrapper
-            .page-wrapper.page-wrapper__template
-                header.page-wrapper__template__header
-                    include _includes/navbar
-                .page-wrapper__template__content(class=page)
-                    block content
+            .page-wrapper.page-wrapper__content
+                header.page-wrapper__header
+                    include ./_includes/navbar  
+                main(data-router-wrapper)
+                    div(class=pageContent, data-router-view=namespace)
+                        block content
+        svg#page-cover1(height='102%', width='102%', viewBox='0 0 10 10' ,preserveAspectRatio='none')
+            path.page-cover(d='M 0,0 10,0 10,0 0,0 Z' fill='hsl(175, 100%, 33%)')
+        svg#page-cover2(height='102%', width='102%', viewBox='0 0 10 10' ,preserveAspectRatio='none')
+            path.page-cover(d='M 0,0 10,0 10,0 0,0 Z' fill='hsl(358, 100%, 68%)')
         include ./_includes/footer
         script(src="public/js/script.js")
         block endScript

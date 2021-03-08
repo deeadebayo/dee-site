@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Merriweather:400|Muli:300,700');
+@import url('https://fonts.googleapis.com/css?family=Philosopher:400,700|Muli:400,700');
 
 // $screen-phone-min: 425px; // The smallest of phones, make this basic or bigger
 // $screen-phablet-min: 768px; // Tablet in portrait mode
@@ -7,50 +7,55 @@
 // $screen-wide-min: 1650px; // Widescreen desktops
 
 $modularscale: (
-    base: 19px,
-    ratio: $fourth,
-    //1.333
-        $screen-phone-min:
-        (
-            ratio: $minor-third//1.2
-        ),
-    $screen-phablet-min: (
-        base: 21px,
-        ratio: $fourth
-    ),
-    $screen-tablet-min: (
-        base: 22px,
-        ratio: $fourth
-    ),
-    $screen-comp-min: (
-        base: 22px,
-        ratio: $fourth
-    ),
-    $screen-wide-min: (
-        base: 25px,
-        ratio: $fourth
-    )
+	base: 19px,
+	ratio: $fourth,
+	//1.333
+		$screen-phone-min:
+		(
+			base: 16px,
+			ratio: 20at1 // ratio: $minor-third//1.2,
+		),
+	$screen-phablet-min: (
+		base: 21px,
+		ratio: $fourth,
+	),
+	$screen-tablet-min: (
+		base: 22px,
+		ratio: $fourth,
+	),
+	$screen-comp-min: (
+		base: 22px,
+		ratio: $fourth,
+	),
+	$screen-wide-min: (
+		base: 25px,
+		ratio: $fourth,
+	),
 );
 
 $ms-fluid: false;
-$ms-range: ($minor-third $screen-phone-min, $fourth $screen-phablet-min, $golden $screen-comp-min);
+$ms-range: (
+	$minor-third $screen-phone-min,
+	$fourth $screen-phablet-min,
+	$golden $screen-comp-min
+);
 
 p {
-    font-family: $font--muli;
-    font-weight: 300;
-    line-height: 1.5;
-    // @include ms-respond(font-size, 3)
-    @include ms-respond(font-size, 0);
-    color: $color--text-default;
+	font-family: $font--muli;
+	font-weight: 400;
+	line-height: 1.5;
+	// @include ms-respond(font-size, 3)
+	@include ms-respond(font-size, 0);
+	color: $color--neutral_text-body;
 
-    &.small {
-        @include ms-respond(font-size, -1);
-    }
+	&.small {
+		@include ms-respond(font-size, -1);
+	}
 }
 
 small,
 .small {
-    @include ms-respond(font-size, -1);
+	@include ms-respond(font-size, -1);
 }
 
 h1,
@@ -59,40 +64,44 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: $font--merriweather;
-    color: $color--dark;
-    font-weight: 400;
+	font-family: $font--philosopher;
+	color: $color--neutral_text-title;
+	font-weight: 700;
 }
 
 a {
-    font-family: $font--muli;
-    font-weight: 700;
-    color: $color--primary;
-    transition: color 0.2s ease-in-out;
-    text-decoration: none;
+	font-family: $font--muli;
+	font-weight: 700;
+	color: $color--secondary;
+	transition: color 0.2s ease-in-out;
+	text-decoration: none;
 
-    &:hover {
-        color: $color--secondary;
-        cursor: pointer;
-    }
+	&:hover {
+		color: $color--primary;
+		cursor: pointer;
+	}
+
+	&:focus {
+		outline: thin dotted;
+	}
 }
 
 h1 {
-    @include ms-respond(font-size, 4);
+	@include ms-respond(font-size, 4);
 }
 
 h2 {
-    @include ms-respond(font-size, 3);
+	@include ms-respond(font-size, 3);
 }
 
 h3 {
-    @include ms-respond(font-size, 2);
+	@include ms-respond(font-size, 2);
 }
 
 h4 {
-    @include ms-respond(font-size, 1);
+	@include ms-respond(font-size, 1);
 }
 
 .title--big {
-    color: $color--text-header;
+	color: $color--neutral_text-dark;
 }

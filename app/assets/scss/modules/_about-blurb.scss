@@ -11,9 +11,11 @@
 
 		a {
 			@include underline-animation(
-				$color--secondary,
+				$color--primary,
 				'right',
-				$lower-underline: true
+				$lowerUnderline: true,
+				$bodyLink: true,
+				$endColor: $color--primary--dark
 			);
 		}
 	}
