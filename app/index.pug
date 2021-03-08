@@ -1,7 +1,7 @@
 extends pug-templates/_layout__normal
 
 append startScript
-    - var pageTitle = "Dee Adebayo";
+    - var pageTitle = "Dee Adebayo - Front-End Web Developer";
     - var keywordContent = "Some SEO stuff"
     - var pageDescContent = "Here's a page description"
     - var pageContent = ".page-wrapper__content__home";
@@ -24,66 +24,64 @@ block content
                 p.lead I'm Adeolu!
                     span.p
                 p 
-                    | I'm a front-end developer 
+                    | I'm a front-end developer
                     //love web dev, one of major requirements for staying relevant is continously keep learning
                     br
-                    | focused on creating interactive and functional web experiences
-                    | using modern CSS, responsive Web design, and progressive enhancement.
+                    | focused on creating interactive and functional web experiences.
                 p 
                     | I'm originally from  
-                    | <a href="https://www.lonelyplanet.com/nigeria/lagos">Lagos</a>
+                    | <a href="https://www.lonelyplanet.com/nigeria/lagos" target="_blank">Lagos</a>
                     img(src="public/img/emoji__ng-flag.png", alt="Nigerian flag emoji").emoji
-                    |  but reside in <a href="https://www.lonelyplanet.com/usa/the-south/atlanta">Atlanta</a>
+                    | but reside in <a href="https://www.lonelyplanet.com/usa/the-south/atlanta" target="_blank">Atlanta</a>
                     img(src="public/img/emoji__peach.png", alt="peach emoji").emoji
                     | ,
                     br
                     | building static websites for small businesses.
                 p <a href="#contact" data-router-disabled>Say hello</a>, or keep exploring. 
-                button.btn#btn-click more about me 
+                button.btn more about me 
     section.content-wrapper.content-wrapper__project-display
         .project-display
             h3.project-display__title Work Things!
-            .project-display__container
-                a.project-display__item(href='/')
+            .project-display__box.project-display__box--blue
+                a.project-display__link(href="/")
                     .project-display__img
                         img(src="public/img/work__jmdrums__cover.jpg")
-                    .project-display__detail-container
-                        .project-display__detail-container__details
-                            .project-display__detail-container__details__title Title
-                            .project-display__detail-container__details__subtitle Subtitle
-                            .project-display__detail-container__details__icon-section
-                                .project-display__detail-container__details__icon-section__icon
-                                    include ./pug-templates/_svg-code/icon--arrow
-                a.project-display__item(href="/")
+                    span.project-display__detail-box
+                        span.project-display__detail-box__details
+                            span.project-display__detail-box__details__title 
+                            span.project-display__detail-box__details__subtitle
+                            //- span.project-display__detail-box__details__icon-section
+                            //-     span.project-display__detail-box__details__icon-section__icon
+            .project-display__box.project-display__box--green
+                a.project-display__link(href="/")
                     .project-display__img
-                        img(src="public/img/work__ctkmc__tablet-and-phone.jpg")
-                    .project-display__detail-container
-                        .project-display__detail-container__details
-                            .project-display__detail-container__details__title 
-                            .project-display__detail-container__details__subtitle
-                            .project-display__detail-container__details__icon-section
-                                .project-display__detail-container__details__icon-section__icon
-                                    include ./pug-templates/_svg-code/icon--arrow
-                a.project-display__item(href="https://github.com/deeadebayo")
+                        img(src="public/img/work__ctkmc__tablet-and-phone.png")
+                    span.project-display__detail-box
+                        span.project-display__detail-box__details
+                            span.project-display__detail-box__details__title
+                            span.project-display__detail-box__details__subtitle
+                            //- span.project-display__detail-box__details__icon-section
+                            //-     span.project-display__detail-box__details__icon-section__icon
+            .project-display__box.project-display__box--yellow
+                a.project-display__link(href="https://github.com/deeadebayo")
                     .project-display__img
-                        img(src="public/img/work__github-octocat.jpg")
-                    .project-display__detail-container
-                        .project-display__detail-container__details
-                            .project-display__detail-container__details__title GitHub/deeadebayo
-                            .project-display__detail-container__details__subtitle Repo for most of my projects
-                            .project-display__detail-container__details__icon-section
-                                .project-display__detail-container__details__icon-section__icon
-                                    include ./pug-templates/_svg-code/icon--arrow
-                a.project-display__item(href="/")
+                        img(src="public/img/work__github-octocat.png")
+                    span.project-display__detail-box
+                        span.project-display__detail-box__details
+                            span.project-display__detail-box__details__title
+                            span.project-display__detail-box__details__subtitle
+                            //- span.project-display__detail-box__details__icon-section
+                            //-     span.project-display__detail-box__details__icon-section__icon
+            .project-display__box.project-display__box--red
+                a.project-display__link(href="/")
                     .project-display__img
                         img(src="public/img/work__coming-soon.jpg")
-                    .project-display__detail-container
-                        .project-display__detail-container__details
-                            .project-display__detail-container__details__title Title
-                            .project-display__detail-container__details__subtitle Subtitle
-                            .project-display__detail-container__details__icon-section
-                                .project-display__detail-container__details__icon-section__icon
-                                    include ./pug-templates/_svg-code/icon--arrow
+                    span.project-display__detail-box
+                        span.project-display__detail-box__details
+                            span.project-display__detail-box__details__title Title
+                            span.project-display__detail-box__details__subtitle Subtitle
+                            //- span.project-display__detail-box__details__icon-section
+                            //-     span.project-display__detail-box__details__icon-section__icon
             .project-display__btn
                 button.btn More work things! (projects)
 block endScript

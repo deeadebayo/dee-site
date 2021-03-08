@@ -4,6 +4,7 @@ export function getRandomColor(classArray) {
 	return classes[currentClass];
 }
 
+<<<<<<< HEAD
 export function logoRandomColor() {
 	let logo = document.querySelector('#logo'),
 		classes = [
@@ -34,5 +35,28 @@ export function logoRandomColor() {
 	logo.addEventListener('mouseleave', () => {
 		logo.classList.remove(noColorClass);
 		logo.classList.add('logo--noColor');
+=======
+export function showRandomColor() {
+	let logo = document.querySelector('#logo');
+
+	logo.addEventListener('mouseenter', function() {
+		let logoColorChange = getRandomColor();
+
+		if (logo.classList.contains('logo--noColor')) {
+			logo.classList.remove('logo--noColor');
+		}
+
+		logo.classList.remove(
+			'logo--primaryColor',
+			'logo--secondaryColor',
+			'logo--accentColor',
+			'logo--primaryColorHover',
+			'logo--secondaryColorHover',
+			'logo--accentColorHover'
+		);
+
+		console.warn(logo);
+		this.classList.toggle(logoColorChange);
+>>>>>>> add-content
 	});
 }

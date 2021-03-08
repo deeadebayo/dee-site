@@ -13,6 +13,7 @@ $modularscale: (
 		$screen-phone-min:
 		(
 			base: 16px,
+<<<<<<< HEAD
 			ratio: 20at1 // ratio: $minor-third//1.2,
 		),
 	$screen-phablet-min: (
@@ -31,6 +32,26 @@ $modularscale: (
 		base: 25px,
 		ratio: $fourth,
 	),
+=======
+			ratio: 20at1 // ratio: $minor-third//1.2
+		),
+	$screen-phablet-min: (
+		base: 21px,
+		ratio: $fourth
+	),
+	$screen-tablet-min: (
+		base: 22px,
+		ratio: $fourth
+	),
+	$screen-comp-min: (
+		base: 22px,
+		ratio: $fourth
+	),
+	$screen-wide-min: (
+		base: 25px,
+		ratio: $fourth
+	)
+>>>>>>> add-content
 );
 
 $ms-fluid: false;
@@ -42,11 +63,19 @@ $ms-range: (
 
 p {
 	font-family: $font--muli;
+<<<<<<< HEAD
 	font-weight: 400;
 	line-height: 1.5;
 	// @include ms-respond(font-size, 3)
 	@include ms-respond(font-size, 0);
 	color: $color--neutral_text-body;
+=======
+	font-weight: 300;
+	line-height: 1.5;
+	// @include ms-respond(font-size, 3)
+	@include ms-respond(font-size, 0);
+	color: $color--text-default;
+>>>>>>> add-content
 
 	&.small {
 		@include ms-respond(font-size, -1);
@@ -64,14 +93,21 @@ h3,
 h4,
 h5,
 h6 {
+<<<<<<< HEAD
 	font-family: $font--philosopher;
 	color: $color--neutral_text-title;
 	font-weight: 700;
+=======
+	font-family: $font--merriweather;
+	color: $color--dark;
+	font-weight: 400;
+>>>>>>> add-content
 }
 
 a {
 	font-family: $font--muli;
 	font-weight: 700;
+<<<<<<< HEAD
 	color: $color--secondary;
 	transition: color 0.2s ease-in-out;
 	text-decoration: none;
@@ -83,6 +119,15 @@ a {
 
 	&:focus {
 		outline: thin dotted;
+=======
+	color: $color--primary;
+	transition: color 0.2s ease-in-out;
+	text-decoration: none;
+
+	&:hover {
+		color: $color--secondary;
+		cursor: pointer;
+>>>>>>> add-content
 	}
 }
 
@@ -103,5 +148,9 @@ h4 {
 }
 
 .title--big {
+<<<<<<< HEAD
 	color: $color--neutral_text-dark;
+=======
+	color: $color--text-header;
+>>>>>>> add-content
 }

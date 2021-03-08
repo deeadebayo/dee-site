@@ -1,5 +1,5 @@
 .page-wrapper {
-	margin: 0 auto;
+	margin: 0 calc(15% - 2em);
 	box-sizing: border-box;
 
 	&__header {
@@ -36,6 +36,7 @@
 	}
 
 	&__content {
+<<<<<<< HEAD
 		margin: 0 auto;
 		max-width: calc(90% - 0.5rem);
 		@include screen-phablet {
@@ -44,12 +45,22 @@
 
 		@include screen-comp {
 			margin: 0 auto;
+=======
+		margin: 0 calc(10% - 2em);
+
+		@include screen-comp {
+			margin: 0 calc(10% - 2em);
+>>>>>>> add-content
 			transition: width 0.1s;
 		}
 
 		@include screen-wide {
 			max-width: 1500px;
+<<<<<<< HEAD
 			margin: 0 auto;
+=======
+			margin: 0 calc(10% - 2em);
+>>>>>>> add-content
 			transition: width 0.1s;
 		}
 
@@ -70,6 +81,7 @@
 
 	&__footer {
 		margin-bottom: 5.5rem;
+<<<<<<< HEAD
 		max-width: calc(90% - 0.5rem);
 		@include screen-phablet {
 			max-width: calc(92% - 1rem);
@@ -77,11 +89,20 @@
 
 		@include screen-comp {
 			margin: 0 auto 5.5rem;
+=======
+
+		@include screen-comp {
+			margin: 0 calc(10% - 2em) 5.5rem;
+>>>>>>> add-content
 		}
 
 		@include screen-wide {
 			max-width: 1500px;
+<<<<<<< HEAD
 			margin: 0 auto 5.5rem;
+=======
+			margin: 0 calc(10% - 2em) 5.5rem;
+>>>>>>> add-content
 		}
 	}
 }

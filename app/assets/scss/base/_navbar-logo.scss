@@ -30,6 +30,25 @@ $layer3-hover-delay: 0s;
 		@include logo-animation(transparent, null, $layer3-static-transition);
 	}
 
+<<<<<<< HEAD:app/assets/scss/base/_navbar-logo.scss
+=======
+	&--noColor {
+		.logo__text-outline {
+			opacity: 1;
+		}
+		.logo__layer-1 {
+			@include logo-animation(transparent, $layer1-hover-delay);
+		}
+
+		.logo__layer-2 {
+			@include logo-animation(transparent, $layer2-hover-delay);
+		}
+
+		.logo__layer-3 {
+			@include logo-animation(transparent, $layer3-hover-delay);
+		}
+	}
+>>>>>>> add-content:app/assets/scss/base/_navbar-logo.scss
 	&--primaryColorHover,
 	&--primaryColor:hover {
 		.logo__text-outline {
@@ -64,7 +83,10 @@ $layer3-hover-delay: 0s;
 			@include logo-animation($color--primary, $layer3-hover-delay);
 		}
 	}
+<<<<<<< HEAD:app/assets/scss/base/_navbar-logo.scss
 
+=======
+>>>>>>> add-content:app/assets/scss/base/_navbar-logo.scss
 	&--accentColorHover,
 	&--accentColor:hover {
 		.logo__text-outline {
