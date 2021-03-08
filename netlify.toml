@@ -3,8 +3,8 @@
 # and override their current ones.
 [context.gatsby]
   command = "npm run build"
-  base = "public"
+  base = "./public"
 
 [context."gatsby/branch"]
   command = "gatsby build"
-  base = "public"
+  base = "./public"
