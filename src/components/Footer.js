@@ -1,5 +1,6 @@
 import React from "react";
 import { css } from "@emotion/react";
+import ContactForm from "./ContactForm";
 
 const footerStyle = css`
 		position: sticky;
@@ -15,6 +16,7 @@ const footerStyle = css`
 	Footer = () => (
 		<footer id="contact" css={footerStyle}>
 			Some text
+			<ContactForm />
 		</footer>
 	);
 
