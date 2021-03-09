@@ -14,6 +14,26 @@ const projectBoxStyles = css`
 			"more-btn more-btn";
 
 		grid-template-columns: 1fr 1fr;
+		.project-box:nth-of-type(2) {
+			a {
+				border-top-left-radius: 5px;
+			}
+		}
+		.project-box:nth-of-type(3) {
+			a {
+				border-top-right-radius: 5px;
+			}
+		}
+		.project-box:nth-of-type(4) {
+			a {
+				border-bottom-left-radius: 5px;
+			}
+		}
+		.project-box:nth-of-type(5) {
+			a {
+				border-bottom-right-radius: 5px;
+			}
+		}
 
 		.project-box {
 			&:hover .project-box__img {
@@ -81,14 +101,6 @@ const projectBoxStyles = css`
 				text-decoration: none;
 				overflow: hidden;
 				display: flex;
-			}
-
-			${
-				"" /* //style the grid item and the anchor link, respectively
-			border-top-right-radius: 5px;
-			border-bottom-left-radius: 5px;
-			border-bottom-right-radius: 5px;
-			border-bottom-left-radius: 5px; */
 			}
 		}
 	`,
