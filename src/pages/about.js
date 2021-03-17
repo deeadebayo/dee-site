@@ -1,6 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import { css } from "@emotion/react";
+import { motion } from "framer-motion";
 
 const AboutPageStyles = css`
 		display: grid;
@@ -87,11 +88,11 @@ const AboutPageStyles = css`
 						</p>
 					</div>
 				</div>
-				<div className="contact">
+				<motion.div className="contact" animate={{ scale: 1.5 }}>
 					Contact me component with social links- If the project
 					involves HTML/CSS/JS, chances are I'm going to love working
 					on it. Say hi, let's start a conversation!
-				</div>
+				</motion.div>
 			</div>
 		</>
 	);

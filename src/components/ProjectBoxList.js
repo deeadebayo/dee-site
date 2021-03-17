@@ -201,7 +201,7 @@ export default function ProjectBoxList() {
 				title: "ctkmc",
 				subtitle: "Some sub-text",
 				backgroundColor: colorAccent,
-				link: "/ctkmedcenter",
+				link: "/work/ctkmedcenter",
 				image: data.ctkmc.childImageSharp.gatsbyImageData,
 				alt: "ctmedcenter project image",
 			},
@@ -241,7 +241,6 @@ export default function ProjectBoxList() {
 					bg={project.backgroundColor}
 				/>
 			))}
-			<div>Div for More projects link</div>
 		</div>
 	);
 }
