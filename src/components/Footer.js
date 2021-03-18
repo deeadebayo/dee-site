@@ -7,6 +7,7 @@ const footerStyle = css`
 		bottom: 0;
 		left: 0;
 		width: 100%;
+		overflow: hidden;
 
 		background: var(--color-secondary);
 		display: grid;
@@ -15,7 +16,6 @@ const footerStyle = css`
 	`,
 	Footer = () => (
 		<footer id="contact" css={footerStyle}>
-			Some text
 			<ContactForm />
 		</footer>
 	);

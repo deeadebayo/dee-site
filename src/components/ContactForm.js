@@ -5,6 +5,7 @@ const contactFormStyles = css`
 		${
 			"" /* background: white url("./../images/postcard-border--blue.jpg"); */
 		}
+		background: white;
 		border-radius: 8px;
 		padding: 0.2em;
 		border: 1px solid hsla(224, 62%, 24%, 0.1);
@@ -26,20 +27,45 @@ const contactFormStyles = css`
 			box-shadow: hsla(0, 0%, 0%, 0.5);
 			z-index: -1;
 		}
+		.form-input {
+			textarea {
+				border: 2px solid var(--color-gray);
+				${"" /* width: 90%; */}
+				padding: 0.625rem 0.8rem;
+				overflow: auto;
+
+				color: var(--color-text_default);
+				font-size: 1.2rem;
+
+				&:hover {
+					border: 2px solid var(--color-secondary);
+				}
+				&:focus,
+				&:active {
+					border: 2px solid var(--color-secondary);
+				}
+			}
+		}
 	`,
 	ContactForm = () => {
 		return (
 			<div css={contactFormStyles}>
 				<h2>Contact</h2>
+				<p>
+					Are you looking for help on a project? Do you have any
+					questions? Or do you just want to say hi? Please use the
+					contact form below and I'll get back to you!{" "}
+				</p>
 				<form
 					action="/"
 					name="contact"
 					method="POST"
 					netlify-honeypot="fake-friends"
 					data-netlify="true"
+					className="form-input"
 				>
-					<div className="contact-form__input">
-						<div className="contact-form__details">
+					<div className="input">
+						<div className="form-input__details">
 							<p>My name is</p>
 							<label htmlFor="name"></label>
 							<input
@@ -60,7 +86,7 @@ const contactFormStyles = css`
 								required
 							/>
 						</div>
-						<div className="contact-form__message">
+						<div className="message">
 							<label htmlFor="message"></label>
 							<textarea
 								name="message"
@@ -71,50 +97,23 @@ const contactFormStyles = css`
 								placeholder="What's on your mind?"
 								required
 							></textarea>
-							<label htmlFor=""></label>
+							<p className="hidden">
+								<label htmlFor="fake-friends">
+									Not for the real friends
+								</label>
+								<input name="fake-friends" />
+							</p>
+						</div>
+						<div className="submit">
+							<input type="submit" value="Send" />
 						</div>
 					</div>
 				</form>
+				<p>LinkedIn link</p>
+				<p>Github link</p>
+				<p>Resume link?</p>
 			</div>
 		);
 	};
 
 export default ContactForm;
-
-// #footer.page-wrapper.page-wrapper__footer
-//     .content-wrapper__footer.footer
-//         form(name='contact', method='POST' netlify-honeypot='fake-friends' data-netlify='true' action='/').contact-form
-//             .contact-form__title
-//                 h2 Get In Touch
-//                 p.small send some mail
-//             section.contact-form__input
-//                 .contact-form__details
-//                     p
-//                         | Hi Dee. My name is
-//                         label(for="name")
-//                         input(type="text" id="name" name="name" placeholder="Your Full Name" size="19" required)
-//                         | , please respond back to me at
-//                         label(for="email")
-//                         input#email(type="text" name="email" placeholder="Your Email Address" size='24' required)
-//                         | .
-//                 .contact-form__message
-//                     label(for="message")
-//                     textarea#message(name="message", cols='30', rows="8", wrap='soft', placeholder="What's on your mind?" required)
-//                     p.hidden
-//                         label This isn't for humans
-//                             input(name="fake-friends")
-//             section.contact-form__midsection
-//             //- section.contact-form__postage-stamp
-//             section.contact-form__info
-//                 .contact-form__info__postcard-stamp
-//                     include ../_svg-code/postcard-stamp
-//                 //- p Although I'm not currently looking for freelance work, my inbox is always open. Say hi or ask any questions. I may not get answer immediately but, I'll do my best to get back to you!
-//                 p Ask a question or say hi! I may not be able to answer immediately but, I'll make sure to get back to you as soon as I can!
-//                 .contact-form__info__links
-//                     p: a(href="https://www.linkedin.com/in/deeadebayo") LinkedIn
-//                     p: a(href="https://github.com/deeadebayo/") GitHub
-//                     p: a(href="/") Resume
-//                 //- text in input fields has to be entered from middle out. how will the text around it behave?
-//             section.contact-form__submit
-//                 input(type="submit", value="Send")
-//                 p: a(href="#top") Back to top &#x2B06;
