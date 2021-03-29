@@ -15,7 +15,7 @@ const footerStyle = css`
 		padding: 50px;
 	`,
 	Footer = () => (
-		<footer id="contact" css={footerStyle}>
+		<footer css={footerStyle}>
 			<ContactForm />
 		</footer>
 	);

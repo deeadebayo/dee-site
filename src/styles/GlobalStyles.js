@@ -35,6 +35,37 @@ const globalstyles = css`
 		display: none;
 	}
 
+	.btn {
+		position: relative;
+		outline: none;
+		transition: all 0.2s ease-in-out;
+		border: 1px solid $color--primary;
+		box-shadow: 0 3px 6px 1px hsla(224, 62%, 24%, 0.24);
+		background: transparent;
+		color: var(--color-primary);
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		font-size: 1.2rem;
+		border-radius: 4px;
+		padding: 1em 2em;
+		cursor: pointer;
+		backface-visibility: hidden;
+		transform: translateZ(0) scale(1, 1);
+		transform: translate3d(0, 0, 0);
+
+		&:hover {
+			background: var(--color-secondary);
+			border: 1px solid var(--color-secondary);
+			color: white;
+		}
+
+		&:active {
+			transform: scale3d(0.95, 0.95, 0.95);
+			box-shadow: 0 0px 0px hsla(224, 62%, 24%, 0.24);
+			background: darken(var(--color-secondary), 10);
+		}
+	}
+
 	main {
 		display: flex;
 		min-height: 100vh;
