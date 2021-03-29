@@ -90,7 +90,7 @@
 		font-weight: 400;
 		color: $color--text-default;
 
-		&[type='text'] {
+		&[type="text"] {
 			transition: all 0.3s ease-in-out;
 			box-sizing: border-box;
 			border: none;
@@ -117,7 +117,7 @@
 			}
 		}
 
-		&[type='submit'] {
+		&[type="submit"] {
 			border: 1px solid $color--accent;
 
 			//Button styles
