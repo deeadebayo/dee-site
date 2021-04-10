@@ -11,15 +11,18 @@ const contactFormStyles = css`
 		border: 1px solid hsla(224, 62%, 24%, 0.1);
 		box-shadow: 0px 3px 5px hsla(224, 62%, 24%, 0.24);
 		display: grid;
-		grid-template-areas: "info info" "form links";
+		grid-template-areas: "info" "form";
 		transition: all 0.3s ease 0s;
 		box-sizing: border-box;
 
-		& > .info {
+		& > .contact__header {
 			grid-area: info;
-			text-align: center;
+			display: flex;
+			flex-flow: row wrap;
 			h2 {
 				margin: 1rem 0;
+				flex-basis: 100%;
+				text-align: center;
 			}
 			p {
 				max-width: 60ch;
@@ -29,14 +32,6 @@ const contactFormStyles = css`
 		& > .form {
 			grid-area: form;
 			padding: 1em 1.5em;
-		}
-		& > .links {
-			display: grid;
-			grid-area: links;
-			padding: 1em 1.5em;
-			grid-template-columns: 1fr;
-			border-left: 1px solid gray;
-			${"" /* //work in progress */}
 		}
 
 		&:before {
@@ -55,7 +50,48 @@ const contactFormStyles = css`
 			box-shadow: hsla(0, 0%, 0%, 0.5);
 			z-index: -1;
 		}
+		.info {
+			gap: 2em;
+			display: flex;
+			flex: 1;
+			margin-bottom: 1em;
+		}
+
 		.form-input {
+			display: flex;
+			flex-flow: row wrap;
+
+			&__name,
+			&__email {
+				flex: 1;
+				input[type="text"] {
+					width: 100%;
+				}
+			}
+			&__message {
+				flex-basis: 100%;
+
+				textarea {
+					width: 100%;
+					margin-bottom: 0.5em;
+				}
+
+				.submit-wrapper {
+					display: flex;
+
+					.submit {
+						flex: 0 1 40%;
+					}
+
+					.links {
+						flex: 1;
+						display: flex;
+						justify-content: flex-end;
+						padding: 1em 1.5em;
+					}
+				}
+			}
+
 			input[type="text"],
 			textarea {
 				border: 2px solid var(--color-gray);
@@ -73,26 +109,21 @@ const contactFormStyles = css`
 					border: 2px solid var(--color-secondary);
 				}
 			}
-
-			textarea {
-				width: 80%;
-				margin-bottom: 0.5em;
+			label {
+				margin: 1rem 0 0;
 			}
-		}
-		form p {
-			margin: 1rem 0 0;
 		}
 	`,
 	ContactForm = () => {
 		return (
 			<>
 				<div css={contactFormStyles}>
-					<div className="info">
+					<div className="contact__header">
 						<h2>Contact</h2>
 						<p>
 							Looking for help on a project or do you just want to
-							say hi? Please use the contact form below and I'll
-							get back to you!
+							say hi? Please use the form below and I'll get back
+							to you!
 						</p>
 					</div>
 					<div className="form">
@@ -104,10 +135,10 @@ const contactFormStyles = css`
 							data-netlify="true"
 							className="form-input"
 						>
-							<div className="input">
-								<div className="form-input__details">
-									<p>Hi Dee, my name is</p>
-									<label htmlFor="name"></label>
+							<div className="info">
+								<div className="form-input__name">
+									<label htmlFor="name">First Name</label>
+									<br />
 									<input
 										type="text"
 										id="name"
@@ -116,11 +147,10 @@ const contactFormStyles = css`
 										size="19"
 										required
 									/>
-									<p>
-										Please respond back to me at the email
-										address below:
-									</p>
-									<label htmlFor="email"></label>
+								</div>
+								<div className="form-input__email">
+									<label htmlFor="email">Email</label>
+									<br />
 									<input
 										type="text"
 										name="email"
@@ -129,48 +159,44 @@ const contactFormStyles = css`
 										required
 									/>
 								</div>
-								<p>How can I help?</p>
-								<div className="message">
-									<label htmlFor="message"></label>
-									<textarea
-										name="message"
-										id="message"
-										cols="30"
-										rows="8"
-										wrap="soft"
-										placeholder="What's on your mind?"
-										required
-									></textarea>
-									<p className="hidden">
-										<label htmlFor="fake-friends">
-											Not for the real friends
-										</label>
-										<input name="fake-friends" />
-									</p>
-								</div>
-								<div className="submit">
-									<input
-										type="submit"
-										value="Send"
-										className="btn"
-									/>
+							</div>
+							<div className="form-input__message">
+								<label htmlFor="message">How can I help?</label>
+								<br />
+								<textarea
+									name="message"
+									id="message"
+									cols="30"
+									rows="8"
+									wrap="soft"
+									placeholder="What's on your mind?"
+									required
+								></textarea>
+								<p className="hidden">
+									<label htmlFor="fake-friends">
+										Not for the real friends
+									</label>
+									<input name="fake-friends" />
+								</p>
+								<div className="submit-wrapper">
+									<div className="submit">
+										<input
+											type="submit"
+											value="Send"
+											className="btn"
+										/>
+									</div>
+									<div className="links">
+										<a href="https://www.linkedin.com/in/deeadebayo/">
+											LinkedIn
+										</a>
+										<a href="https://github.com/deeadebayo">
+											Github
+										</a>
+									</div>
 								</div>
 							</div>
 						</form>
-					</div>
-					<div className="links">
-						<div>
-							<p>
-								<a href="https://www.linkedin.com/in/deeadebayo/">
-									LinkedIn
-								</a>
-							</p>
-							<p>
-								<a href="https://github.com/deeadebayo">
-									Github
-								</a>
-							</p>
-						</div>
 					</div>
 				</div>
 				<div id="contact"></div>
