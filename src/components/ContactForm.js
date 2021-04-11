@@ -1,10 +1,32 @@
 import React from "react";
 import { css } from "@emotion/react";
 
+import "./../scss/contactForm.scss";
+
+import BackgroundImage from "gatsby-background-image";
+import { graphql, useStaticQuery } from "gatsby";
+
+const BackgroundBorder = ({ className }) => {
+	const data = useStaticQuery(
+		graphql`
+			query {
+				postcard: file(relativePath: { eq: "postcard--blue.jpg" }) {
+					childImageSharp {
+						gatsbyImageData(
+							layout: CONSTRAINED
+							placeholder: TRACED_SVG
+						)
+					}
+				}
+			}
+		`
+	);
+	const imageData = data.postcard.childImageSharp.gatsbyImageData;
+
+	return <BackgroundImage Tag="div" />;
+};
+
 const contactFormStyles = css`
-		${
-			"" /* background: white url("./../images/postcard-border--blue.jpg"); */
-		}
 		background: white;
 		border-radius: 5px;
 		padding: 0.5em 1rem;
@@ -19,14 +41,18 @@ const contactFormStyles = css`
 			grid-area: info;
 			display: flex;
 			flex-flow: row wrap;
+			margin-top: 1.2em;
+
+			padding: 1em 1.5em 0;
+
 			h2 {
 				margin: 1rem 0;
 				flex-basis: 100%;
 				text-align: center;
 			}
-			p {
-				max-width: 60ch;
-				margin: 0 2em;
+			p.lead {
+				max-width: 65ch;
+				font-size: 1.25em;
 			}
 		}
 		& > .form {
@@ -66,6 +92,9 @@ const contactFormStyles = css`
 				flex: 1;
 				input[type="text"] {
 					width: 100%;
+					background: transparent;
+					border: none;
+					border-bottom: 1px solid #000000;
 				}
 			}
 			&__message {
@@ -86,8 +115,16 @@ const contactFormStyles = css`
 					.links {
 						flex: 1;
 						display: flex;
+						flex-flow: row wrap;
 						justify-content: flex-end;
 						padding: 1em 1.5em;
+						font-size: 1.2rem;
+
+						& > a {
+							flex: 1;
+							text-align: center;
+							padding: 0.2em 0.5em;
+						}
 					}
 				}
 			}
@@ -117,13 +154,12 @@ const contactFormStyles = css`
 	ContactForm = () => {
 		return (
 			<>
-				<div css={contactFormStyles}>
+				<div css={contactFormStyles} className="contactFormStyles">
 					<div className="contact__header">
-						<h2>Contact</h2>
-						<p>
+						<h2>Say hello</h2>
+						<p className="lead">
 							Looking for help on a project or do you just want to
-							say hi? Please use the form below and I'll get back
-							to you!
+							say hi? Let's get in touch!
 						</p>
 					</div>
 					<div className="form">

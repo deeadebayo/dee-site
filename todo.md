@@ -14,3 +14,5 @@
 -   [id] {scroll-margin-top: 1ex;}
 -   name on homepage is clear white text with black outline. Hover on for treat
 -   fix up 404 page
+-   make input fields underlines instead
+-   gameboy - (https://github.com/baumannzone/gameboy-css)
