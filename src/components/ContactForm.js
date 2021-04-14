@@ -13,7 +13,6 @@ const contactFormStyles = css`
 		border: 1px solid hsla(224, 62%, 24%, 0.1);
 		box-shadow: 0px 3px 5px hsla(224, 62%, 24%, 0.24);
 		display: flex;
-		transition: all 0.3s ease 0s;
 		box-sizing: border-box;
 
 		&:before {
@@ -31,12 +30,11 @@ const contactFormStyles = css`
 		}
 		.content {
 			position: relative;
-			background: #fff;
-			padding: 60px;
+			background: var(--color-soft-white);
 			border-radius: 5px;
 			border: solid 1px #ccc;
 			box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-			padding: 0.25em;
+			${"" /* padding: 0.25em; */}
 			display: grid;
 			flex-flow: row wrap;
 			grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -44,10 +42,12 @@ const contactFormStyles = css`
 
 		& .content > .contact__header {
 			grid-column: 3/4;
+			display: flex;
 			flex-flow: row wrap;
-			margin-top: 1.2em;
+			background: hsl(210, 63%, 98%);
+			border-left: 1px solid hsl(212, 33%, 89%);
 
-			padding: 1em 1.5em 0;
+			padding: 1em 1.5em;
 
 			h2 {
 				margin: 1rem 0;
@@ -61,16 +61,29 @@ const contactFormStyles = css`
 			.links {
 				display: flex;
 				flex: 1;
+				gap: 0.5em;
 				flex-flow: row wrap;
 				justify-content: flex-end;
 				padding: 1em 1.5em;
 				font-size: 1.2rem;
 
-				& > a {
+				& > div {
 					display: flex;
 					flex: 1;
-					text-align: center;
-					padding: 0.2em 0.5em;
+					padding: 0.2em;
+					justify-content: center;
+					align-self: flex-end;
+				}
+
+				svg {
+					transition: 0.3s fill;
+					fill: var(--color-primary);
+
+					&:hover,
+					&:focus,
+					&:active {
+						fill: var(--color-secondary);
+					}
 				}
 			}
 		}
@@ -100,45 +113,45 @@ const contactFormStyles = css`
 			&__message {
 				flex-basis: 100%;
 
-				textarea {
-					width: 100%;
-					margin-bottom: 0.5em;
-				}
-
-				.submit-wrapper {
+				.submit {
 					display: flex;
-
-					.submit {
-						flex: 0 1 40%;
+					flex-direction: column;
+					& > * {
+						align-self: flex-end;
 					}
 				}
 			}
 
 			input[type="text"] {
-				background: blue;
+				background: white;
 				border: 2px solid transparent;
 				border-bottom: 2px solid var(--color-gray);
-				border-radius: 0;
+				border-radius: 4px;
 				padding: 0.5rem 0.5rem;
 				overflow: auto;
+				margin-bottom: 0.25em;
+				transition: 0.3s border;
 
 				color: var(--color-text_default);
 
 				&:hover {
-					border-bottom: 2px solid var(--color-secondary);
-					background: blue;
+					border: 2px solid var(--color-secondary);
+					background: hsl(210, 63%, 98%);
 				}
 				&:focus,
 				&:active {
-					border-bottom: 2px solid var(--color-secondary);
-					background: blue;
+					border: 2px solid var(--color-secondary);
+					background: hsl(210, 63%, 98%);
 				}
 			}
 			textarea {
+				width: 100%;
+				margin-bottom: 0.75em;
 				border: 2px solid var(--color-gray);
 				border-radius: 4px;
 				padding: 0.5rem 0.5rem;
 				overflow: auto;
+				transition: 0.3s border;
 
 				color: var(--color-text_default);
 
@@ -171,7 +184,7 @@ const contactFormStyles = css`
 							>
 								<div className="info">
 									<div className="form-input__name">
-										<label htmlFor="name">First Name</label>
+										{/* <label htmlFor="name">First Name</label> */}
 										<br />
 										<input
 											type="text"
@@ -183,21 +196,21 @@ const contactFormStyles = css`
 										/>
 									</div>
 									<div className="form-input__email">
-										<label htmlFor="email">Email</label>
+										{/* <label htmlFor="email">Email</label> */}
 										<br />
 										<input
 											type="text"
 											name="email"
-											placeholder="Your Email Address"
+											placeholder="Your email address"
 											size="24"
 											required
 										/>
 									</div>
 								</div>
 								<div className="form-input__message">
-									<label htmlFor="message">
+									{/* <label htmlFor="message">
 										How can I help?
-									</label>
+									</label> */}
 									<br />
 									<textarea
 										name="message"
@@ -214,14 +227,12 @@ const contactFormStyles = css`
 										</label>
 										<input name="fake-friends" />
 									</p>
-									<div className="submit-wrapper">
-										<div className="submit">
-											<input
-												type="submit"
-												value="Send"
-												className="btn"
-											/>
-										</div>
+									<div className="submit">
+										<input
+											type="submit"
+											value="Send"
+											className="btn"
+										/>
 									</div>
 								</div>
 							</form>
@@ -234,13 +245,13 @@ const contactFormStyles = css`
 							</p>
 							<div className="links">
 								<div>
-									<a href="https://www.linkedin.com/in/deeadebayo/">
-										<LinkedIn />
+									<a href="https://github.com/deeadebayo">
+										<Github />
 									</a>
 								</div>
 								<div>
-									<a href="https://github.com/deeadebayo">
-										<Github />
+									<a href="https://www.linkedin.com/in/deeadebayo/">
+										<LinkedIn />
 									</a>
 								</div>
 							</div>

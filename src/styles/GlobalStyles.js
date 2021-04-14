@@ -17,6 +17,7 @@ const globalstyles = css`
 		--color-dark: hsl(0, 0%, 28%);
 		--color-gray: hsl(0, 0%, 46%);
 		--color-gray_lighter: hsl(0, 0%, 85%);
+		--color-soft-white: hsl(210, 36%, 96%);
 
 		--color-text: black;
 		--color-background: lightgray;
