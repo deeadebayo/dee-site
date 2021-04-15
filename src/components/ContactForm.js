@@ -5,6 +5,7 @@ import LinkedIn from "./../images/svg/linkedin.svg";
 import Github from "./../images/svg/github.svg";
 
 const contactFormStyles = css`
+		width: clamp(16rem, 90vw, 70rem);
 		position: relative;
 		margin: 0 auto;
 		background: white url(../../images/postcard--blue.jpg);

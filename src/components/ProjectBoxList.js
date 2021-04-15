@@ -228,7 +228,7 @@ export default function ProjectBoxList() {
 	return (
 		<div css={projectBoxStyles}>
 			<div className="project-box__title">
-				<h2>Here's my title</h2>
+				<h2>Featured Projects</h2>
 			</div>
 			{projectData.map((project) => (
 				<ProjectBox
