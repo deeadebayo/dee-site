@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 
 import LinkedIn from "./../images/svg/linkedin.svg";
 import Github from "./../images/svg/github.svg";
+import Button from "./Button";
 
 const contactFormStyles = css`
 		width: clamp(16rem, 90vw, 70rem);
@@ -234,6 +235,7 @@ const contactFormStyles = css`
 											value="Send"
 											className="btn"
 										/>
+										<Button text="Send" />
 									</div>
 								</div>
 							</form>

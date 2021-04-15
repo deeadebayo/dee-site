@@ -66,6 +66,35 @@ const AboutPageStyles = css`
 					<div className="resume__experience">
 						<h2>My Experience, some paragraph text, word stuff</h2>
 						<p>
+							I'm originally from
+							<a
+								href="https://www.lonelyplanet.com/nigeria/lagos"
+								target="_blank"
+								className="about-link"
+							>
+								Lagos
+								{/* <StaticImage
+						className="emoji"
+						src="../images/emoji__ng-flag.png"
+						alt="Nigerian flag emoji"
+					/> */}
+							</a>
+							but reside in
+							<a
+								href="https://www.lonelyplanet.com/usa/the-south/atlanta"
+								target="_blank"
+								className="about-link"
+							>
+								Atlanta
+								{/* <StaticImage
+						src="../images/emoji__peach.png"
+						alt="peach emoji"
+						className="emoji"
+					/> */}
+							</a>
+							building static websites for small businesses.
+						</p>
+						<p>
 							Since 2014, I have have been creating experiences
 							for the front-end web. I specialize in building
 							SEO-optimized websites that look and function

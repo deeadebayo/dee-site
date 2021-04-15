@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import { Link } from "gatsby";
 import React from "react";
 
 const buttonStyles = css`
@@ -32,10 +33,10 @@ const buttonStyles = css`
 		border-radius: 12px;
 		background: linear-gradient(
 			to left,
-			hsl(340deg 100% 16%) 0%,
-			hsl(340deg 100% 32%) 8%,
-			hsl(340deg 100% 32%) 92%,
-			hsl(340deg 100% 16%) 100%
+			hsl(358deg 100% 30%) 0%,
+			hsl(358deg 100% 42%) 8%,
+			hsl(358deg 100% 42%) 92%,
+			hsl(358deg 100% 30%) 100%
 		);
 	}
 	.front {
@@ -44,8 +45,10 @@ const buttonStyles = css`
 		padding: 12px 42px;
 		border-radius: 12px;
 		font-size: 1.25rem;
+		font-weight: 500;
 		color: white;
 		background: hsl(345deg 100% 47%);
+		background: var(--color-primary);
 		will-change: transform;
 		transform: translateY(-4px);
 		transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
@@ -60,6 +63,18 @@ const buttonStyles = css`
 	.pushable:active .front {
 		transform: translateY(-2px);
 		transition: transform 34ms;
+		background: var(--color-secondary);
+		transition: background 900ms 0.1s;
+	}
+	.pushable:active .edge {
+		background: linear-gradient(
+			to left,
+			hsl(175, 100%, 3%) 0%,
+			hsl(175, 100%, 6%) 8%,
+			hsl(175, 100%, 6%) 92%,
+			hsl(175, 100%, 3%) 100%
+		);
+		transition: all 900ms 0.1s;
 	}
 	.pushable:hover .shadow {
 		transform: translateY(4px);
@@ -73,13 +88,25 @@ const buttonStyles = css`
 		outline: none;
 	}
 `;
-const Button = () => (
-	<>
-		<button css={buttonStyles} className="pushable">
+const Button = (props) => (
+	<div css={buttonStyles}>
+		<button className="pushable">
 			<span className="shadow"></span>
 			<span className="edge"></span>
-			<span className="front">Push me</span>
+			<span className="front">{props.text}</span>
 		</button>
-	</>
+	</div>
+);
+
+export const ButtonLink = (props) => (
+	<Link to={props.link}>
+		<div css={buttonStyles}>
+			<button className="pushable">
+				<span className="shadow"></span>
+				<span className="edge"></span>
+				<span className="front">{props.text}</span>
+			</button>
+		</div>
+	</Link>
 );
 export default Button;

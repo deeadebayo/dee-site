@@ -78,21 +78,24 @@ const projectBoxStyles = css`
 				height: 108px;
 				width: 100%;
 				transition: transform 0.2s ease-in-out;
+				display: flex;
 
 				&__details {
-					display: block;
-					padding: 1.6875rem 9.375rem 1.875rem 1.875rem;
+					display: flex;
+					flex-direction: column;
+					flex-basis: 100%;
+					padding: 1.5em 1.875em;
 					position: relative;
 
 					&__title {
+						flex: 1;
 					}
 
-					&__subtitle {
-					}
-
-					&__icon-section {
-						&__icon {
-						}
+					&__description {
+						flex: 1;
+						margin-bottom: 0.5em;
+						font-size: 0.875rem;
+						line-height: 1.25rem;
 					}
 				}
 			}
@@ -104,7 +107,7 @@ const projectBoxStyles = css`
 			}
 		}
 	`,
-	ProjectBox = ({ title, subtitle, link, image, alt, bg }) => (
+	ProjectBox = ({ title, description, link, image, alt, bg }) => (
 		<div className="project-box">
 			<Link className="project-box__link" to={link}>
 				<div className="project-box__img">
@@ -121,17 +124,14 @@ const projectBoxStyles = css`
 						background-color: ${bg};
 					`}
 				>
-					<span className="project-box__detail-box__details">
+					<div className="project-box__detail-box__details">
+						<span className="project-box__detail-box__details__description">
+							{description}
+						</span>
 						<span className="project-box__detail-box__details__title">
-							{title}
+							<h2>{title}</h2>
 						</span>
-						<span className="project-box__detail-box__details__subtitle">
-							{subtitle}
-						</span>
-						<span className="project-box__detail-box__details__icon-section">
-							<span className="project-box__detail-box__details__icon-section__icon"></span>
-						</span>
-					</span>
+					</div>
 				</span>
 			</Link>
 		</div>
@@ -189,8 +189,8 @@ export default function ProjectBoxList() {
 		projectData = [
 			{
 				id: 1,
-				title: "Josh",
-				subtitle: "Some sub-text",
+				title: "Josh Manuel Drums",
+				description: "Website and ecommerce",
 				backgroundColor: colorPrimary,
 				link: "/work/jmdrums",
 				image: data.josh.childImageSharp.gatsbyImageData,
@@ -198,8 +198,8 @@ export default function ProjectBoxList() {
 			},
 			{
 				id: 2,
-				title: "ctkmc",
-				subtitle: "Some sub-text",
+				title: "Christ the King Healthcare",
+				description: "Website & copywriting",
 				backgroundColor: colorAccent,
 				link: "/work/ctkmedcenter",
 				image: data.ctkmc.childImageSharp.gatsbyImageData,
@@ -208,7 +208,7 @@ export default function ProjectBoxList() {
 			{
 				id: 3,
 				title: "Title",
-				subtitle: "Some sub-text",
+				description: "Website",
 				backgroundColor: colorRare,
 				link: "/work/",
 				image: data.ctkmc.childImageSharp.gatsbyImageData,
@@ -216,8 +216,8 @@ export default function ProjectBoxList() {
 			},
 			{
 				id: 4,
-				title: "Title",
-				subtitle: "Some sub-text",
+				title: "Github Projects",
+				description: "Playground",
 				backgroundColor: colorPrimary,
 				link: "/work/",
 				image: data.comingSoon.childImageSharp.gatsbyImageData,
@@ -234,7 +234,7 @@ export default function ProjectBoxList() {
 				<ProjectBox
 					alt={project.alt}
 					title={project.title}
-					subtitle={project.subtitle}
+					description={project.description}
 					link={project.link}
 					image={project.image}
 					key={`hp${project.id}`}
