@@ -16,3 +16,5 @@
 -   fix up 404 page
 -   gameboy - (https://github.com/baumannzone/gameboy-css)
 -   hover colors for svg
+-   use svg text to make the hello animation instead
+-   show iamge on hover for all the thigns on the about page

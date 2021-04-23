@@ -2,32 +2,42 @@ import React from "react";
 import Helmet from "react-helmet";
 import { css } from "@emotion/react";
 import { motion } from "framer-motion";
+import { Link } from "gatsby";
 
 const AboutPageStyles = css`
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(1fr);
+		grid-gap: 1.75em;
 		grid-auto-rows: minmax(100px, auto);
+		padding: 1.5em 2em;
+
+		${"" /* background-color: hsla(224, 62%, 24%, 0.24); */}
 
 		grid-template-areas:
 			"header header"
-			"years resume"
-			". resume"
+			"resume resume"
+			"skills skills"
 			"contact contact";
 
 		.header {
 			grid-area: header;
-		}
-
-		.years {
-			grid-area: years;
+			h1 {
+				font-size: 3em;
+			}
 		}
 
 		.skills {
 			grid-area: skills;
+			padding: 1.5em 2em;
+			border: 1px solid hsla(224, 62%, 24%, 0.1);
+			border-radius: 5px;
+			box-shadow: 0px 3px 5px hsla(224, 62%, 24%, 0.24);
 		}
 
 		.resume {
 			grid-area: resume;
+			padding: 1em 1em;
+			max-width: 55ch;
 		}
 
 		.contact {
@@ -45,101 +55,77 @@ const AboutPageStyles = css`
 						some minor all caps text, maybe a breadcrumb component
 					</p>
 					<h1>
-						I'm a front end developer and "big picture thinker" who-
-						*tinkers* and *another fun work buzzy word*.
+						front-end developer
+						<br />
+						<span>&</span> web consultant
 					</h1>
-					<p>
-						description underneath. I work with small businesses to
-						define their online footprint - creating web experiences
-						that balance business and user needs. I excel at taking
-						apart complex task and delivering results in an
-						informative way
-					</p>
+					{/* <p>
+						description underneath. I help my clients define their
+						online footprint - creating web experiences that balance
+						business and user needs.
+					</p> */}
 				</div>
-				<div className="years">
-					<p>
-						left top box with the years 2014-2020. Maybe have the
-						bottom year stay fix to top of screen on scroll
-					</p>
-				</div>
+
 				<div className="resume">
 					<div className="resume__experience">
-						<h2>My Experience, some paragraph text, word stuff</h2>
+						<h2>Hi, I'm Adeolu</h2>
 						<p>
-							I'm originally from
+							I'm originally from {` `}
 							<a
 								href="https://www.lonelyplanet.com/nigeria/lagos"
 								target="_blank"
 								className="about-link"
 							>
-								Lagos
-								{/* <StaticImage
-						className="emoji"
-						src="../images/emoji__ng-flag.png"
-						alt="Nigerian flag emoji"
-					/> */}
+								Lagos 🇳🇬
 							</a>
-							but reside in
+							{` `}but reside in {` `}
 							<a
 								href="https://www.lonelyplanet.com/usa/the-south/atlanta"
 								target="_blank"
 								className="about-link"
 							>
-								Atlanta
-								{/* <StaticImage
-						src="../images/emoji__peach.png"
-						alt="peach emoji"
-						className="emoji"
-					/> */}
+								Atlanta 🍑
 							</a>
-							building static websites for small businesses.
+							{` `}working as a freelance web developer.
 						</p>
 						<p>
 							Since 2014, I have have been creating experiences
-							for the front-end web. I specialize in building
+							for the front-end web. I enjoy building semantic,
 							SEO-optimized websites that look and function
 							seamlessly on anything that can access the web.
+						</p>
+						<p>
 							While just the development part of websites is super
-							fun, I like all the other pieces that go into it as
-							well (looking at you, tone of voice 😍 and design
+							fun, I like all the other pieces that go into it too
+							(looking at you, SEO 💰, tone of voice 😍 and design
 							systems😎).
 						</p>
-					</div>
-					<div className="resume__toolbox">
-						<h2>Toolbox</h2>
-						<p>Software stuff</p>
-					</div>
-					<div className="resume__skills">
-						<h2>Skills</h2>
 						<p>
-							Branding Copywriting Business Analysis ---- SEO
-							marketing - rename Response website development
+							If the project involves HTML/CSS/JS, chances are I'm
+							going to love working on it. Feel free to{" "}
+							<Link to="#contact">contact me</Link>.
 						</p>
 					</div>
 				</div>
-				<motion.div className="contact" animate={{ scale: 1.5 }}>
-					Contact me component with social links- If the project
-					involves HTML/CSS/JS, chances are I'm going to love working
-					on it. Say hi, let's start a conversation!
-				</motion.div>
+				<div className="skills">
+					<div className="skills__toolbox">
+						<h2>Toolbox</h2>
+						<p>
+							HTML, CSS, JavaScript, Node, React, Gatsby, GraphQL,
+							npm, JAMstack
+						</p>
+					</div>
+					<div className="skills__specialities">
+						<h2>Specialities</h2>
+						<p>
+							Responsive web design, Branding, UI/UX wireframing,
+							Usability testing, Digital marketing, Analytics &
+							SEO, Ecommerce, all the things
+						</p>
+					</div>
+				</div>
 			</div>
 		</>
 	);
 
 export default AboutPage;
-// block content
-//     section.container
-//         // make a header with only work, about, contact. Hide inspiration in a link after whole screen looks like a gameboy
-//         .page-title
-//             h2 About Me
-//             p https://www.lonelyplanet.com/nigeria/lagos
-//             p Something of a lead in
-//             p actual text
-//             p I'm an Atlanta-based front-end developer with a passion for interactive design and technology. I help businesses reach their goals faster by freeing them to work on the stuff that matters. Most of the time, this happens from
-//             p I'm a developer, a digital marketer, an introvert, and a dreamer.
-//             p I love _____ and _____ with the occasional habits and playing computer games and dancing terribly.
-//             p with a cusiness background, I conside myself a creative web developer, standing in the sweet spot where design and code intercept
-//             p Ever since I graduated in 2014, I've been using multidisciplinary background to assist Atlanta and online-based businesses. I specialize in creating high-SEO ranked, interactive websites using current (and best) design, marketing, and compliance standards.
-//             p I believe putting the client and their audience at the heart of any project is the key to delivering thoughtful and lasting solutions.
-//         ul
-//

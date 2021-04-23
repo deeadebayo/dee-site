@@ -22,7 +22,6 @@ const HomeAbout = () => (
 		<div>
 			<span>
 				<p>Hello Animation Here Inline witth next line</p>
-				<p className="lead">I'm Adeolu</p>
 			</span>
 			<p>
 				I'm a front-end web developer focused on creating interactive

@@ -118,6 +118,9 @@ const contactFormStyles = css`
 				.submit {
 					display: flex;
 					flex-direction: column;
+					input {
+						display: none;
+					}
 					& > * {
 						align-self: flex-end;
 					}
@@ -234,6 +237,7 @@ const contactFormStyles = css`
 											type="submit"
 											value="Send"
 											className="btn"
+											// style={{ display: "none" }}
 										/>
 										<Button text="Send" />
 									</div>
@@ -241,7 +245,7 @@ const contactFormStyles = css`
 							</form>
 						</div>
 						<div className="contact__header">
-							<h2>Say hello</h2>
+							<h2>Contact me</h2>
 							<p className="lead">
 								Looking for help on a project or do you just
 								want to say hi? Let's get in touch!
