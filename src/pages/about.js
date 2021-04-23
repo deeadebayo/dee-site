@@ -7,7 +7,7 @@ import { Link } from "gatsby";
 const AboutPageStyles = css`
 		display: grid;
 		grid-template-columns: repeat(1fr);
-		grid-gap: 1.75em;
+		grid-gap: 1.25em;
 		grid-auto-rows: minmax(100px, auto);
 		padding: 1.5em 2em;
 
@@ -23,6 +23,9 @@ const AboutPageStyles = css`
 			grid-area: header;
 			h1 {
 				font-size: 3em;
+				.and {
+					color: var(--color-primary);
+				}
 			}
 		}
 
@@ -57,7 +60,7 @@ const AboutPageStyles = css`
 					<h1>
 						front-end developer
 						<br />
-						<span>&</span> web consultant
+						<span className="and">&</span> web consultant
 					</h1>
 					{/* <p>
 						description underneath. I help my clients define their
@@ -68,7 +71,7 @@ const AboutPageStyles = css`
 
 				<div className="resume">
 					<div className="resume__experience">
-						<h2>Hi, I'm Adeolu</h2>
+						<h2>Hi, I'm Adeolu,</h2>
 						<p>
 							I'm originally from {` `}
 							<a
@@ -112,7 +115,7 @@ const AboutPageStyles = css`
 						<h2>Toolbox</h2>
 						<p>
 							HTML, CSS, JavaScript, Node, React, Gatsby, GraphQL,
-							npm, JAMstack
+							SQL, npm, JAMstack
 						</p>
 					</div>
 					<div className="skills__specialities">
