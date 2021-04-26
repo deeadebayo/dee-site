@@ -39,6 +39,7 @@ const AboutPageStyles = css`
 
 		.resume {
 			grid-area: resume;
+			margin: 0 auto;
 			padding: 1em 1em;
 			max-width: 55ch;
 		}
@@ -54,9 +55,6 @@ const AboutPageStyles = css`
 			</Helmet>
 			<div css={AboutPageStyles}>
 				<div className="header">
-					<p>
-						some minor all caps text, maybe a breadcrumb component
-					</p>
 					<h1>
 						front-end developer
 						<br />
@@ -81,7 +79,7 @@ const AboutPageStyles = css`
 							>
 								Lagos 🇳🇬
 							</a>
-							{` `}but reside in {` `}
+							{` `}but, now I live in {` `}
 							<a
 								href="https://www.lonelyplanet.com/usa/the-south/atlanta"
 								target="_blank"
@@ -104,8 +102,8 @@ const AboutPageStyles = css`
 							systems😎).
 						</p>
 						<p>
-							If the project involves HTML/CSS/JS, chances are I'm
-							going to love working on it. Feel free to{" "}
+							If the project involves HTML/CSS/JS, chances are
+							high that I'll love working on it. Feel free to{" "}
 							<Link to="#contact">contact me</Link>.
 						</p>
 					</div>

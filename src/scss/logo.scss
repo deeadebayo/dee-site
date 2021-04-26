@@ -1,5 +1,4 @@
 @import "../scss/mixins/logo-animation";
-@import "../scss/variables/color.scss";
 
 // Module specific variables. To make editing timing for transitions a bit easier
 $layer0-static-transition: 0.8s;
@@ -13,7 +12,7 @@ $layer2-hover-delay: 0.15s;
 $layer3-hover-delay: 0s;
 
 .logo {
-	stroke: $color--gray;
+	stroke: var(--color-gray);
 	stroke-width: 0.1px;
 	max-height: 51px;
 
@@ -38,15 +37,15 @@ $layer3-hover-delay: 0s;
 			opacity: 0;
 		}
 		.logo__layer-1 {
-			@include logo-animation($color--primary, $layer1-hover-delay);
+			@include logo-animation(var(--color-primary), $layer1-hover-delay);
 		}
 
 		.logo__layer-2 {
-			@include logo-animation($color--primary, $layer2-hover-delay);
+			@include logo-animation(var(--color-primary), $layer2-hover-delay);
 		}
 
 		.logo__layer-3 {
-			@include logo-animation($color--primary, $layer3-hover-delay);
+			@include logo-animation(var(--color-primary), $layer3-hover-delay);
 		}
 	}
 	&--secondaryColor:hover {
@@ -54,15 +53,24 @@ $layer3-hover-delay: 0s;
 			opacity: 0;
 		}
 		.logo__layer-1 {
-			@include logo-animation($color--secondary, $layer1-hover-delay);
+			@include logo-animation(
+				var(--color-secondary),
+				$layer1-hover-delay
+			);
 		}
 
 		.logo__layer-2 {
-			@include logo-animation($color--secondary, $layer2-hover-delay);
+			@include logo-animation(
+				var(--color-secondary),
+				$layer2-hover-delay
+			);
 		}
 
 		.logo__layer-3 {
-			@include logo-animation($color--secondary, $layer3-hover-delay);
+			@include logo-animation(
+				var(--color-secondary),
+				$layer3-hover-delay
+			);
 		}
 	}
 	&--accentColor:hover {
@@ -70,15 +78,15 @@ $layer3-hover-delay: 0s;
 			opacity: 0;
 		}
 		.logo__layer-1 {
-			@include logo-animation($color--rare, $layer1-hover-delay);
+			@include logo-animation(var(--color-rare), $layer1-hover-delay);
 		}
 
 		.logo__layer-2 {
-			@include logo-animation($color--rare, $layer2-hover-delay);
+			@include logo-animation(var(--color-rare), $layer2-hover-delay);
 		}
 
 		.logo__layer-3 {
-			@include logo-animation($color--rare, $layer3-hover-delay);
+			@include logo-animation(var(--color-rare), $layer3-hover-delay);
 		}
 	}
 }
