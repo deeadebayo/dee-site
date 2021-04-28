@@ -1,5 +1,4 @@
 @import "../scss/mixins/underline-animation";
-@import "../scss/variables/color.scss";
 
 .navbar {
 	display: grid;
@@ -37,13 +36,13 @@
 					// color: $color--text-black;
 					// @include ms-respond(font-size, 1);
 					@include underline-animation(
-						$color--primary,
+						var(--color-primary),
 						"left",
 						$lower-underline: false
 					);
 
 					&:hover {
-						color: $color--primary;
+						color: var(--color-primary);
 					}
 				}
 			}

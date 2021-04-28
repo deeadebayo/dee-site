@@ -41,7 +41,7 @@ const AboutPageStyles = css`
 			grid-area: resume;
 			margin: 0 auto;
 			padding: 1em 1em;
-			max-width: 55ch;
+			max-width: 58ch;
 		}
 
 		.contact {
@@ -51,7 +51,7 @@ const AboutPageStyles = css`
 	AboutPage = () => (
 		<>
 			<Helmet>
-				<title>Dee Adebayo</title>
+				<title>About - Dee Adebayo</title>
 			</Helmet>
 			<div css={AboutPageStyles}>
 				<div className="header">
@@ -69,7 +69,7 @@ const AboutPageStyles = css`
 
 				<div className="resume">
 					<div className="resume__experience">
-						<h2>Hi, I'm Adeolu,</h2>
+						<h2>Hi, I'm Adeolu!</h2>
 						<p>
 							I'm originally from {` `}
 							<a
@@ -79,7 +79,7 @@ const AboutPageStyles = css`
 							>
 								Lagos 🇳🇬
 							</a>
-							{` `}but, now I live in {` `}
+							{` `}- now I live in {` `}
 							<a
 								href="https://www.lonelyplanet.com/usa/the-south/atlanta"
 								target="_blank"
@@ -112,8 +112,8 @@ const AboutPageStyles = css`
 					<div className="skills__toolbox">
 						<h2>Toolbox</h2>
 						<p>
-							HTML, CSS, JavaScript, Node, React, Gatsby, GraphQL,
-							SQL, npm, JAMstack
+							HTML, CSS, JavaScript, Node, React, Gatsby,
+							JAMstack, GraphQL, SQL
 						</p>
 					</div>
 					<div className="skills__specialities">

@@ -9,7 +9,7 @@ const IndexPage = () => {
 	return (
 		<>
 			<Helmet>
-				<title>Dee Adebayo</title>
+				<title>Dee Adebayo | Front-End Web Developer</title>
 			</Helmet>
 			<HomeAbout />
 			<ProjectBoxList />
