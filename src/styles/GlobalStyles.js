@@ -79,6 +79,9 @@ const globalstyles = css`
 			margin: 0 auto;
 		}
 	}
+	p.lead {
+		font-size: 1.3em;
+	}
 `;
 
 const GlobalStyles = () => <Global styles={globalstyles} />;

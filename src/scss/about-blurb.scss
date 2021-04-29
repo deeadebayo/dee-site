@@ -2,8 +2,8 @@
 
 a.about-link {
 	@include underline-animation(
-		var(--color-secondary),
-		"right",
+		var(--color-primary),
+		"left",
 		$lower-underline: true
 	);
 }

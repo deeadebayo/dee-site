@@ -22,7 +22,7 @@ const AboutPageStyles = css`
 		.header {
 			grid-area: header;
 			h1 {
-				font-size: 3em;
+				font-size: 2.75em;
 				.and {
 					color: var(--color-primary);
 				}

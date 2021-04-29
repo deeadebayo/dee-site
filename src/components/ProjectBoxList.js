@@ -189,7 +189,7 @@ export default function ProjectBoxList() {
 		projectData = [
 			{
 				id: 1,
-				title: "Josh Manuel Drums",
+				title: "joshmanueldrums.com",
 				description: "Website and ecommerce",
 				backgroundColor: colorPrimary,
 				link: "/work/jmdrums",
@@ -198,7 +198,7 @@ export default function ProjectBoxList() {
 			},
 			{
 				id: 2,
-				title: "Christ the King Healthcare",
+				title: "ctkmedcenter.com",
 				description: "Website & copywriting",
 				backgroundColor: colorAccent,
 				link: "/work/ctkmedcenter",

@@ -18,3 +18,5 @@
 -   hover colors for svg
 -   use svg text to make the hello animation instead
 -   show iamge on hover for all the thigns on the about page
+-   for footer contact, make the input box transparaten like text inpute effects set 2
+-   about text https://tympanus.net/codrops/2020/06/17/making-stagger-reveal-animations-for-text/

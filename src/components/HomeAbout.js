@@ -1,9 +1,9 @@
 import { css } from "@emotion/react";
 import React from "react";
-import { StaticImage } from "gatsby-plugin-image";
+// import { StaticImage } from "gatsby-plugin-image";
 
-import "../scss/about-blurb.scss";
-import Button, { ButtonLink } from "./Button";
+// import "../scss/about-blurb.scss";
+import { ButtonLink } from "./Button";
 
 const aboutStyle = css`
 	margin: 3em 0;
@@ -15,26 +15,38 @@ const aboutStyle = css`
 	& > div {
 		margin: 1.5rem 2rem;
 	}
+
+	h1 {
+		font-size: 2.75em;
+	}
+
+	a.about-link {
+		color: var(--color-primary);
+		text-decoration-thickness: 3px;
+		text-decoration-style: solid;
+
+		&:hover {
+			color: var(--color-secondary);
+			width: 0%;
+			transition: 0.3s ease;
+		}
+	}
 `;
 
 const HomeAbout = () => (
 	<div css={aboutStyle}>
 		<div>
-			<span>
-				<p>Hello Animation Here Inline witth next line</p>
-			</span>
-			<p>
+			<h1>Hello Animation</h1>
+			<p className="lead">
 				I'm a front-end web developer focused on creating interactive
-				and accessible web experiences. Currently, I'm freelancing
-				____________
+				and accessible web experiences.
 			</p>
-			<p>
-				<a href="#footer" className="about-link">
-					Say hello
+			<p className="lead">
+				<ButtonLink text="More about" link="about" /> or{" "}
+				<a href="#contact" className="about-link">
+					say hello
 				</a>
-				, or keep looking around.
 			</p>
-			<ButtonLink text="More about" link="about" />
 		</div>
 	</div>
 );
