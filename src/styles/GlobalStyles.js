@@ -12,7 +12,7 @@ const globalstyles = css`
 		--color-alert: hsl(356, 69%, 54%);
 
 		--color-text-black: hsl(0, 0%, 17%);
-		--color-text-header: hsl(0, 0%, 20%);
+		--color-text-header: hsla(0, 0%, 0%, 0.8);
 		--color-text_default: hsl(0, 0%, 28%);
 		--color-dark: hsl(0, 0%, 28%);
 		--color-gray: hsl(0, 0%, 46%);

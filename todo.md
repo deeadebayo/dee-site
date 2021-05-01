@@ -16,7 +16,6 @@
 -   fix up 404 page
 -   gameboy - (https://github.com/baumannzone/gameboy-css)
 -   hover colors for svg
--   use svg text to make the hello animation instead
 -   show iamge on hover for all the thigns on the about page
--   for footer contact, make the input box transparaten like text inpute effects set 2
+-   for footer contact, make the input box transparaten like text inpute effects set - https://tympanus.net/Development/TextInputEffects/index2.html
 -   about text https://tympanus.net/codrops/2020/06/17/making-stagger-reveal-animations-for-text/

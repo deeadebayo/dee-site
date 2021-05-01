@@ -4,6 +4,8 @@ import { css } from "@emotion/react";
 import { motion } from "framer-motion";
 import { Link } from "gatsby";
 
+import "../scss/link-hover.scss";
+
 const AboutPageStyles = css`
 		display: grid;
 		grid-template-columns: repeat(1fr);
@@ -42,6 +44,9 @@ const AboutPageStyles = css`
 			margin: 0 auto;
 			padding: 1em 1em;
 			max-width: 58ch;
+			p span {
+				color: var(--color-primary);
+			}
 		}
 
 		.contact {
@@ -75,36 +80,40 @@ const AboutPageStyles = css`
 							<a
 								href="https://www.lonelyplanet.com/nigeria/lagos"
 								target="_blank"
-								className="about-link"
+								className="about-page"
 							>
-								Lagos 🇳🇬
+								Lagos
 							</a>
-							{` `}- now I live in {` `}
+							{` `}
+							<span>🇳🇬</span> - now I live in {` `}
 							<a
 								href="https://www.lonelyplanet.com/usa/the-south/atlanta"
 								target="_blank"
-								className="about-link"
+								className="about-page"
 							>
-								Atlanta 🍑
+								Atlanta
 							</a>
-							{` `}working as a freelance web developer.
+							{` `}
+							<span>🍑</span> working as a freelance web developer
 						</p>
 						<p>
 							Since 2014, I have have been creating experiences
 							for the front-end web. I enjoy building semantic,
 							SEO-optimized websites that look and function
-							seamlessly on anything that can access the web.
+							seamlessly on anything that can access the web
 						</p>
 						<p>
 							While just the development part of websites is super
 							fun, I like all the other pieces that go into it too
-							(looking at you, SEO 💰, tone of voice 😍 and design
-							systems😎).
+							(looking at you: SEO 😍 and design systems 😎)
 						</p>
 						<p>
 							If the project involves HTML/CSS/JS, chances are
-							high that I'll love working on it. Feel free to{" "}
-							<Link to="#contact">contact me</Link>.
+							high that I'll love working on it. Have a project in
+							mind?{" "}
+							<Link to="#contact" className="about-page">
+								Contact me
+							</Link>
 						</p>
 					</div>
 				</div>

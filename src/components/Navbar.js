@@ -3,21 +3,64 @@ import { css } from "@emotion/react";
 import { Link } from "gatsby";
 import { AnimatedLogo } from "./AnimatedLogo";
 
-import "./../scss/navbar.scss";
+import "./../scss/link-hover.scss";
 
 const navbar = css`
-		a {
-			outline: 1px blue;
+		display: grid;
+		grid-template-columns: 12.5em auto;
+		padding: 2rem;
+
+		.navbar__logo {
+			grid-column: 1/2;
+			padding: 2px 0;
+		}
+
+		.navbar__links {
+			grid-column: 2/3;
 			display: block;
-			max-height: 55px;
-			margin-left: -0.535rem;
+
+			ul {
+				list-style: none;
+				justify-content: end;
+				float: right;
+
+				li {
+					display: block;
+					float: left;
+					margin-right: 2.647em;
+
+					&:last-child {
+						margin-right: 0;
+					}
+
+					a {
+						display: block;
+						position: relative;
+						text-decoration: none;
+						text-transform: capitalize;
+						color: var(--color--text-header);
+						outline: 1px blue;
+						max-height: 55px;
+						margin-left: -0.535rem;
+						font-size: 1.1em;
+
+						&:hover {
+							color: var(--color-primary);
+						}
+					}
+					.active {
+						text-decoration: underline 3px var(--color-secondary);
+						color: var(--color-secondary);
+					}
+				}
+			}
 		}
 	`,
 	internalLinks = [
 		{
 			id: 1,
 			title: "About",
-			url: "/about",
+			url: "/about/",
 			description:
 				"A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
 			color: "#E95800",
@@ -39,28 +82,41 @@ const navbar = css`
 			color: "#BC027F",
 		},
 	],
-	Navbar = () => (
-		<header className="navbar" css={navbar}>
-			<div className="navbar__logo">
-				<Link to="/" className="logo--wrap" id="logo">
-					<AnimatedLogo />
-				</Link>
-			</div>
-			<div className="navbar__links">
-				<ul>
-					{internalLinks.map((link) => (
-						<li key={link.id}>
-							<Link to={link.url}>{link.title}</Link>
-						</li>
-					))}
-					{externalLinks.map((link) => (
-						<li key={link.id}>
-							<a href={link.url}>{link.title}</a>
-						</li>
-					))}
-				</ul>
-			</div>
-		</header>
-	);
+	Navbar = (path) => {
+		const pathString = path.path;
+		console.log(pathString);
+		let activePage = (url) =>
+			url === pathString ? `active` : `navbar-link`;
+		return (
+			<header className="navbar" css={navbar}>
+				<div className="navbar__logo">
+					<Link to="/" className="logo--wrap" id="logo">
+						<AnimatedLogo />
+					</Link>
+				</div>
+				<div className="navbar__links">
+					<ul>
+						{internalLinks.map((link) => (
+							<li key={link.id}>
+								<Link
+									to={link.url}
+									className={activePage(link.url)}
+								>
+									{link.title}
+								</Link>
+							</li>
+						))}
+						{externalLinks.map((link) => (
+							<li key={link.id}>
+								<a href={link.url} className="navbar-link">
+									{link.title}
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			</header>
+		);
+	};
 
 export default Navbar;

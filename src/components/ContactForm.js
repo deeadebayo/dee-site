@@ -245,10 +245,10 @@ const contactFormStyles = css`
 							</form>
 						</div>
 						<div className="contact__header">
-							<h2>Contact me</h2>
+							<h2>Get in Touch</h2>
 							<p className="lead">
-								Looking for help on a project or do you just
-								want to say hi? Let's get in touch!
+								Looking for help on a project or just want to
+								say hi? Use the button!
 							</p>
 							<div className="links">
 								<div>

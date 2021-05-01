@@ -1,9 +1,0 @@
-@import "../scss/mixins/underline-animation";
-
-a.about-link {
-	@include underline-animation(
-		var(--color-primary),
-		"left",
-		$lower-underline: true
-	);
-}

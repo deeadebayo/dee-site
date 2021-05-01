@@ -11,7 +11,7 @@ let colorClassOptions = [
 
 export const AnimatedLogo = () => {
 	const [color, setColor] = useState(""),
-		[currentColor, setCurrentColor] = useState("");
+		[currentColor, setCurrentColor] = useState("logo--primaryColor");
 
 	let colorClassChoice = () =>
 			colorClassOptions[

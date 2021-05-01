@@ -1,0 +1,32 @@
+@import "../scss/mixins/underline-animation";
+
+a.navbar-link {
+	@include underline-animation(
+		var(--color-primary),
+		"left",
+		$lower-underline: false
+	);
+}
+
+a.about-link {
+	color: var(--color-primary);
+	text-decoration-thickness: 3px;
+	text-decoration-style: solid;
+
+	@include underline-animation(
+		var(--color-secondary),
+		"right",
+		$lower-underline: false
+	);
+}
+
+a.about-page {
+	color: var(--color-primary);
+	text-decoration-thickness: 3px;
+	text-decoration-style: solid;
+	@include underline-animation(
+		var(--color-primary),
+		"right",
+		$lower-underline: true
+	);
+}

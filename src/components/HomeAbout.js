@@ -1,8 +1,7 @@
 import { css } from "@emotion/react";
 import React from "react";
-// import { StaticImage } from "gatsby-plugin-image";
 
-// import "../scss/about-blurb.scss";
+import "../scss/link-hover.scss";
 import { ButtonLink } from "./Button";
 
 const aboutStyle = css`
@@ -31,20 +30,57 @@ const aboutStyle = css`
 			transition: 0.3s ease;
 		}
 	}
+	.hello-marquee {
+		${"" /* width: 100%; */}
+		height: 100px;
+		overflow: hidden;
+
+		&__content:hover {
+			${"" /* make this only happen on big devices */}
+			animation: marqueeEffect 3s linear 1;
+			&:first-of-type {
+				color: var(--color-secondary);
+			}
+
+			h1:nth-of-type(2n) {
+				color: var(--color-rare);
+			}
+		}
+	}
+
+	@keyframes marqueeEffect {
+		0% {
+			transform: translateY(0);
+		}
+		100% {
+			transform: translateY(-100%);
+		}
+	}
 `;
 
 const HomeAbout = () => (
 	<div css={aboutStyle}>
 		<div>
-			<h1>Hello Animation</h1>
+			<div className="hello-marquee">
+				<div className="hello-marquee__content">
+					<h1>Hello</h1>
+					<h1>Hi</h1>
+					<h1>Heya</h1>
+					<h1>Hiya</h1>
+					<h1>Hey there</h1>
+					<h1>What's up</h1>
+					<h1>Whoaaa</h1>
+				</div>
+			</div>
+
 			<p className="lead">
 				I'm a front-end web developer focused on creating interactive
-				and accessible web experiences.
+				and accessible web experiences
 			</p>
 			<p className="lead">
-				<ButtonLink text="More about" link="about" /> or{" "}
+				<ButtonLink text="more words" link="about" /> or{" "}
 				<a href="#contact" className="about-link">
-					say hello
+					Get in Touch
 				</a>
 			</p>
 		</div>
@@ -55,11 +91,3 @@ export default HomeAbout;
 
 // .hello-animation
 // 	ul.hello-animation__hellos
-// 		li Hello
-// 		li Hi
-// 		li Hola
-// 		li Heya
-// 		li Hiya
-// 		li What's up
-// 		li Hey there
-// 		li Whoa

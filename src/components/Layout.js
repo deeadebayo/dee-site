@@ -9,11 +9,11 @@ const wrapperStyle = css`
 	display: block;
 `;
 
-export default function Layout({ children }) {
+export default function Layout({ children, location }) {
 	return (
 		<div css={wrapperStyle}>
 			<GlobalStyles />
-			<Navbar />
+			<Navbar path={location.pathname} />
 			<main>
 				<div className="page">{children}</div>
 			</main>
