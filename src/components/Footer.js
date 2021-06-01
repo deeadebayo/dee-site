@@ -13,6 +13,14 @@ const footerStyle = css`
 		display: grid;
 		place-items: center;
 		padding: 50px;
+
+		&::after {
+			content: " ";
+			display: block;
+			background: blue;
+			height: 100px;
+			margin: -100px 0 0;
+		}
 	`,
 	Footer = () => (
 		<footer css={footerStyle}>

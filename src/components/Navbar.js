@@ -44,7 +44,7 @@ const navbar = css`
 						max-height: 55px;
 						margin-left: -0.535rem;
 						font-size: 1.1em;
-						font-weight: bold;
+						${"" /* font-weight: bold; */}
 
 						&:hover {
 							color: var(--color-primary);

@@ -266,7 +266,6 @@ const contactFormStyles = css`
 						</div>
 					</div>
 				</div>
-				<div id="contact"></div>
 			</>
 		);
 	};

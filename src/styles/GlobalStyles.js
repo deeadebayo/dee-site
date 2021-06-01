@@ -23,6 +23,9 @@ const globalstyles = css`
 		--color-background: lightgray;
 		border-top: 4px solid var(--color-secondary);
 		scroll-behavior: smooth;
+		@media screen and (prefers-reduced-motion: reduce) {
+			scroll-behavior: auto;
+		}
 	}
 	background-color: "lightgray";
 
@@ -61,18 +64,6 @@ const globalstyles = css`
 		}
 	}
 
-	main {
-		display: flex;
-		min-height: 100vh;
-		background: white;
-		position: relative;
-		z-index: 1;
-		padding: 2rem;
-		& > .page {
-			${"" /* width: clamp(16rem, 90vw, 70rem); */}
-			margin: 0 auto;
-		}
-	}
 	p.lead {
 		font-size: 1.3em;
 	}

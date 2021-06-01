@@ -12,8 +12,8 @@ const projectBoxStyles = css`
 			"project"
 			"project"
 			"more-btn";
-
 		grid-template-columns: 1fr;
+
 		.project-box:nth-of-type(2) {
 			a {
 				border-top-left-radius: 5px;
@@ -26,8 +26,9 @@ const projectBoxStyles = css`
 				border-bottom-right-radius: 5px;
 			}
 		}
-
-		@media screen and (min-width: 860px) {
+		@media screen and (min-width: 468px) {
+		}
+		@media screen and (min-width: 800px) {
 			grid-template-areas:
 				"title title"
 				"project project"
@@ -53,6 +54,7 @@ const projectBoxStyles = css`
 			.project-box:nth-of-type(5) {
 				a {
 					border-bottom-right-radius: 5px;
+					border-bottom-left-radius: 0px;
 				}
 			}
 		}
@@ -97,17 +99,23 @@ const projectBoxStyles = css`
 				left: 0;
 				bottom: 0;
 				transform: translateY(108px);
-				height: 108px;
+				height: 6em;
 				width: 100%;
 				transition: transform 0.2s ease-in-out;
 				display: flex;
+				flex-flow: row nowrap;
 
 				&__details {
 					display: flex;
-					flex-direction: column;
+					flex-flow: row nowrap;
 					flex-basis: 100%;
-					padding: 1.5em 1.875em;
 					position: relative;
+
+					&--text {
+						padding: 1.5em 1.875em;
+						color: var(--color-text-black);
+						${"" /* background: a color; */};
+					}
 
 					&__title {
 						flex: 1;
@@ -119,6 +127,46 @@ const projectBoxStyles = css`
 						font-size: 0.875rem;
 						line-height: 1.25rem;
 					}
+				}
+			}
+
+			${
+				"" /* @media screen and (min-width: 800px) {
+				&__detail-box {
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					transform: translateY(108px);
+					height: 5.5em;
+					width: 100%;
+					transition: transform 0.2s ease-in-out;
+					display: flex;
+
+					&__details {
+						display: flex;
+						flex-direction: column;
+						flex-basis: 100%;
+						padding: 1.5em 1.875em;
+						position: relative;
+
+						&__title {
+							flex: 1;
+						}
+
+						&__description {
+							flex: 1;
+							margin-bottom: 0.5em;
+							font-size: 0.875rem;
+							line-height: 1.25rem;
+						}
+					}
+				}
+			} */
+			}
+
+			@media screen and (min-width: 1170px) {
+				&__detail-box {
+					height: 6em;
 				}
 			}
 
@@ -147,12 +195,15 @@ const projectBoxStyles = css`
 					`}
 				>
 					<div className="project-box__detail-box__details">
-						<span className="project-box__detail-box__details__description">
-							{description}
-						</span>
-						<span className="project-box__detail-box__details__title">
-							<h2>{title}</h2>
-						</span>
+						<div className="project-box__detail-box__details--text">
+							<span className="project-box__detail-box__details__description">
+								{description}
+							</span>
+							<span className="project-box__detail-box__details__title">
+								<h2>{title}</h2>
+							</span>
+						</div>
+						<div className="project-box__detail-box__details--icon"></div>
 					</div>
 				</span>
 			</Link>
@@ -170,7 +221,7 @@ export default function ProjectBoxList() {
 							gatsbyImageData(
 								layout: CONSTRAINED
 								placeholder: TRACED_SVG
-								height: 562
+								height: 615
 								aspectRatio: 1.33
 							)
 						}
@@ -182,7 +233,7 @@ export default function ProjectBoxList() {
 							gatsbyImageData(
 								layout: CONSTRAINED
 								placeholder: TRACED_SVG
-								height: 562
+								height: 615
 								aspectRatio: 1.33
 							)
 						}
@@ -196,7 +247,7 @@ export default function ProjectBoxList() {
 							gatsbyImageData(
 								layout: CONSTRAINED
 								placeholder: TRACED_SVG
-								height: 562
+								height: 615
 								aspectRatio: 1.33
 							)
 						}
