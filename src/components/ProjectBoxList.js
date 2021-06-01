@@ -8,30 +8,52 @@ const projectBoxStyles = css`
 		margin: 4em 0;
 		display: grid;
 		grid-template-areas:
-			"title title"
-			"project project"
-			"project project"
-			"more-btn more-btn";
+			"title"
+			"project"
+			"project"
+			"more-btn";
 
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr;
 		.project-box:nth-of-type(2) {
 			a {
 				border-top-left-radius: 5px;
-			}
-		}
-		.project-box:nth-of-type(3) {
-			a {
 				border-top-right-radius: 5px;
-			}
-		}
-		.project-box:nth-of-type(4) {
-			a {
-				border-bottom-left-radius: 5px;
 			}
 		}
 		.project-box:nth-of-type(5) {
 			a {
+				border-bottom-left-radius: 5px;
 				border-bottom-right-radius: 5px;
+			}
+		}
+
+		@media screen and (min-width: 860px) {
+			grid-template-areas:
+				"title title"
+				"project project"
+				"project project"
+				"more-btn more-btn";
+			grid-template-columns: 1fr 1fr;
+
+			.project-box:nth-of-type(2) {
+				a {
+					border-top-left-radius: 5px;
+				}
+			}
+			.project-box:nth-of-type(3) {
+				a {
+					border-top-right-radius: 5px;
+				}
+			}
+			.project-box:nth-of-type(4) {
+				a {
+					border-bottom-left-radius: 5px;
+				}
+			}
+			.project-box:nth-of-type(5) {
+				a {
+					border-bottom-right-radius: 5px;
+				}
 			}
 		}
 

@@ -8,13 +8,14 @@ import "./../scss/link-hover.scss";
 const navbar = css`
 		display: grid;
 		grid-template-columns: 12.5em auto;
-		padding: 2rem;
+		padding: 2em;
 
 		.navbar__logo {
 			grid-column: 1/2;
 			padding: 2px 0;
 		}
-
+		${"" /* @media screen and (max-width: 859px) {
+		} */}
 		.navbar__links {
 			grid-column: 2/3;
 			display: block;
@@ -43,6 +44,7 @@ const navbar = css`
 						max-height: 55px;
 						margin-left: -0.535rem;
 						font-size: 1.1em;
+						font-weight: bold;
 
 						&:hover {
 							color: var(--color-primary);

@@ -80,6 +80,7 @@ const contactFormStyles = css`
 				svg {
 					transition: 0.3s fill;
 					fill: var(--color-primary);
+					height: 100%;
 
 					&:hover,
 					&:focus,

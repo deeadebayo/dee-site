@@ -76,16 +76,7 @@ const AboutPageStyles = css`
 					<div className="resume__experience">
 						<h2>Hi, I'm Adeolu!</h2>
 						<p>
-							I'm originally from {` `}
-							<a
-								href="https://www.lonelyplanet.com/nigeria/lagos"
-								target="_blank"
-								className="about-page"
-							>
-								Lagos
-							</a>
-							{` `}
-							<span>🇳🇬</span> - now I live in {` `}
+							I live in {` `}
 							<a
 								href="https://www.lonelyplanet.com/usa/the-south/atlanta"
 								target="_blank"
@@ -94,18 +85,17 @@ const AboutPageStyles = css`
 								Atlanta
 							</a>
 							{` `}
-							<span>🍑</span> working as a freelance web developer
+							<span>🍑</span> working as a freelance developer.
 						</p>
 						<p>
-							Since 2014, I have have been creating experiences
-							for the front-end web. I enjoy building semantic,
-							SEO-optimized websites that look and function
-							seamlessly on anything that can access the web
+							Since 2014, I've enjoyed building accessible
+							websites that function seamlessly on anything that
+							can access the web.
 						</p>
 						<p>
-							While just the development part of websites is super
+							While just the web dev part of projects can be super
 							fun, I like all the other pieces that go into it too
-							(looking at you: SEO 😍 and design systems 😎)
+							(looking at you: SEO 😍 and design systems 😎).
 						</p>
 						<p>
 							If the project involves HTML/CSS/JS, chances are

@@ -2,7 +2,7 @@ import Typography from "typography";
 import CodePlugin from "typography-plugin-code";
 
 let theme = {
-	baseFontSize: `20px`,
+	baseFontSize: `16px`,
 	headerFontFamily: [`Cooper Hewitt`, `sans-serif`],
 	bodyFontFamily: [`Cooper Hewitt`, `sans-serif`],
 	plugins: [new CodePlugin()],

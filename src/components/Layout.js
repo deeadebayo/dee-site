@@ -7,6 +7,7 @@ import Footer from "./Footer";
 
 const wrapperStyle = css`
 	display: block;
+	padding: 0 0.5em;
 `;
 
 export default function Layout({ children, location }) {

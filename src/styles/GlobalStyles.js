@@ -26,12 +26,6 @@ const globalstyles = css`
 	}
 	background-color: "lightgray";
 
-	.emoji {
-		height: 19px;
-		padding: 0 2px;
-		line-height: 1.5;
-	}
-
 	.hidden {
 		display: none;
 	}
