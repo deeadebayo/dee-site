@@ -47,6 +47,11 @@ const aboutStyle = css`
 			}
 		}
 	}
+	.name {
+		background: var(--color-secondary);
+		color: white;
+		${"" /* padding */}
+	}
 
 	@keyframes marqueeEffect {
 		0% {
@@ -62,7 +67,7 @@ const HomeAbout = () => (
 	<div css={aboutStyle}>
 		<div>
 			<div className="hello-marquee">
-				<div className="hello-marquee__content">
+				<span className="hello-marquee__content">
 					<h1>Hello</h1>
 					<h1>Hi</h1>
 					<h1>Heya</h1>
@@ -70,8 +75,11 @@ const HomeAbout = () => (
 					<h1>Hey there</h1>
 					<h1>What's up</h1>
 					<h1>Whoaaa</h1>
-				</div>
+				</span>
 			</div>
+			<h1>
+				<span className="name">Dee</span>
+			</h1>
 
 			<p className="lead">
 				I'm a front-end web developer focused on creating interactive

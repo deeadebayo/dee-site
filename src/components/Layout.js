@@ -2,6 +2,7 @@ import React from "react";
 import { css } from "@emotion/react";
 
 import GlobalStyles from "../styles/GlobalStyles";
+import Banner from "./Banner";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
@@ -48,6 +49,7 @@ export default function Layout({ children, location }) {
 		<>
 			<div css={wrapperStyle}>
 				<GlobalStyles />
+				<Banner />
 				<Navbar path={location.pathname} />
 				<main>
 					<div className="page">{children}</div>
