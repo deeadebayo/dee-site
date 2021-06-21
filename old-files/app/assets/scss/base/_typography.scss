@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400|Muli:300,700');
+
+// $screen-phone-min: 425px; // The smallest of phones, make this basic or bigger
+// $screen-phablet-min: 768px; // Tablet in portrait mode
+// $screen-tablet-min: 992px; // Tablet (landscape) and small deskstops
+// $screen-comp-min: 1200px; // Large tablets and desktops
+// $screen-wide-min: 1650px; // Widescreen desktops
+
+$modularscale: (
+    base: 19px,
+    ratio: $fourth,
+    //1.333
+        $screen-phone-min:
+        (
+            ratio: $minor-third//1.2
+        ),
+    $screen-phablet-min: (
+        base: 21px,
+        ratio: $fourth
+    ),
+    $screen-tablet-min: (
+        base: 22px,
+        ratio: $fourth
+    ),
+    $screen-comp-min: (
+        base: 22px,
+        ratio: $fourth
+    ),
+    $screen-wide-min: (
+        base: 25px,
+        ratio: $fourth
+    )
+);
+
+$ms-fluid: false;
+$ms-range: ($minor-third $screen-phone-min, $fourth $screen-phablet-min, $golden $screen-comp-min);
+
+p {
+    font-family: $font--muli;
+    font-weight: 300;
+    line-height: 1.5;
+    // @include ms-respond(font-size, 3)
+    @include ms-respond(font-size, 0);
+    color: $color--text-default;
+
+    &.small {
+        @include ms-respond(font-size, -1);
+    }
+}
+
+small,
+.small {
+    @include ms-respond(font-size, -1);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font--merriweather;
+    color: $color--dark;
+    font-weight: 400;
+}
+
+a {
+    font-family: $font--muli;
+    font-weight: 700;
+    color: $color--primary;
+    transition: color 0.2s ease-in-out;
+    text-decoration: none;
+
+    &:hover {
+        color: $color--secondary;
+        cursor: pointer;
+    }
+}
+
+h1 {
+    @include ms-respond(font-size, 4);
+}
+
+h2 {
+    @include ms-respond(font-size, 3);
+}
+
+h3 {
+    @include ms-respond(font-size, 2);
+}
+
+h4 {
+    @include ms-respond(font-size, 1);
+}
+
+.title--big {
+    color: $color--text-header;
+}

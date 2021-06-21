@@ -1,65 +1,72 @@
 {
 	"name": "dee-site",
 	"version": "1.0.0",
-	"description": "refactor of deeadebayo.com using better practices",
-	"main": "index.js",
+	"description": "dee-site",
+	"author": "deeadebayo",
+	"keywords": [
+		"gatsby"
+	],
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"build": "cross-env NODE_OPTIONS=\"-r esm\" gatsby build",
+		"develop": "cross-env NODE_OPTIONS=\"-r esm\" gatsby develop",
+		"start": "npm run develop",
+		"serve": "cross-env NODE_OPTIONS=\"-r esm\" gatsby serve",
+		"clean": "gatsby clean"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/deeadebayo/dee-site.git"
+	"eslintConfig": {
+		"extends": [
+			"wesbos"
+		],
+		"rules": {
+			"react/prop-types": 0
+		}
 	},
-	"author": "@deeadebayo",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/deeadebayo/dee-site/issues"
-	},
-	"homepage": "https://github.com/deeadebayo/dee-site#readme",
 	"dependencies": {
+		"@emotion/react": "^11.1.5",
+		"@emotion/styled": "^11.1.5",
+		"framer-motion": "^3.10.5",
+		"gatsby": "^2.32.8",
+		"gatsby-background-image": "^1.5.0",
+		"gatsby-image": "^2.11.0",
+		"gatsby-plugin-emotion": "^5.4.0",
+		"gatsby-plugin-image": "^0.7.2",
+		"gatsby-plugin-manifest": "^2.12.1",
+		"gatsby-plugin-offline": "^3.10.2",
+		"gatsby-plugin-react-helmet": "^3.10.0",
+		"gatsby-plugin-react-svg": "^3.0.0",
+		"gatsby-plugin-sass": "^3.2.0",
+		"gatsby-plugin-sharp": "^2.14.3",
+		"gatsby-plugin-sitemap": "^2.12.0",
+		"gatsby-plugin-typography": "^2.12.0",
+		"gatsby-source-filesystem": "^2.11.1",
+		"gatsby-transformer-sharp": "^2.12.0",
 		"normalize.css": "^8.0.1",
-		"npm": "^6.13.4"
+		"react": "^17.0.1",
+		"react-dom": "^17.0.1",
+		"react-helmet": "^6.1.0",
+		"react-typography": "^0.16.19",
+		"sass": "^1.32.8",
+		"sharp": "^0.27.2",
+		"typography": "^0.16.19",
+		"typography-plugin-code": "^0.16.19",
+		"typography-theme-fairy-gates": "^0.16.19"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.5.5",
-		"@babel/preset-env": "^7.5.5",
-		"autoprefixer": "^9.6.1",
-		"babel-core": "^6.26.3",
-		"babel-loader": "^8.0.6",
-		"browser-sync": "^2.26.7",
-		"browserslist": "^4.6.6",
-		"css-loader": "^3.0.0",
-		"del": "^5.0.0",
-		"fancy-log": "^1.3.3",
-		"gulp": "^4.0.2",
-		"gulp-babel": "^8.0.0",
-		"gulp-cached": "^1.1.1",
-		"gulp-changed": "^4.0.0",
-		"gulp-cli": "^2.2.0",
-		"gulp-concat": "^2.6.1",
-		"gulp-debug": "^4.0.0",
-		"gulp-eslint": "^6.0.0",
-		"gulp-filter": "^6.0.0",
-		"gulp-if": "^2.0.2",
-		"gulp-imagemin": "^6.0.0",
-		"gulp-postcss": "^8.0.0",
-		"gulp-pug": "^4.0.1",
-		"gulp-sass": "^4.0.2",
-		"gulp-sourcemaps": "^2.6.5",
-		"gulp-uglify": "^3.0.2",
-		"imagemin-pngquant": "^8.0.0",
-		"jquery": "^3.5.0",
-		"lite-server": "^2.5.3",
-		"modularscale-sass": "^3.0.8",
-		"node-sass": "^4.12.0",
-		"postcss-loader": "^3.0.0",
-		"sass-loader": "^7.1.0",
-		"style-loader": "^0.23.1",
-		"webpack": "^4.36.1",
-		"webpack-cli": "^3.3.6",
-		"webpack-stream": "^5.2.1"
-	},
-	"browserslist": [
-		"defaults"
-	]
+		"babel-eslint": "^10.1.0",
+		"cross-env": "^7.0.3",
+		"eslint": "^7.21.0",
+		"eslint-config-airbnb": "^18.2.1",
+		"eslint-config-prettier": "^8.1.0",
+		"eslint-config-wesbos": "^1.0.1",
+		"eslint-plugin-html": "^6.1.1",
+		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-jsx-a11y": "^6.4.1",
+		"eslint-plugin-prettier": "^3.3.1",
+		"eslint-plugin-react": "^7.22.0",
+		"eslint-plugin-react-hooks": "^4.2.0",
+		"esm": "^3.2.25",
+		"file-loader": "^1.1.11",
+		"prettier": "^2.2.1",
+		"url-loader": "^1.1.2"
+	}
 }
