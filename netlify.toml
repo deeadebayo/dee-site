@@ -2,3 +2,7 @@
   command = "gatsby build"
   publish = "public"
   environment = { NODE_VERSION = "12.16.2" }
+[[redirects]]
+	from = '/*'
+	to = '/index.html'
+	status = 200
