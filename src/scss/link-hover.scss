@@ -1,5 +1,18 @@
 @import "../scss/mixins/underline-animation";
 
+a.banner-link {
+	color: var(--color-primary);
+	text-decoration: none;
+	// text-decoration-thickness: 4px;
+	text-decoration-style: solid;
+
+	@include underline-animation(
+		var(--color-secondary),
+		"right",
+		$lower-underline: false
+	);
+}
+
 a.navbar-link {
 	@include underline-animation(
 		var(--color-primary),

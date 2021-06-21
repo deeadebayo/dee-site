@@ -13,6 +13,7 @@
 
 	"extends": "react/recommended",
 	"rules": {
+		"semi": ["error", "never"],
 		"no-console": [
 			"error",
 			{

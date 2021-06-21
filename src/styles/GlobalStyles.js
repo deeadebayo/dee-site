@@ -15,14 +15,17 @@ const globalstyles = css`
 		--color-text-header: hsla(0, 0%, 0%, 0.8);
 		--color-text_default: hsl(0, 0%, 28%);
 		--color-dark: hsl(0, 0%, 28%);
+		--color-dark-slate: hsl(0, 0%, 13.3%);
 		--color-gray: hsl(0, 0%, 46%);
 		--color-gray_lighter: hsl(0, 0%, 85%);
 		--color-soft-white: hsl(210, 36%, 96%);
 
 		--color-text: black;
 		--color-background: lightgray;
+
 		border-top: 4px solid var(--color-secondary);
 		scroll-behavior: smooth;
+
 		@media screen and (prefers-reduced-motion: reduce) {
 			scroll-behavior: auto;
 		}

@@ -6,28 +6,33 @@ import "./../scss/link-hover.scss";
 const banner = css`
 		top: 0;
 		left: 0;
-		position: fixed;
+		padding: 1.5em;
+		position: relative;
 		width: 100%;
+		z-index: 101;
+		background-color: var(--color-dark-slate);
 
-		align-items: center;
 		display: flex;
 		justify-content: center;
+		align-items: center;
 
 		.banner__content {
+			display: flex;
+			justify-content: center;
 			flex: 1;
 		}
 	`,
-	githubLink = `https://github.com/deeadebayo/dee-site`;
-
-export const Banner = () => {
-	return (
-		<div className="banner" css={banner}>
+	githubLink = `https://github.com/deeadebayo/dee-site`,
+	Banner = () => (
+		<header className="banner" css={banner}>
 			<div className="banner__content">
-				Site is very experimental right now - follow the progress on{" "}
-				<a href={githubLink} className="navbar-link">
-					GitHub
-				</a>
+				<p className="lead" style={{ marginBottom: 0 }}>
+					<a href={githubLink} className="banner-link">
+						Site under construction - follow my progress on GitHub
+					</a>
+				</p>
 			</div>
-		</div>
+		</header>
 	);
-};
+
+export default Banner;

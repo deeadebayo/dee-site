@@ -1,0 +1,39 @@
+doctype html
+html(lang="en")
+    head
+        - var keywordContent = "dee adebayo, adeolu adebayo, front-end developer, ui/ux, bachelor's,georgia state university, software implementation, web development, freelance, website building, html, css, javascript, front-end desinger"
+        - var pageDescContent = "Hi, I'm Dee. I'm a front-end developer based in Atlanta. I build website using HTML, CSS, presentational JavaScript with a strong focus on responsive design, accessibility, and modern front-end tooling & techniques."
+        //- Google Tag Manager
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MZDN562');</script>
+        //- End Google Tag Manager
+        meta(charset='UTF-8')
+        meta(name='viewport')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        title Dee Adebayo - Front-End Web Developer
+        meta(name="author", content="Dee Adebayo")
+        meta(name="keywords", content=keywordContent)
+        meta(name="description" content=pageDescContent)
+        link(rel="stylesheet", href="public/css/styles.css")
+        style.
+            p {
+                margin-top: .25em;
+                margin-bottom: .25em;
+            }
+            section {
+                margin: 1em 0;
+            }
+        body
+            //- Google Tag Manager (noscript)
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MZDN562" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+            //- End Google Tag Manager (noscript)
+            .page-wrapper.page-wrapper__landing-page
+                .page-wrapper__landing-page__content
+                    section.message
+                        h2 Hi there!
+                        p Thanks for visiting! I lost my old website, so I'm working on a new one. A <small>(rough)</small> dev preview is hosted on Netlify. Source here: <a href="https://github.com/deeadebayo/dee-site">GitHub</a>. When it's done, this page will be updated &#x1F604;.
+                    section.contact
+                        br
+                        p Email: dee(at)deeadebayo.com
+                        p: a(href='https://www.linkedin.com/in/deeadebayo/' target='_blank') LinkedIn
+            script(src="public/js/script.js")
+
