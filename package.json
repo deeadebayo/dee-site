@@ -47,6 +47,7 @@
 		"react-typography": "^0.16.19",
 		"sass": "^1.32.8",
 		"sharp": "^0.27.2",
+		"splitting": "^1.0.6",
 		"typography": "^0.16.19",
 		"typography-plugin-code": "^0.16.19",
 		"typography-theme-fairy-gates": "^0.16.19"

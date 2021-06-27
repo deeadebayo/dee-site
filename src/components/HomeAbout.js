@@ -1,7 +1,11 @@
 import { css } from "@emotion/react";
 import React from "react";
+// import Splitting from "splitting";
 
 import "../scss/link-hover.scss";
+// import "splitting/dist/splitting.css";
+// import "splitting/dist/splitting-cells.css";
+
 import { ButtonLink } from "./Button";
 
 const aboutStyle = css`
@@ -32,25 +36,38 @@ const aboutStyle = css`
 	}
 	.hello-marquee {
 		${"" /* width: 100%; */}
-		height: 100px;
 		overflow: hidden;
 
-		&__content:hover {
-			${"" /* make this only happen on big devices */}
-			animation: marqueeEffect 3s linear 1;
-			&:first-of-type {
-				color: var(--color-secondary);
-			}
+		&__text-content {
+			position: relative;
+			display: inline-block;
+			padding-top: .2em;
+			padding-right: 0.05em;
+			padding-bottom: .1em;
+			overflow: hidden;
 
-			h1:nth-of-type(2n) {
-				color: var(--color-rare);
-			}
+			${'' /* &:hover {
+				animation: marqueeEffect 3s linear 1;
+				&:first-of-type {
+					color: var(--color-secondary);
+				}
+
+				h1:nth-of-type(2n) {
+					color: var(--color-rare);
+				}
+			} */}
+		}
+
+		.letter {
+			transform-origin: 0 100%;
+			display: inline-block;
+			line-height: 1em;
 		}
 	}
+
 	.name {
 		background: var(--color-secondary);
 		color: white;
-		${"" /* padding */}
 	}
 
 	@keyframes marqueeEffect {
@@ -63,10 +80,17 @@ const aboutStyle = css`
 	}
 `;
 
+// const letterArray = ()
+
 const HomeAbout = () => (
 	<div css={aboutStyle}>
 		<div>
-			<div className="hello-marquee">
+			<h1 className="hello-marquee">
+				<span data-splitting className="hello-marquee__text-content">
+					<span className="letters">Hi, I'm Adeolu</span>
+				</span>
+			</h1>
+			{/* <div className="hello-marquee">
 				<span className="hello-marquee__content">
 					<h1>Hello</h1>
 					<h1>Hi</h1>
@@ -76,11 +100,7 @@ const HomeAbout = () => (
 					<h1>What's up</h1>
 					<h1>Whoaaa</h1>
 				</span>
-			</div>
-			<h1>
-				<span className="name">Dee</span>
-			</h1>
-
+			</div> */}
 			<p className="lead">
 				I'm a front-end web developer focused on creating interactive
 				and accessible web experiences
