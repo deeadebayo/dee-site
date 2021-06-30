@@ -101,11 +101,11 @@ const Button = (props) => (
 export const ButtonLink = (props) => (
 	<Link to={props.link}>
 		<div css={buttonStyles} style={{ display: "inline-block" }}>
-			<button className="pushable">
+			<div className="pushable">
 				<span className="shadow"></span>
 				<span className="edge"></span>
 				<span className="front">{props.text}</span>
-			</button>
+			</div>
 		</div>
 	</Link>
 );

@@ -227,18 +227,18 @@ const contactFormStyles = css`
 										placeholder="What's on your mind?"
 										required
 									></textarea>
-									<p className="hidden">
+									<span style={{ display: 'none' }} className="hidden">
 										<label htmlFor="fake-friends">
 											Not for the real friends
 										</label>
 										<input name="fake-friends" />
-									</p>
+									</span>
 									<div className="submit">
 										<input
 											type="submit"
 											value="Send"
 											className="btn"
-											// style={{ display: "none" }}
+										// style={{ display: "none" }}
 										/>
 										<Button text="Send" />
 									</div>

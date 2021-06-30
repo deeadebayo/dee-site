@@ -6,7 +6,7 @@ import "normalize.css";
 const globalstyles = css`
 	:root {
 		--color-primary: hsl(358, 100%, 68%);
-		--color-secondary: hsl(175, 100%, 33%);
+		--color-secondary: hsla(175, 100%, 33%, 1);
 		--color-accent: hsl(16, 97%, 58%);
 		--color-rare: hsl(39, 98%, 58%);
 		--color-alert: hsl(356, 69%, 54%);

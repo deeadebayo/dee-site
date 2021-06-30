@@ -1,10 +1,8 @@
 import { css } from "@emotion/react";
 import React from "react";
-// import Splitting from "splitting";
 
 import "../scss/link-hover.scss";
-// import "splitting/dist/splitting.css";
-// import "splitting/dist/splitting-cells.css";
+import SplitText from "./SplitText";
 
 import { ButtonLink } from "./Button";
 
@@ -21,6 +19,7 @@ const aboutStyle = css`
 
 	h1 {
 		font-size: 2.75em;
+		margin-bottom: 1rem;
 	}
 
 	a.about-link {
@@ -35,33 +34,9 @@ const aboutStyle = css`
 		}
 	}
 	.hello-marquee {
-		${"" /* width: 100%; */}
-		overflow: hidden;
 
-		&__text-content {
-			position: relative;
-			display: inline-block;
-			padding-top: .2em;
-			padding-right: 0.05em;
-			padding-bottom: .1em;
-			overflow: hidden;
-
-			${'' /* &:hover {
-				animation: marqueeEffect 3s linear 1;
-				&:first-of-type {
-					color: var(--color-secondary);
-				}
-
-				h1:nth-of-type(2n) {
-					color: var(--color-rare);
-				}
-			} */}
-		}
-
-		.letter {
-			transform-origin: 0 100%;
-			display: inline-block;
-			line-height: 1em;
+		&:hover {
+			color: var(--color-secondary);
 		}
 	}
 
@@ -69,44 +44,30 @@ const aboutStyle = css`
 		background: var(--color-secondary);
 		color: white;
 	}
-
-	@keyframes marqueeEffect {
-		0% {
-			transform: translateY(0);
-		}
-		100% {
-			transform: translateY(-100%);
-		}
-	}
 `;
-
-// const letterArray = ()
 
 const HomeAbout = () => (
 	<div css={aboutStyle}>
 		<div>
 			<h1 className="hello-marquee">
-				<span data-splitting className="hello-marquee__text-content">
-					<span className="letters">Hi, I'm Adeolu</span>
-				</span>
+				<SplitText initial={{ y: '100%', color: 'var(--color-secondary)' }}
+					animate="visible"
+					variants={{
+						visible: i => ({
+							y: 0,
+							color: 'var(--color-text-header)',
+							transition: {
+								delay: i * 0.1
+							},
+						})
+					}}>Hi, I'm Adeolu</SplitText>
 			</h1>
-			{/* <div className="hello-marquee">
-				<span className="hello-marquee__content">
-					<h1>Hello</h1>
-					<h1>Hi</h1>
-					<h1>Heya</h1>
-					<h1>Hiya</h1>
-					<h1>Hey there</h1>
-					<h1>What's up</h1>
-					<h1>Whoaaa</h1>
-				</span>
-			</div> */}
 			<p className="lead">
 				I'm a front-end web developer focused on creating interactive
 				and accessible web experiences
 			</p>
 			<p className="lead">
-				<ButtonLink text="more words" link="about" /> or{" "}
+				<ButtonLink text="learn more" link="about" /> or{" "}
 				<a href="#contact" className="about-link">
 					Get in Touch
 				</a>
@@ -116,6 +77,3 @@ const HomeAbout = () => (
 );
 
 export default HomeAbout;
-
-// .hello-animation
-// 	ul.hello-animation__hellos
