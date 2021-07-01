@@ -1,5 +1,6 @@
 import React from "react";
 import { css } from "@emotion/react";
+import { AnimatePresence } from "framer-motion";
 
 import GlobalStyles from "../styles/GlobalStyles";
 import Banner from "./Banner";
@@ -35,7 +36,7 @@ const wrapperStyle = css`
 			}
 		}
 	}
-	@media screen and (min-width: 1170px) {
+	@media screen and (min-width: 1080px) {
 		main {
 			& > .page {
 				max-width: 1500px;
@@ -52,7 +53,9 @@ export default function Layout({ children, location }) {
 				<Banner />
 				<Navbar path={location.pathname} />
 				<main>
-					<div className="page">{children}</div>
+					<AnimatePresence>
+						<div className="page">{children}</div>
+					</AnimatePresence>
 				</main>
 				<Footer />
 			</div>

@@ -19,6 +19,7 @@ const banner = css`
 		.banner__content {
 			display: flex;
 			justify-content: center;
+			text-align: center;
 			flex: 1;
 		}
 	`,

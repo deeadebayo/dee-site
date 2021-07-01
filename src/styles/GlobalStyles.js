@@ -16,6 +16,7 @@ const globalstyles = css`
 		--color-text_default: hsl(0, 0%, 28%);
 		--color-dark: hsl(0, 0%, 28%);
 		--color-dark-slate: hsl(0, 0%, 13.3%);
+		--color-dark-shadow: hsla(224, 62%, 24%, 0.24);
 		--color-gray: hsl(0, 0%, 46%);
 		--color-gray_lighter: hsl(0, 0%, 85%);
 		--color-soft-white: hsl(210, 36%, 96%);
@@ -41,7 +42,7 @@ const globalstyles = css`
 		outline: none;
 		transition: all 0.2s ease-in-out;
 		border: 1px solid var(--color-primary);
-		box-shadow: 0 3px 6px 1px hsla(224, 62%, 24%, 0.24);
+		box-shadow: 0 3px 6px 1px var(--color-dark-shadow);
 		background: transparent;
 		color: var(--color-primary);
 		text-transform: uppercase;
@@ -62,12 +63,12 @@ const globalstyles = css`
 
 		&:active {
 			transform: scale3d(0.95, 0.95, 0.95);
-			box-shadow: 0 0px 0px hsla(224, 62%, 24%, 0.24);
+			box-shadow: 0 0px 0px var(--color-dark-shadow);
 			background: darken(var(--color-secondary), 10);
 		}
 	}
 
-	p.lead {
+	p.lead-text {
 		font-size: 1.3em;
 	}
 `;

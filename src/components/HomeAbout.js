@@ -1,28 +1,25 @@
-import { css } from "@emotion/react";
 import React from "react";
+import { css } from "@emotion/react";
 
 import "../scss/link-hover.scss";
-import SplitText from "./SplitText";
-
+import AnimatedHello from "./AnimatedHello";
 import { ButtonLink } from "./Button";
 
 const aboutStyle = css`
-	margin: 3em 0;
+	min-width: 60%;
+	margin: 3rem .5rem;
 	padding: 1.5em 2em;
-	border: 1px solid hsla(224, 62%, 24%, 0.1);
+	border: 1px solid var(--color-dark-shadow);
 	border-radius: 5px;
-	box-shadow: 0px 3px 5px hsla(224, 62%, 24%, 0.24);
+	box-shadow: 0px 3px 5px var(--color-dark-shadow);
 
-	& > div {
-		margin: 1.5rem 2rem;
+	.wrapper__about {
+		display: flex;
+		flex-flow: column wrap;
+		align-content: center;
 	}
 
-	h1 {
-		font-size: 2.75em;
-		margin-bottom: 1rem;
-	}
-
-	a.about-link {
+	a.about__link {
 		color: var(--color-primary);
 		text-decoration-thickness: 3px;
 		text-decoration-style: solid;
@@ -33,47 +30,106 @@ const aboutStyle = css`
 			transition: 0.3s ease;
 		}
 	}
-	.hello-marquee {
 
+	.about__title {
+		font-size: 2.75em;
+		margin-bottom: .5rem;
+		text-align: center;
 		&:hover {
 			color: var(--color-secondary);
 		}
 	}
 
-	.name {
-		background: var(--color-secondary);
-		color: white;
+	.isCentered {
+		text-align: center;
+	}
+
+	.about__lead-text {
+		max-width: 38ch;
+	}
+
+	.about__learn-more {
+		display: flex;
+		flex-flow: column wrap;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+	}
+
+	@media screen and (min-width: 480px) {
+		margin: 3rem 1rem;
+			.about__learn-more{flex-flow: row nowrap;
+			.about__lead-text {
+				margin-bottom: .5rem;
+				text-align: center;
+			}}
+	}
+
+	@media screen and (min-width: 800px) {
+		margin: 3rem 1.5rem;
+		.about__lead-text {
+		max-width: 48ch;
+	}
+	}
+
+	@media screen and (min-width: 1080px) {
+		margin: 3rem 2rem;
+
+		.wrapper__about {
+			padding: .5rem 2rem;
+		}
+
+		.about__title {
+			text-align: left;
+		}
+
+		.isCentered {
+		text-align: left;
+	}
+	.about__lead-text {
+		max-width: 50ch;
+	}
+		.about__learn-more {
+			justify-content: flex-start;
+		}
 	}
 `;
 
 const HomeAbout = () => (
 	<div css={aboutStyle}>
-		<div>
-			<h1 className="hello-marquee">
-				<SplitText initial={{ y: '100%', color: 'var(--color-secondary)' }}
+		<div className='wrapper__about'>
+			<h1 className="about__title">
+				<AnimatedHello
+					whileHover={{ color: "var(--color-secondary)" }}
+					initial={{ y: "100%", color: "var(--color-secondary)" }}
 					animate="visible"
 					variants={{
-						visible: i => ({
+						visible: (i) => ({
 							y: 0,
-							color: 'var(--color-text-header)',
+							color: "var(--color-text-header)",
 							transition: {
-								delay: i * 0.1
+								delay: i * 0.1,
 							},
-						})
-					}}>Hi, I'm Adeolu</SplitText>
+						}),
+					}}
+				>
+					Hi, I'm Adeolu
+				</AnimatedHello>
 			</h1>
-			<p className="lead">
-				I'm a front-end web developer focused on creating interactive
-				and accessible web experiences
+			<p className="lead-text about__lead-text isCentered">
+				I'm a front-end developer with a soft spot for UX/UI. I'm focused on creating interactive and
+				accessible web experiences
 			</p>
-			<p className="lead">
-				<ButtonLink text="learn more" link="about" /> or{" "}
-				<a href="#contact" className="about-link">
-					Get in Touch
-				</a>
-			</p>
+			<div className="about__learn-more">
+				<ButtonLink text="Learn more" link="about" />
+				<p className="lead-text about__lead-text">
+					<a href="#contact" className="about-link about__link">
+						Get in touch
+					</a>
+				</p>
+			</div>
 		</div>
 	</div>
-);
+)
 
 export default HomeAbout;
