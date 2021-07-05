@@ -7,7 +7,7 @@ import { ButtonLink } from "./Button";
 
 const aboutStyle = css`
 	min-width: 60%;
-	margin: 3rem .5rem;
+	margin: 3rem 0.5rem;
 	padding: 1.5em 2em;
 	border: 1px solid var(--color-dark-shadow);
 	border-radius: 5px;
@@ -33,7 +33,7 @@ const aboutStyle = css`
 
 	.about__title {
 		font-size: 2.75em;
-		margin-bottom: .5rem;
+		margin-bottom: 0.5rem;
 		text-align: center;
 		&:hover {
 			color: var(--color-secondary);
@@ -56,27 +56,29 @@ const aboutStyle = css`
 		gap: 1.5rem;
 	}
 
-	@media screen and (min-width: 480px) {
+	@media screen and (min-width: 476px) {
 		margin: 3rem 1rem;
-			.about__learn-more{flex-flow: row nowrap;
+		.about__learn-more {
+			flex-flow: row nowrap;
 			.about__lead-text {
-				margin-bottom: .5rem;
+				margin-bottom: 0.5rem;
 				text-align: center;
-			}}
+			}
+		}
 	}
 
-	@media screen and (min-width: 800px) {
+	@media screen and (min-width: 769px) {
 		margin: 3rem 1.5rem;
 		.about__lead-text {
-		max-width: 48ch;
-	}
+			max-width: 48ch;
+		}
 	}
 
-	@media screen and (min-width: 1080px) {
+	@media screen and (min-width: 1025px) {
 		margin: 3rem 2rem;
 
 		.wrapper__about {
-			padding: .5rem 2rem;
+			padding: 0.5rem 2rem;
 		}
 
 		.about__title {
@@ -84,11 +86,11 @@ const aboutStyle = css`
 		}
 
 		.isCentered {
-		text-align: left;
-	}
-	.about__lead-text {
-		max-width: 50ch;
-	}
+			text-align: left;
+		}
+		.about__lead-text {
+			max-width: 50ch;
+		}
 		.about__learn-more {
 			justify-content: flex-start;
 		}
@@ -97,7 +99,7 @@ const aboutStyle = css`
 
 const HomeAbout = () => (
 	<div css={aboutStyle}>
-		<div className='wrapper__about'>
+		<div className="wrapper__about">
 			<h1 className="about__title">
 				<AnimatedHello
 					whileHover={{ color: "var(--color-secondary)" }}
@@ -117,8 +119,8 @@ const HomeAbout = () => (
 				</AnimatedHello>
 			</h1>
 			<p className="lead-text about__lead-text isCentered">
-				I'm a front-end developer with a soft spot for UX/UI. I'm focused on creating interactive and
-				accessible web experiences
+				I'm a front-end developer with a soft spot for UX/UI. I'm
+				focused on creating interactive and accessible web experiences
 			</p>
 			<div className="about__learn-more">
 				<ButtonLink text="Learn more" link="about" />
@@ -130,6 +132,6 @@ const HomeAbout = () => (
 			</div>
 		</div>
 	</div>
-)
+);
 
 export default HomeAbout;

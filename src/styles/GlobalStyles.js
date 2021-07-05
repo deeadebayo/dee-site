@@ -69,7 +69,25 @@ const globalstyles = css`
 	}
 
 	p.lead-text {
-		font-size: 1.3em;
+		font-size: 1.25em;
+	}
+
+	@media screen and (min-width: 476px) {
+		p.lead-text {
+			font-size: 1.3em;
+		}
+	}
+
+	@media screen and (min-width: 769px) {
+		p.lead-text {
+			font-size: 1.4em;
+		}
+	}
+
+	@media screen and (min-width: 1025px) {
+		p.lead-text {
+			font-size: 1.5em;
+		}
 	}
 `;
 

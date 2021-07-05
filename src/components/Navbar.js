@@ -6,33 +6,29 @@ import { AnimatedLogo } from "./AnimatedLogo";
 import "./../scss/link-hover.scss";
 
 const navbar = css`
-		display: grid;
-		grid-template-columns: 12.5em auto;
-		padding: 2em;
+		display: flex;
+		flex-flow: row wrap;
+		padding: 1.5em;
+		justify-content: space-between;
+		align-items: center;
 
 		.navbar__logo {
-			grid-column: 1/2;
 			padding: 2px 0;
 		}
-		${"" /* @media screen and (max-width: 859px) {
-		} */}
-		.navbar__links {
-			grid-column: 2/3;
-			display: block;
 
+		.navbar__links {
 			ul {
 				list-style: none;
-				justify-content: end;
-				float: right;
+				display: flex;
+				flex-flow: row wrap;
+				align-items: center;
+				justify-content: space-around;
+				margin: 0;
 
 				li {
 					display: block;
-					float: left;
-					margin-right: 2.647em;
-
-					&:last-child {
-						margin-right: 0;
-					}
+					margin: 0;
+					padding: 0 0.5rem;
 
 					a {
 						display: block;
@@ -42,9 +38,9 @@ const navbar = css`
 						color: var(--color--text-header);
 						outline: 1px blue;
 						max-height: 55px;
-						margin-left: -0.535rem;
-						font-size: 1.1em;
-						${"" /* font-weight: bold; */}
+						margin: 1rem 0;
+						font-size: 1.1rem;
+						font-weight: 500;
 
 						&:hover {
 							color: var(--color-primary);
@@ -53,6 +49,44 @@ const navbar = css`
 					.active {
 						text-decoration: underline 3px var(--color-secondary);
 						color: var(--color-secondary);
+					}
+				}
+			}
+		}
+
+		@media screen and (min-width: 476px) {
+			.navbar__links {
+				ul {
+					li {
+						padding: 0 1rem;
+
+						a {
+							font-size: 1.2rem;
+						}
+					}
+				}
+			}
+		}
+
+		@media screen and (min-width: 769px) {
+			.navbar__links {
+				ul {
+					li {
+						padding: 0 2rem;
+
+						a {
+							font-size: 1.4rem;
+						}
+					}
+				}
+			}
+		}
+
+		@media screen and (min-width: 1025px) {
+			.navbar__links {
+				ul {
+					li {
+						padding: 0 2.25rem;
 					}
 				}
 			}
