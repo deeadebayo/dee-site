@@ -119,8 +119,8 @@ const HomeAbout = () => (
 				</AnimatedHello>
 			</h1>
 			<p className="lead-text about__lead-text isCentered">
-				I'm a front-end developer with a soft spot for UX/UI. I'm
-				focused on creating interactive and accessible web experiences
+				I'm a front-end developer with a soft spot for UX/UI. My passion
+				is creating interactive and accessible web experiences
 			</p>
 			<div className="about__learn-more">
 				<ButtonLink text="Learn more" link="about" />
