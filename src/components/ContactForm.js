@@ -37,12 +37,15 @@ const contactFormStyles = css`
 			border: solid 1px #ccc;
 			box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
 			${"" /* padding: 0.25em; */}
-			display: grid;
-			flex-flow: row wrap;
+			display: flex;
+			${"" /* display: grid; */}
+			flex-flow: column wrap;
+			${"" /* flex-flow: row wrap; */}
 			grid-template-columns: repeat(3, minmax(0, 1fr));
+			${"" /* grid-template-columns: repeat(3, minmax(0, 1fr)); */}
 		}
 
-		& .content > .contact__header {
+		.content > .contact__header {
 			grid-column: 3/4;
 			display: flex;
 			flex-flow: row wrap;
@@ -90,7 +93,7 @@ const contactFormStyles = css`
 				}
 			}
 		}
-		& .content > .form {
+		.content > .form {
 			padding: 1em 1.5em;
 			grid-column: 1/3;
 		}
@@ -227,7 +230,10 @@ const contactFormStyles = css`
 										placeholder="What's on your mind?"
 										required
 									></textarea>
-									<span style={{ display: 'none' }} className="hidden">
+									<span
+										style={{ display: "none" }}
+										className="hidden"
+									>
 										<label htmlFor="fake-friends">
 											Not for the real friends
 										</label>
@@ -238,7 +244,7 @@ const contactFormStyles = css`
 											type="submit"
 											value="Send"
 											className="btn"
-										// style={{ display: "none" }}
+											// style={{ display: "none" }}
 										/>
 										<Button text="Send" />
 									</div>

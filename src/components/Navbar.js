@@ -6,6 +6,8 @@ import { AnimatedLogo } from "./AnimatedLogo";
 import "./../scss/link-hover.scss";
 
 const navbar = css`
+		z-index: 1;
+		background: var(--color-page-background);
 		display: flex;
 		flex-flow: row wrap;
 		padding: 1.5em;

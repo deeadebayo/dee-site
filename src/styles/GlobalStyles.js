@@ -22,6 +22,7 @@ const globalstyles = css`
 		--color-soft-white: hsl(210, 36%, 96%);
 
 		--color-text: black;
+		--color-page-background: white;
 		--color-background: lightgray;
 
 		border-top: 4px solid var(--color-secondary);

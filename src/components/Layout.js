@@ -6,6 +6,7 @@ import GlobalStyles from "../styles/GlobalStyles";
 import Banner from "./Banner";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import SiteCredit from "./SiteCredit";
 
 const wrapperStyle = css`
 	display: flex;
@@ -18,7 +19,7 @@ const wrapperStyle = css`
 		flex-flow: column;
 		min-height: 100vh;
 		${"" /* width: 100%; */}
-		background: white;
+		background: var(--color-page-background);
 		position: relative;
 		z-index: 1;
 		padding: 1rem;
@@ -60,6 +61,7 @@ export default function Layout({ children, location }) {
 					</AnimatePresence>
 				</main>
 				<Footer />
+				<SiteCredit />
 			</div>
 			<div id="contact"></div>
 		</>

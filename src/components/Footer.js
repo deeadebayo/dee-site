@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import ContactForm from "./ContactForm";
 
 const footerStyle = css`
+		box-sizing: border-box;
 		position: sticky;
 		bottom: 0;
 		left: 0;
@@ -13,6 +14,10 @@ const footerStyle = css`
 		display: grid;
 		place-items: center;
 		padding: 50px;
+
+		* {
+			box-sizing: border-box;
+		}
 
 		&::after {
 			content: " ";
