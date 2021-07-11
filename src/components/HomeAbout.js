@@ -115,15 +115,18 @@ const HomeAbout = () => (
 						}),
 					}}
 				>
-					Hi, I'm Adeolu
+					Hi, I'm Adeolu.
 				</AnimatedHello>
 			</h1>
 			<p className="lead-text about__lead-text isCentered">
-				I'm a front-end developer with a soft spot for UX/UI. My passion
-				is creating interactive and accessible web experiences
+				I'm a front-end developer with a soft spot for UX/UI. My focus
+				is creating interactive and accessible web experiences.
+			</p>
+			<p className="lead-text about__lead-text isCentered">
+				Thanks for visiting. It's nice to meet you.
 			</p>
 			<div className="about__learn-more">
-				<ButtonLink text="Learn more" link="about" />
+				<ButtonLink text="About me" link="about" />
 				<p className="lead-text about__lead-text">
 					<a href="#contact" className="about-link about__link">
 						Get in touch
