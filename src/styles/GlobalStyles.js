@@ -84,7 +84,7 @@ const globalstyles = css`
 		}
 	}
 
-	@media screen and (min-width: 1025px) {
+	@media screen and (min-width: 1023px) {
 		p.lead-text {
 			font-size: 1.5em;
 		}

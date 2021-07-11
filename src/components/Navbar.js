@@ -82,7 +82,7 @@ const navbar = css`
 			}
 		}
 
-		@media screen and (min-width: 1025px) {
+		@media screen and (min-width: 1023px) {
 			.navbar__links {
 				ul {
 					li {

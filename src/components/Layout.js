@@ -38,7 +38,7 @@ const wrapperStyle = css`
 			}
 		}
 	}
-	@media screen and (min-width: 1025px) {
+	@media screen and (min-width: 1023px) {
 		main {
 			& > .page {
 				max-width: 1500px;

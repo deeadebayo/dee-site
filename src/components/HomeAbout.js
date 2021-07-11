@@ -74,7 +74,7 @@ const aboutStyle = css`
 		}
 	}
 
-	@media screen and (min-width: 1025px) {
+	@media screen and (min-width: 1023px) {
 		margin: 3rem 2rem;
 
 		.wrapper__about {
