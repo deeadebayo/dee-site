@@ -11,6 +11,7 @@ const projectBoxStyles = css`
 		width: clamp(16rem, 90vw, 70rem);
 		margin: 4em 0;
 		display: grid;
+		gap: 0;
 		grid-template-areas:
 			"title"
 			"project"
