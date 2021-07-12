@@ -22,6 +22,7 @@ const globalstyles = css`
 		--color-soft-white: hsl(210, 36%, 96%);
 
 		--color-text: black;
+		--color-page-background: white;
 		--color-background: lightgray;
 
 		border-top: 4px solid var(--color-secondary);
@@ -84,7 +85,7 @@ const globalstyles = css`
 		}
 	}
 
-	@media screen and (min-width: 1025px) {
+	@media screen and (min-width: 1023px) {
 		p.lead-text {
 			font-size: 1.5em;
 		}

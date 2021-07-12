@@ -8,17 +8,19 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 const wrapperStyle = css`
-	display: block;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
 	margin: 0 auto;
 
 	main {
 		display: flex;
 		flex-flow: column;
 		min-height: 100vh;
-		width: 100%;
-		background: white;
+		${"" /* width: 100%; */}
+		background: var(--color-page-background);
 		position: relative;
-		z-index: 1;
+		z-index: 3;
 		padding: 1rem;
 		& > .page {
 			margin: 0 auto;
@@ -27,16 +29,11 @@ const wrapperStyle = css`
 			align-items: center;
 		}
 	}
-	@media screen and (min-width: 468px) {
+	@media screen and (min-width: 476px) {
 	}
-	@media screen and (min-width: 800px) {
-		main {
-			& > .page {
-				margin: 0 1em;
-			}
-		}
+	@media screen and (min-width: 769px) {
 	}
-	@media screen and (min-width: 1080px) {
+	@media screen and (min-width: 1023px) {
 		main {
 			& > .page {
 				max-width: 1500px;
@@ -59,7 +56,6 @@ export default function Layout({ children, location }) {
 				</main>
 				<Footer />
 			</div>
-			<div id="contact"></div>
 		</>
 	);
 }

@@ -6,6 +6,8 @@ import { AnimatedLogo } from "./AnimatedLogo";
 import "./../scss/link-hover.scss";
 
 const navbar = css`
+		z-index: 1;
+		background: var(--color-page-background);
 		display: flex;
 		flex-flow: row wrap;
 		padding: 1.5em;
@@ -82,7 +84,7 @@ const navbar = css`
 			}
 		}
 
-		@media screen and (min-width: 1025px) {
+		@media screen and (min-width: 1023px) {
 			.navbar__links {
 				ul {
 					li {
@@ -142,13 +144,13 @@ const navbar = css`
 								</Link>
 							</li>
 						))}
-						{externalLinks.map((link) => (
+						{/* {externalLinks.map((link) => (
 							<li key={link.id}>
 								<a href={link.url} className="navbar-link">
 									{link.title}
 								</a>
 							</li>
-						))}
+						))} */}
 					</ul>
 				</div>
 			</header>

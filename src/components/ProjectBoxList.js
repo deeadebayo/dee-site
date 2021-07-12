@@ -3,15 +3,19 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 import { css } from "@emotion/react";
 import { GatsbyImage } from "gatsby-plugin-image";
 
+// check out emotion/facepant for media queries in sass like syntax
+// const breakpoints = [469,769,1023]
+// const mq = breakpoints.map(bp => `@media(min-width:${bp}px)`)
+
 const projectBoxStyles = css`
 		width: clamp(16rem, 90vw, 70rem);
 		margin: 4em 0;
 		display: grid;
+		gap: 0;
 		grid-template-areas:
 			"title"
 			"project"
-			"project"
-			"more-btn";
+			"project";
 		grid-template-columns: 1fr;
 
 		.project-box:nth-of-type(2) {
@@ -20,54 +24,15 @@ const projectBoxStyles = css`
 				border-top-right-radius: 5px;
 			}
 		}
+
 		.project-box:nth-of-type(5) {
 			a {
 				border-bottom-left-radius: 5px;
 				border-bottom-right-radius: 5px;
 			}
 		}
-		@media screen and (min-width: 468px) {
-		}
-		@media screen and (min-width: 800px) {
-			grid-template-areas:
-				"title title"
-				"project project"
-				"project project"
-				"more-btn more-btn";
-			grid-template-columns: 1fr 1fr;
-
-			.project-box:nth-of-type(2) {
-				a {
-					border-top-left-radius: 5px;
-				}
-			}
-			.project-box:nth-of-type(3) {
-				a {
-					border-top-right-radius: 5px;
-				}
-			}
-			.project-box:nth-of-type(4) {
-				a {
-					border-bottom-left-radius: 5px;
-				}
-			}
-			.project-box:nth-of-type(5) {
-				a {
-					border-bottom-right-radius: 5px;
-					border-bottom-left-radius: 0px;
-				}
-			}
-		}
 
 		.project-box {
-			&:hover .project-box__img {
-				transform: translateY(-65px);
-			}
-
-			&:hover .project-box__detail-box {
-				transform: translateY(0);
-			}
-
 			grid-area: project;
 			grid-column: span 1;
 			grid-row: span 1;
@@ -94,12 +59,16 @@ const projectBoxStyles = css`
 				display: flex;
 			}
 
+			&:hover .project-box__img {
+				transform: translateY(-65px);
+			}
+
 			&__detail-box {
 				position: absolute;
 				left: 0;
 				bottom: 0;
 				transform: translateY(108px);
-				height: 6em;
+				height: 4.5em;
 				width: 100%;
 				transition: transform 0.2s ease-in-out;
 				display: flex;
@@ -112,7 +81,9 @@ const projectBoxStyles = css`
 					position: relative;
 
 					&--text {
-						padding: 1.5em 1.875em;
+						display: flex;
+						flex-flow: column;
+						padding: 1em;
 						color: var(--color-text-black);
 						${"" /* background: a color; */};
 					}
@@ -130,50 +101,86 @@ const projectBoxStyles = css`
 				}
 			}
 
-			${
-				"" /* @media screen and (min-width: 800px) {
-				&__detail-box {
-					position: absolute;
-					left: 0;
-					bottom: 0;
-					transform: translateY(108px);
-					height: 5.5em;
-					width: 100%;
-					transition: transform 0.2s ease-in-out;
-					display: flex;
-
-					&__details {
-						display: flex;
-						flex-direction: column;
-						flex-basis: 100%;
-						padding: 1.5em 1.875em;
-						position: relative;
-
-						&__title {
-							flex: 1;
-						}
-
-						&__description {
-							flex: 1;
-							margin-bottom: 0.5em;
-							font-size: 0.875rem;
-							line-height: 1.25rem;
-						}
-					}
-				}
-			} */
-			}
-
-			@media screen and (min-width: 1170px) {
-				&__detail-box {
-					height: 6em;
-				}
+			&:hover .project-box__detail-box {
+				transform: translateY(0);
 			}
 
 			&__link {
 				text-decoration: none;
 				overflow: hidden;
 				display: flex;
+			}
+		}
+
+		@media screen and (min-width: 469px) {
+			.project-box {
+				&__detail-box {
+					height: 5.25em;
+					&__details {
+						&--text {
+							padding: 1.3em;
+						}
+					}
+				}
+			}
+		}
+
+		@media screen and (min-width: 769px) {
+			grid-template-areas:
+				"title title"
+				"project project"
+				"project project";
+			grid-template-columns: 1fr 1fr;
+
+			.project-box:nth-of-type(2) {
+				a {
+					border-top-left-radius: 5px;
+				}
+			}
+
+			.project-box:nth-of-type(3) {
+				a {
+					border-top-right-radius: 5px;
+				}
+			}
+
+			.project-box:nth-of-type(4) {
+				a {
+					border-bottom-left-radius: 5px;
+				}
+			}
+
+			.project-box:nth-of-type(5) {
+				a {
+					border-bottom-right-radius: 5px;
+					border-bottom-left-radius: 0px;
+				}
+			}
+			.project-box {
+				&__detail-box {
+					height: 5.5em;
+					&__details {
+						&--text {
+							padding: 1.5em;
+						}
+					}
+				}
+			}
+		}
+
+		@media screen and (min-width: 1023px) {
+			.project-box {
+				&__detail-box {
+					height: 6em;
+					&__details {
+						&--text {
+							padding: 1.5em 1.875em;
+						}
+						&__description {
+							font-size: 0.975rem;
+						}
+					}
+				}
 			}
 		}
 	`,
