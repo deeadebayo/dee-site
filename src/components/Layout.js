@@ -32,11 +32,6 @@ const wrapperStyle = css`
 	@media screen and (min-width: 476px) {
 	}
 	@media screen and (min-width: 769px) {
-		main {
-			& > .page {
-				margin: 0 1em;
-			}
-		}
 	}
 	@media screen and (min-width: 1023px) {
 		main {
@@ -61,7 +56,6 @@ export default function Layout({ children, location }) {
 				</main>
 				<Footer />
 			</div>
-			<div id="contact"></div>
 		</>
 	);
 }

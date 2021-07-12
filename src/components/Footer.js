@@ -42,6 +42,7 @@ const contactFooterStyle = css`
 	Footer = () => (
 		<footer>
 			<div css={contactFooterStyle}>
+				<div id="contact"></div>
 				<ContactForm />
 			</div>
 			<SiteCredit />

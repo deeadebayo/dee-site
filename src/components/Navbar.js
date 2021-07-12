@@ -144,13 +144,13 @@ const navbar = css`
 								</Link>
 							</li>
 						))}
-						{externalLinks.map((link) => (
+						{/* {externalLinks.map((link) => (
 							<li key={link.id}>
 								<a href={link.url} className="navbar-link">
 									{link.title}
 								</a>
 							</li>
-						))}
+						))} */}
 					</ul>
 				</div>
 			</header>
