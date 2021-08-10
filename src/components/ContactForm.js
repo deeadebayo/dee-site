@@ -6,7 +6,6 @@ import Github from "./../images/svg/github.svg";
 import Button from "./Button";
 
 const contactFormStyles = css`
-		${"" /* width: clamp(16rem, 90vw, 70rem); */}
 		max-width: 1070px;
 		position: relative;
 		margin: 0 auto;
@@ -77,14 +76,73 @@ const contactFormStyles = css`
 					max-width: 125px;
 				}
 
-				svg {
-					transition: 0.3s fill;
-					fill: var(--color-primary);
+				svg > * {
+					transition-duration: 0.25s;
 					height: 100%;
+				}
+
+				.svg__linkedin {
+					.linkedin--top-back {
+						fill: hsl(358, 100%, 70%);
+					}
+					.linkedin--bot-back {
+						fill: hsl(358, 100%, 68%);
+					}
+					.linkedin--shadow {
+						fill: hsla(358, 100%, 63%, 0.7);
+					}
+
 					&:hover,
 					&:focus,
 					&:active {
-						fill: var(--color-secondary);
+						.linkedin--top-back {
+							fill: hsla(39, 98%, 58%, 1);
+						}
+						.linkedin--bot-back {
+							fill: hsla(39, 98%, 56%, 1);
+						}
+						.linkedin--shadow {
+							fill: hsla(175, 100%, 33%, 0.7);
+						}
+					}
+				}
+
+				.svg__github {
+					.github--top-back,
+					.github--outline {
+						fill: hsla(358, 100%, 70%, 1);
+					}
+					.github--bot-back {
+						fill: hsla(358, 100%, 65%, 1);
+					}
+					.github--top-liner,
+					.github--bot-liner,
+					.github--underarm,
+					.github--abovearm {
+						fill: hsla(358, 100%, 62%, 0.9);
+					}
+					&:hover,
+					&:focus,
+					&:active {
+						.github--top-back,
+						.github--outline {
+							fill: hsla(175, 100%, 33%, 0.6);
+						}
+						.github--bot-back {
+							fill: hsla(175, 100%, 33%, 0.6);
+						}
+
+						.github--underarm,
+						.github--abovearm {
+							fill: hsla(39, 98%, 56%, 1);
+							transition-delay: 0.02s;
+						}
+
+						.github--top-liner,
+						.github--bot-liner {
+							fill: hsla(39, 98%, 56%, 1);
+							transition-delay: 0.01s;
+						}
 					}
 				}
 			}
