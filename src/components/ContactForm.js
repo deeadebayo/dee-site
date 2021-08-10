@@ -296,8 +296,8 @@ const contactFormStyles = css`
 							<div className="contact__header__text">
 								<h2>📮Get in Touch📮</h2>
 								<p className="lead">
-									Looking for help on a project or just want
-									to say hi? Send some mail!
+									Need help on a project or just want to say
+									hi - send mail!
 								</p>
 							</div>
 							<div className="links">

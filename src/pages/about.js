@@ -12,6 +12,13 @@ const AboutPageStyles = css`
 		grid-gap: 1.25em;
 		grid-auto-rows: minmax(100px, auto);
 		padding: 1.5em 2em;
+		h2 {
+			font-size: 1.6em;
+		}
+
+		p {
+			font-size: 1.2em;
+		}
 
 		${"" /* background-color: hsla(224, 62%, 24%, 0.24); */}
 
