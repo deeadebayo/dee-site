@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 
 import HomeAbout from "../components/HomeAbout";
 import ProjectBoxList from "../components/ProjectBoxList";
+import FadeInPage from "../components-ui/FadeInPage";
 
 const IndexPage = () => {
 	return (
@@ -10,8 +11,10 @@ const IndexPage = () => {
 			<Helmet>
 				<title>Dee Adebayo | Front-End Web Developer</title>
 			</Helmet>
-			<HomeAbout />
-			<ProjectBoxList />
+			<FadeInPage pageName='index'>
+				<HomeAbout />
+				<ProjectBoxList />
+			</FadeInPage>
 		</>
 	);
 };

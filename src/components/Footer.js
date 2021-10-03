@@ -10,8 +10,6 @@ const contactFooterStyle = css`
 		width: 100%;
 		overflow: hidden;
 		z-index: 2;
-
-		background: var(--color-secondary);
 		display: grid;
 		place-items: center;
 		padding: 2em 1.2em 1em;

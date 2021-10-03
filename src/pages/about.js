@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "gatsby";
 
 import "../scss/link-hover.scss";
+import FadeInPage from "../components-ui/FadeInPage";
 
 const AboutPageStyles = css`
 		display: grid;
@@ -65,73 +66,75 @@ const AboutPageStyles = css`
 			<Helmet>
 				<title>About - Dee Adebayo</title>
 			</Helmet>
-			<div css={AboutPageStyles}>
-				<div className="header">
-					<h1>
-						front-end developer
-						<br />
-						<span className="and">&</span> web consultant
-					</h1>
-					{/* <p>
+			<FadeInPage pageName='about'>
+				<div css={AboutPageStyles}>
+					<div className="header">
+						<h1>
+							front-end developer
+							<br />
+							<span className="and">&</span> web consultant
+						</h1>
+						{/* <p>
 						description underneath. I help my clients define their
 						online footprint - creating web experiences that balance
 						business and user needs.
 					</p> */}
-				</div>
+					</div>
 
-				<div className="resume">
-					<div className="resume__experience">
-						<h2>Hi, I'm Adeolu!</h2>
-						<p>
-							I live in {` `}
-							<a
-								href="https://www.lonelyplanet.com/usa/the-south/atlanta"
-								target="_blank"
-								className="about-page"
-							>
-								Atlanta
-							</a>
-							{` `}
-							<span>🍑</span> working as a freelance developer.
-						</p>
-						<p>
-							Since 2014, I've enjoyed building accessible
-							websites that function seamlessly on anything that
-							can access the web.
-						</p>
-						<p>
-							While just the web dev part of projects can be super
-							fun, I like all the other pieces that go into it too
-							(looking at you: SEO 😍 and design systems 😎).
-						</p>
-						<p>
-							If the project involves HTML/CSS/JS, chances are
-							high that I'll love working on it. Have a project in
-							mind?{" "}
-							<Link to="#contact" className="about-page">
-								Contact me
-							</Link>
-						</p>
+					<div className="resume">
+						<div className="resume__experience">
+							<h2>Hi, I'm Adeolu!</h2>
+							<p>
+								I live in {` `}
+								<a
+									href="https://www.lonelyplanet.com/usa/the-south/atlanta"
+									target="_blank"
+									className="about-page"
+								>
+									Atlanta
+								</a>
+								{` `}
+								<span>🍑</span> working as a freelance developer.
+							</p>
+							<p>
+								Since 2014, I've enjoyed building accessible
+								websites that function seamlessly on anything that
+								can access the web.
+							</p>
+							<p>
+								While just the web dev part of projects can be super
+								fun, I like all the other pieces that go into it too
+								(looking at you: SEO 😍 and design systems 😎).
+							</p>
+							<p>
+								If the project involves HTML/CSS/JS, chances are
+								high that I'll love working on it. Have a project in
+								mind?{" "}
+								<Link to="#contact" className="about-page">
+									Contact me
+								</Link>
+							</p>
+						</div>
+					</div>
+					<div className="skills">
+						<div className="skills__toolbox">
+							<h2>Toolbox</h2>
+							<p>
+								HTML, CSS, JavaScript, Node, React, Gatsby,
+								JAMstack, GraphQL, SQL
+							</p>
+						</div>
+						<div className="skills__specialities">
+							<h2>Specialities</h2>
+							<p>
+								Responsive web design, Branding, UI/UX wireframing,
+								Usability testing, Digital marketing, Analytics &
+								SEO, Ecommerce, all the things
+							</p>
+						</div>
 					</div>
 				</div>
-				<div className="skills">
-					<div className="skills__toolbox">
-						<h2>Toolbox</h2>
-						<p>
-							HTML, CSS, JavaScript, Node, React, Gatsby,
-							JAMstack, GraphQL, SQL
-						</p>
-					</div>
-					<div className="skills__specialities">
-						<h2>Specialities</h2>
-						<p>
-							Responsive web design, Branding, UI/UX wireframing,
-							Usability testing, Digital marketing, Analytics &
-							SEO, Ecommerce, all the things
-						</p>
-					</div>
-				</div>
-			</div>
+			</FadeInPage>
 		</>
 	);
 

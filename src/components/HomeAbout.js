@@ -2,8 +2,8 @@ import React from "react";
 import { css } from "@emotion/react";
 
 import "../scss/link-hover.scss";
-import AnimatedHello from "./AnimatedHello";
-import { ButtonLink } from "./Button";
+import AnimatedHello from "../components-ui/AnimatedHello";
+import { ButtonLink } from "../components-ui/Button";
 
 const aboutStyle = css`
 	min-width: 60%;
@@ -123,7 +123,7 @@ const HomeAbout = () => (
 				is creating interactive and accessible web experiences.
 			</p>
 			<p className="lead-text about__lead-text isCentered">
-				Thanks for visiting. It's nice to meet you.
+				Thanks for visiting. It's nice to meet you!
 			</p>
 			<div className="about__learn-more">
 				<ButtonLink text="About me" link="about" />

@@ -22,7 +22,8 @@ const globalstyles = css`
 		--color-soft-white: hsl(210, 36%, 96%);
 
 		--color-text: black;
-		--color-page-background: white;
+		--color-page_neutral_background: white;
+		--color-behind_page_background: linear-gradient(to left, #fc00ff, #00dbde);
 		--color-background: lightgray;
 
 		border-top: 4px solid var(--color-secondary);

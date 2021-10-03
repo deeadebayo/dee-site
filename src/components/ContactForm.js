@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 
 import LinkedIn from "./../images/svg/linkedin.svg";
 import Github from "./../images/svg/github.svg";
-import Button from "./Button";
+import Button from "../components-ui/Button";
 
 const contactFormStyles = css`
 		max-width: 1070px;
@@ -96,13 +96,13 @@ const contactFormStyles = css`
 					&:focus,
 					&:active {
 						.linkedin--top-back {
-							fill: hsla(39, 98%, 58%, 1);
+							fill: hsla(175, 100%, 33%, 0.9);
 						}
 						.linkedin--bot-back {
-							fill: hsla(39, 98%, 56%, 1);
+							fill: hsla(175, 100%, 33%, 0.6);
 						}
 						.linkedin--shadow {
-							fill: hsla(175, 100%, 33%, 0.7);
+							fill: hsla(39, 98%, 56%, 1);
 						}
 					}
 				}
@@ -371,7 +371,7 @@ const contactFormStyles = css`
 											type="submit"
 											value="Send"
 											className="btn"
-											// style={{ display: "none" }}
+										// style={{ display: "none" }}
 										/>
 										<Button text="Send" />
 									</div>

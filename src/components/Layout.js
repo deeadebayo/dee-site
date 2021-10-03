@@ -12,16 +12,16 @@ const wrapperStyle = css`
 	flex-flow: column nowrap;
 	justify-content: center;
 	margin: 0 auto;
+		background: var(--color-behind_page_background);
 
 	main {
 		display: flex;
 		flex-flow: column;
 		min-height: 100vh;
 		${"" /* width: 100%; */}
-		background: var(--color-page-background);
 		position: relative;
-		z-index: 3;
 		padding: 1rem;
+		z-index: 3;
 		& > .page {
 			margin: 0 auto;
 			display: flex;
@@ -30,6 +30,12 @@ const wrapperStyle = css`
 		}
 	}
 	@media screen and (min-width: 476px) {
+		main {
+			& > .page {
+				padding: 1rem;
+				background: red
+			}
+		}
 	}
 	@media screen and (min-width: 769px) {
 	}
@@ -37,6 +43,7 @@ const wrapperStyle = css`
 		main {
 			& > .page {
 				max-width: 1500px;
+				padding: 1.1rem;
 			}
 		}
 	}

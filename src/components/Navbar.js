@@ -1,13 +1,13 @@
 import React from "react";
 import { css } from "@emotion/react";
 import { Link } from "gatsby";
-import { AnimatedLogo } from "./AnimatedLogo";
+import { AnimatedLogo } from "../components-ui/AnimatedLogo";
 
 import "./../scss/link-hover.scss";
 
 const navbar = css`
 		z-index: 1;
-		background: var(--color-page-background);
+		background: var(--color-page_neutral_background);
 		display: flex;
 		flex-flow: row wrap;
 		padding: 1.5em;
@@ -122,7 +122,6 @@ const navbar = css`
 	],
 	Navbar = (path) => {
 		const pathString = path.path;
-		console.log(pathString);
 		let activePage = (url) =>
 			url === pathString ? `active` : `navbar-link`;
 		return (

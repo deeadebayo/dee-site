@@ -3,7 +3,6 @@
 -   add some major css clamp for font sizes and header (doing full with with links too) (scratch full width, doing a contracint mid container)
 -   add padding for template containers (wrappers)
 -   translate(y) on navbar links when hovered, maybe?
--   increase size of navbar font
 -   take another look at current text modular scale
 -   add in modal full to screen
 -   github as one of the categories
