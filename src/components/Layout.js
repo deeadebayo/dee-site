@@ -1,24 +1,25 @@
-import React from "react";
-import { css } from "@emotion/react";
-import { AnimatePresence } from "framer-motion";
+import React, { useState, useEffect } from 'react'
+import { css } from '@emotion/react'
+import { AnimatePresence, motion } from 'framer-motion'
 
-import GlobalStyles from "../styles/GlobalStyles";
-import Banner from "./Banner";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import GlobalStyles from '../styles/GlobalStyles'
+import Banner from './Banner'
+import Navbar from './Navbar'
+import Footer from './Footer'
+import Loader from '../components-ui/Loader'
 
 const wrapperStyle = css`
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: center;
 	margin: 0 auto;
-		background: var(--color-behind_page_background);
+	background: var(--color-behind_page_background);
 
 	main {
+		background: var(--color-page_neutral_background);
 		display: flex;
 		flex-flow: column;
 		min-height: 100vh;
-		${"" /* width: 100%; */}
 		position: relative;
 		padding: 1rem;
 		z-index: 3;
@@ -33,7 +34,7 @@ const wrapperStyle = css`
 		main {
 			& > .page {
 				padding: 1rem;
-				background: red
+				background: var(--color-page_neutral_background);
 			}
 		}
 	}
@@ -47,22 +48,34 @@ const wrapperStyle = css`
 			}
 		}
 	}
-`;
+`
 
 export default function Layout({ children, location }) {
+	const [loading, setLoading] = useState(true)
+
+	useEffect(() => {
+		loading
+			? document.querySelector('body').classList.add('loading')
+			: document.querySelector('body').classList.remove('loading')
+	}, [loading])
+
 	return (
-		<>
-			<div css={wrapperStyle}>
-				<GlobalStyles />
-				<Banner />
-				<Navbar path={location.pathname} />
-				<main>
-					<AnimatePresence>
-						<div className="page">{children}</div>
-					</AnimatePresence>
-				</main>
-				<Footer />
-			</div>
-		</>
-	);
+		<AnimatePresence>
+			{loading ? (
+				<motion.div key='loader'>
+					<Loader setLoading={setLoading} />
+				</motion.div>
+			) : (
+				<div css={wrapperStyle}>
+					<GlobalStyles />
+					<Banner />
+					<Navbar path={location.pathname} />
+					<main>
+						<div className='page'>{children}</div>
+					</main>
+					<Footer />
+				</div>
+			)}
+		</AnimatePresence>
+	)
 }

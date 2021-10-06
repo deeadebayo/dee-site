@@ -5,11 +5,11 @@ import "normalize.css";
 
 const globalstyles = css`
 	:root {
-		--color-primary: hsl(358, 100%, 68%);
+		--color-primary: hsla(358, 100%, 68%, 1);
 		--color-secondary: hsla(175, 100%, 33%, 1);
-		--color-accent: hsl(16, 97%, 58%);
-		--color-rare: hsl(39, 98%, 58%);
-		--color-alert: hsl(356, 69%, 54%);
+		--color-accent: hsla(16, 97%, 58%, 1);
+		--color-rare: hsla(39, 98%, 58%, 1);
+		--color-alert: hsla(356, 69%, 54%, 1);
 
 		--color-text-black: hsl(0, 0%, 17%);
 		--color-text-header: hsla(0, 0%, 0%, 0.8);
@@ -20,6 +20,7 @@ const globalstyles = css`
 		--color-gray: hsl(0, 0%, 46%);
 		--color-gray_lighter: hsl(0, 0%, 85%);
 		--color-soft-white: hsl(210, 36%, 96%);
+		--color-transparent: hsla(0, 0%,0, 1);
 
 		--color-text: black;
 		--color-page_neutral_background: white;
@@ -34,6 +35,11 @@ const globalstyles = css`
 		}
 	}
 	background-color: "lightgray";
+
+	body.loading {
+		overflow: hidden;
+		height: 100vh;
+	}
 
 	.hidden {
 		display: none;

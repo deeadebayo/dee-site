@@ -5,7 +5,6 @@
 -   translate(y) on navbar links when hovered, maybe?
 -   take another look at current text modular scale
 -   add in modal full to screen
--   github as one of the categories
 -   each menu bar has a different color underline, logo color changes with the page that the color underneath is on. Icon already will be a color already. 4 colors. About, projects, contact (no coloor)
 -   highlight text color
 -   p {max-width: 70ch;}

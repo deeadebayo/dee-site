@@ -1,9 +1,9 @@
-import React from "react";
-import { css } from "@emotion/react";
+import React from 'react'
+import { css } from '@emotion/react'
 
-import "../scss/link-hover.scss";
-import AnimatedHello from "../components-ui/AnimatedHello";
-import { ButtonLink } from "../components-ui/Button";
+import '../scss/link-hover.scss'
+import AnimatedHello from '../components-ui/AnimatedHello'
+import { ButtonLink } from '../components-ui/Button'
 
 const aboutStyle = css`
 	min-width: 60%;
@@ -95,46 +95,45 @@ const aboutStyle = css`
 			justify-content: flex-start;
 		}
 	}
-`;
+`
 
 const HomeAbout = () => (
 	<div css={aboutStyle}>
-		<div className="wrapper__about">
-			<h1 className="about__title">
+		<div className='wrapper__about'>
+			<h1 className='about__title'>
 				<AnimatedHello
-					whileHover={{ color: "var(--color-secondary)" }}
-					initial={{ y: "100%", color: "var(--color-secondary)" }}
-					animate="visible"
+					whileHover={{ color: 'var(--color-secondary)' }}
+					initial={{ y: '100%', color: 'var(--color-secondary)' }}
+					animate='visible'
 					variants={{
-						visible: (i) => ({
+						visible: i => ({
 							y: 0,
-							color: "var(--color-text-header)",
+							color: 'var(--color-text-header)',
 							transition: {
 								delay: i * 0.1,
 							},
 						}),
-					}}
-				>
-					Hi, I'm Adeolu.
+					}}>
+					Hi, I'm Adeolu!
 				</AnimatedHello>
 			</h1>
-			<p className="lead-text about__lead-text isCentered">
-				I'm a front-end developer with a soft spot for UX/UI. My focus
-				is creating interactive and accessible web experiences.
+			<p className='lead-text about__lead-text isCentered'>
+				I'm a front-end developer with a soft spot for UX/UI. My focus is
+				creating interactive and accessible web experiences.
 			</p>
-			<p className="lead-text about__lead-text isCentered">
+			<p className='lead-text about__lead-text isCentered'>
 				Thanks for visiting. It's nice to meet you!
 			</p>
-			<div className="about__learn-more">
-				<ButtonLink text="About me" link="about" />
-				<p className="lead-text about__lead-text">
-					<a href="#contact" className="about-link about__link">
+			<div className='about__learn-more'>
+				<ButtonLink text='About me' link='about' />
+				<p className='lead-text about__lead-text'>
+					<a href='#contact' className='about-link about__link'>
 						Get in touch
 					</a>
 				</p>
 			</div>
 		</div>
 	</div>
-);
+)
 
-export default HomeAbout;
+export default HomeAbout

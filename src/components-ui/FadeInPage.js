@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import React from 'react';
+import { motion } from 'framer-motion'
+import React from 'react'
 import { useInView } from 'react-intersection-observer'
 
 const FadeInPage = ({ children, pageName }) => {
@@ -8,26 +8,30 @@ const FadeInPage = ({ children, pageName }) => {
 	const variants = {
 		hidden: { y: 200, opacity: 0 },
 		visible: {
-			opacity: 1, y: 0, transition: {
-				duration: 1.5
-			}
+			opacity: 1,
+			y: 0,
+			transition: {
+				duration: 1.5,
+				ease: 'easeInOut',
+			},
 		},
 		exitOut: {
-			y: -200, opacity: 0, transition: {
-				duration: 3
-			}
-		}
+			y: -200,
+			opacity: 0,
+			transition: {
+				duration: 3,
+			},
+		},
 	}
 	return (
 		<motion.div
 			key={pageName}
-			onAnimationComplete={() => console.log(`completed animation`)}
-			onAnimationStart={() => console.log(`animation started`)}
+			onAnimationComplete={() => console.log(`completed fadeInPage animation`)}
+			onAnimationStart={() => console.log(`animation fadeInPage started`)}
 			initial='hidden'
 			animate='visible'
 			exit='exitOut'
-			variants={variants}
-		>
+			variants={variants}>
 			{children}
 		</motion.div>
 	)
