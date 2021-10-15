@@ -1,9 +1,9 @@
-import React from "react";
-import { css } from "@emotion/react";
-import { Link } from "gatsby";
-import { AnimatedLogo } from "../components-ui/AnimatedLogo";
+import React from 'react'
+import { css } from '@emotion/react'
+import { Link } from 'gatsby'
+import { AnimatedLogo } from '../components-ui/AnimatedLogo'
 
-import "./../scss/link-hover.scss";
+import './../scss/link-hover.scss'
 
 const navbar = css`
 		z-index: 1;
@@ -97,48 +97,44 @@ const navbar = css`
 	internalLinks = [
 		{
 			id: 1,
-			title: "About",
-			url: "/about/",
+			title: 'About',
+			url: '/about/',
 			description:
 				"A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-			color: "#E95800",
+			color: '#E95800',
 		},
 		{
 			id: 2,
-			title: "Contact",
-			url: "/#contact",
+			title: 'Contact',
+			url: '#contact',
 			description:
 				"Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-			color: "#1099A8",
+			color: '#1099A8',
 		},
 	],
 	externalLinks = [
 		{
 			id: 3,
-			title: "Inspiration",
-			url: "http://deeadebayo.tumblr.com/",
-			color: "#BC027F",
+			title: 'Inspiration',
+			url: 'http://deeadebayo.tumblr.com/',
+			color: '#BC027F',
 		},
 	],
-	Navbar = (path) => {
-		const pathString = path.path;
-		let activePage = (url) =>
-			url === pathString ? `active` : `navbar-link`;
+	Navbar = path => {
+		const pathString = path.path
+		let activePage = url => (url === pathString ? `active` : `navbar-link`)
 		return (
-			<header className="navbar" css={navbar}>
-				<div className="navbar__logo">
-					<Link to="/" className="logo--wrap" id="logo">
+			<header className='navbar' css={navbar}>
+				<div className='navbar__logo'>
+					<Link to='/' className='logo--wrap' id='logo'>
 						<AnimatedLogo />
 					</Link>
 				</div>
-				<div className="navbar__links">
+				<div className='navbar__links'>
 					<ul>
-						{internalLinks.map((link) => (
+						{internalLinks.map(link => (
 							<li key={link.id}>
-								<Link
-									to={link.url}
-									className={activePage(link.url)}
-								>
+								<Link to={link.url} className={activePage(link.url)}>
 									{link.title}
 								</Link>
 							</li>
@@ -153,7 +149,7 @@ const navbar = css`
 					</ul>
 				</div>
 			</header>
-		);
-	};
+		)
+	}
 
-export default Navbar;
+export default Navbar

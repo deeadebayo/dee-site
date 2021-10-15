@@ -11,7 +11,7 @@ const FadeInPage = ({ children, pageName }) => {
 			opacity: 1,
 			y: 0,
 			transition: {
-				duration: 1.5,
+				duration: 1.1,
 				ease: 'easeInOut',
 			},
 		},

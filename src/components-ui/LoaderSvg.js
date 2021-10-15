@@ -42,7 +42,7 @@ const textOutline = {
 		opacity: 0,
 		pathLength: 1,
 		transition: {
-			duration: 2.5,
+			duration: 1.3,
 			ease: 'easeInOut',
 		},
 	},

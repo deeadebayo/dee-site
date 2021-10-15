@@ -6,7 +6,7 @@ import LoaderSvg from './LoaderSvg'
 const loaderStyles = css`
 	width: 100%;
 	height: 100vh;
-	background: hsla(39, 98%, 58%, 1);
+	background: var(--color-gray_pale);
 	display: flex;
 	justify-content: center;
 	transform-origin: center;
@@ -21,12 +21,12 @@ const loaderStyles = css`
 `
 const Loader = ({ setLoading }) => {
 	const containerVariants = {
-		hidden: { opacity: 0.6 },
+		hidden: { opacity: 0.4 },
 		show: {
 			opacity: 1,
 			transition: {
 				ease: 'easeInOut',
-				duration: 1.75,
+				duration: 1.8,
 			},
 		},
 		exitOut: {
@@ -44,9 +44,9 @@ const Loader = ({ setLoading }) => {
 				css={loaderStyles}
 				initial='hidden'
 				animate='show'
+				key='loaderWrapper'
 				exit='exitOut'
-				variants={containerVariants}
-				onAnimationComplete={() => console.log(`complete loader parent`)}>
+				variants={containerVariants}>
 				<LoaderSvg setLoading={setLoading} />
 			</motion.div>
 		</>

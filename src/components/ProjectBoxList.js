@@ -1,11 +1,7 @@
-import React from "react";
-import { Link, useStaticQuery, graphql } from "gatsby";
-import { css } from "@emotion/react";
-import { GatsbyImage } from "gatsby-plugin-image";
-
-// check out emotion/facepant for media queries in sass like syntax
-// const breakpoints = [469,769,1023]
-// const mq = breakpoints.map(bp => `@media(min-width:${bp}px)`)
+import React from 'react'
+import { Link, useStaticQuery, graphql } from 'gatsby'
+import { css } from '@emotion/react'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 const projectBoxStyles = css`
 		width: clamp(16rem, 90vw, 70rem);
@@ -13,9 +9,9 @@ const projectBoxStyles = css`
 		display: grid;
 		gap: 0;
 		grid-template-areas:
-			"title"
-			"project"
-			"project";
+			'title'
+			'project'
+			'project';
 		grid-template-columns: 1fr;
 
 		.project-box:nth-of-type(2) {
@@ -85,7 +81,7 @@ const projectBoxStyles = css`
 						flex-flow: column;
 						padding: 1em;
 						color: var(--color-text-black);
-						${"" /* background: a color; */};
+						${'' /* background: a color; */};
 					}
 
 					&__title {
@@ -127,9 +123,9 @@ const projectBoxStyles = css`
 
 		@media screen and (min-width: 769px) {
 			grid-template-areas:
-				"title title"
-				"project project"
-				"project project";
+				'title title'
+				'project project'
+				'project project';
 			grid-template-columns: 1fr 1fr;
 
 			.project-box:nth-of-type(2) {
@@ -185,45 +181,42 @@ const projectBoxStyles = css`
 		}
 	`,
 	ProjectBox = ({ title, description, link, image, alt, bg }) => (
-		<div className="project-box">
-			<Link className="project-box__link" to={link}>
-				<div className="project-box__img">
+		<div className='project-box'>
+			<Link className='project-box__link' to={link}>
+				<div className='project-box__img'>
 					<GatsbyImage
 						image={image}
 						alt={alt}
-						objectFit="cover"
+						objectFit='cover'
 						objectPosition
 					/>
 				</div>
 				<span
-					className="project-box__detail-box"
+					className='project-box__detail-box'
 					css={css`
 						background-color: ${bg};
-					`}
-				>
-					<div className="project-box__detail-box__details">
-						<div className="project-box__detail-box__details--text">
-							<span className="project-box__detail-box__details__description">
+					`}>
+					<div className='project-box__detail-box__details'>
+						<div className='project-box__detail-box__details--text'>
+							<span className='project-box__detail-box__details__description'>
 								{description}
 							</span>
-							<span className="project-box__detail-box__details__title">
+							<span className='project-box__detail-box__details__title'>
 								<h2>{title}</h2>
 							</span>
 						</div>
-						<div className="project-box__detail-box__details--icon"></div>
+						<div className='project-box__detail-box__details--icon'></div>
 					</div>
 				</span>
 			</Link>
 		</div>
-	);
+	)
 
 export default function ProjectBoxList() {
 	const data = useStaticQuery(
 			graphql`
 				query {
-					comingSoon: file(
-						relativePath: { eq: "work/work__coming-soon.jpg" }
-					) {
+					comingSoon: file(relativePath: { eq: "work/work__coming-soon.jpg" }) {
 						childImageSharp {
 							gatsbyImageData(
 								layout: CONSTRAINED
@@ -233,9 +226,7 @@ export default function ProjectBoxList() {
 							)
 						}
 					}
-					josh: file(
-						relativePath: { eq: "work/work__jmdrums__cover.jpg" }
-					) {
+					josh: file(relativePath: { eq: "work/work__jmdrums__cover.jpg" }) {
 						childImageSharp {
 							gatsbyImageData(
 								layout: CONSTRAINED
@@ -246,9 +237,7 @@ export default function ProjectBoxList() {
 						}
 					}
 					ctkmc: file(
-						relativePath: {
-							eq: "work/work__ctkmc__tablet-and-phone.png"
-						}
+						relativePath: { eq: "work/work__ctkmc__tablet-and-phone.png" }
 					) {
 						childImageSharp {
 							gatsbyImageData(
@@ -262,55 +251,55 @@ export default function ProjectBoxList() {
 				}
 			`
 		),
-		colorPrimary = "hsl(358, 100%, 68%)",
-		colorSecondary = "hsl(175, 100%, 33%)",
-		colorAccent = "hsl(16, 97%, 58%)",
-		colorRare = "hsl(39, 98%, 58%)",
+		colorPrimary = 'hsl(358, 100%, 68%)',
+		colorSecondary = 'hsl(175, 100%, 33%)',
+		colorAccent = 'hsl(16, 97%, 58%)',
+		colorRare = 'hsl(39, 98%, 58%)',
 		projectData = [
 			{
 				id: 1,
-				title: "joshmanueldrums.com",
-				description: "Website and ecommerce",
+				title: 'joshmanueldrums.com',
+				description: 'Website and ecommerce',
 				backgroundColor: colorPrimary,
-				link: "/work/jmdrums",
+				link: '/work/jmdrums',
 				image: data.josh.childImageSharp.gatsbyImageData,
-				alt: "Josh project image",
+				alt: 'Josh project image',
 			},
 			{
 				id: 2,
-				title: "ctkmedcenter.com",
-				description: "Website & copywriting",
+				title: 'ctkmedcenter.com',
+				description: 'Website & copywriting',
 				backgroundColor: colorAccent,
-				link: "/work/ctkmedcenter",
+				link: '/work/ctkmedcenter',
 				image: data.ctkmc.childImageSharp.gatsbyImageData,
-				alt: "ctmedcenter project image",
+				alt: 'ctmedcenter project image',
 			},
 			{
 				id: 3,
-				title: "Title",
-				description: "Website",
+				title: 'Title',
+				description: 'Website',
 				backgroundColor: colorRare,
-				link: "/work/",
+				link: '/work/',
 				image: data.ctkmc.childImageSharp.gatsbyImageData,
-				alt: "Josh project image",
+				alt: 'Josh project image',
 			},
 			{
 				id: 4,
-				title: "Github Projects",
-				description: "Playground",
+				title: 'Github Projects',
+				description: 'Playground',
 				backgroundColor: colorPrimary,
-				link: "/work/",
+				link: '/work/',
 				image: data.comingSoon.childImageSharp.gatsbyImageData,
-				alt: "Coming soon image",
+				alt: 'Coming soon image',
 			},
-		];
+		]
 
 	return (
 		<div css={projectBoxStyles}>
-			<div className="project-box__title">
+			<div className='project-box__title'>
 				<h2>Featured Projects</h2>
 			</div>
-			{projectData.map((project) => (
+			{projectData.map(project => (
 				<ProjectBox
 					alt={project.alt}
 					title={project.title}
@@ -322,5 +311,5 @@ export default function ProjectBoxList() {
 				/>
 			))}
 		</div>
-	);
+	)
 }

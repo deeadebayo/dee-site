@@ -60,7 +60,7 @@ export default function Layout({ children, location }) {
 	}, [loading])
 
 	return (
-		<AnimatePresence>
+		<AnimatePresence exitBeforeEnter>
 			{loading ? (
 				<motion.div key='loader'>
 					<Loader setLoading={setLoading} />

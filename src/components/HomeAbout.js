@@ -6,9 +6,9 @@ import AnimatedHello from '../components-ui/AnimatedHello'
 import { ButtonLink } from '../components-ui/Button'
 
 const aboutStyle = css`
-	min-width: 60%;
+	min-width: 50%;
 	margin: 3rem 0.5rem;
-	padding: 1.5em 2em;
+	padding: 1.5em 2em 1.85em;
 	border: 1px solid var(--color-dark-shadow);
 	border-radius: 5px;
 	box-shadow: 0px 3px 5px var(--color-dark-shadow);
@@ -97,6 +97,16 @@ const aboutStyle = css`
 	}
 `
 
+const animatedHelloVariants = {
+	visible: i => ({
+		y: 0,
+		color: 'var(--color-text-header)',
+		transition: {
+			// delay: i * 0.1,
+		},
+	}),
+}
+
 const HomeAbout = () => (
 	<div css={aboutStyle}>
 		<div className='wrapper__about'>
@@ -105,20 +115,13 @@ const HomeAbout = () => (
 					whileHover={{ color: 'var(--color-secondary)' }}
 					initial={{ y: '100%', color: 'var(--color-secondary)' }}
 					animate='visible'
-					variants={{
-						visible: i => ({
-							y: 0,
-							color: 'var(--color-text-header)',
-							transition: {
-								delay: i * 0.1,
-							},
-						}),
-					}}>
+					onAnimationComplete={() => console.log(`lettered written`)}
+					variants={animatedHelloVariants}>
 					Hi, I'm Adeolu!
 				</AnimatedHello>
 			</h1>
 			<p className='lead-text about__lead-text isCentered'>
-				I'm a front-end developer with a soft spot for UX/UI. My focus is
+				I'm a full-stack web developer with a soft spot for UX/UI. My focus is
 				creating interactive and accessible web experiences.
 			</p>
 			<p className='lead-text about__lead-text isCentered'>

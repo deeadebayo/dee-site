@@ -1,7 +1,7 @@
-import React from "react";
-import { Global, css } from "@emotion/react";
+import React from 'react'
+import { Global, css } from '@emotion/react'
 
-import "normalize.css";
+import 'normalize.css'
 
 const globalstyles = css`
 	:root {
@@ -18,9 +18,10 @@ const globalstyles = css`
 		--color-dark-slate: hsl(0, 0%, 13.3%);
 		--color-dark-shadow: hsla(224, 62%, 24%, 0.24);
 		--color-gray: hsl(0, 0%, 46%);
+		--color-gray_pale: hsl(51, 12%, 77%);
 		--color-gray_lighter: hsl(0, 0%, 85%);
 		--color-soft-white: hsl(210, 36%, 96%);
-		--color-transparent: hsla(0, 0%,0, 1);
+		--color-transparent: hsla(0, 0%, 0, 1);
 
 		--color-text: black;
 		--color-page_neutral_background: white;
@@ -34,7 +35,7 @@ const globalstyles = css`
 			scroll-behavior: auto;
 		}
 	}
-	background-color: "lightgray";
+	background-color: 'lightgray';
 
 	body.loading {
 		overflow: hidden;
@@ -97,8 +98,8 @@ const globalstyles = css`
 			font-size: 1.5em;
 		}
 	}
-`;
+`
 
-const GlobalStyles = () => <Global styles={globalstyles} />;
+const GlobalStyles = () => <Global styles={globalstyles} />
 
-export default GlobalStyles;
+export default GlobalStyles

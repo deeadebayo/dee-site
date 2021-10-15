@@ -69,7 +69,7 @@ const AboutPageStyles = css`
 				<div css={AboutPageStyles}>
 					<div className='header'>
 						<h1>
-							front-end developer
+							full-stack developer
 							<br />
 							<span className='and'>&</span> web consultant
 						</h1>
