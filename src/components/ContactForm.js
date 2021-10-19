@@ -1,9 +1,9 @@
-import React from "react";
-import { css } from "@emotion/react";
+import React from 'react'
+import { css } from '@emotion/react'
 
-import LinkedIn from "./../images/svg/linkedin.svg";
-import Github from "./../images/svg/github.svg";
-import Button from "../components-ui/Button";
+import LinkedIn from './../images/svg/linkedin.svg'
+import Github from './../images/svg/github.svg'
+import Button from '../components-ui/Button'
 
 const contactFormStyles = css`
 		max-width: 1070px;
@@ -18,7 +18,7 @@ const contactFormStyles = css`
 		box-sizing: border-box;
 
 		&:before {
-			content: "";
+			content: '';
 			position: absolute;
 			top: 0;
 			right: -4px;
@@ -166,7 +166,7 @@ const contactFormStyles = css`
 			&__name,
 			&__email {
 				flex: 1;
-				input[type="text"] {
+				input[type='text'] {
 					width: 100%;
 				}
 			}
@@ -185,10 +185,10 @@ const contactFormStyles = css`
 				}
 			}
 
-			input[type="text"] {
+			input[type='text'] {
 				background: white;
 				border: 2px solid transparent;
-				border-bottom: 2px solid var(--color-gray);
+				border-bottom: 2px solid hsla(var(--palette-gray-40), 100%);
 				border-radius: 4px;
 				padding: 0.5rem 0.5rem;
 				overflow: auto;
@@ -210,7 +210,7 @@ const contactFormStyles = css`
 			textarea {
 				width: 100%;
 				margin-bottom: 0.75em;
-				border: 2px solid var(--color-gray);
+				border: 2px solid hsla(var(--palette-gray-40), 100%);
 				border-radius: 4px;
 				padding: 0.5rem 0.5rem;
 				overflow: auto;
@@ -291,89 +291,83 @@ const contactFormStyles = css`
 		return (
 			<>
 				<div css={contactFormStyles}>
-					<div className="content">
-						<div className="contact__header">
-							<div className="contact__header__text">
+					<div className='content'>
+						<div className='contact__header'>
+							<div className='contact__header__text'>
 								<h2>📮Get in Touch📮</h2>
-								<p className="lead">
-									Need help on a project or just want to say
-									hi - send mail!
+								<p className='lead'>
+									Need help on a project or just want to say hi - send mail!
 								</p>
 							</div>
-							<div className="links">
-								<a href="https://github.com/deeadebayo">
+							<div className='links'>
+								<a href='https://github.com/deeadebayo'>
 									<Github />
 								</a>
-								<a href="https://www.linkedin.com/in/deeadebayo/">
+								<a href='https://www.linkedin.com/in/deeadebayo/'>
 									<LinkedIn />
 								</a>
 							</div>
 						</div>
-						<div className="form">
+						<div className='form'>
 							<form
-								action="/"
-								name="contact"
-								method="POST"
-								netlify-honeypot="fake-friends"
-								data-netlify="true"
-								className="form-input"
-							>
-								<div className="info">
-									<div className="form-input__name">
+								action='/'
+								name='contact'
+								method='POST'
+								netlify-honeypot='fake-friends'
+								data-netlify='true'
+								className='form-input'>
+								<div className='info'>
+									<div className='form-input__name'>
 										{/* <label htmlFor="name">First Name</label> */}
 										<br />
 										<input
-											type="text"
-											id="name"
-											name="name"
+											type='text'
+											id='name'
+											name='name'
 											placeholder="What's your name?"
-											size="19"
+											size='19'
 											required
 										/>
 									</div>
-									<div className="form-input__email">
+									<div className='form-input__email'>
 										{/* <label htmlFor="email">Email</label> */}
 										<br />
 										<input
-											type="text"
-											name="email"
-											placeholder="Your email address"
-											size="24"
+											type='text'
+											name='email'
+											placeholder='Your email address'
+											size='24'
 											required
 										/>
 									</div>
 								</div>
-								<div className="form-input__message">
+								<div className='form-input__message'>
 									{/* <label htmlFor="message">
 										How can I help?
 									</label> */}
 									<br />
 									<textarea
-										name="message"
-										id="message"
-										cols="30"
-										rows="8"
-										wrap="soft"
+										name='message'
+										id='message'
+										cols='30'
+										rows='8'
+										wrap='soft'
 										placeholder="What's on your mind?"
-										required
-									></textarea>
-									<span
-										style={{ display: "none" }}
-										className="hidden"
-									>
-										<label htmlFor="fake-friends">
+										required></textarea>
+									<span style={{ display: 'none' }} className='hidden'>
+										<label htmlFor='fake-friends'>
 											Not for the real friends
 										</label>
-										<input name="fake-friends" />
+										<input name='fake-friends' />
 									</span>
-									<div className="submit">
+									<div className='submit'>
 										<input
-											type="submit"
-											value="Send"
-											className="btn"
-										// style={{ display: "none" }}
+											type='submit'
+											value='Send'
+											className='btn'
+											// style={{ display: "none" }}
 										/>
-										<Button text="Send" />
+										<Button text='Send' />
 									</div>
 								</div>
 							</form>
@@ -381,7 +375,7 @@ const contactFormStyles = css`
 					</div>
 				</div>
 			</>
-		);
-	};
+		)
+	}
 
-export default ContactForm;
+export default ContactForm

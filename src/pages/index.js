@@ -1,9 +1,9 @@
-import React from "react";
-import { Helmet } from "react-helmet";
+import React from 'react'
+import { Helmet } from 'react-helmet'
 
-import HomeAbout from "../components/HomeAbout";
-import ProjectBoxList from "../components/ProjectBoxList";
-import FadeInPage from "../components-ui/FadeInPage";
+import HomeAbout from '../components/HomeAbout'
+import ProjectBoxList from '../components/ProjectBoxList'
+import FadeInPage from '../components-ui/FadeInPage'
 
 const IndexPage = () => {
 	return (
@@ -16,7 +16,7 @@ const IndexPage = () => {
 				<ProjectBoxList />
 			</FadeInPage>
 		</>
-	);
-};
+	)
+}
 
-export default IndexPage;
+export default IndexPage
