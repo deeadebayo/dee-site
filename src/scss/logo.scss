@@ -1,4 +1,4 @@
-@import "../scss/mixins/logo-animation";
+@import '../scss/mixins/logo-animation';
 
 // Module specific variables. To make editing timing for transitions a bit easier
 $layer0-static-transition: 0.8s;
@@ -12,7 +12,7 @@ $layer2-hover-delay: 0.15s;
 $layer3-hover-delay: 0s;
 
 .logo {
-	stroke: var(--color-gray);
+	stroke: hsla(var(--palette-gray-40), 100%);
 	stroke-width: 0.1px;
 	max-height: 51px;
 
@@ -53,27 +53,18 @@ $layer3-hover-delay: 0s;
 			opacity: 0;
 		}
 		.logo__layer-1 {
-			@include logo-animation(
-				var(--color-secondary),
-				$layer1-hover-delay
-			);
+			@include logo-animation(var(--color-secondary), $layer1-hover-delay);
 		}
 
 		.logo__layer-2 {
-			@include logo-animation(
-				var(--color-secondary),
-				$layer2-hover-delay
-			);
+			@include logo-animation(var(--color-secondary), $layer2-hover-delay);
 		}
 
 		.logo__layer-3 {
-			@include logo-animation(
-				var(--color-secondary),
-				$layer3-hover-delay
-			);
+			@include logo-animation(var(--color-secondary), $layer3-hover-delay);
 		}
 	}
-	&--accentColor:hover {
+	&--rareColor:hover {
 		.logo__text-outline {
 			opacity: 0;
 		}

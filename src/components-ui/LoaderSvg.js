@@ -3,9 +3,9 @@ import React from 'react'
 import { css } from '@emotion/react'
 
 const colorOptions = {
-	red: '#ff5c61',
-	green: '#5cfffa',
-	yellow: '#fdb32b',
+	red: '#FF6F6F',
+	green: '#24A3A1',
+	yellow: '#E8B969',
 	darkGray: 'hsl(0, 0%, 28%)',
 }
 const { red, yellow, green, darkGray } = colorOptions
