@@ -26,8 +26,9 @@ const svgItem = {
 		opacity: 1,
 		scale: 1,
 		transition: {
+			// when: 'beforeChildren',
 			staggerChildren: 0.15,
-			delayChildren: 0.6,
+			delayChildren: 0.4,
 		},
 	},
 }
@@ -68,14 +69,13 @@ const lastAction = {
 	show: { opacity: 1, fill: green },
 }
 
-const LoaderSvg = ({ setLoading }) => (
+const LoaderSvg = () => (
 	<>
 		<motion.svg
 			variants={svgItem}
 			css={loaderSvgStyles}
 			initial='hidden'
 			animate='show'
-			onAnimationComplete={() => setLoading(false)}
 			xmlns='http://www.w3.org/2000/svg'
 			viewBox='0 0 125 93'>
 			<motion.g transform='translate(-0.426 -0.355)'>
