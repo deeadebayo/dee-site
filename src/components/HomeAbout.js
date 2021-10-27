@@ -4,6 +4,7 @@ import { css } from '@emotion/react'
 import '../scss/link-hover.scss'
 import AnimatedHello from '../components-ui/AnimatedHello'
 import { ButtonLink } from '../components-ui/Button'
+import { motion } from 'framer-motion'
 
 const aboutStyle = css`
 	min-width: 50%;
@@ -108,7 +109,7 @@ const animatedHelloVariants = {
 }
 
 const HomeAbout = () => (
-	<div css={aboutStyle}>
+	<motion.div css={aboutStyle}>
 		<div className='wrapper__about'>
 			<h1 className='about__title'>
 				<AnimatedHello
@@ -136,7 +137,7 @@ const HomeAbout = () => (
 				</p>
 			</div>
 		</div>
-	</div>
+	</motion.div>
 )
 
 export default HomeAbout

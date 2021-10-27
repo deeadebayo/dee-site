@@ -4,19 +4,41 @@ import { Helmet } from 'react-helmet'
 import HomeAbout from '../components/HomeAbout'
 import ProjectBoxList from '../components/ProjectBoxList'
 import FadeInPage from '../components-ui/FadeInPage'
+import { graphql } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 
-const IndexPage = () => {
-	return (
-		<>
-			<Helmet>
-				<title>Dee Adebayo | Front-End Web Developer</title>
-			</Helmet>
-			<FadeInPage pageName='index'>
-				<HomeAbout />
-				<ProjectBoxList />
-			</FadeInPage>
-		</>
-	)
-}
+const IndexPage = ({ data }) => (
+	<>
+		<Helmet>
+			<title>Dee Adebayo | Front-End Web Developer</title>
+		</Helmet>
+		<FadeInPage pageName='index'>
+			<HomeAbout />
+			<ProjectBoxList projectImages={data} />
+		</FadeInPage>
+	</>
+)
+
+export const query = graphql`
+	query {
+		comingSoon: file(relativePath: { eq: "work/work__coming-soon.jpg" }) {
+			childImageSharp {
+				gatsbyImageData(layout: CONSTRAINED, height: 615, aspectRatio: 1.33)
+			}
+		}
+		josh: file(relativePath: { eq: "work/work__jmdrums__cover.jpg" }) {
+			childImageSharp {
+				gatsbyImageData(layout: CONSTRAINED, height: 615, aspectRatio: 1.33)
+			}
+		}
+		ctkmc: file(
+			relativePath: { eq: "work/work__ctkmc__tablet-and-phone.png" }
+		) {
+			childImageSharp {
+				gatsbyImageData(layout: CONSTRAINED, height: 615, aspectRatio: 1.33)
+			}
+		}
+	}
+`
 
 export default IndexPage

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import { css } from '@emotion/react'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import { motion } from 'framer-motion'
 
 const projectBoxStyles = css`
 		width: clamp(16rem, 90vw, 70rem);
@@ -212,46 +213,8 @@ const projectBoxStyles = css`
 		</div>
 	)
 
-export default function ProjectBoxList() {
-	const data = useStaticQuery(
-			graphql`
-				query {
-					comingSoon: file(relativePath: { eq: "work/work__coming-soon.jpg" }) {
-						childImageSharp {
-							gatsbyImageData(
-								layout: CONSTRAINED
-								placeholder: TRACED_SVG
-								height: 615
-								aspectRatio: 1.33
-							)
-						}
-					}
-					josh: file(relativePath: { eq: "work/work__jmdrums__cover.jpg" }) {
-						childImageSharp {
-							gatsbyImageData(
-								layout: CONSTRAINED
-								placeholder: TRACED_SVG
-								height: 615
-								aspectRatio: 1.33
-							)
-						}
-					}
-					ctkmc: file(
-						relativePath: { eq: "work/work__ctkmc__tablet-and-phone.png" }
-					) {
-						childImageSharp {
-							gatsbyImageData(
-								layout: CONSTRAINED
-								placeholder: TRACED_SVG
-								height: 615
-								aspectRatio: 1.33
-							)
-						}
-					}
-				}
-			`
-		),
-		colorPrimary = 'var(--color-primary)',
+const ProjectBoxList = ({ projectImages }) => {
+	const colorPrimary = 'var(--color-primary)',
 		colorSecondary = 'var(--color-secondary)',
 		colorRare = 'var(--color-rare)',
 		projectData = [
@@ -261,7 +224,7 @@ export default function ProjectBoxList() {
 				description: 'Website and ecommerce',
 				backgroundColor: colorSecondary,
 				link: '/work/jmdrums',
-				image: data.josh.childImageSharp.gatsbyImageData,
+				image: projectImages.josh.childImageSharp.gatsbyImageData,
 				alt: 'Josh project image',
 			},
 			{
@@ -270,7 +233,7 @@ export default function ProjectBoxList() {
 				description: 'Website & copywriting',
 				backgroundColor: colorPrimary,
 				link: '/work/ctkmedcenter',
-				image: data.ctkmc.childImageSharp.gatsbyImageData,
+				image: projectImages.ctkmc.childImageSharp.gatsbyImageData,
 				alt: 'ctmedcenter project image',
 			},
 			{
@@ -279,7 +242,7 @@ export default function ProjectBoxList() {
 				description: 'Website',
 				backgroundColor: colorPrimary,
 				link: '/work/',
-				image: data.ctkmc.childImageSharp.gatsbyImageData,
+				image: projectImages.ctkmc.childImageSharp.gatsbyImageData,
 				alt: 'Josh project image',
 			},
 			{
@@ -288,13 +251,13 @@ export default function ProjectBoxList() {
 				description: 'Playground',
 				backgroundColor: colorRare,
 				link: '/work/',
-				image: data.comingSoon.childImageSharp.gatsbyImageData,
+				image: projectImages.comingSoon.childImageSharp.gatsbyImageData,
 				alt: 'Coming soon image',
 			},
 		]
 
 	return (
-		<div css={projectBoxStyles}>
+		<motion.div css={projectBoxStyles}>
 			<div className='project-box__title'>
 				<h2>Featured Projects</h2>
 			</div>
@@ -309,6 +272,8 @@ export default function ProjectBoxList() {
 					bg={project.backgroundColor}
 				/>
 			))}
-		</div>
+		</motion.div>
 	)
 }
+
+export default ProjectBoxList

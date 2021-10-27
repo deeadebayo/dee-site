@@ -7,6 +7,7 @@ import Banner from './Banner'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import Loader from '../components-ui/Loader'
+import { useStaticQuery, graphql } from 'gatsby'
 
 const wrapperStyle = css`
 	display: flex;
@@ -66,15 +67,15 @@ export default function Layout({ children, location }) {
 					<Loader setLoading={setLoading} />
 				</motion.div>
 			) : (
-				<div css={wrapperStyle}>
+				<motion.div css={wrapperStyle}>
 					<GlobalStyles />
 					<Banner />
 					<Navbar path={location.pathname} />
-					<main>
+					<motion.main>
 						<div className='page'>{children}</div>
-					</main>
+					</motion.main>
 					<Footer />
-				</div>
+				</motion.div>
 			)}
 		</AnimatePresence>
 	)
