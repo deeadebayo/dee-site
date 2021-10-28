@@ -103,7 +103,7 @@ const animatedHelloVariants = {
 		y: 0,
 		color: 'var(--color-text-header)',
 		transition: {
-			// delay: i * 0.1,
+			delay: i * 0.1,
 		},
 	}),
 }
@@ -116,7 +116,6 @@ const HomeAbout = () => (
 					whileHover={{ color: 'var(--color-secondary)' }}
 					initial={{ y: '100%', color: 'var(--color-secondary)' }}
 					animate='visible'
-					onAnimationComplete={() => console.log(`lettered written`)}
 					variants={animatedHelloVariants}>
 					Hi, I'm Adeolu!
 				</AnimatedHello>

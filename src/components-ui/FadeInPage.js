@@ -2,20 +2,15 @@ import { motion } from 'framer-motion'
 import React from 'react'
 import { useInView } from 'react-intersection-observer'
 
-const FadeInPage = ({ children, pageName, projectImages }) => {
-	//need to add a super uique key if multiple children
-
+const FadeInPage = ({ children, pageName }) => {
 	const pageContent = {
-		pageComingInHot: { y: 150, opacity: 0 },
+		pageHidden: { y: 150, opacity: 0 },
 		visible: {
 			opacity: 1,
 			y: 0,
 			transition: {
-				ease: 'easeIn',
-				// ease: [0.87, 0, 0.13, 1],
-				duration: 0.7,
-				staggerChildren: 4,
-				delayChildren: 3,
+				ease: [0.87, 0, 0.13, 1],
+				duration: 0.8,
 			},
 		},
 		exitOut: {
@@ -29,9 +24,7 @@ const FadeInPage = ({ children, pageName, projectImages }) => {
 	return (
 		<motion.div
 			key={pageName}
-			onAnimationStart={() => console.log(`animation fadeInPage started`)}
-			onAnimationComplete={() => console.log(`completed fadeInPage animation`)}
-			initial='pageComingInHot'
+			initial='pageHidden'
 			animate='visible'
 			exit='exitOut'
 			variants={pageContent}>

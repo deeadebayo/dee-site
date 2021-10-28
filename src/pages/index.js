@@ -5,7 +5,6 @@ import HomeAbout from '../components/HomeAbout'
 import ProjectBoxList from '../components/ProjectBoxList'
 import FadeInPage from '../components-ui/FadeInPage'
 import { graphql } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
 
 const IndexPage = ({ data }) => (
 	<>

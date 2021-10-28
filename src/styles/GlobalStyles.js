@@ -37,7 +37,7 @@ const globalstyles = css`
 
 		// my goTo colors
 		--color-primary: hsla(var(--palette-red-70), 100%);
-		--color-secondary: hsla(var(--palette-blue-50), 100%);
+		--color-secondary: hsla(var(--palette-blue-30), 100%);
 		--color-rare: hsla(var(--palette-yellow-50), 100%);
 
 		--color-text-black: hsl(0, 0%, 17%);

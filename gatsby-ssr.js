@@ -1,6 +1,12 @@
-import React from 'react';
-import Layout from './src/components/Layout';
+import React from 'react'
+import Layout from './src/components/Layout'
+import LayoutProject from './src/components/LayoutProject'
 
 export function wrapPageElement({ element, props }) {
-	return <Layout {...props}>{element}</Layout>;
+	console.log(props, element)
+	return props.pageContext.type === 'projectPage' ? (
+		<LayoutProject {...props}>{element}</LayoutProject>
+	) : (
+		<Layout {...props}>{element}</Layout>
+	)
 }

@@ -2,10 +2,42 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { css } from '@emotion/react'
 import { Link } from 'gatsby'
+import { motion } from 'framer-motion'
 
 import '../scss/link-hover.scss'
 import FadeInPage from '../components-ui/FadeInPage'
 
+const contentVariants = {
+	hidden: { opacity: 0 },
+	show: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.3,
+		},
+	},
+}
+const titleVariants = {
+	hidden: { y: -20, opacity: 0 },
+	show: {
+		y: 0,
+		opacity: 1,
+		transition: {
+			duration: 1,
+			ease: [0.17, 0.67, 0.83, 0.67],
+		},
+	},
+}
+const textContentVariants = {
+	hidden: { y: -20, opacity: 0 },
+	show: {
+		y: 0,
+		opacity: 1,
+		transition: {
+			duration: 0.7,
+			ease: 'easeInOut',
+		},
+	},
+}
 const AboutPageStyles = css`
 		display: grid;
 		grid-template-columns: repeat(1fr);
@@ -66,8 +98,12 @@ const AboutPageStyles = css`
 				<title>About - Dee Adebayo</title>
 			</Helmet>
 			<FadeInPage pageName='about'>
-				<div css={AboutPageStyles}>
-					<div className='header'>
+				<motion.div
+					css={AboutPageStyles}
+					variants={contentVariants}
+					initial='hidden'
+					animate='show'>
+					<motion.div className='header' variants={titleVariants}>
 						<h1>
 							full-stack developer
 							<br />
@@ -78,8 +114,11 @@ const AboutPageStyles = css`
 						online footprint - creating web experiences that balance
 						business and user needs.
 					</p> */}
-					</div>
-					<div className='resume'>
+					</motion.div>
+					<motion.div
+						className='resume'
+						variants={textContentVariants}
+						key='resumeText'>
 						<div className='resume__experience'>
 							<h2>Hi, I'm Adeolu!</h2>
 							<p>
@@ -110,8 +149,11 @@ const AboutPageStyles = css`
 								</Link>
 							</p>
 						</div>
-					</div>
-					<div className='skills'>
+					</motion.div>
+					<motion.div
+						className='skills'
+						variants={textContentVariants}
+						key='skilsText'>
 						<div className='skills__toolbox'>
 							<h2>Toolbox</h2>
 							<p>
@@ -127,8 +169,8 @@ const AboutPageStyles = css`
 								things
 							</p>
 						</div>
-					</div>
-				</div>
+					</motion.div>
+				</motion.div>
 			</FadeInPage>
 		</>
 	)

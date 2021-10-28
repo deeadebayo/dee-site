@@ -26,7 +26,7 @@ const svgItem = {
 		opacity: 1,
 		scale: 1,
 		transition: {
-			// when: 'beforeChildren',
+			when: 'beforeChildren',
 			staggerChildren: 0.15,
 			delayChildren: 0.4,
 		},
