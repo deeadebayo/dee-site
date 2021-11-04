@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { Link } from 'gatsby'
 import { css } from '@emotion/react'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { motion } from 'framer-motion'
@@ -181,8 +181,8 @@ const projectBoxStyles = css`
 			}
 		}
 	`,
-	ProjectBox = ({ title, description, link, image, alt, bg }) => (
-		<div className='project-box'>
+	ProjectBox = ({ id, title, description, link, image, alt, bg }) => (
+		<motion.div className='project-box' layoutId={`project-${id}`}>
 			<Link className='project-box__link' to={link}>
 				<div className='project-box__img'>
 					<GatsbyImage
@@ -210,7 +210,7 @@ const projectBoxStyles = css`
 					</div>
 				</span>
 			</Link>
-		</div>
+		</motion.div>
 	)
 
 const ProjectBoxList = ({ projectImages }) => {
@@ -241,7 +241,7 @@ const ProjectBoxList = ({ projectImages }) => {
 				title: 'Title',
 				description: 'Website',
 				backgroundColor: colorPrimary,
-				link: '/work/',
+				link: '/work/other',
 				image: projectImages.ctkmc.childImageSharp.gatsbyImageData,
 				alt: 'Josh project image',
 			},
@@ -250,7 +250,7 @@ const ProjectBoxList = ({ projectImages }) => {
 				title: 'Github Projects',
 				description: 'Playground',
 				backgroundColor: colorRare,
-				link: '/work/',
+				link: '/work/other',
 				image: projectImages.comingSoon.childImageSharp.gatsbyImageData,
 				alt: 'Coming soon image',
 			},
@@ -261,17 +261,20 @@ const ProjectBoxList = ({ projectImages }) => {
 			<div className='project-box__title'>
 				<h2>Featured Projects</h2>
 			</div>
-			{projectData.map(project => (
-				<ProjectBox
-					alt={project.alt}
-					title={project.title}
-					description={project.description}
-					link={project.link}
-					image={project.image}
-					key={`hp${project.id}`}
-					bg={project.backgroundColor}
-				/>
-			))}
+			{projectData.map(
+				({ id, alt, title, description, link, image, backgroundColor }) => (
+					<ProjectBox
+						id={id}
+						alt={alt}
+						title={title}
+						description={description}
+						link={link}
+						image={image}
+						key={`hp${id}`}
+						bg={backgroundColor}
+					/>
+				)
+			)}
 		</motion.div>
 	)
 }

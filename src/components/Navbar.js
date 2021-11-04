@@ -45,11 +45,12 @@ const navbar = css`
 						font-weight: 500;
 
 						&:hover {
-							color: var(--color-primary);
+							color: var(--color-secondary);
 						}
 					}
 					.active {
-						text-decoration: underline 3px var(--color-secondary);
+						text-decoration: underline 2px var(--color-primary);
+						text-underline-offset: 6px;
 						color: var(--color-secondary);
 					}
 				}

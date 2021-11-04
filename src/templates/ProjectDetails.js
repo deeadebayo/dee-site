@@ -1,12 +1,33 @@
 import { graphql } from 'gatsby'
-import react from 'react'
-const SingleProjectPage = () => <h1>Hi Deez</h1>
+import React from 'react'
+import Helmet from 'react-helmet'
+import FadeInPage from '../components-ui/FadeInPage'
+
+const SingleProjectPage = ({ data: { pageInfo } }) => {
+	const { title, slug, stuff } = pageInfo
+	return (
+		<>
+			<Helmet>
+				<title> {title} | Projects | Dee Adebayo</title>
+			</Helmet>
+			<FadeInPage pageName='yes'>
+				<h1>Hi Dee, here's {stuff}</h1>
+			</FadeInPage>
+		</>
+	)
+}
 
 export default SingleProjectPage
 
-// export const query = graphql`
-//     query
-// `
+export const query = graphql`
+	query ($slug: String!) {
+		pageInfo: projectPage(slug: { eq: $slug }) {
+			stuff
+			slug
+			title
+		}
+	}
+`
 
 // import { css } from '@emotion/react'
 // import React from 'react'

@@ -36,6 +36,7 @@ const Loader = ({ setLoading }) => {
 			height: 0,
 			top: 0,
 			transition: {
+				when: 'afterChildren',
 				ease: 'easeInOut',
 				duration: 1,
 			},

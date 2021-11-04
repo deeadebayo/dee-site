@@ -22,19 +22,34 @@ export const query = graphql`
 	query {
 		comingSoon: file(relativePath: { eq: "work/work__coming-soon.jpg" }) {
 			childImageSharp {
-				gatsbyImageData(layout: CONSTRAINED, height: 615, aspectRatio: 1.33)
+				gatsbyImageData(
+					layout: CONSTRAINED
+					height: 615
+					aspectRatio: 1.33
+					placeholder: TRACED_SVG
+				)
 			}
 		}
 		josh: file(relativePath: { eq: "work/work__jmdrums__cover.jpg" }) {
 			childImageSharp {
-				gatsbyImageData(layout: CONSTRAINED, height: 615, aspectRatio: 1.33)
+				gatsbyImageData(
+					layout: CONSTRAINED
+					height: 615
+					aspectRatio: 1.33
+					placeholder: TRACED_SVG
+				)
 			}
 		}
 		ctkmc: file(
 			relativePath: { eq: "work/work__ctkmc__tablet-and-phone.png" }
 		) {
 			childImageSharp {
-				gatsbyImageData(layout: CONSTRAINED, height: 615, aspectRatio: 1.33)
+				gatsbyImageData(
+					layout: CONSTRAINED
+					height: 615
+					aspectRatio: 1.33
+					placeholder: TRACED_SVG
+				)
 			}
 		}
 	}

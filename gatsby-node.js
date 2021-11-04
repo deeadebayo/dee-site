@@ -25,10 +25,7 @@ exports.createPages = async function ({ actions, graphql }) {
 		{
 			allProjectPage {
 				nodes {
-					key
-					stuff
 					slug
-					title
 				}
 			}
 		}

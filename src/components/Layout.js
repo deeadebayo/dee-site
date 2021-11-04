@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { css } from '@emotion/react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 import GlobalStyles from '../styles/GlobalStyles'
 import Banner from './Banner'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import Loader from '../components-ui/Loader'
-import { useStaticQuery, graphql } from 'gatsby'
 
 const wrapperStyle = css`
 	display: flex;
@@ -61,7 +60,7 @@ const Layout = ({ children, location }) => {
 	}, [loading])
 
 	return (
-		<AnimatePresence exitBeforeEnter>
+		<motion.div key='loaderWrapper'>
 			{loading ? (
 				<motion.div key='loader'>
 					<Loader setLoading={setLoading} />
@@ -77,7 +76,7 @@ const Layout = ({ children, location }) => {
 					<Footer />
 				</motion.div>
 			)}
-		</AnimatePresence>
+		</motion.div>
 	)
 }
 

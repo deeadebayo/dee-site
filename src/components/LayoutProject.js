@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { css } from '@emotion/react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 import GlobalStyles from '../styles/GlobalStyles'
 import Banner from './Banner'
 import Navbar from './Navbar'
 import Footer from './Footer'
-import Loader from '../components-ui/Loader'
+import LoaderProject from '../components-ui/LoaderProject'
 
 const wrapperStyle = css`
 	display: flex;
@@ -60,10 +60,10 @@ export default function LayoutProject({ children }) {
 	}, [loading])
 
 	return (
-		<AnimatePresence exitBeforeEnter>
+		<motion.div key='projectLoaderWrapper'>
 			{loading ? (
 				<motion.div key='loader'>
-					<Loader setLoading={setLoading} />
+					<LoaderProject setLoading={setLoading} />
 				</motion.div>
 			) : (
 				<motion.div css={wrapperStyle}>
@@ -76,6 +76,6 @@ export default function LayoutProject({ children }) {
 					<Footer />
 				</motion.div>
 			)}
-		</AnimatePresence>
+		</motion.div>
 	)
 }
