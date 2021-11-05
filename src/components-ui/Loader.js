@@ -5,7 +5,7 @@ import LoaderSvg from './LoaderSvg'
 
 const loaderStyles = css`
 	width: 100%;
-	background: green;
+	background: hsl(0, 100%, 72%);
 	display: flex;
 	justify-content: center;
 	transform-origin: center;
@@ -21,14 +21,23 @@ const loaderStyles = css`
 `
 const Loader = ({ setLoading }) => {
 	const containerVariants = {
-		initial: { height: '100vh', bottom: 0, opacity: 0, y: 0 },
+		initial: {
+			height: '100vh',
+			bottom: 0,
+			opacity: 0,
+			y: 0,
+			// background: 'hsl(174, 41%, 18%)',
+			// background: 'hsl(0, 80%, 72%)',
+		},
 		show: {
 			height: '100vh',
 			opacity: 1,
+			// background: 'hsl(174, 41%, 36%)',
+			// background: 'hsl(0, 100%, 72%)',
 			transition: {
 				when: 'afterChildren',
 				ease: [0.87, 0, 0.13, 1],
-				duration: 1.8,
+				duration: 2,
 			},
 		},
 		exitOut: {

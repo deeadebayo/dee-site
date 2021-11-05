@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { graphql } from 'gatsby'
 import React from 'react'
 import Helmet from 'react-helmet'
@@ -10,8 +11,31 @@ const SingleProjectPage = ({ data: { pageInfo } }) => {
 			<Helmet>
 				<title> {title} | Projects | Dee Adebayo</title>
 			</Helmet>
+			<motion.div>
+				<h1>
+					Hi, there's supposed to be a page here. Instead here's dummy text:{' '}
+					{stuff}
+				</h1>
+			</motion.div>
 			<FadeInPage pageName='yes'>
-				<h1>Hi Dee, here's {stuff}</h1>
+				<h1>
+					Hi, there's supposed to be a page here. Instead here's dummy text:{' '}
+					{stuff}
+				</h1>
+
+				<motion.svg
+					className='transition'
+					viewBox='0 0 100 100'
+					preserveAspectRatio='none'>
+					<path
+						className='path'
+						stroke='#000'
+						strokeWidth='2px'
+						dur='10s'
+						vectorEffect='non-scaling-stroke'
+						d='M 0 100 V 100 Q 50 100 100 100 V 100 z'
+					/>
+				</motion.svg>
 			</FadeInPage>
 		</>
 	)

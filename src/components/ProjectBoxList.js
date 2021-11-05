@@ -182,16 +182,16 @@ const projectBoxStyles = css`
 		}
 	`,
 	ProjectBox = ({ id, title, description, link, image, alt, bg }) => (
-		<motion.div className='project-box' layoutId={`project-${id}`}>
+		<motion.div className='project-box' key={`projectBox-${id}`}>
 			<Link className='project-box__link' to={link}>
-				<div className='project-box__img'>
+				<motion.div className='project-box__img' layoutId={`project-${id}`}>
 					<GatsbyImage
 						image={image}
 						alt={alt}
 						objectFit='cover'
 						objectPosition
 					/>
-				</div>
+				</motion.div>
 				<span
 					className='project-box__detail-box'
 					css={css`

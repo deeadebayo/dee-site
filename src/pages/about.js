@@ -120,7 +120,7 @@ const AboutPageStyles = css`
 						variants={textContentVariants}
 						key='resumeText'>
 						<div className='resume__experience'>
-							<h2>Hi, I'm Adeolu!</h2>
+							<h2>Hi, my name is Adeolu!</h2>
 							<p>
 								I live in {` `}
 								<a

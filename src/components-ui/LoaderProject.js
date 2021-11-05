@@ -5,7 +5,7 @@ import LoaderSvg from './LoaderSvg'
 
 const loaderStyles = css`
 	width: 100%;
-	background: purple;
+	background: hsl(174, 41%, 18%);
 	display: flex;
 	justify-content: center;
 	transform-origin: center;
@@ -28,23 +28,22 @@ const loaderStyles = css`
 `
 const LoaderProject = ({ setLoading }) => {
 	const containerVariants = {
-		initial: { height: '100vh', bottom: 0, opacity: 1, y: 0 },
-		show: {
+		initial: {
 			height: '100vh',
-			transition: {
-				when: 'afterChildren',
-				ease: [0.87, 0, 0.13, 1],
-				duration: 1.8,
-			},
-		},
-		exitOut: {
-			y: -200,
-			height: 0,
 			top: 0,
+			opacity: 0.7,
+			y: 0,
+			// background: 'hsl(174, 41%, 36%)',
+		},
+		show: {
+			height: ['100vh', '0vh'],
+			opacity: 1,
+			// background: 'hsl(174, 41%, 18%)',
 			transition: {
-				ease: 'easeInOut',
-				when: 'beforeChildren',
-				duration: 5,
+				// when: 'afterChildren',
+				delay: 0.5,
+				ease: 'easeIn',
+				duration: 1.8,
 			},
 		},
 	}
@@ -56,23 +55,8 @@ const LoaderProject = ({ setLoading }) => {
 			animate='show'
 			variants={containerVariants}
 			onAnimationComplete={() => setLoading(false)}
-			key='loader'
-			exit='exitOut'>
-			<motion.svg
-				class='transition'
-				viewBox='0 0 100 100'
-				preserveAspectRatio='none'>
-				<path
-					class='path'
-					stroke='#000'
-					stroke-width='2px'
-					dur='10s'
-					vector-effect='non-scaling-stroke'
-					d='M 0 100 V 100 Q 50 100 100 100 V 100 z'
-				/>
-			</motion.svg>
-
-			<LoaderSvg />
+			key='loader'>
+			{/* <LoaderSvg /> */}
 		</motion.div>
 	)
 }

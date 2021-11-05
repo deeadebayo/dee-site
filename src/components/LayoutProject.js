@@ -7,6 +7,7 @@ import Banner from './Banner'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import LoaderProject from '../components-ui/LoaderProject'
+import FadeInPage from '../components-ui/FadeInPage'
 
 const wrapperStyle = css`
 	display: flex;
@@ -23,7 +24,7 @@ const wrapperStyle = css`
 		position: relative;
 		padding: 1rem;
 		z-index: 3;
-		& > .page {
+		.page {
 			margin: 0 auto;
 			display: flex;
 			flex-flow: column;
@@ -32,7 +33,7 @@ const wrapperStyle = css`
 	}
 	@media screen and (min-width: 476px) {
 		main {
-			& > .page {
+			.page {
 				padding: 1rem;
 				background: var(--color-page_neutral_background);
 			}
@@ -42,7 +43,7 @@ const wrapperStyle = css`
 	}
 	@media screen and (min-width: 1023px) {
 		main {
-			& > .page {
+			.page {
 				max-width: 1500px;
 				padding: 1.1rem;
 			}
@@ -52,7 +53,6 @@ const wrapperStyle = css`
 
 export default function LayoutProject({ children }) {
 	const [loading, setLoading] = useState(true)
-
 	useEffect(() => {
 		loading
 			? document.querySelector('body').classList.add('loading')
@@ -60,22 +60,26 @@ export default function LayoutProject({ children }) {
 	}, [loading])
 
 	return (
-		<motion.div key='projectLoaderWrapper'>
+		<>
 			{loading ? (
-				<motion.div key='loader'>
+				<motion.div key='projectloader'>
 					<LoaderProject setLoading={setLoading} />
 				</motion.div>
 			) : (
-				<motion.div css={wrapperStyle}>
-					<GlobalStyles />
-					<Banner />
-					<Navbar />
-					<motion.main>
-						<div className='page'>{children}</div>
-					</motion.main>
-					<Footer />
+				<motion.div key='projectPageWrapper'>
+					<div css={wrapperStyle}>
+						<GlobalStyles />
+						<motion.div animate={{ opacity: [0.3, 1], y: [-20, 0] }}>
+							<Banner />
+							<Navbar />
+						</motion.div>
+						<motion.main>
+							<div className='page'>{children}</div>
+						</motion.main>
+						<Footer />
+					</div>
 				</motion.div>
 			)}
-		</motion.div>
+		</>
 	)
 }

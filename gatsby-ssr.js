@@ -1,17 +1,20 @@
-import { AnimatePresence, AnimateSharedLayout } from 'framer-motion'
+import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion'
 import React from 'react'
 import Layout from './src/components/Layout'
 import LayoutProject from './src/components/LayoutProject'
 
 export function wrapPageElement({ element, props }) {
-	console.log(props, element)
 	return (
 		<AnimateSharedLayout type='crossfade'>
 			<AnimatePresence exitBeforeEnter>
 				{props.pageContext.type === 'projectPage' ? (
-					<LayoutProject {...props}>{element}</LayoutProject>
+					<motion.div key='projectLoaderWrapper'>
+						<LayoutProject {...props}>{element}</LayoutProject>
+					</motion.div>
 				) : (
-					<Layout {...props}>{element}</Layout>
+					<motion.div key='loaderWrapper'>
+						<Layout {...props}>{element}</Layout>
+					</motion.div>
 				)}
 			</AnimatePresence>
 		</AnimateSharedLayout>
