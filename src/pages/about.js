@@ -102,7 +102,8 @@ const AboutPageStyles = css`
 					css={AboutPageStyles}
 					variants={contentVariants}
 					initial='hidden'
-					animate='show'>
+					animate='show'
+				>
 					<motion.div className='header' variants={titleVariants}>
 						<h1>
 							full-stack developer
@@ -118,7 +119,8 @@ const AboutPageStyles = css`
 					<motion.div
 						className='resume'
 						variants={textContentVariants}
-						key='resumeText'>
+						key='resumeText'
+					>
 						<div className='resume__experience'>
 							<h2>Hi, my name is Adeolu!</h2>
 							<p>
@@ -126,7 +128,8 @@ const AboutPageStyles = css`
 								<a
 									href='https://www.lonelyplanet.com/usa/the-south/atlanta'
 									target='_blank'
-									className='about-page'>
+									className='about-page'
+								>
 									Atlanta
 								</a>
 								{` `}
@@ -153,12 +156,13 @@ const AboutPageStyles = css`
 					<motion.div
 						className='skills'
 						variants={textContentVariants}
-						key='skilsText'>
+						key='skilsText'
+					>
 						<div className='skills__toolbox'>
 							<h2>Toolbox</h2>
 							<p>
-								HTML, CSS, JavaScript, Node, React, Gatsby, JAMstack, GraphQL,
-								SQL
+								HTML, CSS, JavaScript, Node.js, React.js, Gatsby, JAMstack,
+								GraphQL, PostgreSQL
 							</p>
 						</div>
 						<div className='skills__specialities'>

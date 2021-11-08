@@ -4,8 +4,10 @@ import { css } from '@emotion/react'
 import LoaderSvg from './LoaderSvg'
 
 const loaderStyles = css`
+	z-index: 9999;
 	width: 100%;
-	background: hsl(0, 100%, 72%);
+	height: 100vh;
+	background: var(--color-page_neutral_background);
 	display: flex;
 	justify-content: center;
 	transform-origin: center;
@@ -22,49 +24,37 @@ const loaderStyles = css`
 const Loader = ({ setLoading }) => {
 	const containerVariants = {
 		initial: {
-			height: '100vh',
 			bottom: 0,
-			opacity: 0,
+			opacity: 0.5,
 			y: 0,
-			// background: 'hsl(174, 41%, 18%)',
-			// background: 'hsl(0, 80%, 72%)',
 		},
 		show: {
-			height: '100vh',
 			opacity: 1,
-			// background: 'hsl(174, 41%, 36%)',
-			// background: 'hsl(0, 100%, 72%)',
+			y: 0,
+			transition: { duration: 2.2 },
+		},
+		exit: {
+			y: 300,
 			transition: {
+				delay: 0.5,
 				when: 'afterChildren',
 				ease: [0.87, 0, 0.13, 1],
-				duration: 2,
-			},
-		},
-		exitOut: {
-			y: -200,
-			height: 0,
-			top: 0,
-			transition: {
-				when: 'afterChildren',
-				ease: 'easeInOut',
-				duration: 1,
 			},
 		},
 	}
 
 	return (
-		<>
-			<motion.div
-				css={loaderStyles}
-				initial='initial'
-				animate='show'
-				variants={containerVariants}
-				onAnimationComplete={() => setLoading(false)}
-				key='loaderWrapper'
-				exit='exitOut'>
-				<LoaderSvg />
-			</motion.div>
-		</>
+		<motion.div
+			css={loaderStyles}
+			variants={containerVariants}
+			initial='initial'
+			animate='show'
+			exit='exit'
+			onAnimationComplete={() => setLoading(false)}
+			key='loader'
+		>
+			<LoaderSvg />
+		</motion.div>
 	)
 }
 

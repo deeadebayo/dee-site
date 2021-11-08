@@ -27,7 +27,9 @@ const FadeInPage = ({ children, pageKey }) => {
 			key={pageKey}
 			initial='pageHidden'
 			animate='visible'
-			variants={pageContent}>
+			// exit='exitOut'
+			variants={pageContent}
+		>
 			{children}
 		</motion.div>
 	)

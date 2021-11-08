@@ -2,12 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { css } from '@emotion/react'
 import { motion } from 'framer-motion'
 
-import GlobalStyles from '../styles/GlobalStyles'
 import Banner from './Banner'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import LoaderProject from '../components-ui/LoaderProject'
-import FadeInPage from '../components-ui/FadeInPage'
 
 const wrapperStyle = css`
 	display: flex;
@@ -59,27 +57,50 @@ export default function LayoutProject({ children }) {
 			: document.querySelector('body').classList.remove('loading')
 	}, [loading])
 
+	const containerReveal = {
+		navbarHidden: { y: '-5vh', opacity: 0.35 },
+		pageHidden: { y: 55, opacity: 0.5 },
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: {
+				when: 'beforeChildren',
+				ease: 'easeIn',
+				duration: 0.4,
+			},
+		},
+	}
+
 	return (
-		<>
+		<motion.div key='projectLayoutWrapper'>
 			{loading ? (
-				<motion.div key='projectloader'>
+				<motion.div key='projectLoader'>
 					<LoaderProject setLoading={setLoading} />
 				</motion.div>
 			) : (
 				<motion.div key='projectPageWrapper'>
-					<div css={wrapperStyle}>
-						<GlobalStyles />
-						<motion.div animate={{ opacity: [0.3, 1], y: [-20, 0] }}>
+					<motion.div css={wrapperStyle}>
+						<motion.div
+							key='navbarProject'
+							variants={containerReveal}
+							initial='navbarHidden'
+							animate='visible'
+						>
 							<Banner />
 							<Navbar />
 						</motion.div>
-						<motion.main>
+						<motion.main
+							key='restOfPage'
+							variants={containerReveal}
+							initial='pageHidden'
+							animate='visible'
+						>
 							<div className='page'>{children}</div>
 						</motion.main>
 						<Footer />
-					</div>
+					</motion.div>
 				</motion.div>
 			)}
-		</>
+		</motion.div>
 	)
 }

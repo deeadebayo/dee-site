@@ -2,12 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { css } from '@emotion/react'
 import { motion } from 'framer-motion'
 
-import GlobalStyles from '../styles/GlobalStyles'
 import Banner from './Banner'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import Loader from '../components-ui/Loader'
-import FadeInPage from '../components-ui/FadeInPage'
 
 const wrapperStyle = css`
 	display: flex;
@@ -51,42 +49,55 @@ const wrapperStyle = css`
 	}
 `
 
-const Layout = ({ children, location: { key } }) => {
+const Layout = ({ children, location }) => {
 	const [loading, setLoading] = useState(true)
 
 	useEffect(() => {
 		loading
 			? document.querySelector('body').classList.add('loading')
-			: setTimeout(() => {
-					document.querySelector('body').classList.remove('loading')
-			  }, 1000)
-		return () =>
-			clearTimeout(
-				setTimeout(() => {
-					document.querySelector('body').classList.remove('loading')
-				}, 1000)
-			)
+			: document.querySelector('body').classList.remove('loading')
 	}, [loading])
+
+	const containerReveal = {
+		navbarHidden: { y: '-5vh', opacity: 0.35 },
+		pageHidden: { y: 55, opacity: 0.5 },
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: {
+				when: 'beforeChildren',
+				ease: 'easeIn',
+				duration: 0.4,
+			},
+		},
+	}
 
 	return (
 		<>
 			{loading ? (
-				<motion.div key='loader'>
-					<Loader setLoading={setLoading} />
-				</motion.div>
+				<Loader setLoading={setLoading} />
 			) : (
 				<motion.div key='pageWrapper'>
-					<div css={wrapperStyle}>
-						<GlobalStyles />
-						<motion.div animate={{ opacity: [0.3, 1], y: [-20, 0] }}>
+					<motion.div css={wrapperStyle}>
+						<motion.div
+							key='navbar'
+							variants={containerReveal}
+							initial='navbarHidden'
+							animate='visible'
+						>
 							<Banner />
 							<Navbar path={location.pathname} />
 						</motion.div>
-						<motion.main>
+						<motion.main
+							key='restOfPage'
+							variants={containerReveal}
+							initial='pageHidden'
+							animate='visible'
+						>
 							<div className='page'>{children}</div>
 						</motion.main>
 						<Footer />
-					</div>
+					</motion.div>
 				</motion.div>
 			)}
 		</>
