@@ -7,6 +7,10 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import Loader from '../components-ui/Loader'
 
+const behindcontentStyle = css`
+	background: var(--color-behind_content_background);
+`
+
 const wrapperStyle = css`
 	display: flex;
 	flex-flow: column nowrap;
@@ -59,7 +63,7 @@ const Layout = ({ children, location }) => {
 	}, [loading])
 
 	const containerReveal = {
-		navbarHidden: { y: '-5vh', opacity: 0.35 },
+		navbarHidden: { y: '-3vh', opacity: 0.35 },
 		pageHidden: { y: 55, opacity: 0.5 },
 		visible: {
 			opacity: 1,
@@ -70,6 +74,9 @@ const Layout = ({ children, location }) => {
 				duration: 0.4,
 			},
 		},
+		exit: {
+			y: -300,
+		},
 	}
 
 	return (
@@ -77,25 +84,27 @@ const Layout = ({ children, location }) => {
 			{loading ? (
 				<Loader setLoading={setLoading} />
 			) : (
-				<motion.div key='pageWrapper'>
-					<motion.div css={wrapperStyle}>
-						<motion.div
-							key='navbar'
-							variants={containerReveal}
-							initial='navbarHidden'
-							animate='visible'
-						>
-							<Banner />
-							<Navbar path={location.pathname} />
+				<motion.div key='pageWrapper' exit={{ y: -200 }}>
+					<motion.div key='contentWrapper' css={behindcontentStyle}>
+						<motion.div css={wrapperStyle}>
+							<motion.div
+								key='navbar'
+								variants={containerReveal}
+								initial='navbarHidden'
+								animate='visible'
+							>
+								<Banner />
+								<Navbar path={location.pathname} />
+							</motion.div>
+							<motion.main
+								key='restOfPage'
+								variants={containerReveal}
+								initial='pageHidden'
+								animate='visible'
+							>
+								<div className='page'>{children}</div>
+							</motion.main>
 						</motion.div>
-						<motion.main
-							key='restOfPage'
-							variants={containerReveal}
-							initial='pageHidden'
-							animate='visible'
-						>
-							<div className='page'>{children}</div>
-						</motion.main>
 						<Footer />
 					</motion.div>
 				</motion.div>

@@ -9,7 +9,7 @@ const SingleProjectPage = ({ data: { pageInfo } }) => {
 	return (
 		<>
 			<Helmet>
-				<title> {title} | Projects | Dee Adebayo</title>
+				<title> Dee Adebayo - Projects | {title} </title>
 			</Helmet>
 			<motion.div>
 				<h1>
@@ -26,7 +26,8 @@ const SingleProjectPage = ({ data: { pageInfo } }) => {
 				<motion.svg
 					className='transition'
 					viewBox='0 0 100 100'
-					preserveAspectRatio='none'>
+					preserveAspectRatio='none'
+				>
 					<path
 						className='path'
 						stroke='#000'

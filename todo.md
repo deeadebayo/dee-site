@@ -13,3 +13,4 @@
 - show iamge on hover for all the thigns on the about page
 - for footer contact, make the input box transparaten like text inpute effects set - https://tympanus.net/Development/TextInputEffects/index2.html
 - just show the site on mobile devices
+- project pagination - https://www.semplice.com/page-transitions

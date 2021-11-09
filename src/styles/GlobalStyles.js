@@ -52,17 +52,15 @@ const globalstyles = css`
 		--color-transparent: hsla(0, 0%, 0, 1);
 
 		--color-page_neutral_background: hsl(0, 0%, 90%);
-		${
-			'' /* --color-behind_page_background: linear-gradient(
+
+		--color-behind_page_background: var(--color-page_neutral_background);
+		--color-behind_content_background: linear-gradient(
 			to right,
 			#f78ca0 0%,
 			#f9748f 19%,
 			#fd868c 60%,
 			#fe9a8b 100%
-		); */
-		}
-		--color-behind_page_background: hsl(0, 100%, 72%);
-		--color-behind_page_background: var(--color-page_neutral_background);
+		);
 		--color-background: lightgray;
 
 		border-top: 4px solid hsl(174, 41%, 35%);

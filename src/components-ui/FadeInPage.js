@@ -9,16 +9,14 @@ const FadeInPage = ({ children, pageKey }) => {
 			opacity: 1,
 			y: 0,
 			transition: {
-				ease: [0.87, 0, 0.13, 1],
-				duration: 0.8,
+				ease: [0.87, 0, 0.2, 1],
+				duration: 0.75,
 			},
 		},
 		// exitOut: {
-		// 	y: -400,
-
 		// 	opacity: 0,
 		// 	transition: {
-		// 		duration: 0.5,
+		// 		// duration: 0.5,
 		// 	},
 		// },
 	}

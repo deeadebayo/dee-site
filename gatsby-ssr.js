@@ -7,6 +7,9 @@ import GlobalStyles from './src/styles/GlobalStyles'
 export function wrapPageElement({ element, props }) {
 	return (
 		<>
+			<Helmet>
+				<title>Dee Adebayo | Front-End Web Developer</title>
+			</Helmet>
 			<GlobalStyles />
 			<AnimateSharedLayout type='crossfade'>
 				<AnimatePresence exitBeforeEnter>

@@ -6,7 +6,6 @@ import LoaderSvg from './LoaderSvg'
 const loaderStyles = css`
 	width: 100%;
 	height: 100vh;
-	opacity: 0.8;
 	background: hsl(174, 41%, 18%);
 	display: flex;
 	justify-content: center;

@@ -7,6 +7,10 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import LoaderProject from '../components-ui/LoaderProject'
 
+const behindcontentStyle = css`
+	background: var(--color-behind_content_background);
+`
+
 const wrapperStyle = css`
 	display: flex;
 	flex-flow: column nowrap;
@@ -58,49 +62,52 @@ export default function LayoutProject({ children }) {
 	}, [loading])
 
 	const containerReveal = {
-		navbarHidden: { y: '-5vh', opacity: 0.35 },
-		pageHidden: { y: 55, opacity: 0.5 },
+		navbarHidden: { y: '-3vh', opacity: 0.35 },
+		pageHidden: { y: 100, opacity: 0.5 },
 		visible: {
 			opacity: 1,
 			y: 0,
 			transition: {
+				delay: -1.2,
 				when: 'beforeChildren',
-				ease: 'easeIn',
+				ease: [0.61, 0.2, 0.5, 1],
 				duration: 0.4,
 			},
 		},
 	}
 
 	return (
-		<motion.div key='projectLayoutWrapper'>
+		<>
 			{loading ? (
 				<motion.div key='projectLoader'>
 					<LoaderProject setLoading={setLoading} />
 				</motion.div>
 			) : (
 				<motion.div key='projectPageWrapper'>
-					<motion.div css={wrapperStyle}>
-						<motion.div
-							key='navbarProject'
-							variants={containerReveal}
-							initial='navbarHidden'
-							animate='visible'
-						>
-							<Banner />
-							<Navbar />
+					<motion.div key='contentWrapper' css={behindcontentStyle}>
+						<motion.div css={wrapperStyle}>
+							<motion.div
+								key='navbarProject'
+								variants={containerReveal}
+								initial='navbarHidden'
+								animate='visible'
+							>
+								<Banner />
+								<Navbar />
+							</motion.div>
+							<motion.main
+								key='restOfPage'
+								variants={containerReveal}
+								initial='pageHidden'
+								animate='visible'
+							>
+								<div className='page'>{children}</div>
+							</motion.main>
+							<Footer />
 						</motion.div>
-						<motion.main
-							key='restOfPage'
-							variants={containerReveal}
-							initial='pageHidden'
-							animate='visible'
-						>
-							<div className='page'>{children}</div>
-						</motion.main>
-						<Footer />
 					</motion.div>
 				</motion.div>
 			)}
-		</motion.div>
+		</>
 	)
 }
