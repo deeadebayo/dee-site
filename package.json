@@ -23,7 +23,7 @@
 	},
 	"dependencies": {
 		"@emotion/react": "^11.4.0",
-		"framer-motion": "^4.1.17",
+		"framer-motion": "^5.3.0",
 		"gatsby": "^3.8.1",
 		"gatsby-background-image": "^1.5.3",
 		"gatsby-image": "^3.8.0",

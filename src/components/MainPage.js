@@ -55,19 +55,6 @@ const wrapperStyle = css`
 `
 
 const MainPage = ({ children, location }) => {
-	const containerReveal = {
-		navbarHidden: { y: '-3vh', opacity: 0.35 },
-		pageHidden: { y: 55, opacity: 0.5 },
-		visible: {
-			opacity: 1,
-			y: 0,
-			transition: {
-				when: 'beforeChildren',
-				ease: 'easeIn',
-				duration: 0.4,
-			},
-		},
-	}
 	const [loading, setLoading] = useState(true)
 
 	useEffect(() => {
@@ -75,6 +62,29 @@ const MainPage = ({ children, location }) => {
 			? document.querySelector('body').classList.add('loading')
 			: document.querySelector('body').classList.remove('loading')
 	}, [loading])
+
+	const containerReveal = {
+		hidden: { opacity: 0 },
+		show: {
+			opacity: 1,
+			transition: {
+				when: 'beforeChildren',
+				staggerChildren: 0.2,
+				ease: [0.61, 0.2, 0.5, 1],
+				duration: 0.4,
+			},
+		},
+	}
+
+	const navbarVariants = {
+		hidden: { y: '-3vh', opacity: 0 },
+		show: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+	}
+
+	const pageVariants = {
+		hidden: { opacity: 0.5 },
+		show: { opacity: 1, transition: { duration: 0.8 } },
+	}
 
 	return (
 		<motion.div key='mainContentWrapper'>
@@ -86,22 +96,18 @@ const MainPage = ({ children, location }) => {
 				<motion.div css={behindcontentStyle}>
 					<motion.div css={wrapperStyle}>
 						<motion.div
-							key='navbar'
 							variants={containerReveal}
-							initial='navbarHidden'
-							animate='visible'
+							initial='hidden'
+							animate='show'
 						>
-							<Banner />
-							<Navbar path={location.pathname} />
+							<motion.div key='navbar' variants={navbarVariants}>
+								<Banner />
+								<Navbar path={location.pathname} />
+							</motion.div>
+							<motion.main key='restOfPage' variants={pageVariants}>
+								<div className='page'>{children}</div>
+							</motion.main>
 						</motion.div>
-						<motion.main
-							key='restOfPage'
-							variants={containerReveal}
-							initial='pageHidden'
-							animate='visible'
-						>
-							<div className='page'>{children}</div>
-						</motion.main>
 					</motion.div>
 					<Footer />
 				</motion.div>

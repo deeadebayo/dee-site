@@ -1,4 +1,3 @@
-import { AnimateSharedLayout } from 'framer-motion'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import Layout from './src/components/Layout'
@@ -10,8 +9,6 @@ export const wrapPageElement = ({ element, props }) => (
 			<title>Dee Adebayo | Front-End Web Developer</title>
 		</Helmet>
 		<GlobalStyles />
-		<AnimateSharedLayout type='crossfade'>
-			<Layout {...props}>{element}</Layout>
-		</AnimateSharedLayout>
+		<Layout {...props}>{element}</Layout>
 	</>
 )

@@ -30,13 +30,14 @@ const SingleProjectPage = ({
 					Hi, there's supposed to be a page here. Instead here's dummy text:{' '}
 					{stuff} and it's in the foreground
 				</h1>
-				<motion.div layoutId='project-1'></motion.div>
-				<GatsbyImage
-					image={gatsbyImageData}
-					objectFit='cover'
-					layoutId={`project-1`}
-					objectPosition
-				/>
+				<motion.div layoutId='project-1'>
+					<GatsbyImage
+						image={gatsbyImageData}
+						objectFit='cover'
+						layoutId={`project-1`}
+						objectPosition
+					/>
+				</motion.div>
 			</FadeInPage>
 		</>
 	)

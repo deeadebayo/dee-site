@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { css } from '@emotion/react'
 import { useInView } from 'react-intersection-observer'
 
-import LoaderProject from '../components-ui/LoaderProject'
 import Banner from './Banner'
 import Navbar from './Navbar'
 import Footer from './Footer'
@@ -71,21 +70,9 @@ const ProjectPage = ({ children, location }) => {
 			y: -300,
 		},
 	}
-	const [loading, setLoading] = useState(true)
-
-	useEffect(() => {
-		loading
-			? document.querySelector('body').classList.add('loading')
-			: document.querySelector('body').classList.remove('loading')
-	}, [loading])
 
 	return (
 		<motion.div key='projectContentWrapper' css={behindcontentStyle}>
-			{/* {loading ? (
-				<motion.div key='loader'>
-					<LoaderProject setLoading={setLoading} />
-				</motion.div>
-			) : ( */}
 			<motion.div css={behindcontentStyle}>
 				<motion.div css={wrapperStyle}>
 					<motion.div
@@ -108,7 +95,6 @@ const ProjectPage = ({ children, location }) => {
 				</motion.div>
 				<Footer />
 			</motion.div>
-			{/* )} */}
 		</motion.div>
 	)
 }
