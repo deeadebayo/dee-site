@@ -8,7 +8,8 @@ const LoaderProject = ({ setLoading }) => {
 		z-index: 9999;
 		width: 100%;
 		height: 100vh;
-		background: hsl(174, 41%, 18%);
+		${'' /* background: hsl(174, 41%, 18%); */}
+		background: white;
 		display: flex;
 		justify-content: center;
 		transform-origin: center;

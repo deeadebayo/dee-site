@@ -81,34 +81,34 @@ const ProjectPage = ({ children, location }) => {
 
 	return (
 		<motion.div key='projectContentWrapper' css={behindcontentStyle}>
-			{loading ? (
+			{/* {loading ? (
 				<motion.div key='loader'>
 					<LoaderProject setLoading={setLoading} />
 				</motion.div>
-			) : (
-				<motion.div css={behindcontentStyle}>
-					<motion.div css={wrapperStyle}>
-						<motion.div
-							key='navbar'
-							variants={containerReveal}
-							initial='navbarHidden'
-							animate='visible'
-						>
-							<Banner />
-							<Navbar path={location.pathname} />
-						</motion.div>
-						<motion.main
-							key='restOfPage'
-							variants={containerReveal}
-							initial='pageHidden'
-							animate='visible'
-						>
-							<div className='page'>{children}</div>
-						</motion.main>
+			) : ( */}
+			<motion.div css={behindcontentStyle}>
+				<motion.div css={wrapperStyle}>
+					<motion.div
+						key='navbar'
+						variants={containerReveal}
+						initial='navbarHidden'
+						animate='visible'
+					>
+						<Banner />
+						<Navbar path={location.pathname} />
 					</motion.div>
-					<Footer />
+					<motion.main
+						key='restOfPage'
+						variants={containerReveal}
+						initial='pageHidden'
+						animate='visible'
+					>
+						<div className='page'>{children}</div>
+					</motion.main>
 				</motion.div>
-			)}
+				<Footer />
+			</motion.div>
+			{/* )} */}
 		</motion.div>
 	)
 }

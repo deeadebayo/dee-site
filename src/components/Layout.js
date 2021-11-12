@@ -12,7 +12,7 @@ const Layout = ({ children, location, pageContext: { type } }) => (
 					key='ppage'
 					initial='initial'
 					animate='animate'
-					// exit={{ opacity: 0, transition: { duration: 0.8 } }}
+					// exit={{ opacity: 0, y: -100, transition: { duration: 3 } }}
 				>
 					<ProjectPage location={location}>{children}</ProjectPage>
 				</motion.div>
@@ -22,6 +22,7 @@ const Layout = ({ children, location, pageContext: { type } }) => (
 					initial='initial'
 					animate='animate'
 					// exit={{ opacity: 0, transition: { duration: 0.8 } }}
+					exit={{ opacity: 0, y: -100, transition: { duration: 3 } }}
 				>
 					<MainPage location={location}>{children}</MainPage>
 				</motion.div>

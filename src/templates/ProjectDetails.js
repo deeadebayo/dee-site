@@ -1,10 +1,18 @@
-import { motion } from 'framer-motion'
-import { graphql } from 'gatsby'
 import React from 'react'
 import Helmet from 'react-helmet'
+import { motion } from 'framer-motion'
+import { graphql } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import FadeInPage from '../components-ui/FadeInPage'
 
-const SingleProjectPage = ({ data: { pageInfo } }) => {
+const SingleProjectPage = ({
+	data: {
+		pageInfo,
+		josh: {
+			childImageSharp: { gatsbyImageData },
+		},
+	},
+}) => {
 	const { title, slug, stuff } = pageInfo
 	return (
 		<>
@@ -13,30 +21,22 @@ const SingleProjectPage = ({ data: { pageInfo } }) => {
 			</Helmet>
 			<motion.div>
 				<h1>
-					Hi, there's supposed to be a page here. Instead here's dummy text:{' '}
-					{stuff}
+					Hi, there's supposed to be a page here. Instead here's dummy text in
+					my background
 				</h1>
 			</motion.div>
 			<FadeInPage pageName='yes'>
 				<h1>
 					Hi, there's supposed to be a page here. Instead here's dummy text:{' '}
-					{stuff}
+					{stuff} and it's in the foreground
 				</h1>
-
-				<motion.svg
-					className='transition'
-					viewBox='0 0 100 100'
-					preserveAspectRatio='none'
-				>
-					<path
-						className='path'
-						stroke='#000'
-						strokeWidth='2px'
-						dur='10s'
-						vectorEffect='non-scaling-stroke'
-						d='M 0 100 V 100 Q 50 100 100 100 V 100 z'
-					/>
-				</motion.svg>
+				<motion.div layoutId='project-1'></motion.div>
+				<GatsbyImage
+					image={gatsbyImageData}
+					objectFit='cover'
+					layoutId={`project-1`}
+					objectPosition
+				/>
 			</FadeInPage>
 		</>
 	)
@@ -50,6 +50,38 @@ export const query = graphql`
 			stuff
 			slug
 			title
+		}
+		comingSoon: file(relativePath: { eq: "work/work__coming-soon.jpg" }) {
+			childImageSharp {
+				gatsbyImageData(
+					layout: CONSTRAINED
+					height: 615
+					aspectRatio: 1.33
+					placeholder: TRACED_SVG
+				)
+			}
+		}
+		josh: file(relativePath: { eq: "work/work__jmdrums__cover.jpg" }) {
+			childImageSharp {
+				gatsbyImageData(
+					layout: CONSTRAINED
+					height: 615
+					aspectRatio: 1.33
+					placeholder: TRACED_SVG
+				)
+			}
+		}
+		ctkmc: file(
+			relativePath: { eq: "work/work__ctkmc__tablet-and-phone.png" }
+		) {
+			childImageSharp {
+				gatsbyImageData(
+					layout: CONSTRAINED
+					height: 615
+					aspectRatio: 1.33
+					placeholder: TRACED_SVG
+				)
+			}
 		}
 	}
 `

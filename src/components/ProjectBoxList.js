@@ -196,7 +196,8 @@ const projectBoxStyles = css`
 					className='project-box__detail-box'
 					css={css`
 						background-color: ${bg};
-					`}>
+					`}
+				>
 					<div className='project-box__detail-box__details'>
 						<div className='project-box__detail-box__details--text'>
 							<span className='project-box__detail-box__details__description'>
