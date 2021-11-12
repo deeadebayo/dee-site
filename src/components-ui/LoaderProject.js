@@ -3,31 +3,32 @@ import { motion } from 'framer-motion'
 import { css } from '@emotion/react'
 import LoaderSvg from './LoaderSvg'
 
-const loaderStyles = css`
-	width: 100%;
-	height: 100vh;
-	background: hsl(174, 41%, 18%);
-	display: flex;
-	justify-content: center;
-	transform-origin: center;
-	align-items: center;
-	padding: 4rem;
-	position: absolute;
-
-	svg {
-		display: flex;
-		position: absolute;
-		max-height: 18vh;
-	}
-	.transition {
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-	}
-`
 const LoaderProject = ({ setLoading }) => {
+	const loaderStyles = css`
+		z-index: 9999;
+		width: 100%;
+		height: 100vh;
+		background: hsl(174, 41%, 18%);
+		display: flex;
+		justify-content: center;
+		transform-origin: center;
+		align-items: center;
+		padding: 4rem;
+		position: absolute;
+
+		svg {
+			display: flex;
+			position: absolute;
+			max-height: 18vh;
+		}
+		.transition {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+		}
+	`
 	const containerVariants = {
 		initial: {
 			top: 0,

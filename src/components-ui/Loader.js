@@ -12,33 +12,33 @@ const loaderStyles = css`
 	justify-content: center;
 	transform-origin: center;
 	align-items: center;
-	padding: 4rem;
 	position: absolute;
+	padding: 4rem;
 
 	svg {
-		display: flex;
 		position: absolute;
 		max-height: 18vh;
 	}
 `
+
 const Loader = ({ setLoading }) => {
-	const containerVariants = {
-		initial: {
-			bottom: 0,
-			opacity: 0.5,
-			y: 0,
-		},
+	const container = {
 		show: {
 			opacity: 1,
-			y: 0,
-			transition: { duration: 2.2 },
+			transition: { duration: 1.7, delay: 0.2 },
 		},
-		exit: {
-			y: 300,
+	}
+
+	const svgItem = {
+		hidden: { opacity: 0, scale: 0.96 },
+		show: {
+			opacity: 1,
+			scale: 1,
 			transition: {
-				delay: 0.5,
-				when: 'afterChildren',
-				ease: [0.87, 0, 0.13, 1],
+				staggerChildren: 0.2,
+				delayChildren: 0.4,
+				duration: 0.4,
+				ease: 'easeIn',
 			},
 		},
 	}
@@ -46,14 +46,13 @@ const Loader = ({ setLoading }) => {
 	return (
 		<motion.div
 			css={loaderStyles}
-			variants={containerVariants}
+			variants={container}
 			initial='initial'
 			animate='show'
 			exit='exit'
 			onAnimationComplete={() => setLoading(false)}
-			key='loader'
 		>
-			<LoaderSvg />
+			<LoaderSvg variants={svgItem} />
 		</motion.div>
 	)
 }

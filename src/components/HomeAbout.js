@@ -5,6 +5,7 @@ import '../scss/link-hover.scss'
 import AnimatedHello from '../components-ui/AnimatedHello'
 import { ButtonLink } from '../components-ui/Button'
 import { motion } from 'framer-motion'
+import AnimatedTextHeaders from '../components-ui/AnimatedTextHeaders'
 
 const aboutStyle = css`
 	min-width: 50%;
@@ -116,9 +117,11 @@ const HomeAbout = () => (
 					whileHover={{ color: 'var(--color-secondary)' }}
 					initial={{ y: '100%', color: 'var(--color-secondary)' }}
 					animate='visible'
-					variants={animatedHelloVariants}>
+					variants={animatedHelloVariants}
+				>
 					Hi, I'm Adeolu!
 				</AnimatedHello>
+				<AnimatedTextHeaders>Heyyyyyy</AnimatedTextHeaders>
 			</h1>
 			<p className='lead-text about__lead-text isCentered'>
 				I'm a full-stack web developer with a soft spot for UX/UI. My focus is

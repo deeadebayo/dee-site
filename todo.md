@@ -14,3 +14,4 @@
 - for footer contact, make the input box transparaten like text inpute effects set - https://tympanus.net/Development/TextInputEffects/index2.html
 - just show the site on mobile devices
 - project pagination - https://www.semplice.com/page-transitions
+- add 'Dee Adebayo | Front-End Web Developer' to site home title

@@ -95,7 +95,7 @@ const AboutPageStyles = css`
 	AboutPage = () => (
 		<>
 			<Helmet>
-				<title>About - Dee Adebayo</title>
+				<title>Dee Adebayo | About Me</title>
 			</Helmet>
 			<FadeInPage pageName='about'>
 				<motion.div
