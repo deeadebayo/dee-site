@@ -70,7 +70,7 @@ const MainPage = ({ children, location }) => {
 			transition: {
 				when: 'beforeChildren',
 				staggerChildren: 0.2,
-				ease: [0.61, 0.2, 0.5, 1],
+				ease: [0.87, 0.5, 0.6, 1],
 				duration: 0.4,
 			},
 		},
