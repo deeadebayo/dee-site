@@ -4,6 +4,8 @@ import { css } from '@emotion/react'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { motion } from 'framer-motion'
 
+const projectStuff = require('../data/projectPages')
+
 const projectBoxStyles = css`
 		width: clamp(16rem, 90vw, 70rem);
 		margin: 4em 0;
@@ -215,6 +217,7 @@ const projectBoxStyles = css`
 	)
 
 const ProjectBoxList = ({ projectImages }) => {
+	console.log(projectStuff)
 	const colorPrimary = 'var(--color-primary)',
 		colorSecondary = 'var(--color-secondary)',
 		colorRare = 'var(--color-rare)',

@@ -5,39 +5,35 @@ import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import FadeInPage from '../components-ui/FadeInPage'
 
-const SingleProjectPage = ({
-	data: {
-		pageInfo,
-		josh: {
-			childImageSharp: { gatsbyImageData },
-		},
-	},
-}) => {
-	const { title, slug, stuff } = pageInfo
+const SingleProjectPage = ({ data }) => {
+	const { title, slug, stuff, key } = data.pageInfo
+	const {
+		childImageSharp: { gatsbyImageData },
+	} = data.projectImage
 	return (
 		<>
 			<Helmet>
 				<title> Dee Adebayo - Projects | {title} </title>
 			</Helmet>
+			<motion.div layoutId={`project-${key}`}>
+				<GatsbyImage
+					image={gatsbyImageData}
+					alt={`image for ${title} project`}
+					objectFit='cover'
+					objectPosition
+				/>
+			</motion.div>
 			<motion.div>
 				<h1>
 					Hi, there's supposed to be a page here. Instead here's dummy text in
 					my background
 				</h1>
 			</motion.div>
-			<FadeInPage pageName='yes'>
+			<FadeInPage pageName='projectPage'>
 				<h1>
-					Hi, there's supposed to be a page here. Instead here's dummy text:{' '}
-					{stuff} and it's in the foreground
+					Hi, there's supposed to be a page here. Instead here's dummy text and
+					it's in the foreground
 				</h1>
-				<motion.div layoutId='project-1'>
-					<GatsbyImage
-						image={gatsbyImageData}
-						objectFit='cover'
-						layoutId={`project-1`}
-						objectPosition
-					/>
-				</motion.div>
 			</FadeInPage>
 		</>
 	)
@@ -46,35 +42,17 @@ const SingleProjectPage = ({
 export default SingleProjectPage
 
 export const query = graphql`
-	query ($slug: String!) {
+	query ($slug: String!, $coverImgPath: String!) {
 		pageInfo: projectPage(slug: { eq: $slug }) {
-			stuff
-			slug
+			key
 			title
+			pageTitle
+			slug
+			coverImgPath
+			stuff
+			backgroundColor
 		}
-		comingSoon: file(relativePath: { eq: "work/work__coming-soon.jpg" }) {
-			childImageSharp {
-				gatsbyImageData(
-					layout: CONSTRAINED
-					height: 615
-					aspectRatio: 1.33
-					placeholder: TRACED_SVG
-				)
-			}
-		}
-		josh: file(relativePath: { eq: "work/work__jmdrums__cover.jpg" }) {
-			childImageSharp {
-				gatsbyImageData(
-					layout: CONSTRAINED
-					height: 615
-					aspectRatio: 1.33
-					placeholder: TRACED_SVG
-				)
-			}
-		}
-		ctkmc: file(
-			relativePath: { eq: "work/work__ctkmc__tablet-and-phone.png" }
-		) {
+		projectImage: file(relativePath: { eq: $coverImgPath }) {
 			childImageSharp {
 				gatsbyImageData(
 					layout: CONSTRAINED
@@ -87,14 +65,6 @@ export const query = graphql`
 	}
 `
 
-// import { css } from '@emotion/react'
-// import React from 'react'
-// import LayoutProject from '../../components/LayoutProject'
-// import { Helmet } from 'react-helmet'
-// import { Link } from 'gatsby'
-// import { motion } from 'framer-motion'
-
-// import '../../scss/link-hover.scss'
 // import FadeInPage from '../../components-ui/FadeInPage'
 
 // const content = {
