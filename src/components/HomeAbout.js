@@ -121,7 +121,6 @@ const HomeAbout = () => (
 				>
 					Hi, I'm Adeolu!
 				</AnimatedHello>
-				<AnimatedTextHeaders>Heyyyyyy</AnimatedTextHeaders>
 			</h1>
 			<p className='lead-text about__lead-text isCentered'>
 				I'm a full-stack web developer with a soft spot for UX/UI. My focus is

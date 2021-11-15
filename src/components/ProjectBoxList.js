@@ -217,48 +217,44 @@ const projectBoxStyles = css`
 	)
 
 const ProjectBoxList = ({ projectImages }) => {
-	console.log(projectStuff)
-	const colorPrimary = 'var(--color-primary)',
-		colorSecondary = 'var(--color-secondary)',
-		colorRare = 'var(--color-rare)',
-		projectData = [
-			{
-				id: 1,
-				title: 'joshmanueldrums.com',
-				description: 'Website and ecommerce',
-				backgroundColor: colorSecondary,
-				link: '/work/jmdrums',
-				image: projectImages.josh.childImageSharp.gatsbyImageData,
-				alt: 'Josh project image',
-			},
-			{
-				id: 2,
-				title: 'ctkmedcenter.com',
-				description: 'Website & copywriting',
-				backgroundColor: colorPrimary,
-				link: '/work/ctkmedcenter',
-				image: projectImages.ctkmc.childImageSharp.gatsbyImageData,
-				alt: 'ctmedcenter project image',
-			},
-			{
-				id: 3,
-				title: 'Title',
-				description: 'Website',
-				backgroundColor: colorPrimary,
-				link: '/work/other',
-				image: projectImages.ctkmc.childImageSharp.gatsbyImageData,
-				alt: 'Josh project image',
-			},
-			{
-				id: 4,
-				title: 'Github Projects',
-				description: 'Playground',
-				backgroundColor: colorRare,
-				link: '/work/other',
-				image: projectImages.comingSoon.childImageSharp.gatsbyImageData,
-				alt: 'Coming soon image',
-			},
-		]
+	const projectData = [
+		{
+			id: 1,
+			title: 'joshmanueldrums.com',
+			description: 'Website and ecommerce',
+			backgroundColor: 'var(--color-secondary)',
+			link: '/work/jmdrums',
+			image: projectImages.josh.childImageSharp.gatsbyImageData,
+			alt: 'jmdrums project image',
+		},
+		{
+			id: 2,
+			title: 'ctkmedcenter.com',
+			description: 'Website & copywriting',
+			backgroundColor: 'var(--color-primary)',
+			link: '/work/ctkmedcenter',
+			image: projectImages.ctkmc.childImageSharp.gatsbyImageData,
+			alt: 'ctmedcenter project image',
+		},
+		{
+			id: 3,
+			title: 'Coming Soon',
+			description: 'Website',
+			backgroundColor: 'var(--color-primary)',
+			link: '/work/other',
+			image: projectImages.comingSoon.childImageSharp.gatsbyImageData,
+			alt: 'placeholder image',
+		},
+		{
+			id: 4,
+			title: 'Github Projects',
+			description: 'Playground',
+			backgroundColor: 'var(--color-rare)',
+			link: '/work/other',
+			image: projectImages.comingSoon.childImageSharp.gatsbyImageData,
+			alt: 'github page image',
+		},
+	]
 
 	return (
 		<motion.div css={projectBoxStyles}>

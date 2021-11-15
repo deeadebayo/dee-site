@@ -1,40 +1,51 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { motion } from 'framer-motion'
+import { css } from '@emotion/react'
 import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import FadeInPage from '../components-ui/FadeInPage'
 
-const SingleProjectPage = ({ data }) => {
-	const { title, slug, stuff, key } = data.pageInfo
+const projectPageContent = css``
+
+const SingleProjectPage = ({ data: { pageInfo, projectImage } }) => {
+	const { title, slug, stuff, key } = pageInfo
 	const {
 		childImageSharp: { gatsbyImageData },
-	} = data.projectImage
+	} = projectImage
 	return (
 		<>
 			<Helmet>
 				<title> Dee Adebayo - Projects | {title} </title>
 			</Helmet>
-			<motion.div layoutId={`project-${key}`}>
-				<GatsbyImage
-					image={gatsbyImageData}
-					alt={`image for ${title} project`}
-					objectFit='cover'
-					objectPosition
-				/>
-			</motion.div>
-			<motion.div>
-				<h1>
-					Hi, there's supposed to be a page here. Instead here's dummy text in
-					my background
-				</h1>
-			</motion.div>
-			<FadeInPage pageName='projectPage'>
-				<h1>
-					Hi, there's supposed to be a page here. Instead here's dummy text and
-					it's in the foreground
-				</h1>
-			</FadeInPage>
+			<div css={projectPageContent}>
+				<div className='imageWrapper'>
+					<motion.div layoutId={`project-${key}`}>
+						<GatsbyImage
+							image={gatsbyImageData}
+							alt={`image for ${title} project`}
+							objectFit='cover'
+							objectPosition
+						/>
+					</motion.div>
+				</div>
+				<div className='contentWrapper'>
+					<motion.div>
+						<h1>
+							Hi, there's supposed to be a page here. Instead here's dummy text
+							in my background
+						</h1>
+						<h1>Page title container</h1>
+					</motion.div>
+					<FadeInPage pageName='projectPage'>
+						<h1>
+							Hi, there's supposed to be a page here. Instead here's dummy text
+							and it's in the foreground
+						</h1>
+						<p>Brief synopsis of project</p>
+					</FadeInPage>
+				</div>
+			</div>
 		</>
 	)
 }
@@ -56,9 +67,10 @@ export const query = graphql`
 			childImageSharp {
 				gatsbyImageData(
 					layout: CONSTRAINED
-					height: 615
-					aspectRatio: 1.33
+					## height: 615
+					## aspectRatio: 1.33
 					placeholder: TRACED_SVG
+					formats: [AUTO, WEBP]
 				)
 			}
 		}
