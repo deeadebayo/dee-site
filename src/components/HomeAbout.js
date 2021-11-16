@@ -2,18 +2,23 @@ import React from 'react'
 import { css } from '@emotion/react'
 
 import '../scss/link-hover.scss'
-import AnimatedHello from '../components-ui/AnimatedHello'
 import { ButtonLink } from '../components-ui/Button'
 import { motion } from 'framer-motion'
-import AnimatedTextHeaders from '../components-ui/AnimatedTextHeaders'
+import AnimatedTextHeading from '../components-ui/AnimatedTextHeading'
 
 const aboutStyle = css`
 	min-width: 50%;
 	margin: 3rem 0.5rem;
 	padding: 1.5em 2em 1.85em;
-	border: 1px solid var(--color-dark-shadow);
+	border: 1px solid var(--color-soft-white);
 	border-radius: 5px;
-	box-shadow: 0px 3px 5px var(--color-dark-shadow);
+	background: var(--color-soft-white);
+	box-shadow: 2.2px 2.8px 2.8px rgba(0, 0, 0, 0.02),
+		5.3px 6.7px 6.7px rgba(0, 0, 0, 0.028),
+		10px 12.5px 12.5px rgba(0, 0, 0, 0.035),
+		17.9px 22.3px 22.3px rgba(0, 0, 0, 0.042),
+		33.4px 41.8px 41.8px rgba(0, 0, 0, 0.05),
+		80px 100px 100px rgba(0, 0, 0, 0.07);
 
 	.wrapper__about {
 		display: flex;
@@ -113,14 +118,14 @@ const HomeAbout = () => (
 	<motion.div css={aboutStyle}>
 		<div className='wrapper__about'>
 			<h1 className='about__title'>
-				<AnimatedHello
+				<AnimatedTextHeading
 					whileHover={{ color: 'var(--color-secondary)' }}
 					initial={{ y: '100%', color: 'var(--color-secondary)' }}
 					animate='visible'
 					variants={animatedHelloVariants}
 				>
 					Hi, I'm Adeolu!
-				</AnimatedHello>
+				</AnimatedTextHeading>
 			</h1>
 			<p className='lead-text about__lead-text isCentered'>
 				I'm a full-stack web developer with a soft spot for UX/UI. My focus is

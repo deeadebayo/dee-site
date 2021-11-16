@@ -44,7 +44,8 @@ const navbar = css`
 						font-size: 1.1rem;
 						font-weight: 500;
 
-						&:hover {
+						&:hover,
+						&:focus {
 							color: var(--color-secondary);
 						}
 					}
@@ -100,17 +101,11 @@ const navbar = css`
 			id: 1,
 			title: 'About',
 			url: '/about/',
-			description:
-				"A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-			color: '#E95800',
 		},
 		{
 			id: 2,
 			title: 'Contact',
 			url: '#contact',
-			description:
-				"Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-			color: '#1099A8',
 		},
 	],
 	externalLinks = [

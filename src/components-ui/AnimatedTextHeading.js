@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-export default function AnimatedHello({ children, ...rest }) {
+export default function AnimatedTextHeading({ children, ...rest }) {
 	let words = children.split(' ')
 	return words.map((word, i) => {
 		return (

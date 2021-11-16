@@ -1,6 +1,6 @@
-import { css } from "@emotion/react";
-import { Link } from "gatsby";
-import React from "react";
+import { css } from '@emotion/react'
+import { Link } from 'gatsby'
+import React from 'react'
 
 const buttonStyles = css`
 	.pushable {
@@ -33,10 +33,10 @@ const buttonStyles = css`
 		border-radius: 12px;
 		background: linear-gradient(
 			to left,
-			hsl(358deg 100% 30%) 0%,
-			hsl(358deg 100% 42%) 8%,
-			hsl(358deg 100% 42%) 92%,
-			hsl(358deg 100% 30%) 100%
+			hsl(0deg 100% 30%) 0%,
+			hsl(0deg 100% 42%) 8%,
+			hsl(0deg 100% 42%) 92%,
+			hsl(0deg 100% 30%) 100%
 		);
 	}
 	.front {
@@ -47,8 +47,8 @@ const buttonStyles = css`
 		font-size: 1.25rem;
 		font-weight: 500;
 		color: white;
-		background: hsl(345deg 100% 47%);
-		background: var(--color-primary);
+		background: hsl(0deg 100% 70%);
+		text-align: center;
 		will-change: transform;
 		transform: translateY(-4px);
 		transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
@@ -87,26 +87,26 @@ const buttonStyles = css`
 	.pushable:focus:not(:focus-visible) {
 		outline: none;
 	}
-`;
-const Button = (props) => (
+`
+const Button = props => (
 	<div css={buttonStyles}>
-		<button className="pushable">
-			<span className="shadow"></span>
-			<span className="edge"></span>
-			<span className="front">{props.text}</span>
+		<button className='pushable'>
+			<span className='shadow'></span>
+			<span className='edge'></span>
+			<span className='front'>{props.text}</span>
 		</button>
 	</div>
-);
+)
 
-export const ButtonLink = (props) => (
+export const ButtonLink = props => (
 	<Link to={props.link}>
-		<div css={buttonStyles} style={{ display: "inline-block" }}>
-			<div className="pushable">
-				<span className="shadow"></span>
-				<span className="edge"></span>
-				<span className="front">{props.text}</span>
+		<div css={buttonStyles} style={{ display: 'inline-block' }}>
+			<div className='pushable'>
+				<span className='shadow'></span>
+				<span className='edge'></span>
+				<span className='front'>{props.text}</span>
 			</div>
 		</div>
 	</Link>
-);
-export default Button;
+)
+export default Button

@@ -48,7 +48,7 @@ const globalstyles = css`
 		--color-dark-shadow: hsla(224, 62%, 24%, 0.24);
 		--color-gray_pale: hsl(51, 12%, 77%);
 		--color-gray_lighter: hsl(0, 0%, 85%);
-		--color-soft-white: hsl(210, 36%, 96%);
+		--color-soft-white: hsla(210, 38%, 96%, 1);
 		--color-transparent: hsla(0, 0%, 0, 1);
 
 		--color-page_neutral_background: hsl(0, 0%, 90%);

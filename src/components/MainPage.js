@@ -13,6 +13,7 @@ const behindcontentStyle = css`
 `
 
 const wrapperStyle = css`
+	box-sizing: border-box;
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: center;
@@ -30,7 +31,8 @@ const wrapperStyle = css`
 		.page {
 			margin: 0 auto;
 			display: flex;
-			flex-flow: column;
+			flex-flow: column nowrap;
+			width: 100%;
 			align-items: center;
 		}
 	}

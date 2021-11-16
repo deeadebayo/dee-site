@@ -24,9 +24,11 @@ export const query = graphql`
 			childImageSharp {
 				gatsbyImageData(
 					layout: CONSTRAINED
-					height: 615
+					##height: 615
+					width: 1330
 					aspectRatio: 1.33
 					placeholder: TRACED_SVG
+					formats: [AUTO, WEBP]
 				)
 			}
 		}
@@ -34,9 +36,11 @@ export const query = graphql`
 			childImageSharp {
 				gatsbyImageData(
 					layout: CONSTRAINED
-					height: 615
+					##height: 615
+					width: 1330
 					aspectRatio: 1.33
 					placeholder: TRACED_SVG
+					formats: [AUTO, WEBP]
 				)
 			}
 		}
@@ -46,9 +50,11 @@ export const query = graphql`
 			childImageSharp {
 				gatsbyImageData(
 					layout: CONSTRAINED
-					height: 615
+					##height: 615
+					width: 1330
 					aspectRatio: 1.33
 					placeholder: TRACED_SVG
+					formats: [AUTO, WEBP]
 				)
 			}
 		}
