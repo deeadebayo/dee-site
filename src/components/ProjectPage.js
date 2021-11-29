@@ -16,28 +16,30 @@ const wrapperStyle = css`
 	flex-flow: column nowrap;
 	justify-content: center;
 	margin: 0 auto;
-	background: var(--color-behind_page_background);
+	background: var(--color-soft-white);
 
 	main {
-		background: var(--color-page_neutral_background);
+		background: var(--color-soft-white);
 		display: flex;
 		flex-flow: column;
 		min-height: 100vh;
 		position: relative;
-		padding: 1rem;
+		padding: 0;
+
 		z-index: 3;
 		.page {
 			margin: 0 auto;
 			display: flex;
-			flex-flow: column;
+			flex-flow: column nowrap;
+			width: 100%;
 			align-items: center;
 		}
 	}
 	@media screen and (min-width: 476px) {
 		main {
 			.page {
-				padding: 1rem;
-				background: var(--color-page_neutral_background);
+				padding: 0 1rem;
+				background: var(--color-soft-white);
 			}
 		}
 	}
@@ -47,7 +49,7 @@ const wrapperStyle = css`
 		main {
 			.page {
 				max-width: 1500px;
-				padding: 1.1rem;
+				padding: 0 2.5rem;
 			}
 		}
 	}
@@ -56,18 +58,14 @@ const wrapperStyle = css`
 const ProjectPage = ({ children, location }) => {
 	const containerReveal = {
 		navbarHidden: { y: '-3vh', opacity: 0.35 },
-		pageHidden: { y: 55, opacity: 0.5 },
+		pageHidden: { y: 100, opacity: 0.5 },
 		visible: {
 			opacity: 1,
 			y: 0,
 			transition: {
-				when: 'beforeChildren',
-				ease: 'easeIn',
+				ease: [0.61, 0.2, 0.5, 1],
 				duration: 0.4,
 			},
-		},
-		exit: {
-			y: -300,
 		},
 	}
 
