@@ -77,15 +77,17 @@ const projectPageContent = css`
 		&__details {
 			display: flex;
 			flex-flow: column nowrap;
-			margin-top: 4em;
+			margin: 4em 0;
 			padding-bottom: 2em;
-			align-items: center;
+			border-bottom: 1px solid var(--color-gray_pale);
 
 			&__client-quote {
 				text-decoration: underline;
+				align-self: center;
 			}
 
 			&__section {
+				margin-top: 3em;
 				display: flex;
 				flex-flow: column nowrap;
 			}
@@ -93,11 +95,6 @@ const projectPageContent = css`
 			h4 {
 				font-size: 1.25rem;
 				font-weight: 500;
-			}
-
-			& div {
-				max-width: 800px;
-				margin-top: 3em;
 			}
 		}
 	}
@@ -121,17 +118,21 @@ const projectPageContent = css`
 		}
 		.wrapper__content {
 			&__details {
-				align-items: flex-start;
 				&__section {
 					display: flex;
 					justify-content: space-between;
-					max-width: 100%;
-					justify-content: space-between;
 					flex-flow: row nowrap;
-					${'' /* flex: 1 1; */}
-					${'' /* flex-basis: 50%; */}
-					& > * {
+					&__heading {
 						display: flex;
+						flex-basis: 35%;
+					}
+					&__paragraph {
+						display: flex;
+						flex-basis: 65%;
+					}
+					& h4 {
+						display: flex;
+						justify-content: start;
 					}
 				}
 			}
@@ -229,44 +230,64 @@ const SingleProjectPage = ({ data: { pageInfo, projectImage } }) => {
 								Random quote from client
 							</p>
 							<div className='wrapper__content__details__section'>
-								<h4>Task</h4>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Suspendisse vulputate enim ex, at bibendum mauris faucibus
-									viverra.
-								</p>
+								<div className='wrapper__content__details__section__heading'>
+									<h4>Task</h4>
+								</div>
+								<div className='wrapper__content__details__section__paragraph'>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+										Suspendisse vulputate enim ex, at bibendum mauris faucibus
+										viverra.
+									</p>
+								</div>
 							</div>
 							<div className='wrapper__content__details__section'>
-								<h4>Goal</h4>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Suspendisse vulputate enim ex, at bibendum mauris faucibus
-									viverra.
-								</p>
+								<div className='wrapper__content__details__section__heading'>
+									<h4>Goal</h4>
+								</div>
+								<div className='wrapper__content__details__section__paragraph'>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+										Suspendisse vulputate enim ex, at bibendum mauris faucibus
+										viverra.
+									</p>
+								</div>
 							</div>
 							<div className='wrapper__content__details__section'>
-								<h4>Tools</h4>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Suspendisse vulputate enim ex, at bibendum mauris faucibus
-									viverra.
-								</p>
+								<div className='wrapper__content__details__section__heading'>
+									<h4>Tools</h4>
+								</div>
+								<div className='wrapper__content__details__section__paragraph'>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+										Suspendisse vulputate enim ex, at bibendum mauris faucibus
+										viverra.
+									</p>
+								</div>
 							</div>
 							<div className='wrapper__content__details__section'>
-								<h4>Process</h4>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Suspendisse vulputate enim ex, at bibendum mauris faucibus
-									viverra.
-								</p>
+								<div className='wrapper__content__details__section__heading'>
+									<h4>Process</h4>
+								</div>
+								<div className='wrapper__content__details__section__paragraph'>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+										Suspendisse vulputate enim ex, at bibendum mauris faucibus
+										viverra.
+									</p>
+								</div>
 							</div>
 							<div className='wrapper__content__details__section'>
-								<h4>Result</h4>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Suspendisse vulputate enim ex, at bibendum mauris faucibus
-									viverra.
-								</p>
+								<div className='wrapper__content__details__section__heading'>
+									<h4>Result</h4>
+								</div>
+								<div className='wrapper__content__details__section__paragraph'>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+										Suspendisse vulputate enim ex, at bibendum mauris faucibus
+										viverra.
+									</p>
+								</div>
 							</div>
 						</section>
 					</div>
