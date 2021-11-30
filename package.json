@@ -1,6 +1,6 @@
 {
 	"name": "dee-site",
-	"version": "1.0.0",
+	"version": "0.5.0",
 	"description": "dee-site",
 	"author": "deeadebayo",
 	"keywords": [
@@ -8,7 +8,7 @@
 	],
 	"scripts": {
 		"build": "cross-env NODE_OPTIONS=\"-r esm\" gatsby build",
-		"develop": "cross-env NODE_OPTIONS=\"-r esm\" gatsby develop",
+		"dev": "cross-env NODE_OPTIONS=\"-r esm\" gatsby develop",
 		"start": "npm run develop",
 		"serve": "cross-env NODE_OPTIONS=\"-r esm\" gatsby serve",
 		"clean": "gatsby clean"
@@ -23,8 +23,7 @@
 	},
 	"dependencies": {
 		"@emotion/react": "^11.4.0",
-		"@emotion/styled": "^11.3.0",
-		"framer-motion": "^4.1.17",
+		"framer-motion": "^5.3.0",
 		"gatsby": "^3.8.1",
 		"gatsby-background-image": "^1.5.3",
 		"gatsby-image": "^3.8.0",
@@ -43,7 +42,9 @@
 		"normalize.css": "^8.0.1",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
+		"react-headroom": "^3.2.0",
 		"react-helmet": "^6.1.0",
+		"react-intersection-observer": "^8.32.1",
 		"react-typography": "^0.16.20",
 		"sass": "^1.35.1",
 		"sharp": "^0.28.3",

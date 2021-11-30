@@ -1,61 +1,36 @@
-import React from "react";
-import { css } from "@emotion/react";
-import { AnimatePresence } from "framer-motion";
+import React from 'react'
+import { AnimatePresence, LayoutGroup, motion } from 'framer-motion'
 
-import GlobalStyles from "../styles/GlobalStyles";
-import Banner from "./Banner";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import MainPage from './MainPage'
+import ProjectPage from './ProjectPage'
 
-const wrapperStyle = css`
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: center;
-	margin: 0 auto;
+const Layout = ({ children, location, pageContext: { type } }) => (
+	<motion.div key='pageWrapper'>
+		<LayoutGroup>
+			<AnimatePresence exitBeforeEnter>
+				{type && type === 'projectPage' ? (
+					<motion.div
+						key='ppage'
+						initial='initial'
+						animate='animate'
+						// exit={{ opacity: 0, y: -100, transition: { duration: 3 } }}
+					>
+						<ProjectPage location={location}>{children}</ProjectPage>
+					</motion.div>
+				) : (
+					<motion.div
+						key='hpage'
+						initial='initial'
+						animate='animate'
+						// exit={{ opacity: 0, transition: { duration: 0.8 } }}
+						// exit={{ opacity: 0, y: -100, transition: { duration: 3 } }}
+					>
+						<MainPage location={location}>{children}</MainPage>
+					</motion.div>
+				)}
+			</AnimatePresence>
+		</LayoutGroup>
+	</motion.div>
+)
 
-	main {
-		display: flex;
-		flex-flow: column;
-		min-height: 100vh;
-		${"" /* width: 100%; */}
-		background: var(--color-page-background);
-		position: relative;
-		z-index: 3;
-		padding: 1rem;
-		& > .page {
-			margin: 0 auto;
-			display: flex;
-			flex-flow: column;
-			align-items: center;
-		}
-	}
-	@media screen and (min-width: 476px) {
-	}
-	@media screen and (min-width: 769px) {
-	}
-	@media screen and (min-width: 1023px) {
-		main {
-			& > .page {
-				max-width: 1500px;
-			}
-		}
-	}
-`;
-
-export default function Layout({ children, location }) {
-	return (
-		<>
-			<div css={wrapperStyle}>
-				<GlobalStyles />
-				<Banner />
-				<Navbar path={location.pathname} />
-				<main>
-					<AnimatePresence>
-						<div className="page">{children}</div>
-					</AnimatePresence>
-				</main>
-				<Footer />
-			</div>
-		</>
-	);
-}
+export default Layout

@@ -9,8 +9,6 @@ const siteCreditStyle = css`
 		width: 100%;
 		overflow: visible;
 		z-index: 0;
-
-		background: var(--color-secondary);
 		display: flex;
 		flex-flow: row nowrap;
 		place-items: center;

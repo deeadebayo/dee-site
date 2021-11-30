@@ -1,19 +1,64 @@
-import React from "react";
-import { Helmet } from "react-helmet";
+import React from 'react'
+import { Helmet } from 'react-helmet'
 
-import HomeAbout from "../components/HomeAbout";
-import ProjectBoxList from "../components/ProjectBoxList";
+import HomeAbout from '../components/HomeAbout'
+import ProjectBoxList from '../components/ProjectBoxList'
+import FadeInPage from '../components-ui/FadeInPage'
+import { graphql } from 'gatsby'
 
-const IndexPage = () => {
-	return (
-		<>
-			<Helmet>
-				<title>Dee Adebayo | Front-End Web Developer</title>
-			</Helmet>
+const IndexPage = ({ data }) => (
+	<>
+		<Helmet>
+			<title>Dee Adebayo | Front-End Web Developer</title>
+		</Helmet>
+		<FadeInPage pageName='index'>
 			<HomeAbout />
-			<ProjectBoxList />
-		</>
-	);
-};
+			<ProjectBoxList projectImages={data} />
+		</FadeInPage>
+	</>
+)
 
-export default IndexPage;
+export const query = graphql`
+	query {
+		comingSoon: file(relativePath: { eq: "work/work__coming-soon.jpg" }) {
+			childImageSharp {
+				gatsbyImageData(
+					layout: CONSTRAINED
+					##height: 615
+					width: 1330
+					aspectRatio: 1.33
+					placeholder: TRACED_SVG
+					formats: [AUTO, WEBP]
+				)
+			}
+		}
+		josh: file(relativePath: { eq: "work/work__jmdrums__cover.jpg" }) {
+			childImageSharp {
+				gatsbyImageData(
+					layout: CONSTRAINED
+					##height: 615
+					width: 1330
+					aspectRatio: 1.33
+					placeholder: TRACED_SVG
+					formats: [AUTO, WEBP]
+				)
+			}
+		}
+		ctkmc: file(
+			relativePath: { eq: "work/work__ctkmc__tablet-and-phone.png" }
+		) {
+			childImageSharp {
+				gatsbyImageData(
+					layout: CONSTRAINED
+					##height: 615
+					width: 1330
+					aspectRatio: 1.33
+					placeholder: TRACED_SVG
+					formats: [AUTO, WEBP]
+				)
+			}
+		}
+	}
+`
+
+export default IndexPage
