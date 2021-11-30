@@ -1,4 +1,4 @@
-import path from 'path'
+const path = require('path')
 const projectTemplate = path.resolve('./src/templates/ProjectPageDetails.js')
 const projectPages = require('./src/data/projectPages')
 
