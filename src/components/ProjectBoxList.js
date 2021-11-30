@@ -66,8 +66,8 @@ const projectBoxStyles = css`
 			grid-area: title;
 			text-align: center;
 			h2 {
-				font-size: 2.2em;
-				font-weight: 600;
+				font-size: 2.4em;
+				font-weight: 500;
 			}
 		}
 

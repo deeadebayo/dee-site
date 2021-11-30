@@ -44,6 +44,7 @@ const AboutPageStyles = css`
 	grid-gap: 1.25em;
 	grid-auto-rows: minmax(100px, auto);
 	padding: 1.5em 2em;
+	max-width: 1500px;
 	h2 {
 		font-size: 1.6em;
 	}
@@ -72,7 +73,7 @@ const AboutPageStyles = css`
 		grid-area: skills;
 		padding: 1.5em 1.8em;
 		border: 1px solid var(--color-soft-white);
-		background: var(--color-soft-white);
+		background: var(--color-white);
 		border-radius: 5px;
 		box-shadow: 2.2px 2.8px 2.8px rgba(0, 0, 0, 0.02),
 			5.3px 6.7px 6.7px rgba(0, 0, 0, 0.028),

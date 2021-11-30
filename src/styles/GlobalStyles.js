@@ -52,7 +52,7 @@ const globalstyles = css`
 		--color-soft-white: hsla(210, 33%, 97%, 1);
 		--color-transparent: hsla(0, 0%, 0, 1);
 
-		--color-page_neutral_background: hsl(225, 33%, 98%);
+		--color-page_neutral_background: hsl(225, 33%, 99%);
 
 		--color-behind_page_background: var(--color-page_neutral_background);
 		--color-behind_content_background: linear-gradient(

@@ -13,7 +13,7 @@ const aboutStyle = css`
 	padding: 1.5em 2em 1.85em;
 	border: 1px solid var(--color-soft-white);
 	border-radius: 5px;
-	background: var(--color-soft-white);
+	background: var(--color-white);
 	box-shadow: 2.2px 2.8px 2.8px rgba(0, 0, 0, 0.02),
 		5.3px 6.7px 6.7px rgba(0, 0, 0, 0.028),
 		10px 12.5px 12.5px rgba(0, 0, 0, 0.035),
@@ -84,7 +84,7 @@ const aboutStyle = css`
 	}
 
 	@media screen and (min-width: 1023px) {
-		margin: 3rem 4rem;
+		margin: 3rem 4rem 4rem;
 
 		.wrapper__about {
 			padding: 0.5rem 2rem;
