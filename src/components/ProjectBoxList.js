@@ -19,10 +19,20 @@ const projectImageVariant = {
 		duration: 5,
 	},
 }
+
+const projectBoxWrapper = css`
+	background: var(--color-page_neutral_background);
+	width: 100%;
+	align-items: center;
+	display: flex;
+	flex-flow: column nowrap;
+`
 const projectBoxStyles = css`
 	width: clamp(16rem, 100%, 70rem);
 	width: 100%;
-	margin: 4em 0;
+	max-width: 1500px;
+	margin: 4em 0 0;
+	padding: 2rem 1.8rem 3em;
 	display: grid;
 	gap: 0;
 	grid-template-areas:
@@ -55,6 +65,10 @@ const projectBoxStyles = css`
 		&__title {
 			grid-area: title;
 			text-align: center;
+			h2 {
+				font-size: 2.2em;
+				font-weight: 600;
+			}
 		}
 
 		a,
@@ -125,7 +139,12 @@ const projectBoxStyles = css`
 		}
 	}
 
+	.disabled-link {
+		pointer-events: none;
+	}
+
 	@media screen and (min-width: 469px) {
+		padding: 2rem 2rem 3.5em;
 		.project-box {
 			&__detail-box {
 				height: 5.25em;
@@ -182,6 +201,7 @@ const projectBoxStyles = css`
 	}
 
 	@media screen and (min-width: 1023px) {
+		padding: 2rem 3.5rem 4em;
 		.project-box {
 			&__detail-box {
 				height: 6em;
@@ -197,9 +217,21 @@ const projectBoxStyles = css`
 		}
 	}
 `
-const ProjectBox = ({ id, title, description, link, image, alt, bg }) => (
+const ProjectBox = ({
+	id,
+	title,
+	description,
+	link,
+	image,
+	alt,
+	bg,
+	disabled,
+}) => (
 	<motion.div className='project-box' key={`projectBox-${id}`}>
-		<Link className='project-box__link' to={link}>
+		<Link
+			className={`project-box__link ${disabled ? 'disabled-link' : ''}`}
+			to={link}
+		>
 			<motion.div
 				className='project-box__img'
 				layoutId={`project-${id}`}
@@ -240,6 +272,7 @@ const ProjectBoxList = ({ projectImages }) => {
 			link: '/work/jmdrums',
 			image: projectImages.josh.childImageSharp.gatsbyImageData,
 			alt: 'jmdrums project image',
+			disabled: false,
 		},
 		{
 			id: 2,
@@ -249,6 +282,7 @@ const ProjectBoxList = ({ projectImages }) => {
 			link: '/work/ctkmedcenter',
 			image: projectImages.ctkmc.childImageSharp.gatsbyImageData,
 			alt: 'ctmedcenter project image',
+			disabled: false,
 		},
 		{
 			id: 3,
@@ -258,6 +292,7 @@ const ProjectBoxList = ({ projectImages }) => {
 			link: '/work/other',
 			image: projectImages.comingSoon.childImageSharp.gatsbyImageData,
 			alt: 'placeholder image',
+			disabled: true,
 		},
 		{
 			id: 4,
@@ -267,28 +302,41 @@ const ProjectBoxList = ({ projectImages }) => {
 			link: '/work/other',
 			image: projectImages.comingSoon.childImageSharp.gatsbyImageData,
 			alt: 'github page image',
+			disabled: true,
 		},
 	]
 
 	return (
-		<motion.div css={projectBoxStyles}>
-			<div className='project-box__title'>
-				<h2>Featured Projects</h2>
+		<motion.div css={projectBoxWrapper}>
+			<div css={projectBoxStyles}>
+				<div className='project-box__title'>
+					<h2>Featured Projects</h2>
+				</div>
+				{projectData.map(
+					({
+						id,
+						alt,
+						title,
+						description,
+						link,
+						image,
+						backgroundColor,
+						disabled,
+					}) => (
+						<ProjectBox
+							id={id}
+							alt={alt}
+							title={title}
+							description={description}
+							link={link}
+							image={image}
+							key={`hp${id}`}
+							bg={backgroundColor}
+							disabled={disabled}
+						/>
+					)
+				)}
 			</div>
-			{projectData.map(
-				({ id, alt, title, description, link, image, backgroundColor }) => (
-					<ProjectBox
-						id={id}
-						alt={alt}
-						title={title}
-						description={description}
-						link={link}
-						image={image}
-						key={`hp${id}`}
-						bg={backgroundColor}
-					/>
-				)
-			)}
 		</motion.div>
 	)
 }

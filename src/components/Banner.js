@@ -1,7 +1,7 @@
-import React from "react";
-import { css } from "@emotion/react";
+import React from 'react'
+import { css } from '@emotion/react'
 
-import "./../scss/link-hover.scss";
+import './../scss/link-hover.scss'
 
 const banner = css`
 		top: 0;
@@ -25,15 +25,16 @@ const banner = css`
 	`,
 	githubLink = `https://github.com/deeadebayo/dee-site`,
 	Banner = () => (
-		<header className="banner" css={banner}>
-			<div className="banner__content">
-				<p className="lead" style={{ marginBottom: 0 }}>
-					<a href={githubLink} className="banner-link">
-						Site under construction - follow my progress on GitHub
+		<header className='banner' css={banner}>
+			<div className='banner__content'>
+				<p className='lead' style={{ marginBottom: 0 }}>
+					<a href={githubLink} className='banner-link'>
+						Bless this mess - site under construction. Follow my progress on
+						GitHub
 					</a>
 				</p>
 			</div>
 		</header>
-	);
+	)
 
-export default Banner;
+export default Banner

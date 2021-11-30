@@ -70,7 +70,7 @@ const AboutPageStyles = css`
 
 	.skills {
 		grid-area: skills;
-		padding: 1.5em 2em;
+		padding: 1.5em 1.8em;
 		border: 1px solid var(--color-soft-white);
 		background: var(--color-soft-white);
 		border-radius: 5px;
@@ -94,6 +94,12 @@ const AboutPageStyles = css`
 
 	.contact {
 		grid-area: contact;
+	}
+	@media screen and (min-width: 469px) {
+		padding: 2rem 2.5rem;
+	}
+	@media screen and (min-width: 1023px) {
+		padding: 2rem 4.5rem;
 	}
 `
 const AboutPage = () => (

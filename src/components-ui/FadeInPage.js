@@ -27,7 +27,12 @@ const FadeInPage = ({ children, pageKey }) => {
 			animate='visible'
 			// exit='exitOut'
 			variants={pageContent}
-			style={{ display: 'flex', flexFlow: 'column' }}
+			style={{
+				display: 'flex',
+				flexFlow: 'column',
+				width: '100%',
+				alignItems: 'center',
+			}}
 		>
 			{children}
 		</motion.div>

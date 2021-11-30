@@ -18,15 +18,14 @@ const wrapperStyle = css`
 	flex-flow: column nowrap;
 	justify-content: center;
 	margin: 0 auto;
-	background: var(--color-behind_page_background);
+	background: var(--color-white);
 
 	main {
-		background: var(--color-page_neutral_background);
+		background: white;
 		display: flex;
 		flex-flow: column;
 		min-height: 100vh;
 		position: relative;
-		padding: 1rem;
 		z-index: 3;
 		.page {
 			margin: 0 auto;
@@ -34,24 +33,7 @@ const wrapperStyle = css`
 			flex-flow: column nowrap;
 			width: 100%;
 			align-items: center;
-		}
-	}
-	@media screen and (min-width: 476px) {
-		main {
-			.page {
-				padding: 1rem;
-				background: var(--color-page_neutral_background);
-			}
-		}
-	}
-	@media screen and (min-width: 769px) {
-	}
-	@media screen and (min-width: 1023px) {
-		main {
-			.page {
-				max-width: 1500px;
-				padding: 1.1rem;
-			}
+			background: var(--color-white);
 		}
 	}
 `

@@ -53,6 +53,7 @@ const contactFormStyles = css`
 				flex-basis: 100%;
 				text-align: center;
 				font-size: 1.75rem;
+				font-weight: 500;
 			}
 			p.lead {
 				max-width: 65ch;
@@ -315,7 +316,8 @@ const contactFormStyles = css`
 								method='POST'
 								netlify-honeypot='fake-friends'
 								data-netlify='true'
-								className='form-input'>
+								className='form-input'
+							>
 								<div className='info'>
 									<div className='form-input__name'>
 										{/* <label htmlFor="name">First Name</label> */}
@@ -353,7 +355,8 @@ const contactFormStyles = css`
 										rows='8'
 										wrap='soft'
 										placeholder="What's on your mind?"
-										required></textarea>
+										required
+									></textarea>
 									<span style={{ display: 'none' }} className='hidden'>
 										<label htmlFor='fake-friends'>
 											Not for the real friends

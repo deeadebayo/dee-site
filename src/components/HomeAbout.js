@@ -8,6 +8,7 @@ import AnimatedTextHeading from '../components-ui/AnimatedTextHeading'
 
 const aboutStyle = css`
 	min-width: 50%;
+	max-width: 1500px;
 	margin: 3rem 0.5rem;
 	padding: 1.5em 2em 1.85em;
 	border: 1px solid var(--color-soft-white);
@@ -39,9 +40,10 @@ const aboutStyle = css`
 	}
 
 	.about__title {
-		font-size: 2.75em;
+		font-size: 3.5em;
 		margin-bottom: 0.5rem;
 		text-align: center;
+		font-weight: 600;
 		&:hover {
 			color: var(--color-secondary);
 		}
@@ -64,7 +66,7 @@ const aboutStyle = css`
 	}
 
 	@media screen and (min-width: 476px) {
-		margin: 3rem 1rem;
+		margin: 3rem 2rem;
 		.about__learn-more {
 			flex-flow: row nowrap;
 			.about__lead-text {
@@ -75,14 +77,14 @@ const aboutStyle = css`
 	}
 
 	@media screen and (min-width: 769px) {
-		margin: 3rem 1.5rem;
+		margin: 3rem 3rem;
 		.about__lead-text {
 			max-width: 48ch;
 		}
 	}
 
 	@media screen and (min-width: 1023px) {
-		margin: 3rem 2rem;
+		margin: 3rem 4rem;
 
 		.wrapper__about {
 			padding: 0.5rem 2rem;
