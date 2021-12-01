@@ -1,8 +1,8 @@
-import Typography from "typography";
-import CodePlugin from "typography-plugin-code";
+import Typography from 'typography'
+import CodePlugin from 'typography-plugin-code'
 
 let theme = {
-	baseFontSize: `19px`,
+	baseFontSize: `20px`,
 	headerFontFamily: [`Cooper Hewitt`, `sans-serif`],
 	bodyFontFamily: [`Cooper Hewitt`, `sans-serif`],
 	plugins: [new CodePlugin()],
@@ -17,27 +17,27 @@ let theme = {
 			paddingLeft: rhythm(5 / 8),
 			borderLeft: `${rhythm(3 / 8)} solid #CDE7B0`,
 		},
-		"blockquote > *": {
+		'blockquote > *': {
 			fontStyle: `italic`,
 		},
-		"blockquote > h1, blockquote > h2, blockquote > h3, blockquote > h4": {
+		'blockquote > h1, blockquote > h2, blockquote > h3, blockquote > h4': {
 			marginTop: 0,
 		},
-		"li > p": {
+		'li > p': {
 			marginBottom: rhythm(1 / 2),
 		},
-		"p code": {
-			fontSize: "75%",
+		'p code': {
+			fontSize: '75%',
 		},
-		"tt,code": {
-			fontSize: "85%",
+		'tt,code': {
+			fontSize: '85%',
 		},
 		pre: {
 			lineHeight: 1.22,
 		},
 	}),
-};
+}
 
-const typography = new Typography(theme);
-export const { scale, rhythm, options } = typography;
-export default typography;
+const typography = new Typography(theme)
+export const { scale, rhythm, options } = typography
+export default typography

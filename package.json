@@ -23,7 +23,7 @@
 	},
 	"dependencies": {
 		"@emotion/react": "^11.4.0",
-		"framer-motion": "^4.1.17",
+		"framer-motion": "^5.3.0",
 		"gatsby": "^3.8.1",
 		"gatsby-background-image": "^1.5.3",
 		"gatsby-image": "^3.8.0",
@@ -42,6 +42,7 @@
 		"normalize.css": "^8.0.1",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
+		"react-headroom": "^3.2.0",
 		"react-helmet": "^6.1.0",
 		"react-intersection-observer": "^8.32.1",
 		"react-typography": "^0.16.20",
