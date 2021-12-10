@@ -18,3 +18,4 @@
 - intersection observer for scroll animation on footer
 - headroom for nav bars (mainly for project page cause so long)
 - iron out animations for project page - main header image will show first then other pages will come on top of it
+- take another look at box shadows - specially homeabout and about page and projectboxlist

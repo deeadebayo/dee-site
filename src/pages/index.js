@@ -1,25 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-<<<<<<< HEAD
-import HomeAbout from "../components/HomeAbout";
-import ProjectBoxList from "../components/ProjectBoxList";
-import FadeInPage from "../components-ui/FadeInPage";
-
-const IndexPage = () => {
-	return (
-		<>
-			<Helmet>
-				<title>Dee Adebayo | Front-End Web Developer</title>
-			</Helmet>
-			<FadeInPage pageName='index'>
-				<HomeAbout />
-				<ProjectBoxList />
-			</FadeInPage>
-		</>
-	);
-};
-=======
 import HomeAbout from '../components/HomeAbout'
 import ProjectBoxList from '../components/ProjectBoxList'
 import FadeInPage from '../components-ui/FadeInPage'
@@ -36,7 +17,6 @@ const IndexPage = ({ data }) => (
 		</FadeInPage>
 	</>
 )
->>>>>>> d5771be433b5a6d4aa177749599e5b01e777a4b4
 
 export const query = graphql`
 	query {
