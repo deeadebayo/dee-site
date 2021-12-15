@@ -6,6 +6,7 @@ import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 
 import FadeInPage from '../components-ui/FadeInPage'
+import { MiniSEO } from '../components/Seo'
 
 const projectPageContent = css`
 	display: flex;
@@ -169,6 +170,8 @@ const SingleProjectPage = ({ data: { pageInfo, projectImage } }) => {
 		tools,
 		myProcess,
 		results,
+		seoKeywords,
+		seoDescription,
 	} = pageInfo
 
 	const {
@@ -178,9 +181,11 @@ const SingleProjectPage = ({ data: { pageInfo, projectImage } }) => {
 	console.log(pageInfo)
 	return (
 		<>
-			<Helmet>
-				<title>Dee Adebayo - Projects | {pageTitle}</title>
-			</Helmet>
+			<MiniSEO
+				title={`${pageTitle} - Projects`}
+				description={seoDescription}
+				keywords={seoKeywords}
+			/>
 			<FadeInPage pageName='projectPage'>
 				<div css={projectPageContent}>
 					<div className='wrapper__hero'>
@@ -318,6 +323,8 @@ export const query = graphql`
 			tools
 			myProcess
 			results
+			seoDescription
+			seoKeywords
 		}
 		projectImage: file(relativePath: { eq: $coverImgPath }) {
 			childImageSharp {

@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 
 import '../scss/link-hover.scss'
 import FadeInPage from '../components-ui/FadeInPage'
+import { MiniSEO } from '../components/Seo'
 
 const contentVariants = {
 	hidden: { opacity: 0 },
@@ -105,9 +106,10 @@ const AboutPageStyles = css`
 `
 const AboutPage = () => (
 	<>
-		<Helmet>
-			<title>Dee Adebayo | About Me</title>
-		</Helmet>
+		<MiniSEO
+			title='About Me'
+			description='Learn more about Dee Adebayo and the freelance web development services he offers.'
+		/>
 		<FadeInPage pageName='about'>
 			<motion.div
 				css={AboutPageStyles}
@@ -147,8 +149,9 @@ const AboutPage = () => (
 							<span>🍑</span> working as a freelance developer.
 						</p>
 						<p>
-							Since 2014, I've enjoyed building accessible websites that
-							function seamlessly on anything that can access the web.
+							Since 2014, I've enjoyed using modern tools to build accessible
+							sites that function seamlessly on anything that can access the
+							web.
 						</p>
 						<p>
 							While just the web dev part of projects can be super fun, I like

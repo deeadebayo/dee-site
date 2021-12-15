@@ -5,12 +5,11 @@ import HomeAbout from '../components/HomeAbout'
 import ProjectBoxList from '../components/ProjectBoxList'
 import FadeInPage from '../components-ui/FadeInPage'
 import { graphql } from 'gatsby'
+import { MiniSEO } from '../components/Seo'
 
 const IndexPage = ({ data }) => (
 	<>
-		<Helmet>
-			<title>Dee Adebayo | Front-End Web Developer</title>
-		</Helmet>
+		<MiniSEO />
 		<FadeInPage pageName='index'>
 			<HomeAbout />
 			<ProjectBoxList projectImages={data} />
