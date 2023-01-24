@@ -178,7 +178,6 @@ const SingleProjectPage = ({ data: { pageInfo, projectImage } }) => {
 		childImageSharp: { gatsbyImageData },
 	} = projectImage
 
-	console.log(pageInfo)
 	return (
 		<>
 			<MiniSEO

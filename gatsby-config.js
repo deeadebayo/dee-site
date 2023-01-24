@@ -1,3 +1,7 @@
+require('dotenv').config({
+	path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
 	siteMetadata: {
 		title: 'Fullstack Web Developer | Dee Adebayo',
@@ -44,6 +48,15 @@ module.exports = {
 				rule: {
 					include: /src/,
 				},
+			},
+		},
+		{
+			resolve: 'gatsby-plugin-google-tagmanager',
+			options: {
+				id: process.env.GOOGLE_TAG_MANAGER_ID,
+				includeInDevelopment: false,
+				routeChangeEventName: 'gatsby-route-change',
+				enableWebVitalsTracking: true,
 			},
 		},
 	],
