@@ -1,5 +1,4 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
 
 import HomeAbout from '../components/HomeAbout'
 import ProjectBoxList from '../components/ProjectBoxList'
@@ -8,9 +7,6 @@ import { graphql } from 'gatsby'
 
 const IndexPage = ({ data }) => (
 	<>
-		<Helmet>
-			<title>Dee Adebayo | Front-End Web Developer</title>
-		</Helmet>
 		<FadeInPage pageName='index'>
 			<HomeAbout />
 			<ProjectBoxList projectImages={data} />
@@ -62,3 +58,4 @@ export const query = graphql`
 `
 
 export default IndexPage
+export const Head = () => <title>Dee Adebayo | Front-End Web Developer</title>

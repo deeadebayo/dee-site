@@ -1,31 +1,30 @@
 module.exports = {
 	siteMetadata: {
-		title: "dee-site",
-		siteUrl: "https://www.deeadebayo.com",
+		title: 'dee-site',
+		siteUrl: 'https://www.deeadebayo.com',
 	},
 	plugins: [
-		"gatsby-plugin-emotion",
-		"gatsby-plugin-react-helmet",
-		"gatsby-plugin-sitemap",
-		"gatsby-plugin-offline",
-		"gatsby-plugin-sass",
+		'gatsby-plugin-emotion',
+		'gatsby-plugin-sitemap',
+		'gatsby-plugin-offline',
+		'gatsby-plugin-sass',
 		{
-			resolve: "gatsby-plugin-manifest",
+			resolve: 'gatsby-plugin-manifest',
 			options: {
-				icon: "src/images/icon.png",
+				icon: 'src/images/icon.png',
 			},
 		},
 		{
-			resolve: "gatsby-source-filesystem",
+			resolve: 'gatsby-source-filesystem',
 			options: {
-				name: "images",
+				name: 'images',
 				path: `${__dirname}/src/images`,
 			},
-			__key: "images",
+			__key: 'images',
 		},
-		"gatsby-plugin-sharp",
-		"gatsby-transformer-sharp",
-		"gatsby-plugin-image",
+		'gatsby-plugin-sharp',
+		'gatsby-transformer-sharp',
+		'gatsby-plugin-image',
 		{
 			resolve: `gatsby-plugin-typography`,
 			options: {
@@ -33,7 +32,7 @@ module.exports = {
 			},
 		},
 		{
-			resolve: "gatsby-plugin-react-svg",
+			resolve: 'gatsby-plugin-react-svg',
 			options: {
 				rule: {
 					include: /src/,
@@ -41,4 +40,4 @@ module.exports = {
 			},
 		},
 	],
-};
+}
