@@ -7,10 +7,10 @@
 		"gatsby"
 	],
 	"scripts": {
-		"build": "cross-env NODE_OPTIONS=\"-r esm\" gatsby build",
-		"dev": "cross-env NODE_OPTIONS=\"-r esm\" gatsby develop",
+		"build": "cross-env gatsby build",
+		"dev": "cross-env gatsby develop",
 		"start": "npm run develop",
-		"serve": "cross-env NODE_OPTIONS=\"-r esm\" gatsby serve",
+		"serve": "cross-env gatsby serve",
 		"clean": "gatsby clean"
 	},
 	"eslintConfig": {
