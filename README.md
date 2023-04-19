@@ -11,7 +11,7 @@ Highlights:
 
 Roadmap
 
-- ~~integrate a js framework (vue, react) - Using React and Gatsby for Static Site Generation~~
+- ~~integrate a js framework (vue, react) - Using React and Gatsby for Static Site Generation~~ riding or dying with Gatsby
 - ~~add an animation library~~ Framer-Motion
 - Decouple data from this repo (maybe host on Contentful or Airtable)
 - link other microsites/projects to this site with Netlify proxying -or- try out a monorepo?

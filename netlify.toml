@@ -1,7 +1,7 @@
 [build]
   command = "gatsby build"
   publish = "public"
-  environment = { NODE_VERSION = "12.16.2" }
+  environment = { NODE_VERSION = "18", NPM_FLAGS = "--legacy-peer-deps" }
 [[redirects]]
 	from = '/*'
 	to = '/index.html'

@@ -4,6 +4,7 @@ require('dotenv').config({
 
 module.exports = {
 	siteMetadata: {
+<<<<<<< HEAD
 		title: 'Fullstack Web Developer | Dee Adebayo',
 		siteUrl: 'https://www.deeadebayo.com',
 		keywords:
@@ -16,6 +17,13 @@ module.exports = {
 	plugins: [
 		'gatsby-plugin-emotion',
 		'gatsby-plugin-react-helmet',
+=======
+		title: 'dee-site',
+		siteUrl: 'https://www.deeadebayo.com',
+	},
+	plugins: [
+		'gatsby-plugin-emotion',
+>>>>>>> 7b9270c8d3dda7bc120b8347a03f09ccdd227c64
 		'gatsby-plugin-sitemap',
 		'gatsby-plugin-offline',
 		'gatsby-plugin-sass',

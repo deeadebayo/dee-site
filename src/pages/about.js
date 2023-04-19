@@ -1,5 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { css } from '@emotion/react'
 import { Link } from 'gatsby'
 import { motion } from 'framer-motion'
@@ -106,10 +105,13 @@ const AboutPageStyles = css`
 `
 const AboutPage = () => (
 	<>
+<<<<<<< HEAD
 		<MiniSEO
 			title='About Me'
 			description='Learn more about Dee Adebayo and the freelance web development services he offers.'
 		/>
+=======
+>>>>>>> 7b9270c8d3dda7bc120b8347a03f09ccdd227c64
 		<FadeInPage pageName='about'>
 			<motion.div
 				css={AboutPageStyles}
@@ -194,3 +196,4 @@ const AboutPage = () => (
 )
 
 export default AboutPage
+export const Head = () => <title>Dee Adebayo | About Me</title>

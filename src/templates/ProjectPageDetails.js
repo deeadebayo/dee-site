@@ -1,5 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { motion } from 'framer-motion'
 import { css } from '@emotion/react'
 import { graphql } from 'gatsby'
@@ -152,6 +151,7 @@ const projectImageVariant = {
 		},
 	},
 }
+export const Head = () => <title>Dee Adebayo | Front-End Web Developer</title>
 const SingleProjectPage = ({ data: { pageInfo, projectImage } }) => {
 	const {
 		key,
@@ -180,11 +180,9 @@ const SingleProjectPage = ({ data: { pageInfo, projectImage } }) => {
 
 	return (
 		<>
-			<MiniSEO
-				title={`${pageTitle} - Projects`}
-				description={seoDescription}
-				keywords={seoKeywords}
-			/>
+			{/* <Helmet>
+				<title>Dee Adebayo - Projects | {pageTitle}</title>
+			</Helmet> */}
 			<FadeInPage pageName='projectPage'>
 				<div css={projectPageContent}>
 					<div className='wrapper__hero'>

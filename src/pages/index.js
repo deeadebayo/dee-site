@@ -1,5 +1,4 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
 
 import HomeAbout from '../components/HomeAbout'
 import ProjectBoxList from '../components/ProjectBoxList'
@@ -9,7 +8,10 @@ import { MiniSEO } from '../components/Seo'
 
 const IndexPage = ({ data }) => (
 	<>
+<<<<<<< HEAD
 		<MiniSEO />
+=======
+>>>>>>> 7b9270c8d3dda7bc120b8347a03f09ccdd227c64
 		<FadeInPage pageName='index'>
 			<HomeAbout />
 			<ProjectBoxList projectImages={data} />
@@ -61,3 +63,4 @@ export const query = graphql`
 `
 
 export default IndexPage
+export const Head = () => <title>Dee Adebayo | Front-End Web Developer</title>
