@@ -1,5 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { css } from '@emotion/react'
 import { Link } from 'gatsby'
 import { motion } from 'framer-motion'
@@ -105,9 +104,6 @@ const AboutPageStyles = css`
 `
 const AboutPage = () => (
 	<>
-		<Helmet>
-			<title>Dee Adebayo | About Me</title>
-		</Helmet>
 		<FadeInPage pageName='about'>
 			<motion.div
 				css={AboutPageStyles}
@@ -191,3 +187,4 @@ const AboutPage = () => (
 )
 
 export default AboutPage
+export const Head = () => <title>Dee Adebayo | About Me</title>
