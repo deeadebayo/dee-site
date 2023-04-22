@@ -10,4 +10,8 @@ export const wrapPageElement = ({ element, props }) => (
 	</>
 )
 
+exports.onRenderBody = ({ setHtmlAttributes }) => {
+	setHtmlAttributes({ lang: 'en' })
+}
+
 export const Head = () => <title>Dee Adebayo | Front-End Web Developer</title>

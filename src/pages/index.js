@@ -8,10 +8,7 @@ import { MiniSEO } from '../components/Seo'
 
 const IndexPage = ({ data }) => (
 	<>
-<<<<<<< HEAD
 		<MiniSEO />
-=======
->>>>>>> 7b9270c8d3dda7bc120b8347a03f09ccdd227c64
 		<FadeInPage pageName='index'>
 			<HomeAbout />
 			<ProjectBoxList projectImages={data} />

@@ -105,13 +105,10 @@ const AboutPageStyles = css`
 `
 const AboutPage = () => (
 	<>
-<<<<<<< HEAD
 		<MiniSEO
 			title='About Me'
-			description='Learn more about Dee Adebayo and the freelance web development services he offers.'
+			description='Learn more about Dee and the freelance web development services he offers.'
 		/>
-=======
->>>>>>> 7b9270c8d3dda7bc120b8347a03f09ccdd227c64
 		<FadeInPage pageName='about'>
 			<motion.div
 				css={AboutPageStyles}

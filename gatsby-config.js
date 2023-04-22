@@ -4,26 +4,17 @@ require('dotenv').config({
 
 module.exports = {
 	siteMetadata: {
-<<<<<<< HEAD
 		title: 'Fullstack Web Developer | Dee Adebayo',
 		siteUrl: 'https://www.deeadebayo.com',
 		keywords:
-			"dee adebayo, adeolu adebayo, front-end developer, ui/ux, bachelor's, georgia state university, software implementation, web development, freelance, website building, front-end designer, full stack developer, front end developer, software engineer, HTML, CSS, JavaScript, Node.js, React.js, Gatsby.js, Jamstack, GraphQL, PostgreSQL",
+			"adeolu adebayo, dee adebayo, front-end developer, ui/ux, bachelor's, georgia state university, software implementation, web development, freelance, website building, front-end designer, full stack developer, front end developer, software engineer, css engineer, HTML, CSS, JavaScript, Node.js, React.js, Gatsby.js, Jamstack, GraphQL, PostgreSQL",
 		description:
 			"Hi, I'm Adeolu! Since 2014, I've enjoyed building accessible sites that function seamlessly on anything that can access the web. Thanks for visiting. It's nice to meet you!",
 		image: '/images/icon.png',
-		author: 'Dee Adebayo',
+		author: 'Adeolu Adebayo',
 	},
 	plugins: [
 		'gatsby-plugin-emotion',
-		'gatsby-plugin-react-helmet',
-=======
-		title: 'dee-site',
-		siteUrl: 'https://www.deeadebayo.com',
-	},
-	plugins: [
-		'gatsby-plugin-emotion',
->>>>>>> 7b9270c8d3dda7bc120b8347a03f09ccdd227c64
 		'gatsby-plugin-sitemap',
 		'gatsby-plugin-offline',
 		'gatsby-plugin-sass',
