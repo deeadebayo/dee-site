@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 import '../scss/link-hover.scss'
 import FadeInPage from '../components-ui/FadeInPage'
-import { MiniSEO } from '../components/Seo'
+import { SEO } from '../components/Seo'
 
 const contentVariants = {
 	hidden: { opacity: 0 },
@@ -193,4 +193,4 @@ const AboutPage = () => (
 )
 
 export default AboutPage
-export const Head = () => <title>Dee Adebayo | About Me</title>
+export const Head = () => <SEO />

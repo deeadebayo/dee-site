@@ -1,28 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Helmet } from 'react-helmet'
 import { useLocation } from '@reach/router'
-import { useStaticQuery, graphql } from 'gatsby'
 
-const query = graphql`
-	query SeoQuery {
-		site {
-			buildTime(formatString: "ddd, DD MMM YYYY hh:mm A")
-			siteMetadata {
-				defaultTitle: title
-				defaultDescription: description
-				defaultKeywords: keywords
-				siteUrl
-				defaultImage: image
-			}
-		}
-	}
-`
-const SEO = ({ title, description, image, keywords }) => {
+// TODO: make title: Dee Adebayo | Front-End Software Engineer
+// TODO: move the qLquery into ../hooks
+
+export const SEO = ({ title, description, image, keywords, children }) => {
 	const { pathname } = useLocation()
 	const data = useStaticQuery(query)
 
-	const { buildTime } = data.site.buildTime
+	const { buildTime } = data.site
 	const author = 'Dee Adebayo'
 
 	const {
@@ -38,7 +25,8 @@ const SEO = ({ title, description, image, keywords }) => {
 		description: description || defaultDescription,
 		image: `${siteUrl}${image || defaultImage}`,
 		url: `${siteUrl}${pathname}`,
-		keywords: `${defaultKeywords} ${keywords || null}`,
+		keywords:
+			(keywords && `${defaultKeywords}, ${keywords}`) || defaultKeywords,
 	}
 
 	const personStructured = {
@@ -46,7 +34,7 @@ const SEO = ({ title, description, image, keywords }) => {
 		name: author,
 		hasOccupation: {
 			'@type': 'Occupation',
-			name: 'Web Developer',
+			name: 'Software Engineer',
 		},
 		email: 'mailto:hi@deeadebayo.com',
 		url: 'https://www.deeadebayo.com',
@@ -75,7 +63,8 @@ const SEO = ({ title, description, image, keywords }) => {
 	}
 
 	return (
-		<Helmet title={seo.title}>
+		<>
+			<title>{seo.title}</title>
 			<meta name='description' content={seo.description} />
 			<meta name='image' content={seo.image} />
 			{seo.url && <meta property='og:url' content={seo.url} />}
@@ -93,53 +82,13 @@ const SEO = ({ title, description, image, keywords }) => {
 				<meta name='twitter:description' content={seo.description} />
 			)}
 			{seo.image && <meta name='twitter:image' content={seo.image} />}
+			{children}
 			<script type='application/ld+json'>
 				{JSON.stringify(schemaOrgWebPage)}
 			</script>
-		</Helmet>
+		</>
 	)
 }
-
-const MiniSEO = ({ title, description, image, keywords }) => {
-	const { site } = useStaticQuery(query)
-
-	const author = 'Dee Adebayo'
-
-	const {
-		defaultTitle,
-		defaultDescription,
-		defaultKeywords,
-		siteUrl,
-		defaultImage,
-	} = site.siteMetadata
-
-	const seo = {
-		title: (title && `${title} | ${author}`) || defaultTitle,
-		description: description || defaultDescription,
-		image: `${siteUrl}${image || defaultImage}`,
-		keywords:
-			(keywords && `${defaultKeywords}, ${keywords}`) || defaultKeywords,
-	}
-
-	return (
-		<Helmet title={seo.title}>
-			<meta name='description' content={seo.description} />
-			<meta name='image' content={seo.image} />
-			{seo.title && <meta property='og:title' content={seo.title} />}
-			{seo.description && (
-				<meta property='og:description' content={seo.description} />
-			)}
-			{seo.image && <meta property='og:image' content={seo.image} />}
-			{seo.title && <meta name='twitter:title' content={seo.title} />}
-			{seo.description && (
-				<meta name='twitter:description' content={seo.description} />
-			)}
-			{seo.image && <meta name='twitter:image' content={seo.image} />}
-		</Helmet>
-	)
-}
-
-export { SEO, MiniSEO }
 
 SEO.propTypes = {
 	title: PropTypes.string,
@@ -149,20 +98,6 @@ SEO.propTypes = {
 }
 
 SEO.defaultProps = {
-	title: null,
-	description: null,
-	image: null,
-	keywords: null,
-}
-
-MiniSEO.propTypes = {
-	title: PropTypes.string,
-	description: PropTypes.string,
-	image: PropTypes.string,
-	keywords: PropTypes.string,
-}
-
-MiniSEO.defaultProps = {
 	title: null,
 	description: null,
 	image: null,

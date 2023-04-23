@@ -3,6 +3,8 @@ import Layout from './src/components/Layout'
 import { SEO } from './src/components/Seo'
 import GlobalStyles from './src/styles/GlobalStyles'
 
+export const Head = () => <SEO />
+
 export const wrapPageElement = ({ element, props }) => (
 	<>
 		<GlobalStyles />
@@ -10,8 +12,6 @@ export const wrapPageElement = ({ element, props }) => (
 	</>
 )
 
-exports.onRenderBody = ({ setHtmlAttributes }) => {
+export const onRenderBody = ({ setHtmlAttributes }) => {
 	setHtmlAttributes({ lang: 'en' })
 }
-
-export const Head = () => <title>Dee Adebayo | Front-End Web Developer</title>

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import { MiniSEO } from '../components/Seo'
+import { SEO } from '../components/Seo'
 
 // styles
 const pageStyles = {
@@ -57,3 +57,5 @@ const NotFoundPage = () => {
 }
 
 export default NotFoundPage
+
+export const Head = () => <SEO />

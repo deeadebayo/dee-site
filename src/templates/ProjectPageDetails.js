@@ -5,7 +5,8 @@ import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 
 import FadeInPage from '../components-ui/FadeInPage'
-import { MiniSEO } from '../components/Seo'
+// TODO: Specify the SEO object to pull each indidivual project if the routes match
+import { SEO } from '../components/Seo'
 
 const projectPageContent = css`
 	display: flex;
@@ -151,7 +152,7 @@ const projectImageVariant = {
 		},
 	},
 }
-export const Head = () => <title>Dee Adebayo | Front-End Web Developer</title>
+export const Head = () => <SEO />
 const SingleProjectPage = ({ data: { pageInfo, projectImage } }) => {
 	const {
 		key,

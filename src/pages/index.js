@@ -4,11 +4,11 @@ import HomeAbout from '../components/HomeAbout'
 import ProjectBoxList from '../components/ProjectBoxList'
 import FadeInPage from '../components-ui/FadeInPage'
 import { graphql } from 'gatsby'
-import { MiniSEO } from '../components/Seo'
+import { SEO } from '../components/Seo'
 
 const IndexPage = ({ data }) => (
 	<>
-		<MiniSEO />
+		<SEO />
 		<FadeInPage pageName='index'>
 			<HomeAbout />
 			<ProjectBoxList projectImages={data} />
@@ -60,4 +60,4 @@ export const query = graphql`
 `
 
 export default IndexPage
-export const Head = () => <title>Dee Adebayo | Front-End Web Developer</title>
+export const Head = () => <SEO />
