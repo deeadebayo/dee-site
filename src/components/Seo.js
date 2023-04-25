@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useLocation } from '@reach/router'
+import { useSiteMetaData } from '../hooks/use-site-metadata'
 
 // TODO: make title: Dee Adebayo | Front-End Software Engineer
 // TODO: move the qLquery into ../hooks
 
 export const SEO = ({ title, description, image, keywords, children }) => {
-	const { pathname } = useLocation()
-	const data = useStaticQuery(query)
-
-	const { buildTime } = data.site
-	const author = 'Dee Adebayo'
+	const { pathname } = useLocation(),
+		data = useSiteMetaData(),
+		{ buildTime } = data.site,
+		author = 'Dee Adebayo'
 
 	const {
 		defaultTitle,
