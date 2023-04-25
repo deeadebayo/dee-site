@@ -4,63 +4,60 @@ import { useLocation } from '@reach/router'
 import { useSiteMetaData } from '../hooks/use-site-metadata'
 
 // TODO: make title: Dee Adebayo | Front-End Software Engineer
-// TODO: move the qLquery into ../hooks
 
 export const SEO = ({ title, description, image, keywords, children }) => {
 	const { pathname } = useLocation(),
 		data = useSiteMetaData(),
-		{ buildTime } = data.site,
-		author = 'Dee Adebayo'
-
-	const {
-		defaultTitle,
-		defaultDescription,
-		defaultKeywords,
-		siteUrl,
-		defaultImage,
-	} = data.site.siteMetadata
-
-	const seo = {
-		title: (title && `${title}| ${author}`) || defaultTitle,
-		description: description || defaultDescription,
-		image: `${siteUrl}${image || defaultImage}`,
-		url: `${siteUrl}${pathname}`,
-		keywords:
-			(keywords && `${defaultKeywords}, ${keywords}`) || defaultKeywords,
-	}
-
-	const personStructured = {
-		'@type': 'Person',
-		name: author,
-		hasOccupation: {
-			'@type': 'Occupation',
-			name: 'Software Engineer',
+		author = 'Adeolu Adebayo',
+		{
+			buildTime,
+			siteMetadata: {
+				defaultTitle,
+				defaultDescription,
+				defaultKeywords,
+				siteUrl,
+				defaultImage,
+			},
+		} = data.site,
+		seo = {
+			title: (title && `${title}| ${author}`) || defaultTitle,
+			description: description || defaultDescription,
+			image: `${siteUrl}${image || defaultImage}`,
+			url: `${siteUrl}${pathname}`,
+			keywords:
+				(keywords && `${defaultKeywords}, ${keywords}`) || defaultKeywords,
 		},
-		email: 'mailto:hi@deeadebayo.com',
-		url: 'https://www.deeadebayo.com',
-	}
-
-	const schemaOrgWebPage = {
-		'@context': 'http://schema.org',
-		'@type': 'WebPage',
-		url: siteUrl,
-		headline: 'Personal Site for Dee Adebayo',
-		inLanguage: 'English',
-		mainEntityOfPage: siteUrl,
-		description: defaultDescription,
-		name: defaultTitle,
-		author: personStructured,
-		copyrightHolder: personStructured,
-		copyrightYear: '2019',
-		creator: personStructured,
-		publisher: personStructured,
-		datePublished: '2019-01-01T10:30:00+01:00',
-		dateModified: buildTime,
-		image: {
-			'@type': 'ImageObject',
-			url: `${siteUrl}${defaultImage}`,
+		personStructured = {
+			'@type': 'Person',
+			name: author,
+			hasOccupation: {
+				'@type': 'Occupation',
+				name: 'Software Engineer',
+			},
+			email: 'mailto:hi@deeadebayo.com',
+			url: 'https://www.deeadebayo.com',
 		},
-	}
+		schemaOrgWebPage = {
+			'@context': 'http://schema.org',
+			'@type': 'WebPage',
+			url: siteUrl,
+			headline: 'Personal Site for Dee Adebayo',
+			inLanguage: 'English',
+			mainEntityOfPage: siteUrl,
+			description: defaultDescription,
+			name: defaultTitle,
+			author: personStructured,
+			copyrightHolder: personStructured,
+			copyrightYear: '2019',
+			creator: personStructured,
+			publisher: personStructured,
+			datePublished: '2019-01-01T10:30:00+01:00',
+			dateModified: buildTime,
+			image: {
+				'@type': 'ImageObject',
+				url: `${siteUrl}${defaultImage}`,
+			},
+		}
 
 	return (
 		<>
