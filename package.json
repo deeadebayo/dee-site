@@ -24,7 +24,7 @@
 	"dependencies": {
 		"@emotion/react": "^11.4.0",
 		"framer-motion": "^9.0.7",
-		"gatsby": "^5.7.0",
+		"gatsby": "^5.9.1",
 		"gatsby-background-image": "^1.5.3",
 		"gatsby-image": "^3.8.0",
 		"gatsby-plugin-emotion": "^6.8.0",
