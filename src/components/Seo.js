@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import { useLocation } from '@reach/router'
 import { useSiteMetaData } from '../hooks/use-site-metadata'
 
-// TODO: make title: Dee Adebayo | Front-End Software Engineer
-
 export const SEO = ({ title, description, image, keywords, children }) => {
 	const { pathname } = useLocation(),
 		data = useSiteMetaData(),
@@ -41,7 +39,7 @@ export const SEO = ({ title, description, image, keywords, children }) => {
 			'@context': 'http://schema.org',
 			'@type': 'WebPage',
 			url: siteUrl,
-			headline: 'Personal Site for Dee Adebayo',
+			headline: 'Personal Site for Adeolu Adebayo',
 			inLanguage: 'English',
 			mainEntityOfPage: siteUrl,
 			description: defaultDescription,

@@ -4,7 +4,7 @@ require('dotenv').config({
 
 module.exports = {
 	siteMetadata: {
-		title: 'Fullstack Web Developer | Dee Adebayo',
+		title: 'Adeolu Adebayo | Front-End Software Engineer',
 		siteUrl: 'https://www.deeadebayo.com',
 		keywords:
 			"adeolu adebayo, dee adebayo, front-end developer, ui/ux, bachelor's, georgia state university, software implementation, web development, freelance, website building, front-end designer, full stack developer, front end developer, software engineer, css engineer, HTML, CSS, JavaScript, Node.js, React.js, Gatsby.js, Jamstack, GraphQL, PostgreSQL",
