@@ -29,7 +29,6 @@ const codeStyles = {
 const NotFoundPage = () => {
 	return (
 		<>
-			<MiniSEO title='Page Not Found' />
 			<main style={pageStyles}>
 				<title>Not found</title>
 				<h1 style={headingStyles}>Page not found</h1>
@@ -49,7 +48,7 @@ const NotFoundPage = () => {
 					) : null}
 					<br />
 					<Link to='/'>Go home</Link>. Dang, you just got a page that's not
-					here, the sadness. Here's an inception gif
+					here, imagine the sadness. Here's an inception gif
 				</p>
 			</main>
 		</>
@@ -58,4 +57,4 @@ const NotFoundPage = () => {
 
 export default NotFoundPage
 
-export const Head = () => <SEO />
+export const Head = () => <SEO title='Page Not Found' />

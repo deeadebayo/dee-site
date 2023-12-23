@@ -8,7 +8,6 @@ import { SEO } from '../components/Seo'
 
 const IndexPage = ({ data }) => (
 	<>
-		<SEO />
 		<FadeInPage pageName='index'>
 			<HomeAbout />
 			<ProjectBoxList projectImages={data} />

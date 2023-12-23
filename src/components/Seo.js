@@ -18,7 +18,7 @@ export const SEO = ({ title, description, image, keywords, children }) => {
 			},
 		} = data.site,
 		seo = {
-			title: (title && `${title}| ${author}`) || defaultTitle,
+			title: (title && `${title} | ${author}`) || defaultTitle,
 			description: description || defaultDescription,
 			image: `${siteUrl}${image || defaultImage}`,
 			url: `${siteUrl}${pathname}`,
@@ -59,6 +59,7 @@ export const SEO = ({ title, description, image, keywords, children }) => {
 
 	return (
 		<>
+			<html lang='en-US' />
 			<title>{seo.title}</title>
 			<meta name='description' content={seo.description} />
 			<meta name='image' content={seo.image} />
