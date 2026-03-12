@@ -1,13 +1,15 @@
+'use client'
+
 import React, { useState } from 'react'
 
 import Logo from './../../../_misc/logo.svg'
-// import './../scss/logo.scss'
+import './animatedLogo.modules.scss'
 
-let colorClassOptions = ['logo--primaryColor', 'logo--secondaryColor', 'logo--accentColor']
+let colorClassOptions = ['logoPrimaryColor', 'logoSecondaryColor', 'logoAccentColor']
 
 const AnimatedLogo = () => {
   const [color, setColor] = useState(''),
-    [currentColor, setCurrentColor] = useState('logo--primaryColor')
+    [currentColor, setCurrentColor] = useState('logoPrimaryColor')
 
   let colorClassChoice = () =>
       colorClassOptions[Math.floor(Math.random() * colorClassOptions.length)],

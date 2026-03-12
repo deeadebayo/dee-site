@@ -8,7 +8,7 @@ import AnimatedLogo from '../Animations/AnimatedLogo/AnimatedLogo'
 
 const Navbar = () => {
   const pathname = usePathname(),
-    domain = window.location.host
+    domain = location.host
 
   let navlinks = [
       {
