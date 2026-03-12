@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 
-import Logo from './../images/svg/logo.svg'
-import './../scss/logo.scss'
+import Logo from './../../../_misc/logo.svg'
+// import './../scss/logo.scss'
 
 let colorClassOptions = ['logo--primaryColor', 'logo--secondaryColor', 'logo--accentColor']
 
-export const AnimatedLogo = () => {
+const AnimatedLogo = () => {
   const [color, setColor] = useState(''),
     [currentColor, setCurrentColor] = useState('logo--primaryColor')
 
@@ -19,3 +19,5 @@ export const AnimatedLogo = () => {
     }
   return <Logo className={`logo ${color}`} onMouseEnter={() => addClass()} />
 }
+
+export default AnimatedLogo
