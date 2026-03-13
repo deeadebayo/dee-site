@@ -30,7 +30,7 @@ const Navbar = () => {
       {
         id: 4,
         title: 'Inspiration',
-        href: 'http://deeadebayo.tumblr.com/',
+        href: 'https://deeadebayo.tumblr.com/',
         color: '#BC027F',
         externalUrl: true,
       },

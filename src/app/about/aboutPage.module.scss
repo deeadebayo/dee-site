@@ -1,0 +1,70 @@
+.page {
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    grid-gap: 1.25em;
+    grid-auto-rows: minmax(100px, auto);
+    padding: 1.5em 2em;
+    max-width: 1500px;
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+
+    grid-template-areas: 'header header'
+    'resume resume'
+    'skills skills'
+    'contact contact';
+
+    .header {
+        grid-area: header;
+
+        h1 {
+            font-size: 2.75em;
+
+            .and {
+                color: var(--color-primary);
+            }
+        }
+    }
+
+    .skills {
+        grid-area: skills;
+        padding: 1.5em 1.8em;
+        border: 1px solid var(--color-soft-white);
+        background: var(--color-white);
+        border-radius: 5px;
+        box-shadow: 2.2px 2.8px 2.8px rgba(0, 0, 0, 0.02),
+            5.3px 6.7px 6.7px rgba(0, 0, 0, 0.028),
+            10px 12.5px 12.5px rgba(0, 0, 0, 0.035),
+            17.9px 22.3px 22.3px rgba(0, 0, 0, 0.042),
+            33.4px 41.8px 41.8px rgba(0, 0, 0, 0.05),
+            80px 100px 100px rgba(0, 0, 0, 0.07);
+    }
+
+    .resume {
+        grid-area: resume;
+        margin: 0 auto;
+        padding: 1em 1em;
+        max-width: 58ch;
+
+        p span {
+            color: var(--color-primary);
+        }
+    }
+
+    .contact {
+        grid-area: contact;
+    }
+
+    @media screen and (min-width: 469px) {
+        padding: 2rem 2.5rem;
+    }
+
+    @media screen and (min-width: 1023px) {
+        padding: 2rem 4.5rem;
+    }
+}
