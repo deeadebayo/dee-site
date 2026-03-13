@@ -6,36 +6,13 @@ export default {
     pretty: false, // boolean
   },
   plugins: [
-    'preset-default', // built-in plugins enabled by default
-    'prefixIds', // enable built-in plugins by name
-    'collapseGroups',
-    'inlineStyles',
-
-    // enable built-in plugins with an object to configure plugins
     {
       name: 'preset-default',
       params: {
         overrides: {
-          cleanupIds: false,
+          prefixIds: false,
         },
       },
-    },
-    {
-      name: 'prefixIds',
-      //   params: {
-      //     prefix: 'uwu',
-      //   },
-    },
-    {
-      name: 'inlineStyles',
-      params: {
-        onlyMatchedOnce: true,
-        removeMatchedSelectors: true,
-      },
-    },
-    {
-      name: 'collapseGroups',
-      active: false,
     },
   ],
 }

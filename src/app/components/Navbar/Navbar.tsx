@@ -26,7 +26,6 @@ const Navbar = () => {
         title: 'Just riffing',
         href: '/playground',
       },
-
       {
         id: 4,
         title: 'Inspiration',

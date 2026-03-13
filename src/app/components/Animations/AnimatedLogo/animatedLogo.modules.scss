@@ -16,73 +16,81 @@ $layer3-hover-delay: 0s;
     stroke-width: 0.1px;
     max-height: 51px;
 
-    &__text-outline {
-        @include logo-animation(null, null, $layer0-static-transition);
-    }
+    .logo_svg {
+        &__text-outline {
+            @include logo-animation(null, null, $layer0-static-transition);
+        }
 
-    &__layer-1 {
-        @include logo-animation(transparent, null, $layer1-static-transition);
-    }
+        &__layer-1 {
+            @include logo-animation(transparent, null, $layer1-static-transition);
+        }
 
-    &__layer-2 {
-        @include logo-animation(transparent, null, $layer2-static-transition);
-    }
+        &__layer-2 {
+            @include logo-animation(transparent, null, $layer2-static-transition);
+        }
 
-    &__layer-3 {
-        @include logo-animation(transparent, null, $layer3-static-transition);
+        &__layer-3 {
+            @include logo-animation(transparent, null, $layer3-static-transition);
+        }
     }
 
     &PrimaryColor:hover {
-        .logo__text-outline {
-            opacity: 0;
-        }
+        .logo_svg {
+            &__logo__text-outline {
+                opacity: 0;
+            }
 
-        .logo__layer-1 {
-            @include logo-animation(var(--color-primary), $layer1-hover-delay);
-        }
+            &__logo__layer-1 {
+                @include logo-animation(var(--color-primary), $layer1-hover-delay);
+            }
 
-        .logo__layer-2 {
-            @include logo-animation(var(--color-primary), $layer2-hover-delay);
-        }
+            &__logo__layer-2 {
+                @include logo-animation(var(--color-primary), $layer2-hover-delay);
+            }
 
-        .logo__layer-3 {
-            @include logo-animation(var(--color-primary), $layer3-hover-delay);
+            &__logo__layer-3 {
+                @include logo-animation(var(--color-primary), $layer3-hover-delay);
+            }
         }
     }
 
     &SecondaryColor:hover {
-        .logo__text-outline {
-            opacity: 0;
-        }
+        .logo_svg {
+            &__logo__text-outline {
+                opacity: 0;
+            }
 
-        .logo__layer-1 {
-            @include logo-animation(var(--color-secondary), $layer1-hover-delay);
-        }
+            &__logo__layer-1 {
+                @include logo-animation(var(--color-secondary), $layer1-hover-delay);
+            }
 
-        .logo__layer-2 {
-            @include logo-animation(var(--color-secondary), $layer2-hover-delay);
-        }
+            &__logo__layer-2 {
+                @include logo-animation(var(--color-secondary), $layer2-hover-delay);
+            }
 
-        .logo__layer-3 {
-            @include logo-animation(var(--color-secondary), $layer3-hover-delay);
+            &__logo__layer-3 {
+                @include logo-animation(var(--color-secondary), $layer3-hover-delay);
+            }
         }
     }
 
     &RareColor:hover {
-        .logo__text-outline {
-            opacity: 0;
-        }
+        .logo_svg {
+            &__logo__text-outline {
+                opacity: 0;
+            }
 
-        .logo__layer-1 {
-            @include logo-animation(var(--color-rare), $layer1-hover-delay);
-        }
+            &__logo__layer-1 {
+                @include logo-animation(var(--color-rare), $layer1-hover-delay);
+            }
 
-        .logo__layer-2 {
-            @include logo-animation(var(--color-rare), $layer2-hover-delay);
-        }
+            &__logo__layer-2 {
+                @include logo-animation(var(--color-rare), $layer2-hover-delay);
+            }
 
-        .logo__layer-3 {
-            @include logo-animation(var(--color-rare), $layer3-hover-delay);
+            &__logo__layer-3 {
+                @include logo-animation(var(--color-rare), $layer3-hover-delay);
+            }
         }
     }
 }

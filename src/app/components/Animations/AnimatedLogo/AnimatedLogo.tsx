@@ -19,7 +19,15 @@ const AnimatedLogo = () => {
       setCurrentColor(newColor)
       setColor(currentColor)
     }
-  return <Logo className={`logo ${color}`} onMouseEnter={() => addClass()} />
+  return (
+    <Logo
+      className={`logo ${color}`}
+      onMouseEnter={() => addClass()}
+      width="130"
+      height="66.912"
+      viewBox="0 0 125.474 62.73"
+    />
+  )
 }
 
 export default AnimatedLogo
