@@ -38,7 +38,7 @@ const Navlinks = () => {
     isActivePage = (url: string) => (url === pathname ? `active` : ``)
 
   return (
-    <div className={styles.navbar__links}>
+    <nav className={styles.navbar__links}>
       <ul>
         {navlinks.map((link) => (
           <li key={link.id}>
@@ -51,7 +51,7 @@ const Navlinks = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </nav>
   )
 }
 

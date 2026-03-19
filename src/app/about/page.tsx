@@ -1,6 +1,17 @@
 import React from 'react'
 import styles from './aboutPage.module.scss'
 
+export async function generateMetadata({ params }: any) {
+  const product = await fetch(`https://api.example.com/products/${params.id}`).then((r) => r.json())
+
+  return {
+    title: `${product.name} | MyStore`,
+    description: product.shortDescription,
+    openGraph: { images: [product.image] },
+    alternates: { canonical: `https://mysite.com/product/${params.id}` },
+  }
+}
+
 const AboutPage = () => {
   return <div className={styles.page}></div>
 }
