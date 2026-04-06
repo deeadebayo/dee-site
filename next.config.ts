@@ -16,6 +16,10 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  env: {
+    // Captures the current timestamp at the moment 'next build' runs
+    NEXT_PUBLIC_BUILD_TIME: new Date().toISOString(),
+  },
 }
 
 export default nextConfig

@@ -6,20 +6,12 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const Navlinks = () => {
-  const pathname = usePathname()
-
-  console.log(pathname)
-
-  let navlinks = [
+  const pathname = usePathname(),
+    navlinks = [
       {
         id: 1,
         title: 'About',
         href: '/about',
-      },
-      {
-        id: 2,
-        title: 'Contact',
-        href: '#contact',
       },
       {
         id: 3,
@@ -33,6 +25,11 @@ const Navlinks = () => {
         href: 'http://deeadebayo.tumblr.com/',
         color: '#BC027F',
         externalUrl: true,
+      },
+      {
+        id: 2,
+        title: 'Contact',
+        href: '#contact',
       },
     ],
     isActivePage = (url: string) => (url === pathname ? `active` : ``)
