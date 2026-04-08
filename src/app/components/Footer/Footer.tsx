@@ -45,6 +45,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className={styles.navbar__links}>
+        iamkate, free content - https://iamkate.com/ideas/free-content/
         <ul>
           {navlinks.map((link) => (
             <li key={link.id}>

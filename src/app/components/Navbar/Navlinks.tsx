@@ -6,20 +6,12 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const Navlinks = () => {
-  const pathname = usePathname()
-
-  console.log(pathname)
-
-  let navlinks = [
+  const pathname = usePathname(),
+    navlinks = [
       {
         id: 1,
         title: 'About',
         href: '/about',
-      },
-      {
-        id: 2,
-        title: 'Contact',
-        href: '#contact',
       },
       {
         id: 3,
@@ -34,11 +26,16 @@ const Navlinks = () => {
         color: '#BC027F',
         externalUrl: true,
       },
+      {
+        id: 2,
+        title: 'Contact',
+        href: '#contact',
+      },
     ],
     isActivePage = (url: string) => (url === pathname ? `active` : ``)
 
   return (
-    <div className={styles.navbar__links}>
+    <nav className={styles.navbar__links}>
       <ul>
         {navlinks.map((link) => (
           <li key={link.id}>
@@ -51,7 +48,7 @@ const Navlinks = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </nav>
   )
 }
 

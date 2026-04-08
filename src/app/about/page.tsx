@@ -1,6 +1,13 @@
 import React from 'react'
 import styles from './aboutPage.module.scss'
 
+export async function generateMetadata({ params }: any) {
+  return {
+    title: `About me`,
+    // description:``
+  }
+}
+
 const AboutPage = () => {
   return <div className={styles.page}></div>
 }
