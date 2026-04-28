@@ -6,7 +6,7 @@ import Navlinks from './Navlinks'
 
 const Navbar = () => {
   return (
-    <header className={styles.navbar}>
+    <header className={`${styles.navbar} page-wrapper--header content-wrapper`}>
       <div className="navbar__logo">
         <Link href="/" className="logo--wrap" id="logo">
           <AnimatedLogo />

@@ -1,3 +1,5 @@
+@use './scss/link-hover.scss' as *;
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -175,4 +177,33 @@ p.lead-text {
   p.lead-text {
     font-size: 1.5em;
   }
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.page-wrapper {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  &--body {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--header,
+  &--footer {
+    flex: 1 1 0;
+  }
+}
+
+.content-wrapper {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
 }

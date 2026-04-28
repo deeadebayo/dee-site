@@ -41,7 +41,9 @@ const Navlinks = () => {
           <li key={link.id}>
             <Link
               href={link.href}
-              className={!link.externalUrl && pathname == link.href ? `active` : ``}
+              className={
+                `navbar-link ` + (!link.externalUrl && pathname == link.href ? `active` : ``)
+              }
             >
               {link.title}
             </Link>

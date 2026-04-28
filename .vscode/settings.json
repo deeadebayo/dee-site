@@ -1,6 +1,7 @@
 {
-	"editor.formatOnSave": true,
-	"editor.codeActionsOnSave": {
-		"source.fixAll": "explicit"
-	}
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "github.copilot.nextEditSuggestions.enabled": false
 }

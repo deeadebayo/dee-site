@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 
 import Logo from './../../../_misc/logo.svg'
-import './animatedLogo.modules.scss'
+import './animatedLogo.module.scss'
 
 let colorClassOptions = ['logoPrimaryColor', 'logoSecondaryColor', 'logoAccentColor']
 
